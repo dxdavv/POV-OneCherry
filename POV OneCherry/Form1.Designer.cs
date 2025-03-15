@@ -144,6 +144,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            MaximumSize = new Size(600, 400);
+            MinimumSize = new Size(600, 400);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
