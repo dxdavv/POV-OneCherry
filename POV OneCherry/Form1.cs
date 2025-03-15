@@ -19,6 +19,17 @@ namespace POV_OneCherry
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text != "admin")
+            {
+                MessageBox.Show("Usuario incorrecto");
+                return;
+            }
+            if (textBox2.Text != "root")
+            {
+                MessageBox.Show("Contraseña incorrecta");
+                return;
+            }
+            MessageBox.Show("Sesion iniciada");
 
         }
     }

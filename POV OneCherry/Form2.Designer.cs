@@ -34,11 +34,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            MaximumSize = new Size(816, 489);
-            MinimumSize = new Size(816, 489);
+            ClientSize = new Size(884, 461);
+            MaximumSize = new Size(900, 500);
+            MinimumSize = new Size(900, 500);
             Name = "Form2";
-            Text = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Administrador";
             ResumeLayout(false);
         }
 
