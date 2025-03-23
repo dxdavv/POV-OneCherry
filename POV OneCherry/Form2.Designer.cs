@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             splitContainer1 = new SplitContainer();
-            ButtonProveedor = new Button();
-            button3 = new Button();
-            Productos = new Button();
-            button1 = new Button();
-            pictureBox1 = new PictureBox();
-            button2 = new Button();
             button4 = new Button();
+            pictureBox1 = new PictureBox();
+            button1 = new Button();
+            Productos = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            ButtonProveedor = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.SuspendLayout();
@@ -68,43 +68,14 @@
             splitContainer1.SplitterDistance = 104;
             splitContainer1.TabIndex = 0;
             // 
-            // ButtonProveedor
+            // button4
             // 
-            ButtonProveedor.Location = new Point(1, 45);
-            ButtonProveedor.Name = "ButtonProveedor";
-            ButtonProveedor.Size = new Size(102, 30);
-            ButtonProveedor.TabIndex = 0;
-            ButtonProveedor.Text = "Proveedores";
-            ButtonProveedor.UseVisualStyleBackColor = true;
-            ButtonProveedor.Click += ButtonProveedor_Click;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(1, 105);
-            button3.Name = "button3";
-            button3.Size = new Size(102, 30);
-            button3.TabIndex = 2;
-            button3.Text = "Empleados";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // Productos
-            // 
-            Productos.Location = new Point(1, 135);
-            Productos.Name = "Productos";
-            Productos.Size = new Size(102, 30);
-            Productos.TabIndex = 3;
-            Productos.Text = "Productos";
-            Productos.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(1, 430);
-            button1.Name = "button1";
-            button1.Size = new Size(102, 30);
-            button1.TabIndex = 4;
-            button1.Text = "Soporte";
-            button1.UseVisualStyleBackColor = true;
+            button4.Location = new Point(1, 165);
+            button4.Name = "button4";
+            button4.Size = new Size(102, 30);
+            button4.TabIndex = 6;
+            button4.Text = "Ventas";
+            button4.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -116,6 +87,35 @@
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            button1.Location = new Point(1, 430);
+            button1.Name = "button1";
+            button1.Size = new Size(102, 30);
+            button1.TabIndex = 4;
+            button1.Text = "Soporte";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // Productos
+            // 
+            Productos.Location = new Point(1, 135);
+            Productos.Name = "Productos";
+            Productos.Size = new Size(102, 30);
+            Productos.TabIndex = 3;
+            Productos.Text = "Productos";
+            Productos.UseVisualStyleBackColor = true;
+            Productos.Click += Productos_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(1, 105);
+            button3.Name = "button3";
+            button3.Size = new Size(102, 30);
+            button3.TabIndex = 2;
+            button3.Text = "Empleados";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // button2
             // 
             button2.Location = new Point(1, 75);
@@ -125,14 +125,15 @@
             button2.Text = "Clientes";
             button2.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // ButtonProveedor
             // 
-            button4.Location = new Point(1, 165);
-            button4.Name = "button4";
-            button4.Size = new Size(102, 30);
-            button4.TabIndex = 6;
-            button4.Text = "Ventas";
-            button4.UseVisualStyleBackColor = true;
+            ButtonProveedor.Location = new Point(1, 45);
+            ButtonProveedor.Name = "ButtonProveedor";
+            ButtonProveedor.Size = new Size(102, 30);
+            ButtonProveedor.TabIndex = 0;
+            ButtonProveedor.Text = "Proveedores";
+            ButtonProveedor.UseVisualStyleBackColor = true;
+            ButtonProveedor.Click += ButtonProveedor_Click;
             // 
             // Form2
             // 

@@ -29,8 +29,17 @@ namespace POV_OneCherry
                 MessageBox.Show("Contraseña incorrecta");
                 return;
             }
-            MessageBox.Show("Sesion iniciada");
+            this.SendToBack();
+            // this.SendToBack(); oculta esta ventana para no estorbar en las demas
+            new Form2().Show();
+            // este new Form2().Show(); es para usar la ventan siguiente
+            // sin tener que crear un objeto y se utiliza Show()
+            // para que se muestre
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -44,7 +44,7 @@
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Font = new Font("High Tower Text", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlText;
             label1.ImageAlign = ContentAlignment.TopCenter;
             label1.Location = new Point(176, 15);
@@ -59,27 +59,27 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.Location = new Point(182, 120);
             label2.Name = "label2";
-            label2.Size = new Size(98, 30);
+            label2.Size = new Size(116, 31);
             label2.TabIndex = 1;
             label2.Text = "Usuario:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Goudy Old Style", 21.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label3.Location = new Point(182, 185);
             label3.Name = "label3";
-            label3.Size = new Size(140, 31);
+            label3.Size = new Size(173, 33);
             label3.TabIndex = 2;
             label3.Text = "Contraseña:";
             // 
             // button1
             // 
             button1.BackColor = Color.Pink;
-            button1.Font = new Font("Goudy Old Style", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.Location = new Point(355, 309);
             button1.Name = "button1";
             button1.Size = new Size(100, 25);
@@ -91,13 +91,14 @@
             // button2
             // 
             button2.BackColor = Color.Pink;
-            button2.Font = new Font("Goudy Old Style", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.Location = new Point(464, 309);
             button2.Name = "button2";
             button2.Size = new Size(100, 25);
             button2.TabIndex = 4;
             button2.Text = "Exit";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // pictureBox1
             // 
@@ -129,6 +130,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(151, 23);
             textBox2.TabIndex = 7;
+            textBox2.UseSystemPasswordChar = true;
             // 
             // Form1
             // 
