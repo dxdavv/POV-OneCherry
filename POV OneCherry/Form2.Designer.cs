@@ -70,12 +70,15 @@
             // 
             // button4
             // 
+            button4.BackColor = Color.Crimson;
+            button4.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.ForeColor = SystemColors.ControlLightLight;
             button4.Location = new Point(1, 165);
             button4.Name = "button4";
             button4.Size = new Size(102, 30);
             button4.TabIndex = 6;
             button4.Text = "Ventas";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -89,50 +92,65 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.Crimson;
+            button1.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ControlLightLight;
             button1.Location = new Point(1, 430);
             button1.Name = "button1";
             button1.Size = new Size(102, 30);
             button1.TabIndex = 4;
             button1.Text = "Soporte";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             // 
             // Productos
             // 
+            Productos.BackColor = Color.Crimson;
+            Productos.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Productos.ForeColor = SystemColors.ControlLightLight;
             Productos.Location = new Point(1, 135);
             Productos.Name = "Productos";
             Productos.Size = new Size(102, 30);
             Productos.TabIndex = 3;
             Productos.Text = "Productos";
-            Productos.UseVisualStyleBackColor = true;
+            Productos.UseVisualStyleBackColor = false;
             Productos.Click += Productos_Click;
             // 
             // button3
             // 
+            button3.BackColor = Color.Crimson;
+            button3.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = SystemColors.ControlLightLight;
             button3.Location = new Point(1, 105);
             button3.Name = "button3";
             button3.Size = new Size(102, 30);
             button3.TabIndex = 2;
             button3.Text = "Empleados";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // button2
             // 
+            button2.BackColor = Color.Crimson;
+            button2.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.ControlLightLight;
             button2.Location = new Point(1, 75);
             button2.Name = "button2";
             button2.Size = new Size(102, 30);
             button2.TabIndex = 1;
             button2.Text = "Clientes";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             // 
             // ButtonProveedor
             // 
+            ButtonProveedor.BackColor = Color.Crimson;
+            ButtonProveedor.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ButtonProveedor.ForeColor = SystemColors.ControlLightLight;
             ButtonProveedor.Location = new Point(1, 45);
             ButtonProveedor.Name = "ButtonProveedor";
             ButtonProveedor.Size = new Size(102, 30);
             ButtonProveedor.TabIndex = 0;
             ButtonProveedor.Text = "Proveedores";
-            ButtonProveedor.UseVisualStyleBackColor = true;
+            ButtonProveedor.UseVisualStyleBackColor = false;
             ButtonProveedor.Click += ButtonProveedor_Click;
             // 
             // Form2

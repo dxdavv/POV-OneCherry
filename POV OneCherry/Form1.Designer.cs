@@ -150,7 +150,7 @@
             MaximumSize = new Size(600, 400);
             MinimumSize = new Size(600, 400);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Log in admin";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
