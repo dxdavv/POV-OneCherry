@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace POV_OneCherry
 {
-    public partial class Form8 : Form
+    public partial class Venta : Form
     {
-        public Form8()
+        public Venta()
         {
             InitializeComponent();
         }
@@ -33,6 +33,11 @@ namespace POV_OneCherry
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
         {
 
         }

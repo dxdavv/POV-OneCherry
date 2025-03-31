@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace POV_OneCherry
 {
-    public partial class Form5 : Form
+    public partial class PrimerPantallaLogin : Form
     {
-        public Form5()
+        public PrimerPantallaLogin()
         {
             InitializeComponent();
         }
@@ -29,14 +29,19 @@ namespace POV_OneCherry
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form admin = new Form1();
+            Form admin = new LoginAdmin();
             admin.Show();
-            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new Form4().ShowDialog();
+            new LoginEmpleado().ShowDialog();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Form empleado = new Venta();
+            empleado.Show();
         }
     }
 }

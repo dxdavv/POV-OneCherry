@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace POV_OneCherry
 {
-    public partial class Form4: Form
+    public partial class LoginEmpleado: Form
     {
-        public Form4()
+        public LoginEmpleado()
         {
             InitializeComponent();
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace POV_OneCherry
 {
-    public partial class Form1 : Form
+    public partial class LoginAdmin : Form
     {
-        public Form1()
+        public LoginAdmin()
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace POV_OneCherry
             }
             this.SendToBack();
             // this.SendToBack(); oculta esta ventana para no estorbar en las demas
-            new Form2().Show();
+            new Administrador().Show();
             // este new Form2().Show(); es para usar la ventan siguiente
             // sin tener que crear un objeto y se utiliza Show()
             // para que se muestre

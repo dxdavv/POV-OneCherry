@@ -1,6 +1,6 @@
 ﻿namespace POV_OneCherry
 {
-    partial class Form7
+    partial class RegistroCliente
     {
         /// <summary>
         /// Required designer variable.
