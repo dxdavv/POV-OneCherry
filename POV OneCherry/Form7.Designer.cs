@@ -44,15 +44,16 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Sitka Small", 18.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(68, 9);
+            label1.Location = new Point(77, 9);
             label1.Name = "label1";
             label1.Size = new Size(240, 36);
             label1.TabIndex = 0;
             label1.Text = "Registrar cliente";
+            label1.Click += label1_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(70, 95);
+            textBox1.Location = new Point(77, 94);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(240, 23);
             textBox1.TabIndex = 1;
@@ -61,7 +62,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(147, 70);
+            label2.Location = new Point(154, 69);
             label2.Name = "label2";
             label2.Size = new Size(71, 22);
             label2.TabIndex = 2;
@@ -71,7 +72,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label3.Location = new Point(147, 150);
+            label3.Location = new Point(154, 149);
             label3.Name = "label3";
             label3.Size = new Size(71, 22);
             label3.TabIndex = 3;
@@ -82,7 +83,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.Location = new Point(147, 305);
+            label4.Location = new Point(154, 304);
             label4.Name = "label4";
             label4.Size = new Size(57, 22);
             label4.TabIndex = 4;
@@ -92,7 +93,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label5.Location = new Point(144, 227);
+            label5.Location = new Point(151, 226);
             label5.Name = "label5";
             label5.Size = new Size(74, 22);
             label5.TabIndex = 5;
@@ -101,21 +102,21 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(53, 330);
+            textBox2.Location = new Point(60, 329);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(271, 23);
             textBox2.TabIndex = 6;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(70, 252);
+            textBox3.Location = new Point(77, 251);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(240, 23);
             textBox3.TabIndex = 7;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(70, 175);
+            textBox4.Location = new Point(77, 174);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(240, 23);
             textBox4.TabIndex = 8;
@@ -125,9 +126,9 @@
             button1.BackColor = Color.Crimson;
             button1.Font = new Font("Goudy Old Style", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(143, 376);
+            button1.Location = new Point(150, 364);
             button1.Name = "button1";
-            button1.Size = new Size(75, 25);
+            button1.Size = new Size(75, 35);
             button1.TabIndex = 9;
             button1.Text = "Agregar";
             button1.UseVisualStyleBackColor = false;

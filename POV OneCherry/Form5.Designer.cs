@@ -47,8 +47,9 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Pink;
+            button1.BackColor = Color.Crimson;
             button1.Font = new Font("Goudy Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ControlLightLight;
             button1.Location = new Point(50, 90);
             button1.Name = "button1";
             button1.Size = new Size(115, 50);
@@ -58,8 +59,9 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.Pink;
+            button2.BackColor = Color.Crimson;
             button2.Font = new Font("Goudy Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.ControlLightLight;
             button2.Location = new Point(215, 90);
             button2.Name = "button2";
             button2.Size = new Size(115, 50);
@@ -69,7 +71,7 @@
             // 
             // button5
             // 
-            button5.BackColor = Color.LightCoral;
+            button5.BackColor = Color.LightPink;
             button5.Font = new Font("Goudy Old Style", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button5.Location = new Point(139, 166);
             button5.Name = "button5";
