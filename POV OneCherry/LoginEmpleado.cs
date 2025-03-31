@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace POV_OneCherry
 {
-    public partial class Form5 : Form
+    public partial class LoginEmpleado: Form
     {
-        public Form5()
+        public LoginEmpleado()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

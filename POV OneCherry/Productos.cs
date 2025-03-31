@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace POV_OneCherry
 {
-    public partial class Form3 : Form
+    public partial class Productos : Form
     {
-        public Form3()
+        public Productos()
         {
             InitializeComponent();
         }

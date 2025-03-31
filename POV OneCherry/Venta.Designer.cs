@@ -1,6 +1,6 @@
 ﻿namespace POV_OneCherry
 {
-    partial class Form8
+    partial class Venta
     {
         /// <summary>
         /// Required designer variable.
@@ -65,7 +65,7 @@
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer2);
             splitContainer1.Size = new Size(884, 461);
-            splitContainer1.SplitterDistance = 47;
+            splitContainer1.SplitterDistance = 44;
             splitContainer1.TabIndex = 0;
             // 
             // label4
@@ -100,7 +100,7 @@
             // 
             splitContainer2.Panel2.Controls.Add(label3);
             splitContainer2.Panel2.Controls.Add(label2);
-            splitContainer2.Size = new Size(884, 410);
+            splitContainer2.Size = new Size(884, 413);
             splitContainer2.SplitterDistance = 422;
             splitContainer2.TabIndex = 0;
             // 
@@ -141,7 +141,7 @@
             // button3
             // 
             button3.BackColor = Color.Crimson;
-            button3.Font = new Font("Goudy Old Style", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ControlLightLight;
             button3.Location = new Point(337, 33);
             button3.Name = "button3";
@@ -174,10 +174,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Sitka Small Semibold", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(136, 9);
             label3.Name = "label3";
-            label3.Size = new Size(179, 28);
+            label3.Size = new Size(168, 24);
             label3.TabIndex = 15;
             label3.Text = "Nombre Apellido";
             // 

@@ -1,6 +1,6 @@
 ﻿namespace POV_OneCherry
 {
-    partial class Form2
+    partial class Administrador
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrador));
             splitContainer1 = new SplitContainer();
             button4 = new Button();
             pictureBox1 = new PictureBox();

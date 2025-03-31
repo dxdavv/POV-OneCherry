@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace POV_OneCherry
 {
-    public partial class Form2 : Form
+    public partial class Administrador : Form
     {
-        public Form2()
+        public Administrador()
         {
             InitializeComponent();
         }
@@ -45,7 +45,7 @@ namespace POV_OneCherry
         private void Productos_Click(object sender, EventArgs e)
         {
             this.SendToBack();
-            new Form3().Show();
+            new Productos().Show();
         }
     }
 }
