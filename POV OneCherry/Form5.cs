@@ -24,7 +24,19 @@ namespace POV_OneCherry
 
         private void button5_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form admin = new Form1();
+            admin.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new Form4().ShowDialog();
         }
     }
 }
