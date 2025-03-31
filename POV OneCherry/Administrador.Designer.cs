@@ -37,6 +37,7 @@
             button3 = new Button();
             button2 = new Button();
             ButtonProveedor = new Button();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.SuspendLayout();
@@ -52,6 +53,7 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.LavenderBlush;
+            splitContainer1.Panel1.Controls.Add(button5);
             splitContainer1.Panel1.Controls.Add(button4);
             splitContainer1.Panel1.Controls.Add(pictureBox1);
             splitContainer1.Panel1.Controls.Add(button1);
@@ -153,7 +155,19 @@
             ButtonProveedor.UseVisualStyleBackColor = false;
             ButtonProveedor.Click += ButtonProveedor_Click;
             // 
-            // Form2
+            // button5
+            // 
+            button5.BackColor = Color.Crimson;
+            button5.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button5.ForeColor = SystemColors.ControlLightLight;
+            button5.Location = new Point(1, 195);
+            button5.Name = "button5";
+            button5.Size = new Size(102, 30);
+            button5.TabIndex = 7;
+            button5.Text = "Usuarios";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // Administrador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -161,7 +175,7 @@
             Controls.Add(splitContainer1);
             MaximumSize = new Size(900, 500);
             MinimumSize = new Size(900, 500);
-            Name = "Form2";
+            Name = "Administrador";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Administrador";
             Load += Form2_Load;
@@ -182,5 +196,6 @@
         private PictureBox pictureBox1;
         private Button button2;
         private Button button4;
+        private Button button5;
     }
 }

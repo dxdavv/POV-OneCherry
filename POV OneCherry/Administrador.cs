@@ -45,7 +45,7 @@ namespace POV_OneCherry
         private void Productos_Click(object sender, EventArgs e)
         {
             this.SendToBack();
-            new Productos().Show();
+            new VentanaProductos().Show();
         }
     }
 }

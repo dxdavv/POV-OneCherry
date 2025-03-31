@@ -1,6 +1,6 @@
 ﻿namespace POV_OneCherry
 {
-    partial class Productos
+    partial class VentanaProductos
     {
         /// <summary>
         /// Required designer variable.

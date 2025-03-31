@@ -1,6 +1,6 @@
 ﻿namespace POV_OneCherry
 {
-    partial class Venta
+    partial class Empleado
     {
         /// <summary>
         /// Required designer variable.
@@ -119,7 +119,7 @@
             // button1
             // 
             button1.BackColor = Color.Crimson;
-            button1.Font = new Font("Sitka Banner", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ControlLightLight;
             button1.Location = new Point(10, 349);
             button1.Name = "button1";
@@ -175,11 +175,12 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(136, 9);
+            label3.Location = new Point(140, 13);
             label3.Name = "label3";
             label3.Size = new Size(168, 24);
             label3.TabIndex = 15;
             label3.Text = "Nombre Apellido";
+            label3.Click += label3_Click;
             // 
             // label2
             // 
@@ -191,7 +192,7 @@
             label2.TabIndex = 14;
             label2.Text = "Venta, cliente:";
             // 
-            // Form8
+            // Venta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -199,7 +200,7 @@
             ClientSize = new Size(884, 461);
             Controls.Add(splitContainer1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Name = "Form8";
+            Name = "Venta";
             Text = "Empleado";
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();

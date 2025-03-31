@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace POV_OneCherry
 {
-    public partial class Venta : Form
+    public partial class PaginaSoporte : Form
     {
-        public Venta()
+        public PaginaSoporte()
         {
             InitializeComponent();
         }
@@ -22,22 +22,17 @@ namespace POV_OneCherry
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        private void Form6_Load(object sender, EventArgs e)
         {
 
         }
