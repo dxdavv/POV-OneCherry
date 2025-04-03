@@ -43,5 +43,10 @@ namespace POV_OneCherry
             Form empleado = new Empleado();
             empleado.Show();
         }
+
+        private void PrimerPantallaLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

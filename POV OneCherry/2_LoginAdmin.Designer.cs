@@ -59,30 +59,31 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(182, 120);
             label2.Name = "label2";
-            label2.Size = new Size(98, 30);
+            label2.Size = new Size(106, 31);
             label2.TabIndex = 1;
             label2.Text = "Usuario:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Goudy Old Style", 21.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(182, 185);
             label3.Name = "label3";
-            label3.Size = new Size(140, 31);
+            label3.Size = new Size(143, 31);
             label3.TabIndex = 2;
             label3.Text = "Contraseña:";
             // 
             // button1
             // 
-            button1.BackColor = Color.Pink;
-            button1.Font = new Font("Goudy Old Style", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.BackColor = Color.Crimson;
+            button1.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ControlLightLight;
             button1.Location = new Point(355, 309);
             button1.Name = "button1";
-            button1.Size = new Size(100, 25);
+            button1.Size = new Size(100, 32);
             button1.TabIndex = 3;
             button1.Text = "Log in";
             button1.UseVisualStyleBackColor = false;
@@ -90,11 +91,12 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.Pink;
-            button2.Font = new Font("Goudy Old Style", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.BackColor = Color.OliveDrab;
+            button2.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.ControlLightLight;
             button2.Location = new Point(464, 309);
             button2.Name = "button2";
-            button2.Size = new Size(100, 25);
+            button2.Size = new Size(100, 32);
             button2.TabIndex = 4;
             button2.Text = "Exit";
             button2.UseVisualStyleBackColor = false;
@@ -117,7 +119,8 @@
             // 
             // textBox1
             // 
-            textBox1.BackColor = Color.LightPink;
+            textBox1.BackColor = SystemColors.ButtonHighlight;
+            textBox1.ForeColor = SystemColors.WindowText;
             textBox1.Location = new Point(286, 127);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(151, 23);
@@ -125,14 +128,14 @@
             // 
             // textBox2
             // 
-            textBox2.BackColor = Color.LightPink;
+            textBox2.BackColor = SystemColors.ButtonHighlight;
             textBox2.Location = new Point(328, 193);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(151, 23);
             textBox2.TabIndex = 7;
             textBox2.UseSystemPasswordChar = true;
             // 
-            // Form1
+            // LoginAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -146,10 +149,10 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximumSize = new Size(600, 400);
             MinimumSize = new Size(600, 400);
-            Name = "Form1";
+            Name = "LoginAdmin";
             Text = "Log in admin";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

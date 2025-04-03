@@ -59,6 +59,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.BackColor = Color.LavenderBlush;
             splitContainer1.Panel1.Controls.Add(label4);
             // 
             // splitContainer1.Panel2
@@ -72,11 +73,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(797, 5);
             label4.Margin = new Padding(5);
             label4.Name = "label4";
-            label4.Size = new Size(82, 23);
+            label4.Size = new Size(85, 23);
             label4.TabIndex = 0;
             label4.Text = "One Cherry";
             label4.Click += label4_Click;
@@ -89,6 +90,7 @@
             // 
             // splitContainer2.Panel1
             // 
+            splitContainer2.Panel1.BackColor = Color.LavenderBlush;
             splitContainer2.Panel1.Controls.Add(button2);
             splitContainer2.Panel1.Controls.Add(button1);
             splitContainer2.Panel1.Controls.Add(dataGridView1);
@@ -98,6 +100,7 @@
             // 
             // splitContainer2.Panel2
             // 
+            splitContainer2.Panel2.BackColor = Color.LavenderBlush;
             splitContainer2.Panel2.Controls.Add(label3);
             splitContainer2.Panel2.Controls.Add(label2);
             splitContainer2.Size = new Size(884, 413);
@@ -141,7 +144,7 @@
             // button3
             // 
             button3.BackColor = Color.Crimson;
-            button3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ControlLightLight;
             button3.Location = new Point(337, 33);
             button3.Name = "button3";
@@ -164,7 +167,7 @@
             // 
             // textBox1
             // 
-            textBox1.BackColor = Color.LightPink;
+            textBox1.BackColor = SystemColors.ButtonHighlight;
             textBox1.Location = new Point(10, 40);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(320, 23);
@@ -192,15 +195,15 @@
             label2.TabIndex = 14;
             label2.Text = "Venta, cliente:";
             // 
-            // Venta
+            // Empleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LavenderBlush;
+            BackColor = Color.OliveDrab;
             ClientSize = new Size(884, 461);
             Controls.Add(splitContainer1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Name = "Venta";
+            Name = "Empleado";
             Text = "Empleado";
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
