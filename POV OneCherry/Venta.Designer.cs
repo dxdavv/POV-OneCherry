@@ -127,6 +127,7 @@
             button1.TabIndex = 19;
             button1.Text = "Agregar cliente";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // dataGridView1
             // 
@@ -191,7 +192,7 @@
             label2.TabIndex = 14;
             label2.Text = "Venta, cliente:";
             // 
-            // Form8
+            // Venta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -199,7 +200,7 @@
             ClientSize = new Size(884, 461);
             Controls.Add(splitContainer1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Name = "Form8";
+            Name = "Venta";
             Text = "Empleado";
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();

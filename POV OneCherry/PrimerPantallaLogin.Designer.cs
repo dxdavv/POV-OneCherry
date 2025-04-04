@@ -43,7 +43,6 @@
             label2.Size = new Size(245, 31);
             label2.TabIndex = 12;
             label2.Text = "Inicia sesión como:";
-            label2.Click += label2_Click;
             // 
             // button1
             // 
@@ -69,7 +68,7 @@
             button2.TabIndex = 14;
             button2.Text = "Empleado";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click_1;
+            button2.Click += button2_Click;
             // 
             // button5
             // 
@@ -99,7 +98,6 @@
             ResumeLayout(false);
             PerformLayout();
         }
-
         #endregion
 
         private Label label2;

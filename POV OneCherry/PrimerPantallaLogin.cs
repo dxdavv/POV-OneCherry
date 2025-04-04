@@ -17,10 +17,6 @@ namespace POV_OneCherry
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -35,13 +31,8 @@ namespace POV_OneCherry
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new LoginEmpleado().ShowDialog();
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            Form empleado = new Venta();
-            empleado.Show();
+            Form empleado = new LoginEmpleado();
+            empleado.ShowDialog();
         }
     }
 }
