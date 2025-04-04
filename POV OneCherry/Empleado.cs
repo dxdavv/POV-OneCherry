@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace POV_OneCherry
 {
-    public partial class Venta : Form
+    public partial class Empleado : Form
     {
-        public Venta()
+        public Empleado()
         {
             InitializeComponent();
         }
@@ -42,9 +42,14 @@ namespace POV_OneCherry
 
         }
 
+<<<<<<< HEAD:POV OneCherry/Venta.cs
         private void button1_Click(object sender, EventArgs e)
         {
             new RegistroCliente().ShowDialog();
+=======
+        private void label3_Click(object sender, EventArgs e)
+        {
+>>>>>>> b05fcffbc9c80351a39c5c4370d8481ca42e1d62:POV OneCherry/Empleado.cs
 
         }
     }

@@ -37,21 +37,21 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(102, 20);
+            label2.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(90, 20);
             label2.Name = "label2";
-            label2.Size = new Size(245, 31);
+            label2.Size = new Size(220, 31);
             label2.TabIndex = 12;
             label2.Text = "Inicia sesión como:";
             // 
             // button1
             // 
             button1.BackColor = Color.Crimson;
-            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(50, 90);
+            button1.Location = new Point(60, 68);
             button1.Name = "button1";
-            button1.Size = new Size(115, 50);
+            button1.Size = new Size(115, 60);
             button1.TabIndex = 13;
             button1.Text = "Administrador";
             button1.UseVisualStyleBackColor = false;
@@ -60,11 +60,11 @@
             // button2
             // 
             button2.BackColor = Color.Crimson;
-            button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(215, 90);
+            button2.Location = new Point(210, 68);
             button2.Name = "button2";
-            button2.Size = new Size(115, 50);
+            button2.Size = new Size(115, 60);
             button2.TabIndex = 14;
             button2.Text = "Empleado";
             button2.UseVisualStyleBackColor = false;
@@ -72,11 +72,12 @@
             // 
             // button5
             // 
-            button5.BackColor = Color.LightPink;
-            button5.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.Location = new Point(139, 166);
+            button5.BackColor = Color.OliveDrab;
+            button5.Font = new Font("Sitka Heading", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button5.ForeColor = SystemColors.ControlLightLight;
+            button5.Location = new Point(145, 165);
             button5.Name = "button5";
-            button5.Size = new Size(100, 25);
+            button5.Size = new Size(110, 35);
             button5.TabIndex = 17;
             button5.Text = "Exit";
             button5.UseVisualStyleBackColor = false;
@@ -92,9 +93,10 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label2);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "PrimerPantallaLogin";
-            Text = "First log in";
+            Text = "LOG IN";
+            Load += PrimerPantallaLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

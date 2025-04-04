@@ -45,7 +45,27 @@ namespace POV_OneCherry
         private void Productos_Click(object sender, EventArgs e)
         {
             this.SendToBack();
-            new Productos().Show();
+            new VentanaProductos().Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

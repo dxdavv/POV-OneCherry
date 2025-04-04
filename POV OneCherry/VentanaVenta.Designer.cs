@@ -1,6 +1,6 @@
 ﻿namespace POV_OneCherry
 {
-    partial class Form6
+    partial class VentanaVenta
     {
         /// <summary>
         /// Required designer variable.
@@ -30,17 +30,14 @@
         {
             SuspendLayout();
             // 
-            // Form6
+            // VentanaVenta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(884, 461);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            MaximumSize = new Size(900, 500);
-            MinimumSize = new Size(900, 500);
-            Name = "Form6";
-            Text = "Empleado";
-            Load += Form6_Load;
+            BackColor = Color.LavenderBlush;
+            ClientSize = new Size(800, 450);
+            Name = "VentanaVenta";
+            Text = "Información de ventas";
             ResumeLayout(false);
         }
 
