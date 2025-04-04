@@ -29,7 +29,7 @@ namespace POV_OneCherry
                 MessageBox.Show("Contraseña incorrecta");
                 return;
             }
-            new Venta().ShowDialog();
+            new VentanaVenta().ShowDialog();
         }
     }
 }

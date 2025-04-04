@@ -31,10 +31,8 @@ namespace POV_OneCherry
 
         private void button2_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD:POV OneCherry/PrimerPantallaLogin.cs
             Form empleado = new LoginEmpleado();
             empleado.ShowDialog();
-=======
             new LoginEmpleado().ShowDialog();
         }
 
@@ -42,7 +40,6 @@ namespace POV_OneCherry
         {
             Form empleado = new Empleado();
             empleado.Show();
->>>>>>> b05fcffbc9c80351a39c5c4370d8481ca42e1d62:POV OneCherry/1_PantallaLogin.cs
         }
 
         private void PrimerPantallaLogin_Load(object sender, EventArgs e)

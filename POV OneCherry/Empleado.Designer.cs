@@ -196,11 +196,7 @@
             label2.TabIndex = 14;
             label2.Text = "Venta, cliente:";
             // 
-<<<<<<< HEAD:POV OneCherry/Venta.Designer.cs
-            // Venta
-=======
             // Empleado
->>>>>>> b05fcffbc9c80351a39c5c4370d8481ca42e1d62:POV OneCherry/Empleado.Designer.cs
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -208,11 +204,7 @@
             ClientSize = new Size(884, 461);
             Controls.Add(splitContainer1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-<<<<<<< HEAD:POV OneCherry/Venta.Designer.cs
-            Name = "Venta";
-=======
             Name = "Empleado";
->>>>>>> b05fcffbc9c80351a39c5c4370d8481ca42e1d62:POV OneCherry/Empleado.Designer.cs
             Text = "Empleado";
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
