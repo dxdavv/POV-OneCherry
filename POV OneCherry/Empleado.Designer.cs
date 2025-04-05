@@ -77,7 +77,7 @@
             label4.Location = new Point(797, 5);
             label4.Margin = new Padding(5);
             label4.Name = "label4";
-            label4.Size = new Size(85, 23);
+            label4.Size = new Size(86, 23);
             label4.TabIndex = 0;
             label4.Text = "One Cherry";
             label4.Click += label4_Click;
