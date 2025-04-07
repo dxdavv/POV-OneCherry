@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            button1 = new Button();
+            inputNombre = new TextBox();
+            txtNombre = new Label();
+            txtApellido = new Label();
+            txtEmail = new Label();
+            txtTel = new Label();
+            inputEmail = new TextBox();
+            inputTel = new TextBox();
+            inputApellido = new TextBox();
+            btnAgregar = new Button();
             SuspendLayout();
             // 
             // label1
@@ -46,110 +46,108 @@
             label1.Font = new Font("Sitka Small", 18.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(77, 9);
             label1.Name = "label1";
-            label1.Size = new Size(240, 36);
+            label1.Size = new Size(242, 37);
             label1.TabIndex = 0;
             label1.Text = "Registrar cliente";
-            label1.Click += label1_Click;
             // 
-            // textBox1
+            // inputNombre
             // 
-            textBox1.Location = new Point(77, 94);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(240, 23);
-            textBox1.TabIndex = 1;
+            inputNombre.Location = new Point(77, 94);
+            inputNombre.Name = "inputNombre";
+            inputNombre.Size = new Size(240, 23);
+            inputNombre.TabIndex = 1;
             // 
-            // label2
+            // txtNombre
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(154, 69);
-            label2.Name = "label2";
-            label2.Size = new Size(71, 22);
-            label2.TabIndex = 2;
-            label2.Text = "Nombre:";
+            txtNombre.AutoSize = true;
+            txtNombre.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            txtNombre.Location = new Point(154, 69);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(84, 24);
+            txtNombre.TabIndex = 2;
+            txtNombre.Text = "Nombre:";
             // 
-            // label3
+            // txtApellido
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label3.Location = new Point(154, 149);
-            label3.Name = "label3";
-            label3.Size = new Size(71, 22);
-            label3.TabIndex = 3;
-            label3.Text = "Apellido:";
-            label3.Click += label3_Click;
+            txtApellido.AutoSize = true;
+            txtApellido.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            txtApellido.Location = new Point(154, 149);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(84, 24);
+            txtApellido.TabIndex = 3;
+            txtApellido.Text = "Apellido:";
             // 
-            // label4
+            // txtEmail
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.Location = new Point(154, 304);
-            label4.Name = "label4";
-            label4.Size = new Size(57, 22);
-            label4.TabIndex = 4;
-            label4.Text = "Email:";
+            txtEmail.AutoSize = true;
+            txtEmail.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            txtEmail.Location = new Point(154, 304);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(62, 24);
+            txtEmail.TabIndex = 4;
+            txtEmail.Text = "Email:";
             // 
-            // label5
+            // txtTel
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label5.Location = new Point(151, 226);
-            label5.Name = "label5";
-            label5.Size = new Size(74, 22);
-            label5.TabIndex = 5;
-            label5.Text = "Telefono:";
-            label5.Click += label5_Click;
+            txtTel.AutoSize = true;
+            txtTel.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            txtTel.Location = new Point(151, 226);
+            txtTel.Name = "txtTel";
+            txtTel.Size = new Size(90, 24);
+            txtTel.TabIndex = 5;
+            txtTel.Text = "Telefono:";
             // 
-            // textBox2
+            // inputEmail
             // 
-            textBox2.Location = new Point(60, 329);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(271, 23);
-            textBox2.TabIndex = 6;
+            inputEmail.Location = new Point(60, 329);
+            inputEmail.Name = "inputEmail";
+            inputEmail.Size = new Size(271, 23);
+            inputEmail.TabIndex = 6;
             // 
-            // textBox3
+            // inputTel
             // 
-            textBox3.Location = new Point(77, 251);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(240, 23);
-            textBox3.TabIndex = 7;
+            inputTel.Location = new Point(77, 251);
+            inputTel.Name = "inputTel";
+            inputTel.Size = new Size(240, 23);
+            inputTel.TabIndex = 7;
             // 
-            // textBox4
+            // inputApellido
             // 
-            textBox4.Location = new Point(77, 174);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(240, 23);
-            textBox4.TabIndex = 8;
+            inputApellido.Location = new Point(77, 174);
+            inputApellido.Name = "inputApellido";
+            inputApellido.Size = new Size(240, 23);
+            inputApellido.TabIndex = 8;
             // 
-            // button1
+            // btnAgregar
             // 
-            button1.BackColor = Color.Crimson;
-            button1.Font = new Font("Goudy Old Style", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(150, 364);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 35);
-            button1.TabIndex = 9;
-            button1.Text = "Agregar";
-            button1.UseVisualStyleBackColor = false;
+            btnAgregar.BackColor = Color.Crimson;
+            btnAgregar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregar.ForeColor = SystemColors.ControlLightLight;
+            btnAgregar.Location = new Point(150, 364);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(75, 35);
+            btnAgregar.TabIndex = 9;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
-            // Form7
+            // RegistroCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(384, 411);
-            Controls.Add(button1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(btnAgregar);
+            Controls.Add(inputApellido);
+            Controls.Add(inputTel);
+            Controls.Add(inputEmail);
+            Controls.Add(txtTel);
+            Controls.Add(txtEmail);
+            Controls.Add(txtApellido);
+            Controls.Add(txtNombre);
+            Controls.Add(inputNombre);
             Controls.Add(label1);
-            Name = "Form7";
+            Name = "RegistroCliente";
             Text = "Form7";
             ResumeLayout(false);
             PerformLayout();
@@ -158,14 +156,14 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Button button1;
+        private TextBox inputNombre;
+        private Label txtNombre;
+        private Label txtApellido;
+        private Label txtEmail;
+        private Label txtTel;
+        private TextBox inputEmail;
+        private TextBox inputTel;
+        private TextBox inputApellido;
+        private Button btnAgregar;
     }
 }

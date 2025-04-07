@@ -28,60 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label2 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button5 = new Button();
+            textIniciarSesion = new Label();
+            btnAdmin = new Button();
+            btnEmpleado = new Button();
+            btnSalir = new Button();
             SuspendLayout();
             // 
-            // label2
+            // textIniciarSesion
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(90, 20);
-            label2.Name = "label2";
-            label2.Size = new Size(220, 31);
-            label2.TabIndex = 12;
-            label2.Text = "Inicia sesión como:";
+            textIniciarSesion.AutoSize = true;
+            textIniciarSesion.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textIniciarSesion.Location = new Point(90, 20);
+            textIniciarSesion.Name = "textIniciarSesion";
+            textIniciarSesion.Size = new Size(245, 31);
+            textIniciarSesion.TabIndex = 12;
+            textIniciarSesion.Text = "Inicia sesión como:";
             // 
-            // button1
+            // btnAdmin
             // 
-            button1.BackColor = Color.Crimson;
-            button1.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(60, 68);
-            button1.Name = "button1";
-            button1.Size = new Size(115, 60);
-            button1.TabIndex = 13;
-            button1.Text = "Administrador";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnAdmin.BackColor = Color.Crimson;
+            btnAdmin.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdmin.ForeColor = SystemColors.ControlLightLight;
+            btnAdmin.Location = new Point(60, 68);
+            btnAdmin.Name = "btnAdmin";
+            btnAdmin.Size = new Size(115, 60);
+            btnAdmin.TabIndex = 13;
+            btnAdmin.Text = "Administrador";
+            btnAdmin.UseVisualStyleBackColor = false;
+            btnAdmin.Click += btn_admin;
             // 
-            // button2
+            // btnEmpleado
             // 
-            button2.BackColor = Color.Crimson;
-            button2.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(210, 68);
-            button2.Name = "button2";
-            button2.Size = new Size(115, 60);
-            button2.TabIndex = 14;
-            button2.Text = "Empleado";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btnEmpleado.BackColor = Color.Crimson;
+            btnEmpleado.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEmpleado.ForeColor = SystemColors.ControlLightLight;
+            btnEmpleado.Location = new Point(210, 68);
+            btnEmpleado.Name = "btnEmpleado";
+            btnEmpleado.Size = new Size(115, 60);
+            btnEmpleado.TabIndex = 14;
+            btnEmpleado.Text = "Empleado";
+            btnEmpleado.UseVisualStyleBackColor = false;
+            btnEmpleado.Click += btn_empleado;
             // 
-            // button5
+            // btnSalir
             // 
-            button5.BackColor = Color.OliveDrab;
-            button5.Font = new Font("Sitka Heading", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.ForeColor = SystemColors.ControlLightLight;
-            button5.Location = new Point(145, 165);
-            button5.Name = "button5";
-            button5.Size = new Size(110, 35);
-            button5.TabIndex = 17;
-            button5.Text = "Exit";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
+            btnSalir.BackColor = Color.OliveDrab;
+            btnSalir.Font = new Font("Sitka Heading", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSalir.ForeColor = SystemColors.ControlLightLight;
+            btnSalir.Location = new Point(145, 165);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(110, 35);
+            btnSalir.TabIndex = 17;
+            btnSalir.Text = "Exit";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btn_salir;
             // 
             // PrimerPantallaLogin
             // 
@@ -89,22 +89,21 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(384, 211);
-            Controls.Add(button5);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label2);
+            Controls.Add(btnSalir);
+            Controls.Add(btnEmpleado);
+            Controls.Add(btnAdmin);
+            Controls.Add(textIniciarSesion);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "PrimerPantallaLogin";
             Text = "LOG IN";
-            Load += PrimerPantallaLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }
         #endregion
 
-        private Label label2;
-        protected internal Button button1;
-        protected internal Button button2;
-        protected internal Button button5;
+        private Label textIniciarSesion;
+        protected internal Button btnAdmin;
+        protected internal Button btnEmpleado;
+        protected internal Button btnSalir;
     }
 }

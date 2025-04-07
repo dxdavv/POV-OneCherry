@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaginaSoporte));
-            button2 = new Button();
+            btnManual = new Button();
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -40,35 +40,36 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
-            // button2
+            // btnManual
             // 
-            button2.BackColor = Color.Crimson;
-            button2.Font = new Font("Goudy Old Style", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(74, 164);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 35);
-            button2.TabIndex = 11;
-            button2.Text = "Manual";
-            button2.UseVisualStyleBackColor = false;
+            btnManual.BackColor = Color.Crimson;
+            btnManual.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnManual.ForeColor = SystemColors.ControlLightLight;
+            btnManual.Location = new Point(74, 164);
+            btnManual.Name = "btnManual";
+            btnManual.Size = new Size(75, 35);
+            btnManual.TabIndex = 11;
+            btnManual.Text = "Manual";
+            btnManual.UseVisualStyleBackColor = false;
+            btnManual.Click += btn_Manual;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.Location = new Point(12, 21);
             label2.Name = "label2";
-            label2.Size = new Size(155, 22);
+            label2.Size = new Size(187, 24);
             label2.TabIndex = 12;
             label2.Text = "Numero de contacto:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.Location = new Point(105, 55);
             label1.Name = "label1";
-            label1.Size = new Size(110, 22);
+            label1.Size = new Size(110, 24);
             label1.TabIndex = 13;
             label1.Text = "7791080376";
             // 
@@ -95,20 +96,20 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label3.Location = new Point(105, 95);
             label3.Name = "label3";
-            label3.Size = new Size(110, 22);
+            label3.Size = new Size(110, 24);
             label3.TabIndex = 16;
             label3.Text = "5584472125";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label4.Location = new Point(12, 137);
             label4.Name = "label4";
-            label4.Size = new Size(145, 22);
+            label4.Size = new Size(173, 24);
             label4.TabIndex = 17;
             label4.Text = "Acceder al manual:";
             // 
@@ -124,13 +125,12 @@
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(label2);
-            Controls.Add(button2);
+            Controls.Add(btnManual);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             MaximumSize = new Size(300, 250);
             MinimumSize = new Size(300, 250);
             Name = "PaginaSoporte";
             Text = "Soporte";
-            Load += Form6_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -139,7 +139,7 @@
 
         #endregion
 
-        private Button button2;
+        private Button btnManual;
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;

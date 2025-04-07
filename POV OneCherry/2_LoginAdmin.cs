@@ -17,29 +17,35 @@ namespace POV_OneCherry
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btn_Login(object sender, EventArgs e)
         {
-            if (textBox1.Text != "admin")
+            if (inputUsr.Text != "admin")
             {
                 MessageBox.Show("Usuario incorrecto");
                 return;
             }
-            if (textBox2.Text != "root")
+            if (inputPwd.Text != "root")
             {
                 MessageBox.Show("Contraseña incorrecta");
                 return;
             }
-            //this.SendToBack();
-            // this.SendToBack(); oculta esta ventana para no estorbar en las demas
-            new Administrador().ShowDialog();
-            // este new Form2().Show(); es para usar la ventan siguiente
-            // sin tener que crear un objeto y se utiliza Show()
-            // para que se muestre
+            Form admin = new Administrador();
+            admin.Show();
+            this.Hide();
+
+            admin.FormClosed += onClosedChild;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_Salir(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void onClosedChild(object? sender, FormClosedEventArgs e)
+        {
+            inputUsr.Clear();
+            inputPwd.Clear();
+            this.Show();
         }
     }
 }

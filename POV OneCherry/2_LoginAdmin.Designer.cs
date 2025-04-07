@@ -29,111 +29,110 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginAdmin));
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            titulo = new Label();
+            textUsr = new Label();
+            textPwd = new Label();
+            btnLogin = new Button();
+            btnSalir = new Button();
+            imgPerrito = new PictureBox();
+            inputUsr = new TextBox();
+            inputPwd = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)imgPerrito).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // titulo
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Goudy Old Style", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlText;
-            label1.ImageAlign = ContentAlignment.TopCenter;
-            label1.Location = new Point(176, 15);
-            label1.MaximumSize = new Size(248, 37);
-            label1.MinimumSize = new Size(248, 37);
-            label1.Name = "label1";
-            label1.Size = new Size(248, 37);
-            label1.TabIndex = 0;
-            label1.Text = "ONE CHERRY";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            titulo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            titulo.AutoSize = true;
+            titulo.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            titulo.ForeColor = SystemColors.ControlText;
+            titulo.ImageAlign = ContentAlignment.TopCenter;
+            titulo.Location = new Point(176, 15);
+            titulo.MaximumSize = new Size(248, 37);
+            titulo.MinimumSize = new Size(248, 37);
+            titulo.Name = "titulo";
+            titulo.Size = new Size(248, 37);
+            titulo.TabIndex = 0;
+            titulo.Text = "ONE CHERRY";
+            titulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // textUsr
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(182, 120);
-            label2.Name = "label2";
-            label2.Size = new Size(106, 31);
-            label2.TabIndex = 1;
-            label2.Text = "Usuario:";
+            textUsr.AutoSize = true;
+            textUsr.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textUsr.Location = new Point(182, 120);
+            textUsr.Name = "textUsr";
+            textUsr.Size = new Size(116, 31);
+            textUsr.TabIndex = 1;
+            textUsr.Text = "Usuario:";
             // 
-            // label3
+            // textPwd
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(182, 185);
-            label3.Name = "label3";
-            label3.Size = new Size(143, 31);
-            label3.TabIndex = 2;
-            label3.Text = "Contraseña:";
+            textPwd.AutoSize = true;
+            textPwd.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textPwd.Location = new Point(182, 185);
+            textPwd.Name = "textPwd";
+            textPwd.Size = new Size(163, 31);
+            textPwd.TabIndex = 2;
+            textPwd.Text = "Contraseña:";
             // 
-            // button1
+            // btnLogin
             // 
-            button1.BackColor = Color.Crimson;
-            button1.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(355, 309);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 32);
-            button1.TabIndex = 3;
-            button1.Text = "Log in";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += pictureBox1_Click;
+            btnLogin.BackColor = Color.Crimson;
+            btnLogin.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = SystemColors.ControlLightLight;
+            btnLogin.Location = new Point(355, 309);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(100, 32);
+            btnLogin.TabIndex = 3;
+            btnLogin.Text = "Log in";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btn_Login;
             // 
-            // button2
+            // btnSalir
             // 
-            button2.BackColor = Color.OliveDrab;
-            button2.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(464, 309);
-            button2.Name = "button2";
-            button2.Size = new Size(100, 32);
-            button2.TabIndex = 4;
-            button2.Text = "Exit";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btnSalir.BackColor = Color.OliveDrab;
+            btnSalir.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSalir.ForeColor = SystemColors.ControlLightLight;
+            btnSalir.Location = new Point(464, 309);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(100, 32);
+            btnSalir.TabIndex = 4;
+            btnSalir.Text = "Exit";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btn_Salir;
             // 
-            // pictureBox1
+            // imgPerrito
             // 
-            pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
-            pictureBox1.Image = Properties.Resources.perrito;
-            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(25, 106);
-            pictureBox1.MaximumSize = new Size(140, 121);
-            pictureBox1.MinimumSize = new Size(140, 121);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(140, 121);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            imgPerrito.ErrorImage = (Image)resources.GetObject("imgPerrito.ErrorImage");
+            imgPerrito.Image = Properties.Resources.perrito;
+            imgPerrito.InitialImage = (Image)resources.GetObject("imgPerrito.InitialImage");
+            imgPerrito.Location = new Point(25, 106);
+            imgPerrito.MaximumSize = new Size(140, 121);
+            imgPerrito.MinimumSize = new Size(140, 121);
+            imgPerrito.Name = "imgPerrito";
+            imgPerrito.Size = new Size(140, 121);
+            imgPerrito.SizeMode = PictureBoxSizeMode.StretchImage;
+            imgPerrito.TabIndex = 5;
+            imgPerrito.TabStop = false;
             // 
-            // textBox1
+            // inputUsr
             // 
-            textBox1.BackColor = SystemColors.ButtonHighlight;
-            textBox1.ForeColor = SystemColors.WindowText;
-            textBox1.Location = new Point(286, 127);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(151, 23);
-            textBox1.TabIndex = 6;
+            inputUsr.BackColor = SystemColors.ButtonHighlight;
+            inputUsr.ForeColor = SystemColors.WindowText;
+            inputUsr.Location = new Point(286, 127);
+            inputUsr.Name = "inputUsr";
+            inputUsr.Size = new Size(151, 23);
+            inputUsr.TabIndex = 6;
             // 
-            // textBox2
+            // inputPwd
             // 
-            textBox2.BackColor = SystemColors.ButtonHighlight;
-            textBox2.Location = new Point(328, 193);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(151, 23);
-            textBox2.TabIndex = 7;
-            textBox2.UseSystemPasswordChar = true;
+            inputPwd.BackColor = SystemColors.ButtonHighlight;
+            inputPwd.Location = new Point(328, 193);
+            inputPwd.Name = "inputPwd";
+            inputPwd.Size = new Size(151, 23);
+            inputPwd.TabIndex = 7;
+            inputPwd.UseSystemPasswordChar = true;
             // 
             // LoginAdmin
             // 
@@ -141,33 +140,33 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(584, 361);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(pictureBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(inputPwd);
+            Controls.Add(inputUsr);
+            Controls.Add(imgPerrito);
+            Controls.Add(btnSalir);
+            Controls.Add(btnLogin);
+            Controls.Add(textPwd);
+            Controls.Add(textUsr);
+            Controls.Add(titulo);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximumSize = new Size(600, 400);
             MinimumSize = new Size(600, 400);
             Name = "LoginAdmin";
             Text = "Log in admin";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgPerrito).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Button button2;
-        private PictureBox pictureBox1;
-        protected internal Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private Label titulo;
+        private Label textUsr;
+        private Label textPwd;
+        private Button btnSalir;
+        private PictureBox imgPerrito;
+        protected internal Button btnLogin;
+        private TextBox inputUsr;
+        private TextBox inputPwd;
     }
 }

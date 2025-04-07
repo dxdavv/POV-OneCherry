@@ -17,29 +17,35 @@ namespace POV_OneCherry
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Login(object sender, EventArgs e)
         {
-            if (textBox1.Text != "def")
+            if (inputUsr.Text != "def")
             {
                 MessageBox.Show("Usuario incorrecto");
                 return;
             }
-            if (textBox2.Text != "ault")
+            if (inputPwd.Text != "ault")
             {
                 MessageBox.Show("Contraseña incorrecta");
                 return;
             }
-            new Empleado().ShowDialog();
+            Form empleado = new Empleado();
+            this.Hide();
+            empleado.Show();
+
+            empleado.FormClosed += onChildClosed;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
+        private void btn_Salir(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void onChildClosed(object sender, FormClosedEventArgs e)
+        {
+            inputUsr.Clear();
+            inputPwd.Clear();
+            this.Show();
         }
     }
 }
