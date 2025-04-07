@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace POV_OneCherry
 {
-    public partial class Usuarios: Form
+    public partial class Usuarios : Form
     {
-        public Usuarios ()
+        public Usuarios()
         {
             InitializeComponent();
+        }
+
+        private void Usuarios_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

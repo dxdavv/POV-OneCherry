@@ -153,7 +153,8 @@
             MaximumSize = new Size(600, 400);
             MinimumSize = new Size(600, 400);
             Name = "LoginAdmin";
-            Text = "Log in admin";
+            Text = "LOG IN ADMIN";
+            Load += LoginAdmin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

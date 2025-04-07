@@ -41,5 +41,10 @@ namespace POV_OneCherry
         {
             Application.Exit();
         }
+
+        private void LoginAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace POV_OneCherry
 {
-    public partial class Promociones: Form
+    public partial class VentanaPromociones : Form
     {
-        public Promociones()
+        public VentanaPromociones()
         {
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

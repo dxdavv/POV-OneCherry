@@ -41,5 +41,10 @@ namespace POV_OneCherry
         {
             Application.Exit();
         }
+
+        private void LoginEmpleado_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

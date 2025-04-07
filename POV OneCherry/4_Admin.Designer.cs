@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrador));
             splitContainer1 = new SplitContainer();
+            button11 = new Button();
             button5 = new Button();
             button4 = new Button();
             pictureBox1 = new PictureBox();
@@ -49,7 +50,6 @@
             label1 = new Label();
             button6 = new Button();
             label4 = new Label();
-            button11 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -96,6 +96,18 @@
             splitContainer1.Size = new Size(984, 461);
             splitContainer1.SplitterDistance = 134;
             splitContainer1.TabIndex = 0;
+            // 
+            // button11
+            // 
+            button11.BackColor = Color.Crimson;
+            button11.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button11.ForeColor = SystemColors.ControlLightLight;
+            button11.Location = new Point(2, 225);
+            button11.Name = "button11";
+            button11.Size = new Size(130, 30);
+            button11.TabIndex = 8;
+            button11.Text = "🎁Promociones";
+            button11.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
@@ -326,18 +338,6 @@
             label4.Text = "Nombre Apellido";
             label4.Click += label4_Click;
             // 
-            // button11
-            // 
-            button11.BackColor = Color.Crimson;
-            button11.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button11.ForeColor = SystemColors.ControlLightLight;
-            button11.Location = new Point(2, 225);
-            button11.Name = "button11";
-            button11.Size = new Size(130, 30);
-            button11.TabIndex = 8;
-            button11.Text = "🎁Promociones";
-            button11.UseVisualStyleBackColor = false;
-            // 
             // Administrador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -350,7 +350,7 @@
             MinimumSize = new Size(1000, 500);
             Name = "Administrador";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Admin";
+            Text = "ADMIN";
             Load += Form2_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);

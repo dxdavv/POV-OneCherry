@@ -28,32 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
+            label1 = new Label();
             label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
             textBox2 = new TextBox();
+            label4 = new Label();
             textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            button1 = new Button();
+            button7 = new Button();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Sitka Small", 18.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(77, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(240, 36);
-            label1.TabIndex = 0;
-            label1.Text = "Registrar cliente";
-            label1.Click += label1_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(77, 94);
+            textBox1.Location = new Point(69, 91);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(240, 23);
             textBox1.TabIndex = 1;
@@ -61,111 +48,99 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(154, 69);
+            label2.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(146, 60);
             label2.Name = "label2";
-            label2.Size = new Size(71, 22);
+            label2.Size = new Size(83, 28);
             label2.TabIndex = 2;
             label2.Text = "Nombre:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Sitka Heading", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(92, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(201, 35);
+            label1.TabIndex = 10;
+            label1.Text = "Registro de cliente";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label3.Location = new Point(154, 149);
+            label3.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(146, 128);
             label3.Name = "label3";
-            label3.Size = new Size(71, 22);
-            label3.TabIndex = 3;
-            label3.Text = "Apellido:";
-            label3.Click += label3_Click;
+            label3.Size = new Size(64, 28);
+            label3.TabIndex = 12;
+            label3.Text = "Email:";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(69, 159);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(240, 23);
+            textBox2.TabIndex = 11;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.Location = new Point(154, 304);
+            label4.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(146, 201);
             label4.Name = "label4";
-            label4.Size = new Size(57, 22);
-            label4.TabIndex = 4;
-            label4.Text = "Email:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label5.Location = new Point(151, 226);
-            label5.Name = "label5";
-            label5.Size = new Size(74, 22);
-            label5.TabIndex = 5;
-            label5.Text = "Telefono:";
-            label5.Click += label5_Click;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(60, 329);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(271, 23);
-            textBox2.TabIndex = 6;
+            label4.Size = new Size(85, 28);
+            label4.TabIndex = 14;
+            label4.Text = "Teléfono:";
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(77, 251);
+            textBox3.Location = new Point(69, 232);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(240, 23);
-            textBox3.TabIndex = 7;
+            textBox3.TabIndex = 13;
             // 
-            // textBox4
+            // button7
             // 
-            textBox4.Location = new Point(77, 174);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(240, 23);
-            textBox4.TabIndex = 8;
+            button7.BackColor = Color.Crimson;
+            button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button7.ForeColor = SystemColors.ControlLightLight;
+            button7.Location = new Point(116, 283);
+            button7.Name = "button7";
+            button7.Size = new Size(161, 43);
+            button7.TabIndex = 27;
+            button7.Text = "📥Agregar";
+            button7.UseVisualStyleBackColor = false;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.Crimson;
-            button1.Font = new Font("Goudy Old Style", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(150, 364);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 35);
-            button1.TabIndex = 9;
-            button1.Text = "Agregar";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // Form7
+            // RegistroCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
-            ClientSize = new Size(384, 411);
-            Controls.Add(button1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(label5);
+            ClientSize = new Size(384, 336);
+            Controls.Add(button7);
             Controls.Add(label4);
+            Controls.Add(textBox3);
             Controls.Add(label3);
+            Controls.Add(textBox2);
+            Controls.Add(label1);
             Controls.Add(label2);
             Controls.Add(textBox1);
-            Controls.Add(label1);
-            Name = "Form7";
-            Text = "Form7";
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Name = "RegistroCliente";
+            Text = "CLIENTE REGISTRO";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
         private TextBox textBox1;
         private Label label2;
+        private Label label1;
         private Label label3;
-        private Label label4;
-        private Label label5;
         private TextBox textBox2;
+        private Label label4;
         private TextBox textBox3;
-        private TextBox textBox4;
-        private Button button1;
+        private Button button7;
     }
 }

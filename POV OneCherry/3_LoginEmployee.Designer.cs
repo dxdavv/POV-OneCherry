@@ -29,32 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginEmpleado));
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
             button1 = new Button();
             button2 = new Button();
-            label2 = new Label();
-            label3 = new Label();
             pictureBox1 = new PictureBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = SystemColors.ButtonHighlight;
-            textBox1.Location = new Point(286, 127);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(151, 23);
-            textBox1.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = SystemColors.ButtonHighlight;
-            textBox2.Location = new Point(328, 193);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(151, 23);
-            textBox2.TabIndex = 8;
             // 
             // button1
             // 
@@ -82,26 +66,6 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click_1;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(182, 120);
-            label2.Name = "label2";
-            label2.Size = new Size(116, 31);
-            label2.TabIndex = 11;
-            label2.Text = "Usuario:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(182, 185);
-            label3.Name = "label3";
-            label3.Size = new Size(163, 31);
-            label3.TabIndex = 12;
-            label3.Text = "Contraseña:";
-            // 
             // pictureBox1
             // 
             pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
@@ -116,14 +80,52 @@
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             // 
+            // textBox2
+            // 
+            textBox2.BackColor = SystemColors.ButtonHighlight;
+            textBox2.Location = new Point(322, 196);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(151, 23);
+            textBox2.TabIndex = 18;
+            textBox2.UseSystemPasswordChar = true;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = SystemColors.ButtonHighlight;
+            textBox1.ForeColor = SystemColors.WindowText;
+            textBox1.Location = new Point(280, 130);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(151, 23);
+            textBox1.TabIndex = 17;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(176, 188);
+            label3.Name = "label3";
+            label3.Size = new Size(143, 31);
+            label3.TabIndex = 16;
+            label3.Text = "Contraseña:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(176, 123);
+            label2.Name = "label2";
+            label2.Size = new Size(106, 31);
+            label2.TabIndex = 15;
+            label2.Text = "Usuario:";
+            // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Goudy Old Style", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlText;
             label1.ImageAlign = ContentAlignment.TopCenter;
-            label1.Location = new Point(176, 15);
+            label1.Location = new Point(170, 18);
             label1.MaximumSize = new Size(248, 37);
             label1.MinimumSize = new Size(248, 37);
             label1.Name = "label1";
@@ -138,33 +140,33 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(584, 361);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(pictureBox1);
+            Controls.Add(button2);
+            Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximumSize = new Size(600, 400);
             MinimumSize = new Size(600, 400);
             Name = "LoginEmpleado";
-            Text = "Log in employee";
+            Text = "LOG IN EMPLOYEE";
+            Load += LoginEmpleado_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox textBox1;
-        private TextBox textBox2;
         protected internal Button button1;
         private Button button2;
-        private Label label2;
-        private Label label3;
         private PictureBox pictureBox1;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private Label label3;
+        private Label label2;
         private Label label1;
     }
 }

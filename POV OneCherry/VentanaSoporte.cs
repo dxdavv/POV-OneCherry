@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace POV_OneCherry
 {
-    public partial class PaginaSoporte : Form
+    public partial class VentanaSoporte : Form
     {
-        public PaginaSoporte()
+        public VentanaSoporte()
         {
             InitializeComponent();
         }

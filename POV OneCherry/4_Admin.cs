@@ -70,7 +70,7 @@ namespace POV_OneCherry
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new PaginaSoporte().ShowDialog();
+            new VentanaSoporte().ShowDialog();
         }
 
         private void button10_Click(object sender, EventArgs e)
