@@ -38,19 +38,19 @@
             button3 = new Button();
             button2 = new Button();
             ButtonProveedor = new Button();
+            textBox6 = new TextBox();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            button9 = new Button();
+            button8 = new Button();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            button7 = new Button();
+            dataGridView1 = new DataGridView();
+            label1 = new Label();
             button6 = new Button();
             label4 = new Label();
-            label1 = new Label();
-            dataGridView1 = new DataGridView();
-            button7 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button8 = new Button();
-            button9 = new Button();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -143,6 +143,7 @@
             button1.TabIndex = 4;
             button1.Text = "Soporte";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // Productos
             // 
@@ -195,6 +196,111 @@
             ButtonProveedor.UseVisualStyleBackColor = false;
             ButtonProveedor.Click += ButtonProveedor_Click;
             // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(223, 340);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(182, 23);
+            textBox6.TabIndex = 29;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(14, 340);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(182, 23);
+            textBox5.TabIndex = 28;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(571, 340);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(182, 23);
+            textBox4.TabIndex = 27;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(571, 287);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(182, 23);
+            textBox3.TabIndex = 26;
+            // 
+            // button9
+            // 
+            button9.BackColor = Color.Crimson;
+            button9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button9.ForeColor = SystemColors.ControlLightLight;
+            button9.Location = new Point(470, 406);
+            button9.Name = "button9";
+            button9.Size = new Size(161, 43);
+            button9.TabIndex = 25;
+            button9.Text = "Eliminar usuario";
+            button9.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.Crimson;
+            button8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button8.ForeColor = SystemColors.ControlLightLight;
+            button8.Location = new Point(284, 406);
+            button8.Name = "button8";
+            button8.Size = new Size(161, 43);
+            button8.TabIndex = 24;
+            button8.Text = "Editar usuario";
+            button8.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(223, 287);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(182, 23);
+            textBox2.TabIndex = 23;
+            textBox2.TextChanged += textBox2_TextChanged;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(14, 287);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(182, 23);
+            textBox1.TabIndex = 22;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.Crimson;
+            button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button7.ForeColor = SystemColors.ControlLightLight;
+            button7.Location = new Point(91, 406);
+            button7.Name = "button7";
+            button7.Size = new Size(161, 43);
+            button7.TabIndex = 21;
+            button7.Text = "Agregar usuario";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(14, 56);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(750, 199);
+            dataGridView1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(14, 14);
+            label1.Margin = new Padding(5);
+            label1.Name = "label1";
+            label1.Size = new Size(166, 33);
+            label1.TabIndex = 3;
+            label1.Text = "USUARIOS";
+            label1.Click += label1_Click;
+            // 
             // button6
             // 
             button6.BackColor = Color.OliveDrab;
@@ -219,111 +325,6 @@
             label4.TabIndex = 1;
             label4.Text = "Nombre Apellido";
             label4.Click += label4_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Goudy Old Style", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(14, 14);
-            label1.Margin = new Padding(5);
-            label1.Name = "label1";
-            label1.Size = new Size(160, 34);
-            label1.TabIndex = 3;
-            label1.Text = "USUARIOS";
-            label1.Click += label1_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 56);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(750, 199);
-            dataGridView1.TabIndex = 4;
-            // 
-            // button7
-            // 
-            button7.BackColor = Color.Crimson;
-            button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.ForeColor = SystemColors.ControlLightLight;
-            button7.Location = new Point(91, 406);
-            button7.Name = "button7";
-            button7.Size = new Size(161, 43);
-            button7.TabIndex = 21;
-            button7.Text = "Agregar usuario";
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(14, 287);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(182, 23);
-            textBox1.TabIndex = 22;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(223, 287);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(182, 23);
-            textBox2.TabIndex = 23;
-            textBox2.TextChanged += textBox2_TextChanged;
-            // 
-            // button8
-            // 
-            button8.BackColor = Color.Crimson;
-            button8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button8.ForeColor = SystemColors.ControlLightLight;
-            button8.Location = new Point(284, 406);
-            button8.Name = "button8";
-            button8.Size = new Size(161, 43);
-            button8.TabIndex = 24;
-            button8.Text = "Editar usuario";
-            button8.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            button9.BackColor = Color.Crimson;
-            button9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button9.ForeColor = SystemColors.ControlLightLight;
-            button9.Location = new Point(470, 406);
-            button9.Name = "button9";
-            button9.Size = new Size(161, 43);
-            button9.TabIndex = 25;
-            button9.Text = "Eliminar usuario";
-            button9.UseVisualStyleBackColor = false;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(571, 287);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(182, 23);
-            textBox3.TabIndex = 26;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(571, 340);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(182, 23);
-            textBox4.TabIndex = 27;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(14, 340);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(182, 23);
-            textBox5.TabIndex = 28;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(223, 340);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(182, 23);
-            textBox6.TabIndex = 29;
             // 
             // Administrador
             // 

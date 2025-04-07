@@ -67,6 +67,7 @@
             button1.TabIndex = 9;
             button1.Text = "Log in";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -79,24 +80,25 @@
             button2.TabIndex = 10;
             button2.Text = "Exit";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(182, 120);
             label2.Name = "label2";
-            label2.Size = new Size(106, 31);
+            label2.Size = new Size(116, 31);
             label2.TabIndex = 11;
             label2.Text = "Usuario:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(182, 185);
             label3.Name = "label3";
-            label3.Size = new Size(143, 31);
+            label3.Size = new Size(163, 31);
             label3.TabIndex = 12;
             label3.Text = "Contraseña:";
             // 
@@ -118,7 +120,7 @@
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Font = new Font("Goudy Old Style", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlText;
             label1.ImageAlign = ContentAlignment.TopCenter;
             label1.Location = new Point(176, 15);
