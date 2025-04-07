@@ -149,6 +149,7 @@
             MinimumSize = new Size(600, 400);
             Name = "LoginEmpleado";
             Text = "Log in employee";
+            Load += LoginEmpleado_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

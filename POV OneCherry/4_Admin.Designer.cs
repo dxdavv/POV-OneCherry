@@ -38,19 +38,25 @@
             button3 = new Button();
             button2 = new Button();
             ButtonProveedor = new Button();
+            textBox6 = new TextBox();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            button9 = new Button();
+            button8 = new Button();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            button7 = new Button();
+            dataGridView1 = new DataGridView();
+            label1 = new Label();
             button6 = new Button();
             label4 = new Label();
-            label1 = new Label();
-            dataGridView1 = new DataGridView();
-            button7 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button8 = new Button();
-            button9 = new Button();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
+            label2 = new Label();
+            label3 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -81,6 +87,12 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.LavenderBlush;
+            splitContainer1.Panel2.Controls.Add(label8);
+            splitContainer1.Panel2.Controls.Add(label7);
+            splitContainer1.Panel2.Controls.Add(label6);
+            splitContainer1.Panel2.Controls.Add(label5);
+            splitContainer1.Panel2.Controls.Add(label3);
+            splitContainer1.Panel2.Controls.Add(label2);
             splitContainer1.Panel2.Controls.Add(textBox6);
             splitContainer1.Panel2.Controls.Add(textBox5);
             splitContainer1.Panel2.Controls.Add(textBox4);
@@ -195,6 +207,111 @@
             ButtonProveedor.UseVisualStyleBackColor = false;
             ButtonProveedor.Click += ButtonProveedor_Click;
             // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(223, 340);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(182, 23);
+            textBox6.TabIndex = 29;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(14, 340);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(182, 23);
+            textBox5.TabIndex = 28;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(571, 340);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(182, 23);
+            textBox4.TabIndex = 27;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(571, 287);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(182, 23);
+            textBox3.TabIndex = 26;
+            // 
+            // button9
+            // 
+            button9.BackColor = Color.Crimson;
+            button9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button9.ForeColor = SystemColors.ControlLightLight;
+            button9.Location = new Point(470, 406);
+            button9.Name = "button9";
+            button9.Size = new Size(161, 43);
+            button9.TabIndex = 25;
+            button9.Text = "Eliminar usuario";
+            button9.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.Crimson;
+            button8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button8.ForeColor = SystemColors.ControlLightLight;
+            button8.Location = new Point(284, 406);
+            button8.Name = "button8";
+            button8.Size = new Size(161, 43);
+            button8.TabIndex = 24;
+            button8.Text = "Editar usuario";
+            button8.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(223, 287);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(182, 23);
+            textBox2.TabIndex = 23;
+            textBox2.TextChanged += textBox2_TextChanged;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(14, 287);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(182, 23);
+            textBox1.TabIndex = 22;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.Crimson;
+            button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button7.ForeColor = SystemColors.ControlLightLight;
+            button7.Location = new Point(91, 406);
+            button7.Name = "button7";
+            button7.Size = new Size(161, 43);
+            button7.TabIndex = 21;
+            button7.Text = "Agregar usuario";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(14, 56);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(750, 199);
+            dataGridView1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Goudy Old Style", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(14, 14);
+            label1.Margin = new Padding(5);
+            label1.Name = "label1";
+            label1.Size = new Size(160, 34);
+            label1.TabIndex = 3;
+            label1.Text = "USUARIOS";
+            label1.Click += label1_Click;
+            // 
             // button6
             // 
             button6.BackColor = Color.OliveDrab;
@@ -220,110 +337,79 @@
             label4.Text = "Nombre Apellido";
             label4.Click += label4_Click;
             // 
-            // label1
+            // label2
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Goudy Old Style", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(14, 14);
-            label1.Margin = new Padding(5);
-            label1.Name = "label1";
-            label1.Size = new Size(160, 34);
-            label1.TabIndex = 3;
-            label1.Text = "USUARIOS";
-            label1.Click += label1_Click;
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(28, 263);
+            label2.Margin = new Padding(5);
+            label2.Name = "label2";
+            label2.Size = new Size(63, 23);
+            label2.TabIndex = 30;
+            label2.Text = "Nombre";
+            label2.Click += label2_Click;
             // 
-            // dataGridView1
+            // label3
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 56);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(750, 199);
-            dataGridView1.TabIndex = 4;
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(223, 263);
+            label3.Margin = new Padding(5);
+            label3.Name = "label3";
+            label3.Size = new Size(62, 23);
+            label3.TabIndex = 31;
+            label3.Text = "Apellido";
+            label3.Click += label3_Click;
             // 
-            // button7
+            // label5
             // 
-            button7.BackColor = Color.Crimson;
-            button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.ForeColor = SystemColors.ControlLightLight;
-            button7.Location = new Point(91, 406);
-            button7.Name = "button7";
-            button7.Size = new Size(161, 43);
-            button7.TabIndex = 21;
-            button7.Text = "Agregar usuario";
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(571, 263);
+            label5.Margin = new Padding(5);
+            label5.Name = "label5";
+            label5.Size = new Size(63, 23);
+            label5.TabIndex = 32;
+            label5.Text = "Usuario";
             // 
-            // textBox1
+            // label6
             // 
-            textBox1.Location = new Point(14, 287);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(182, 23);
-            textBox1.TabIndex = 22;
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(571, 318);
+            label6.Margin = new Padding(5);
+            label6.Name = "label6";
+            label6.Size = new Size(86, 23);
+            label6.TabIndex = 33;
+            label6.Text = "Contraseña";
             // 
-            // textBox2
+            // label7
             // 
-            textBox2.Location = new Point(223, 287);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(182, 23);
-            textBox2.TabIndex = 23;
-            textBox2.TextChanged += textBox2_TextChanged;
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(14, 318);
+            label7.Margin = new Padding(5);
+            label7.Name = "label7";
+            label7.Size = new Size(54, 23);
+            label7.TabIndex = 34;
+            label7.Text = "Correo";
             // 
-            // button8
+            // label8
             // 
-            button8.BackColor = Color.Crimson;
-            button8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button8.ForeColor = SystemColors.ControlLightLight;
-            button8.Location = new Point(284, 406);
-            button8.Name = "button8";
-            button8.Size = new Size(161, 43);
-            button8.TabIndex = 24;
-            button8.Text = "Editar usuario";
-            button8.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            button9.BackColor = Color.Crimson;
-            button9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button9.ForeColor = SystemColors.ControlLightLight;
-            button9.Location = new Point(470, 406);
-            button9.Name = "button9";
-            button9.Size = new Size(161, 43);
-            button9.TabIndex = 25;
-            button9.Text = "Eliminar usuario";
-            button9.UseVisualStyleBackColor = false;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(571, 287);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(182, 23);
-            textBox3.TabIndex = 26;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(571, 340);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(182, 23);
-            textBox4.TabIndex = 27;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(14, 340);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(182, 23);
-            textBox5.TabIndex = 28;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(223, 340);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(182, 23);
-            textBox6.TabIndex = 29;
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(223, 318);
+            label8.Margin = new Padding(5);
+            label8.Name = "label8";
+            label8.Size = new Size(66, 23);
+            label8.TabIndex = 35;
+            label8.Text = "Telefono";
             // 
             // Administrador
             // 
@@ -373,5 +459,11 @@
         private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
+        private Label label2;
+        private Label label3;
+        private Label label8;
+        private Label label7;
+        private Label label6;
+        private Label label5;
     }
 }
