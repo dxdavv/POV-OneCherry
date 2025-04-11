@@ -78,6 +78,12 @@
             Subtotal = new DataGridViewTextBoxColumn();
             label3 = new Label();
             label2 = new Label();
+            label15 = new Label();
+            textBox7 = new TextBox();
+            button4 = new Button();
+            button5 = new Button();
+            textBox8 = new TextBox();
+            label16 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -103,6 +109,12 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.LavenderBlush;
+            splitContainer1.Panel1.Controls.Add(button5);
+            splitContainer1.Panel1.Controls.Add(textBox8);
+            splitContainer1.Panel1.Controls.Add(label16);
+            splitContainer1.Panel1.Controls.Add(button4);
+            splitContainer1.Panel1.Controls.Add(textBox7);
+            splitContainer1.Panel1.Controls.Add(label15);
             splitContainer1.Panel1.Controls.Add(pictureBox1);
             splitContainer1.Panel1.Controls.Add(button6);
             splitContainer1.Panel1.Controls.Add(label4);
@@ -602,6 +614,68 @@
             label2.TabIndex = 14;
             label2.Text = "Venta, cliente:";
             // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.Transparent;
+            label15.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label15.Location = new Point(44, 9);
+            label15.Name = "label15";
+            label15.Size = new Size(113, 28);
+            label15.TabIndex = 48;
+            label15.Text = "Monto inicial";
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(163, 12);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(92, 23);
+            textBox7.TabIndex = 48;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Crimson;
+            button4.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.ForeColor = SystemColors.ControlLightLight;
+            button4.Location = new Point(261, 9);
+            button4.Name = "button4";
+            button4.Size = new Size(80, 30);
+            button4.TabIndex = 53;
+            button4.Text = "Enviar";
+            button4.TextAlign = ContentAlignment.TopCenter;
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.Crimson;
+            button5.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button5.ForeColor = SystemColors.ControlLightLight;
+            button5.Location = new Point(660, 9);
+            button5.Name = "button5";
+            button5.Size = new Size(80, 30);
+            button5.TabIndex = 56;
+            button5.Text = "Enviar";
+            button5.TextAlign = ContentAlignment.TopCenter;
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(562, 12);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(92, 23);
+            textBox8.TabIndex = 54;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.BackColor = Color.Transparent;
+            label16.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.Location = new Point(455, 9);
+            label16.Name = "label16";
+            label16.Size = new Size(101, 28);
+            label16.TabIndex = 55;
+            label16.Text = "Monto final";
+            // 
             // Empleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -682,5 +756,11 @@
         private TextBox textBox5;
         private Label label13;
         private Button button3;
+        private Button button4;
+        private TextBox textBox7;
+        private Label label15;
+        private Button button5;
+        private TextBox textBox8;
+        private Label label16;
     }
 }

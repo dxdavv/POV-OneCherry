@@ -37,13 +37,14 @@
             dataGridView1 = new DataGridView();
             Usuario_us = new DataGridViewTextBoxColumn();
             password_us = new DataGridViewTextBoxColumn();
+            Tipo_usuario = new DataGridViewTextBoxColumn();
             label1 = new Label();
-            button6 = new Button();
-            label4 = new Label();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             label3 = new Label();
             label5 = new Label();
+            label4 = new Label();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -84,7 +85,7 @@
             button9.BackColor = Color.Crimson;
             button9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button9.ForeColor = SystemColors.ControlLightLight;
-            button9.Location = new Point(616, 408);
+            button9.Location = new Point(612, 371);
             button9.Name = "button9";
             button9.Size = new Size(161, 43);
             button9.TabIndex = 37;
@@ -96,7 +97,7 @@
             button8.BackColor = Color.Crimson;
             button8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button8.ForeColor = SystemColors.ControlLightLight;
-            button8.Location = new Point(357, 408);
+            button8.Location = new Point(353, 371);
             button8.Name = "button8";
             button8.Size = new Size(161, 43);
             button8.TabIndex = 36;
@@ -108,7 +109,7 @@
             button7.BackColor = Color.Crimson;
             button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button7.ForeColor = SystemColors.ControlLightLight;
-            button7.Location = new Point(82, 408);
+            button7.Location = new Point(78, 371);
             button7.Name = "button7";
             button7.Size = new Size(161, 43);
             button7.TabIndex = 35;
@@ -121,7 +122,7 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Usuario_us, password_us });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Usuario_us, password_us, Tipo_usuario });
             dataGridView1.Location = new Point(44, 70);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -133,14 +134,21 @@
             Usuario_us.HeaderText = "Usuario";
             Usuario_us.Name = "Usuario_us";
             Usuario_us.ReadOnly = true;
-            Usuario_us.Width = 375;
+            Usuario_us.Width = 300;
             // 
             // password_us
             // 
             password_us.HeaderText = "Contraseña";
             password_us.Name = "password_us";
             password_us.ReadOnly = true;
-            password_us.Width = 375;
+            password_us.Width = 300;
+            // 
+            // Tipo_usuario
+            // 
+            Tipo_usuario.HeaderText = "Tipo";
+            Tipo_usuario.Name = "Tipo_usuario";
+            Tipo_usuario.ReadOnly = true;
+            Tipo_usuario.Width = 110;
             // 
             // label1
             // 
@@ -153,30 +161,6 @@
             label1.Size = new Size(147, 42);
             label1.TabIndex = 33;
             label1.Text = "USUARIOS";
-            // 
-            // button6
-            // 
-            button6.BackColor = Color.OliveDrab;
-            button6.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button6.ForeColor = SystemColors.ControlLightLight;
-            button6.Location = new Point(782, 5);
-            button6.Name = "button6";
-            button6.Size = new Size(40, 30);
-            button6.TabIndex = 32;
-            button6.Text = "➡️";
-            button6.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(638, 5);
-            label4.Margin = new Padding(5);
-            label4.Name = "label4";
-            label4.Size = new Size(146, 28);
-            label4.TabIndex = 31;
-            label4.Text = "Nombre Apellido";
             // 
             // textBox2
             // 
@@ -217,12 +201,36 @@
             label5.TabIndex = 44;
             label5.Text = "Contraseña";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(662, 303);
+            label4.Margin = new Padding(5);
+            label4.Name = "label4";
+            label4.Size = new Size(47, 28);
+            label4.TabIndex = 46;
+            label4.Text = "Tipo";
+            // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Administrador", "Empleado" });
+            comboBox1.Location = new Point(662, 331);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 47;
+            // 
             // Usuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
-            ClientSize = new Size(834, 461);
+            ClientSize = new Size(834, 421);
+            Controls.Add(comboBox1);
+            Controls.Add(label4);
             Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(textBox3);
@@ -235,8 +243,6 @@
             Controls.Add(button7);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
-            Controls.Add(button6);
-            Controls.Add(label4);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Usuarios";
             Text = "USUARIOS";
@@ -255,13 +261,14 @@
         private Button button7;
         private DataGridView dataGridView1;
         private Label label1;
-        private Button button6;
-        private Label label4;
-        private DataGridViewTextBoxColumn Usuario_us;
-        private DataGridViewTextBoxColumn password_us;
         private TextBox textBox2;
         private TextBox textBox3;
         private Label label3;
         private Label label5;
+        private DataGridViewTextBoxColumn Usuario_us;
+        private DataGridViewTextBoxColumn password_us;
+        private DataGridViewTextBoxColumn Tipo_usuario;
+        private Label label4;
+        private ComboBox comboBox1;
     }
 }

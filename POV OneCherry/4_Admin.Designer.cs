@@ -55,6 +55,14 @@
             label1 = new Label();
             button6 = new Button();
             label4 = new Label();
+            label3 = new Label();
+            textBox4 = new TextBox();
+            label5 = new Label();
+            label7 = new Label();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            label8 = new Label();
+            textBox5 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -86,6 +94,14 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.LavenderBlush;
+            splitContainer1.Panel2.Controls.Add(label8);
+            splitContainer1.Panel2.Controls.Add(textBox5);
+            splitContainer1.Panel2.Controls.Add(label3);
+            splitContainer1.Panel2.Controls.Add(textBox4);
+            splitContainer1.Panel2.Controls.Add(label5);
+            splitContainer1.Panel2.Controls.Add(label7);
+            splitContainer1.Panel2.Controls.Add(textBox3);
+            splitContainer1.Panel2.Controls.Add(textBox2);
             splitContainer1.Panel2.Controls.Add(comboBox1);
             splitContainer1.Panel2.Controls.Add(label2);
             splitContainer1.Panel2.Controls.Add(button10);
@@ -217,7 +233,7 @@
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "ID", "Nombre", "Teléfono", "Email" });
-            comboBox1.Location = new Point(157, 56);
+            comboBox1.Location = new Point(153, 50);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 30;
@@ -228,7 +244,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(18, 51);
+            label2.Location = new Point(14, 45);
             label2.Margin = new Padding(5);
             label2.Name = "label2";
             label2.Size = new Size(140, 28);
@@ -240,7 +256,7 @@
             button10.BackColor = Color.Crimson;
             button10.Font = new Font("Sitka Banner", 12.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button10.ForeColor = SystemColors.ControlLightLight;
-            button10.Location = new Point(574, 48);
+            button10.Location = new Point(570, 42);
             button10.Name = "button10";
             button10.Size = new Size(102, 35);
             button10.TabIndex = 27;
@@ -250,7 +266,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(284, 56);
+            textBox1.Location = new Point(280, 50);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(284, 23);
             textBox1.TabIndex = 28;
@@ -299,10 +315,10 @@
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_proveedor, Nombre_proveedor, Email_proveedor, Telefono_proveedor, Dirección_proveedor });
-            dataGridView1.Location = new Point(55, 89);
+            dataGridView1.Location = new Point(55, 79);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(750, 208);
+            dataGridView1.Size = new Size(750, 253);
             dataGridView1.TabIndex = 4;
             // 
             // ID_proveedor
@@ -379,6 +395,82 @@
             label4.Text = "Nombre Apellido";
             label4.Click += label4_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(588, 340);
+            label3.Margin = new Padding(5);
+            label3.Name = "label3";
+            label3.Size = new Size(86, 28);
+            label3.TabIndex = 60;
+            label3.Text = "Dirección";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(588, 368);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(217, 23);
+            textBox4.TabIndex = 58;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(210, 340);
+            label5.Margin = new Padding(5);
+            label5.Name = "label5";
+            label5.Size = new Size(58, 28);
+            label5.TabIndex = 57;
+            label5.Text = "Email";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(14, 340);
+            label7.Margin = new Padding(5);
+            label7.Name = "label7";
+            label7.Size = new Size(77, 28);
+            label7.TabIndex = 56;
+            label7.Text = "Nombre";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(210, 368);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(172, 23);
+            textBox3.TabIndex = 55;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(14, 368);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(174, 23);
+            textBox2.TabIndex = 54;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(401, 340);
+            label8.Margin = new Padding(5);
+            label8.Name = "label8";
+            label8.Size = new Size(79, 28);
+            label8.TabIndex = 63;
+            label8.Text = "Telefono";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(401, 368);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(172, 23);
+            textBox5.TabIndex = 62;
+            // 
             // Administrador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -431,5 +523,13 @@
         private DataGridViewTextBoxColumn Email_proveedor;
         private DataGridViewTextBoxColumn Telefono_proveedor;
         private DataGridViewTextBoxColumn Dirección_proveedor;
+        private Label label8;
+        private TextBox textBox5;
+        private Label label3;
+        private TextBox textBox4;
+        private Label label5;
+        private Label label7;
+        private TextBox textBox3;
+        private TextBox textBox2;
     }
 }

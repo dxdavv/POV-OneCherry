@@ -49,7 +49,10 @@
             label4 = new Label();
             label6 = new Label();
             textBox4 = new TextBox();
+            comboBox2 = new ComboBox();
+            label7 = new Label();
             textBox5 = new TextBox();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -218,7 +221,7 @@
             // 
             textBox3.Location = new Point(316, 296);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(284, 23);
+            textBox3.Size = new Size(172, 23);
             textBox3.TabIndex = 46;
             // 
             // textBox2
@@ -256,15 +259,50 @@
             // 
             textBox4.Location = new Point(316, 355);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(284, 23);
+            textBox4.Size = new Size(172, 23);
             textBox4.TabIndex = 50;
+            // 
+            // comboBox2
+            // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "ID", "Nombre", "Teléfono", "Email" });
+            comboBox2.Location = new Point(12, 355);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(284, 23);
+            comboBox2.TabIndex = 53;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(575, 268);
+            label7.Margin = new Padding(5);
+            label7.Name = "label7";
+            label7.Size = new Size(152, 28);
+            label7.TabIndex = 55;
+            label7.Text = "Agregar categoría";
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(12, 355);
+            textBox5.Location = new Point(575, 296);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(284, 23);
-            textBox5.TabIndex = 49;
+            textBox5.Size = new Size(152, 23);
+            textBox5.TabIndex = 54;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Crimson;
+            button4.Font = new Font("Sitka Small", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.ForeColor = SystemColors.ControlLightLight;
+            button4.Location = new Point(733, 290);
+            button4.Name = "button4";
+            button4.Size = new Size(30, 30);
+            button4.TabIndex = 56;
+            button4.Text = "+";
+            button4.TextAlign = ContentAlignment.TopCenter;
+            button4.UseVisualStyleBackColor = false;
             // 
             // VentanaProductos
             // 
@@ -272,10 +310,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(799, 451);
+            Controls.Add(button4);
+            Controls.Add(label7);
+            Controls.Add(textBox5);
+            Controls.Add(comboBox2);
             Controls.Add(label4);
             Controls.Add(label6);
             Controls.Add(textBox4);
-            Controls.Add(textBox5);
             Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(textBox3);
@@ -321,6 +362,9 @@
         private Label label4;
         private Label label6;
         private TextBox textBox4;
+        private ComboBox comboBox2;
+        private Label label7;
         private TextBox textBox5;
+        private Button button4;
     }
 }
