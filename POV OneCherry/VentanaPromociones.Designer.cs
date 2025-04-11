@@ -37,6 +37,10 @@
             button7 = new Button();
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            ID_promocion = new DataGridViewTextBoxColumn();
+            Nombre_promocion = new DataGridViewTextBoxColumn();
+            Fecha_promocion = new DataGridViewTextBoxColumn();
+            Descuento_promocion = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -44,7 +48,7 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "ID", "Nombre", "Teléfono", "Email" });
+            comboBox1.Items.AddRange(new object[] { "ID", "Fecha", "Nombre" });
             comboBox1.Location = new Point(183, 53);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
@@ -87,7 +91,7 @@
             button9.BackColor = Color.Crimson;
             button9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button9.ForeColor = SystemColors.ControlLightLight;
-            button9.Location = new Point(585, 398);
+            button9.Location = new Point(582, 342);
             button9.Name = "button9";
             button9.Size = new Size(161, 43);
             button9.TabIndex = 39;
@@ -99,7 +103,7 @@
             button8.BackColor = Color.Crimson;
             button8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button8.ForeColor = SystemColors.ControlLightLight;
-            button8.Location = new Point(326, 398);
+            button8.Location = new Point(323, 342);
             button8.Name = "button8";
             button8.Size = new Size(161, 43);
             button8.TabIndex = 38;
@@ -111,7 +115,7 @@
             button7.BackColor = Color.Crimson;
             button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button7.ForeColor = SystemColors.ControlLightLight;
-            button7.Location = new Point(51, 398);
+            button7.Location = new Point(48, 342);
             button7.Name = "button7";
             button7.Size = new Size(161, 43);
             button7.TabIndex = 37;
@@ -135,17 +139,47 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_promocion, Nombre_promocion, Fecha_promocion, Descuento_promocion });
             dataGridView1.Location = new Point(11, 86);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(776, 293);
+            dataGridView1.Size = new Size(770, 250);
             dataGridView1.TabIndex = 35;
+            // 
+            // ID_promocion
+            // 
+            ID_promocion.HeaderText = "ID";
+            ID_promocion.Name = "ID_promocion";
+            ID_promocion.ReadOnly = true;
+            ID_promocion.Width = 50;
+            // 
+            // Nombre_promocion
+            // 
+            Nombre_promocion.HeaderText = "Nombre";
+            Nombre_promocion.Name = "Nombre_promocion";
+            Nombre_promocion.ReadOnly = true;
+            Nombre_promocion.Width = 240;
+            // 
+            // Fecha_promocion
+            // 
+            Fecha_promocion.HeaderText = "Fecha";
+            Fecha_promocion.Name = "Fecha_promocion";
+            Fecha_promocion.ReadOnly = true;
+            Fecha_promocion.Width = 240;
+            // 
+            // Descuento_promocion
+            // 
+            Descuento_promocion.HeaderText = "Descuento";
+            Descuento_promocion.Name = "Descuento_promocion";
+            Descuento_promocion.ReadOnly = true;
+            Descuento_promocion.Width = 240;
             // 
             // VentanaPromociones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(799, 451);
+            BackColor = Color.LavenderBlush;
+            ClientSize = new Size(799, 411);
             Controls.Add(comboBox1);
             Controls.Add(label2);
             Controls.Add(button10);
@@ -174,5 +208,9 @@
         private Button button7;
         private Label label1;
         private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn ID_promocion;
+        private DataGridViewTextBoxColumn Nombre_promocion;
+        private DataGridViewTextBoxColumn Fecha_promocion;
+        private DataGridViewTextBoxColumn Descuento_promocion;
     }
 }

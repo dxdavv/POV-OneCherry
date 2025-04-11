@@ -39,6 +39,9 @@
             button10 = new Button();
             textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
+            button9 = new Button();
+            button8 = new Button();
+            button7 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -65,6 +68,9 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.LavenderBlush;
+            splitContainer1.Panel2.Controls.Add(button9);
+            splitContainer1.Panel2.Controls.Add(button8);
+            splitContainer1.Panel2.Controls.Add(button7);
             splitContainer1.Panel2.Controls.Add(comboBox1);
             splitContainer1.Panel2.Controls.Add(label2);
             splitContainer1.Panel2.Controls.Add(button10);
@@ -124,7 +130,7 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "ID", "Nombre", "Teléfono", "Email" });
+            comboBox1.Items.AddRange(new object[] { "ID" });
             comboBox1.Location = new Point(183, 12);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
@@ -174,6 +180,42 @@
             dataGridView1.Size = new Size(776, 293);
             dataGridView1.TabIndex = 35;
             // 
+            // button9
+            // 
+            button9.BackColor = Color.Crimson;
+            button9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button9.ForeColor = SystemColors.ControlLightLight;
+            button9.Location = new Point(587, 348);
+            button9.Name = "button9";
+            button9.Size = new Size(161, 43);
+            button9.TabIndex = 42;
+            button9.Text = "🗑️Eliminar";
+            button9.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.Crimson;
+            button8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button8.ForeColor = SystemColors.ControlLightLight;
+            button8.Location = new Point(328, 348);
+            button8.Name = "button8";
+            button8.Size = new Size(161, 43);
+            button8.TabIndex = 41;
+            button8.Text = "🖋️Editar";
+            button8.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.Crimson;
+            button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button7.ForeColor = SystemColors.ControlLightLight;
+            button7.Location = new Point(53, 348);
+            button7.Name = "button7";
+            button7.Size = new Size(161, 43);
+            button7.TabIndex = 40;
+            button7.Text = "📥Agregar";
+            button7.UseVisualStyleBackColor = false;
+            // 
             // VentanaVenta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -206,5 +248,8 @@
         private Button button10;
         private TextBox textBox1;
         private DataGridView dataGridView1;
+        private Button button9;
+        private Button button8;
+        private Button button7;
     }
 }

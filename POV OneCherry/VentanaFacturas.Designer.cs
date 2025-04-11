@@ -35,6 +35,12 @@
             dataGridView1 = new DataGridView();
             button7 = new Button();
             label1 = new Label();
+            ID_venta = new DataGridViewTextBoxColumn();
+            Fecha_venta = new DataGridViewTextBoxColumn();
+            Productos_venta = new DataGridViewTextBoxColumn();
+            Precio_uni = new DataGridViewTextBoxColumn();
+            Cantidad_venta = new DataGridViewTextBoxColumn();
+            Precio_total_venta = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -42,7 +48,7 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "ID", "Nombre", "Teléfono", "Email" });
+            comboBox1.Items.AddRange(new object[] { "ID" });
             comboBox1.Location = new Point(163, 48);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
@@ -56,9 +62,9 @@
             label2.Location = new Point(24, 43);
             label2.Margin = new Padding(5);
             label2.Name = "label2";
-            label2.Size = new Size(140, 28);
+            label2.Size = new Size(133, 28);
             label2.TabIndex = 38;
-            label2.Text = "Búsqueda por -›";
+            label2.Text = "Buscar venta -›";
             // 
             // button10
             // 
@@ -86,7 +92,8 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(24, 77);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_venta, Fecha_venta, Productos_venta, Precio_uni, Cantidad_venta, Precio_total_venta });
+            dataGridView1.Location = new Point(24, 81);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(658, 253);
@@ -114,6 +121,45 @@
             label1.Size = new Size(136, 35);
             label1.TabIndex = 42;
             label1.Text = "Elegir venta";
+            // 
+            // ID_venta
+            // 
+            ID_venta.HeaderText = "ID";
+            ID_venta.Name = "ID_venta";
+            ID_venta.ReadOnly = true;
+            ID_venta.Width = 50;
+            // 
+            // Fecha_venta
+            // 
+            Fecha_venta.HeaderText = "Fecha";
+            Fecha_venta.Name = "Fecha_venta";
+            Fecha_venta.ReadOnly = true;
+            Fecha_venta.Width = 120;
+            // 
+            // Productos_venta
+            // 
+            Productos_venta.HeaderText = "Productos";
+            Productos_venta.Name = "Productos_venta";
+            Productos_venta.ReadOnly = true;
+            Productos_venta.Width = 150;
+            // 
+            // Precio_uni
+            // 
+            Precio_uni.HeaderText = "Precio";
+            Precio_uni.Name = "Precio_uni";
+            Precio_uni.ReadOnly = true;
+            // 
+            // Cantidad_venta
+            // 
+            Cantidad_venta.HeaderText = "Cantidad";
+            Cantidad_venta.Name = "Cantidad_venta";
+            Cantidad_venta.ReadOnly = true;
+            // 
+            // Precio_total_venta
+            // 
+            Precio_total_venta.HeaderText = "Precio total";
+            Precio_total_venta.Name = "Precio_total_venta";
+            Precio_total_venta.ReadOnly = true;
             // 
             // VentanaFacturas
             // 
@@ -145,5 +191,11 @@
         private DataGridView dataGridView1;
         private Button button7;
         private Label label1;
+        private DataGridViewTextBoxColumn ID_venta;
+        private DataGridViewTextBoxColumn Fecha_venta;
+        private DataGridViewTextBoxColumn Productos_venta;
+        private DataGridViewTextBoxColumn Precio_uni;
+        private DataGridViewTextBoxColumn Cantidad_venta;
+        private DataGridViewTextBoxColumn Precio_total_venta;
     }
 }

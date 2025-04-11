@@ -47,6 +47,11 @@
             button8 = new Button();
             button7 = new Button();
             dataGridView1 = new DataGridView();
+            ID_proveedor = new DataGridViewTextBoxColumn();
+            Nombre_proveedor = new DataGridViewTextBoxColumn();
+            Email_proveedor = new DataGridViewTextBoxColumn();
+            Telefono_proveedor = new DataGridViewTextBoxColumn();
+            Dirección_proveedor = new DataGridViewTextBoxColumn();
             label1 = new Label();
             button6 = new Button();
             label4 = new Label();
@@ -293,11 +298,47 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_proveedor, Nombre_proveedor, Email_proveedor, Telefono_proveedor, Dirección_proveedor });
             dataGridView1.Location = new Point(55, 89);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(750, 301);
+            dataGridView1.Size = new Size(750, 208);
             dataGridView1.TabIndex = 4;
+            // 
+            // ID_proveedor
+            // 
+            ID_proveedor.HeaderText = "ID";
+            ID_proveedor.Name = "ID_proveedor";
+            ID_proveedor.ReadOnly = true;
+            ID_proveedor.Width = 150;
+            // 
+            // Nombre_proveedor
+            // 
+            Nombre_proveedor.HeaderText = "Nombre";
+            Nombre_proveedor.Name = "Nombre_proveedor";
+            Nombre_proveedor.ReadOnly = true;
+            Nombre_proveedor.Width = 150;
+            // 
+            // Email_proveedor
+            // 
+            Email_proveedor.HeaderText = "Email";
+            Email_proveedor.Name = "Email_proveedor";
+            Email_proveedor.ReadOnly = true;
+            Email_proveedor.Width = 150;
+            // 
+            // Telefono_proveedor
+            // 
+            Telefono_proveedor.HeaderText = "Teléfono";
+            Telefono_proveedor.Name = "Telefono_proveedor";
+            Telefono_proveedor.ReadOnly = true;
+            Telefono_proveedor.Width = 150;
+            // 
+            // Dirección_proveedor
+            // 
+            Dirección_proveedor.HeaderText = "Dirección";
+            Dirección_proveedor.Name = "Dirección_proveedor";
+            Dirección_proveedor.ReadOnly = true;
+            Dirección_proveedor.Width = 150;
             // 
             // label1
             // 
@@ -385,5 +426,10 @@
         private TextBox textBox1;
         private ComboBox comboBox1;
         private Button button11;
+        private DataGridViewTextBoxColumn ID_proveedor;
+        private DataGridViewTextBoxColumn Nombre_proveedor;
+        private DataGridViewTextBoxColumn Email_proveedor;
+        private DataGridViewTextBoxColumn Telefono_proveedor;
+        private DataGridViewTextBoxColumn Dirección_proveedor;
     }
 }
