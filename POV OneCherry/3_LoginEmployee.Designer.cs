@@ -32,8 +32,8 @@
             button1 = new Button();
             button2 = new Button();
             pictureBox1 = new PictureBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            pwdText = new TextBox();
+            usrText = new TextBox();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
@@ -51,7 +51,7 @@
             button1.TabIndex = 9;
             button1.Text = "Log in";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += logIn;
             // 
             // button2
             // 
@@ -64,7 +64,7 @@
             button2.TabIndex = 10;
             button2.Text = "Exit";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click_1;
+            button2.Click += Salir;
             // 
             // pictureBox1
             // 
@@ -80,41 +80,41 @@
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             // 
-            // textBox2
+            // pwdText
             // 
-            textBox2.BackColor = SystemColors.ButtonHighlight;
-            textBox2.Location = new Point(322, 196);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(151, 23);
-            textBox2.TabIndex = 18;
-            textBox2.UseSystemPasswordChar = true;
+            pwdText.BackColor = SystemColors.ButtonHighlight;
+            pwdText.Location = new Point(322, 196);
+            pwdText.Name = "pwdText";
+            pwdText.Size = new Size(151, 23);
+            pwdText.TabIndex = 18;
+            pwdText.UseSystemPasswordChar = true;
             // 
-            // textBox1
+            // usrText
             // 
-            textBox1.BackColor = SystemColors.ButtonHighlight;
-            textBox1.ForeColor = SystemColors.WindowText;
-            textBox1.Location = new Point(280, 130);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(151, 23);
-            textBox1.TabIndex = 17;
+            usrText.BackColor = SystemColors.ButtonHighlight;
+            usrText.ForeColor = SystemColors.WindowText;
+            usrText.Location = new Point(280, 130);
+            usrText.Name = "usrText";
+            usrText.Size = new Size(151, 23);
+            usrText.TabIndex = 17;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(176, 188);
             label3.Name = "label3";
-            label3.Size = new Size(143, 31);
+            label3.Size = new Size(163, 31);
             label3.TabIndex = 16;
             label3.Text = "Contraseña:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Goudy Old Style", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(176, 123);
             label2.Name = "label2";
-            label2.Size = new Size(106, 31);
+            label2.Size = new Size(116, 31);
             label2.TabIndex = 15;
             label2.Text = "Usuario:";
             // 
@@ -122,7 +122,7 @@
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Font = new Font("Goudy Old Style", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlText;
             label1.ImageAlign = ContentAlignment.TopCenter;
             label1.Location = new Point(170, 18);
@@ -140,8 +140,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(584, 361);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(pwdText);
+            Controls.Add(usrText);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -153,7 +153,6 @@
             MinimumSize = new Size(600, 400);
             Name = "LoginEmpleado";
             Text = "LOG IN EMPLOYEE";
-            Load += LoginEmpleado_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -163,8 +162,8 @@
         protected internal Button button1;
         private Button button2;
         private PictureBox pictureBox1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox pwdText;
+        private TextBox usrText;
         private Label label3;
         private Label label2;
         private Label label1;
