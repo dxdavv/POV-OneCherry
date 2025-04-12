@@ -21,5 +21,10 @@ namespace POV_OneCherry
         {
 
         }
+
+        private void VentanaPromociones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

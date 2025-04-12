@@ -30,7 +30,6 @@
         {
             label2 = new Label();
             button10 = new Button();
-            textBox1 = new TextBox();
             button9 = new Button();
             button8 = new Button();
             button7 = new Button();
@@ -45,6 +44,7 @@
             label5 = new Label();
             label4 = new Label();
             comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -53,12 +53,12 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(7, 32);
+            label2.Location = new Point(51, 33);
             label2.Margin = new Padding(5);
             label2.Name = "label2";
-            label2.Size = new Size(184, 28);
+            label2.Size = new Size(140, 28);
             label2.TabIndex = 40;
-            label2.Text = "Nombre de usuario -›";
+            label2.Text = "Búsqueda por -›";
             // 
             // button10
             // 
@@ -72,13 +72,6 @@
             button10.Text = "🔎Buscar";
             button10.TextAlign = ContentAlignment.TopCenter;
             button10.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(189, 39);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(284, 23);
-            textBox1.TabIndex = 39;
             // 
             // button9
             // 
@@ -223,12 +216,23 @@
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 47;
             // 
+            // comboBox2
+            // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Nombre de usuario", "Tipo" });
+            comboBox2.Location = new Point(199, 37);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(274, 23);
+            comboBox2.TabIndex = 48;
+            // 
             // Usuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(834, 421);
+            Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(label4);
             Controls.Add(label5);
@@ -237,7 +241,6 @@
             Controls.Add(textBox2);
             Controls.Add(label2);
             Controls.Add(button10);
-            Controls.Add(textBox1);
             Controls.Add(button9);
             Controls.Add(button8);
             Controls.Add(button7);
@@ -255,7 +258,6 @@
         #endregion
         private Label label2;
         private Button button10;
-        private TextBox textBox1;
         private Button button9;
         private Button button8;
         private Button button7;
@@ -270,5 +272,6 @@
         private DataGridViewTextBoxColumn Tipo_usuario;
         private Label label4;
         private ComboBox comboBox1;
+        private ComboBox comboBox2;
     }
 }

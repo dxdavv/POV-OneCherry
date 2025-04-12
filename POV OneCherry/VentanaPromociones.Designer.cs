@@ -49,7 +49,7 @@
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "ID", "Fecha", "Nombre" });
-            comboBox1.Location = new Point(183, 53);
+            comboBox1.Location = new Point(196, 36);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 43;
@@ -59,7 +59,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(44, 48);
+            label2.Location = new Point(57, 31);
             label2.Margin = new Padding(5);
             label2.Name = "label2";
             label2.Size = new Size(140, 28);
@@ -71,7 +71,7 @@
             button10.BackColor = Color.Crimson;
             button10.Font = new Font("Sitka Banner", 12.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button10.ForeColor = SystemColors.ControlLightLight;
-            button10.Location = new Point(600, 45);
+            button10.Location = new Point(613, 28);
             button10.Name = "button10";
             button10.Size = new Size(102, 35);
             button10.TabIndex = 40;
@@ -81,7 +81,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(310, 53);
+            textBox1.Location = new Point(323, 36);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(284, 23);
             textBox1.TabIndex = 41;
@@ -140,10 +140,10 @@
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_promocion, Nombre_promocion, Fecha_promocion, Descuento_promocion });
-            dataGridView1.Location = new Point(11, 86);
+            dataGridView1.Location = new Point(12, 67);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(770, 250);
+            dataGridView1.Size = new Size(770, 229);
             dataGridView1.TabIndex = 35;
             // 
             // ID_promocion
@@ -192,6 +192,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "VentanaPromociones";
             Text = "REGISTRO DE PROMOCIONES";
+            Load += VentanaPromociones_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

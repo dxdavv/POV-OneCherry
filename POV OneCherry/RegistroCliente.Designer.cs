@@ -36,6 +36,8 @@
             label4 = new Label();
             textBox3 = new TextBox();
             button7 = new Button();
+            label5 = new Label();
+            textBox4 = new TextBox();
             SuspendLayout();
             // 
             // textBox1
@@ -70,7 +72,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(146, 128);
+            label3.Location = new Point(146, 179);
             label3.Name = "label3";
             label3.Size = new Size(64, 28);
             label3.TabIndex = 12;
@@ -78,7 +80,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(69, 159);
+            textBox2.Location = new Point(69, 210);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(240, 23);
             textBox2.TabIndex = 11;
@@ -87,7 +89,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(146, 201);
+            label4.Location = new Point(146, 237);
             label4.Name = "label4";
             label4.Size = new Size(85, 28);
             label4.TabIndex = 14;
@@ -95,7 +97,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(69, 232);
+            textBox3.Location = new Point(69, 268);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(240, 23);
             textBox3.TabIndex = 13;
@@ -105,19 +107,39 @@
             button7.BackColor = Color.Crimson;
             button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button7.ForeColor = SystemColors.ControlLightLight;
-            button7.Location = new Point(116, 283);
+            button7.Location = new Point(110, 297);
             button7.Name = "button7";
             button7.Size = new Size(161, 43);
             button7.TabIndex = 27;
             button7.Text = "📥Agregar";
             button7.UseVisualStyleBackColor = false;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(146, 117);
+            label5.Name = "label5";
+            label5.Size = new Size(82, 28);
+            label5.TabIndex = 29;
+            label5.Text = "Apellido:";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(69, 148);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(240, 23);
+            textBox4.TabIndex = 28;
+            // 
             // RegistroCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
-            ClientSize = new Size(384, 336);
+            ClientSize = new Size(384, 351);
+            Controls.Add(label5);
+            Controls.Add(textBox4);
             Controls.Add(button7);
             Controls.Add(label4);
             Controls.Add(textBox3);
@@ -129,6 +151,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "RegistroCliente";
             Text = "CLIENTE REGISTRO";
+            Load += RegistroCliente_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,5 +165,7 @@
         private Label label4;
         private TextBox textBox3;
         private Button button7;
+        private Label label5;
+        private TextBox textBox4;
     }
 }

@@ -33,14 +33,14 @@
             button10 = new Button();
             textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
-            button7 = new Button();
-            label1 = new Label();
             ID_venta = new DataGridViewTextBoxColumn();
             Fecha_venta = new DataGridViewTextBoxColumn();
             Productos_venta = new DataGridViewTextBoxColumn();
             Precio_uni = new DataGridViewTextBoxColumn();
             Cantidad_venta = new DataGridViewTextBoxColumn();
             Precio_total_venta = new DataGridViewTextBoxColumn();
+            button7 = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -78,6 +78,7 @@
             button10.Text = "🔎Buscar";
             button10.TextAlign = ContentAlignment.TopCenter;
             button10.UseVisualStyleBackColor = false;
+            button10.Click += button10_Click;
             // 
             // textBox1
             // 
@@ -98,29 +99,6 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(658, 253);
             dataGridView1.TabIndex = 35;
-            // 
-            // button7
-            // 
-            button7.BackColor = Color.Crimson;
-            button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.ForeColor = SystemColors.ControlLightLight;
-            button7.Location = new Point(24, 336);
-            button7.Name = "button7";
-            button7.Size = new Size(161, 43);
-            button7.TabIndex = 40;
-            button7.Text = "Generar factura";
-            button7.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Sitka Heading", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(259, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(136, 35);
-            label1.TabIndex = 42;
-            label1.Text = "Elegir venta";
             // 
             // ID_venta
             // 
@@ -160,6 +138,30 @@
             Precio_total_venta.HeaderText = "Precio total";
             Precio_total_venta.Name = "Precio_total_venta";
             Precio_total_venta.ReadOnly = true;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.Crimson;
+            button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button7.ForeColor = SystemColors.ControlLightLight;
+            button7.Location = new Point(24, 336);
+            button7.Name = "button7";
+            button7.Size = new Size(161, 43);
+            button7.TabIndex = 40;
+            button7.Text = "Generar factura";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Sitka Heading", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(257, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(136, 35);
+            label1.TabIndex = 42;
+            label1.Text = "Elegir venta";
             // 
             // VentanaFacturas
             // 
