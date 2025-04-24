@@ -32,7 +32,7 @@
             label2 = new Label();
             button10 = new Button();
             textBox1 = new TextBox();
-            dataGridView1 = new DataGridView();
+            TablaFacturas = new DataGridView();
             ID_venta = new DataGridViewTextBoxColumn();
             Fecha_venta = new DataGridViewTextBoxColumn();
             Productos_venta = new DataGridViewTextBoxColumn();
@@ -41,7 +41,7 @@
             Precio_total_venta = new DataGridViewTextBoxColumn();
             button7 = new Button();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TablaFacturas).BeginInit();
             SuspendLayout();
             // 
             // comboBox1
@@ -87,18 +87,18 @@
             textBox1.Size = new Size(284, 23);
             textBox1.TabIndex = 37;
             // 
-            // dataGridView1
+            // TablaFacturas
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_venta, Fecha_venta, Productos_venta, Precio_uni, Cantidad_venta, Precio_total_venta });
-            dataGridView1.Location = new Point(24, 81);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(658, 253);
-            dataGridView1.TabIndex = 35;
+            TablaFacturas.AllowUserToAddRows = false;
+            TablaFacturas.AllowUserToDeleteRows = false;
+            TablaFacturas.BackgroundColor = SystemColors.ButtonHighlight;
+            TablaFacturas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaFacturas.Columns.AddRange(new DataGridViewColumn[] { ID_venta, Fecha_venta, Productos_venta, Precio_uni, Cantidad_venta, Precio_total_venta });
+            TablaFacturas.Location = new Point(24, 81);
+            TablaFacturas.Name = "TablaFacturas";
+            TablaFacturas.ReadOnly = true;
+            TablaFacturas.Size = new Size(658, 253);
+            TablaFacturas.TabIndex = 35;
             // 
             // ID_venta
             // 
@@ -144,7 +144,7 @@
             button7.BackColor = Color.Crimson;
             button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button7.ForeColor = SystemColors.ControlLightLight;
-            button7.Location = new Point(24, 336);
+            button7.Location = new Point(24, 340);
             button7.Name = "button7";
             button7.Size = new Size(161, 43);
             button7.TabIndex = 40;
@@ -175,11 +175,11 @@
             Controls.Add(label2);
             Controls.Add(button10);
             Controls.Add(textBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(TablaFacturas);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "VentanaFacturas";
             Text = "FACTURAS";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TablaFacturas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -190,7 +190,7 @@
         private Label label2;
         private Button button10;
         private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private DataGridView TablaFacturas;
         private Button button7;
         private Label label1;
         private DataGridViewTextBoxColumn ID_venta;

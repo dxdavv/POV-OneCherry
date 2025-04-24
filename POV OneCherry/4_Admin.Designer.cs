@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrador));
             splitContainer1 = new SplitContainer();
+            button13 = new Button();
             button11 = new Button();
             button5 = new Button();
             button4 = new Button();
@@ -39,6 +40,7 @@
             button3 = new Button();
             button2 = new Button();
             ButtonProveedor = new Button();
+            button12 = new Button();
             label8 = new Label();
             textBox5 = new TextBox();
             label3 = new Label();
@@ -63,7 +65,6 @@
             label1 = new Label();
             button6 = new Button();
             label4 = new Label();
-            button12 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -81,6 +82,7 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.LavenderBlush;
+            splitContainer1.Panel1.Controls.Add(button13);
             splitContainer1.Panel1.Controls.Add(button11);
             splitContainer1.Panel1.Controls.Add(button5);
             splitContainer1.Panel1.Controls.Add(button4);
@@ -120,6 +122,19 @@
             splitContainer1.SplitterDistance = 134;
             splitContainer1.TabIndex = 0;
             // 
+            // button13
+            // 
+            button13.BackColor = Color.Crimson;
+            button13.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button13.ForeColor = SystemColors.ControlLightLight;
+            button13.Location = new Point(3, 255);
+            button13.Name = "button13";
+            button13.Size = new Size(130, 30);
+            button13.TabIndex = 9;
+            button13.Text = "🎁Promociones";
+            button13.UseVisualStyleBackColor = false;
+            button13.Click += botonPromociones;
+            // 
             // button11
             // 
             button11.BackColor = Color.Crimson;
@@ -129,8 +144,9 @@
             button11.Name = "button11";
             button11.Size = new Size(130, 30);
             button11.TabIndex = 8;
-            button11.Text = "🎁Promociones";
+            button11.Text = "🔑Usuarios";
             button11.UseVisualStyleBackColor = false;
+            button11.Click += botonUsuarios;
             // 
             // button5
             // 
@@ -141,8 +157,9 @@
             button5.Name = "button5";
             button5.Size = new Size(130, 30);
             button5.TabIndex = 7;
-            button5.Text = "🔑Usuarios";
+            button5.Text = "💰Ventas";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += botonVenta;
             // 
             // button4
             // 
@@ -153,8 +170,9 @@
             button4.Name = "button4";
             button4.Size = new Size(130, 30);
             button4.TabIndex = 6;
-            button4.Text = "💰Ventas";
+            button4.Text = "\U0001f6d2Productos";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += Productos_Click;
             // 
             // pictureBox1
             // 
@@ -177,7 +195,7 @@
             button1.TabIndex = 4;
             button1.Text = "📌Soporte";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += botonSoporte;
             // 
             // Productos
             // 
@@ -188,9 +206,8 @@
             Productos.Name = "Productos";
             Productos.Size = new Size(130, 30);
             Productos.TabIndex = 3;
-            Productos.Text = "\U0001f6d2Productos";
+            Productos.Text = "\U0001f947Admins";
             Productos.UseVisualStyleBackColor = false;
-            Productos.Click += Productos_Click;
             // 
             // button3
             // 
@@ -229,6 +246,18 @@
             ButtonProveedor.Text = "🚚Proveedores";
             ButtonProveedor.UseVisualStyleBackColor = false;
             ButtonProveedor.Click += ButtonProveedor_Click;
+            // 
+            // button12
+            // 
+            button12.BackColor = Color.Crimson;
+            button12.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button12.ForeColor = SystemColors.ControlLightLight;
+            button12.Location = new Point(612, 406);
+            button12.Name = "button12";
+            button12.Size = new Size(193, 43);
+            button12.TabIndex = 64;
+            button12.Text = "Compras a proveedor";
+            button12.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -473,18 +502,6 @@
             label4.Text = "Nombre Apellido";
             label4.Click += label4_Click;
             // 
-            // button12
-            // 
-            button12.BackColor = Color.Crimson;
-            button12.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button12.ForeColor = SystemColors.ControlLightLight;
-            button12.Location = new Point(612, 406);
-            button12.Name = "button12";
-            button12.Size = new Size(193, 43);
-            button12.TabIndex = 64;
-            button12.Text = "Compras a proveedor";
-            button12.UseVisualStyleBackColor = false;
-            // 
             // Administrador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -546,5 +563,6 @@
         private TextBox textBox3;
         private TextBox textBox2;
         private Button button12;
+        private Button button13;
     }
 }

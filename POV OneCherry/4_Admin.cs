@@ -92,5 +92,41 @@ namespace POV_OneCherry
         {
 
         }
+
+        private void botonVenta(object sender, EventArgs e)
+        {
+            Form venta = new VentanaVenta();
+            venta.Show();
+            this.Hide();
+            venta.FormClosed += onCloseChild;
+        }
+        private void onCloseChild(object? sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
+
+        private void botonUsuarios(object sender, EventArgs e)
+        {
+            Form usuarios = new Usuarios();
+            usuarios.Show();
+            this.Hide();
+            usuarios.FormClosed += onCloseChild;
+        }
+
+        private void botonPromociones(object sender, EventArgs e)
+        {
+            Form promociones = new VentanaPromociones();
+            promociones.Show();
+            this.Hide();
+            promociones.FormClosed += onCloseChild;
+        }
+
+        private void botonSoporte(object sender, EventArgs e)
+        {
+            Form soporte = new VentanaSoporte();
+            soporte.Show();
+            this.Hide();
+            soporte.FormClosed += onCloseChild;
+        }
     }
 }

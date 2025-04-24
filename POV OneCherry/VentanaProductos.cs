@@ -20,7 +20,8 @@ namespace POV_OneCherry
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            string servidor = "BAN03\\SQLEXPRESS";
+            string nombreSV = "BAN03";
+            string servidor = nombreSV + "\\SQLEXPRESS";
             string DB = "INE_5";
 
             string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
@@ -37,12 +38,8 @@ namespace POV_OneCherry
 
                 // Bind data to the DataGridView
                 dataGridView1.DataSource = dataTable;
+                connection.Close();
             }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

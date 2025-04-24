@@ -37,6 +37,12 @@
             button7 = new Button();
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            label8 = new Label();
+            textBox5 = new TextBox();
+            label5 = new Label();
+            label7 = new Label();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
             ID_promocion = new DataGridViewTextBoxColumn();
             Nombre_promocion = new DataGridViewTextBoxColumn();
             Fecha_promocion = new DataGridViewTextBoxColumn();
@@ -91,7 +97,7 @@
             button9.BackColor = Color.Crimson;
             button9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button9.ForeColor = SystemColors.ControlLightLight;
-            button9.Location = new Point(582, 342);
+            button9.Location = new Point(587, 366);
             button9.Name = "button9";
             button9.Size = new Size(161, 43);
             button9.TabIndex = 39;
@@ -103,7 +109,7 @@
             button8.BackColor = Color.Crimson;
             button8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button8.ForeColor = SystemColors.ControlLightLight;
-            button8.Location = new Point(323, 342);
+            button8.Location = new Point(323, 366);
             button8.Name = "button8";
             button8.Size = new Size(161, 43);
             button8.TabIndex = 38;
@@ -115,7 +121,7 @@
             button7.BackColor = Color.Crimson;
             button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button7.ForeColor = SystemColors.ControlLightLight;
-            button7.Location = new Point(48, 342);
+            button7.Location = new Point(47, 366);
             button7.Name = "button7";
             button7.Size = new Size(161, 43);
             button7.TabIndex = 37;
@@ -146,6 +152,63 @@
             dataGridView1.Size = new Size(770, 229);
             dataGridView1.TabIndex = 35;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(502, 300);
+            label8.Margin = new Padding(5);
+            label8.Name = "label8";
+            label8.Size = new Size(93, 28);
+            label8.TabIndex = 71;
+            label8.Text = "Descuento";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(502, 328);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(172, 23);
+            textBox5.TabIndex = 70;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(311, 300);
+            label5.Margin = new Padding(5);
+            label5.Name = "label5";
+            label5.Size = new Size(149, 28);
+            label5.TabIndex = 67;
+            label5.Text = "Fecha de termino";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(115, 300);
+            label7.Margin = new Padding(5);
+            label7.Name = "label7";
+            label7.Size = new Size(77, 28);
+            label7.TabIndex = 66;
+            label7.Text = "Nombre";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(311, 328);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(172, 23);
+            textBox3.TabIndex = 65;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(115, 328);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(174, 23);
+            textBox2.TabIndex = 64;
+            // 
             // ID_promocion
             // 
             ID_promocion.HeaderText = "ID";
@@ -162,7 +225,7 @@
             // 
             // Fecha_promocion
             // 
-            Fecha_promocion.HeaderText = "Fecha";
+            Fecha_promocion.HeaderText = "Fecha de termino";
             Fecha_promocion.Name = "Fecha_promocion";
             Fecha_promocion.ReadOnly = true;
             Fecha_promocion.Width = 240;
@@ -180,6 +243,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(799, 411);
+            Controls.Add(label8);
+            Controls.Add(textBox5);
+            Controls.Add(label5);
+            Controls.Add(label7);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
             Controls.Add(comboBox1);
             Controls.Add(label2);
             Controls.Add(button10);
@@ -192,7 +261,6 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "VentanaPromociones";
             Text = "REGISTRO DE PROMOCIONES";
-            Load += VentanaPromociones_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -209,6 +277,12 @@
         private Button button7;
         private Label label1;
         private DataGridView dataGridView1;
+        private Label label8;
+        private TextBox textBox5;
+        private Label label5;
+        private Label label7;
+        private TextBox textBox3;
+        private TextBox textBox2;
         private DataGridViewTextBoxColumn ID_promocion;
         private DataGridViewTextBoxColumn Nombre_promocion;
         private DataGridViewTextBoxColumn Fecha_promocion;

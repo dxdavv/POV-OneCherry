@@ -37,10 +37,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(90, 20);
+            label2.Font = new Font("Sitka Heading", 20.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(77, 9);
             label2.Name = "label2";
-            label2.Size = new Size(245, 31);
+            label2.Size = new Size(228, 39);
             label2.TabIndex = 12;
             label2.Text = "Inicia sesión como:";
             // 

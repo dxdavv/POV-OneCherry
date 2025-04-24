@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace POV_OneCherry
 {
@@ -17,48 +18,36 @@ namespace POV_OneCherry
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void botonAgregarCliente(object sender, EventArgs e)
         {
-
+            Form agregar = new RegistroCliente();
+            agregar.ShowDialog();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Form3_Load(object sender, EventArgs e)
         {
+            string nombreSV = "ANG";
+            string servidor = nombreSV + "\\SQLEXPRESS";
+            string DB = "PruebaPOS";
 
+            string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
+
+            // SQL query to fetch product data
+            string query = "SELECT * FROM Clientes";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                TablaClientes.DataSource = null; // Clear existing data source to avoid conflicts
+
+                // Bind data to the DataGridView
+                TablaClientes.DataSource = dataTable;
+                connection.Close();
+            }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new RegistroCliente().ShowDialog();
-        }
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

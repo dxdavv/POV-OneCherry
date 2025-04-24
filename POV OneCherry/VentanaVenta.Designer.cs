@@ -31,17 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaVenta));
             splitContainer1 = new SplitContainer();
             pictureBox1 = new PictureBox();
-            button3 = new Button();
             button2 = new Button();
-            ButtonProveedor = new Button();
             comboBox1 = new ComboBox();
             label2 = new Label();
             button10 = new Button();
             textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
-            button9 = new Button();
-            button8 = new Button();
-            button7 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -61,16 +56,11 @@
             // 
             splitContainer1.Panel1.BackColor = Color.LavenderBlush;
             splitContainer1.Panel1.Controls.Add(pictureBox1);
-            splitContainer1.Panel1.Controls.Add(button3);
             splitContainer1.Panel1.Controls.Add(button2);
-            splitContainer1.Panel1.Controls.Add(ButtonProveedor);
             // 
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.LavenderBlush;
-            splitContainer1.Panel2.Controls.Add(button9);
-            splitContainer1.Panel2.Controls.Add(button8);
-            splitContainer1.Panel2.Controls.Add(button7);
             splitContainer1.Panel2.Controls.Add(comboBox1);
             splitContainer1.Panel2.Controls.Add(label2);
             splitContainer1.Panel2.Controls.Add(button10);
@@ -90,41 +80,17 @@
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             // 
-            // button3
-            // 
-            button3.BackColor = Color.Crimson;
-            button3.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = SystemColors.ControlLightLight;
-            button3.Location = new Point(317, 9);
-            button3.Name = "button3";
-            button3.Size = new Size(130, 30);
-            button3.TabIndex = 11;
-            button3.Text = "Apartados";
-            button3.UseVisualStyleBackColor = false;
-            // 
             // button2
             // 
             button2.BackColor = Color.Crimson;
             button2.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(181, 9);
+            button2.Location = new Point(174, 4);
             button2.Name = "button2";
-            button2.Size = new Size(130, 30);
+            button2.Size = new Size(130, 35);
             button2.TabIndex = 10;
             button2.Text = "Facturas";
             button2.UseVisualStyleBackColor = false;
-            // 
-            // ButtonProveedor
-            // 
-            ButtonProveedor.BackColor = Color.Crimson;
-            ButtonProveedor.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ButtonProveedor.ForeColor = SystemColors.ControlLightLight;
-            ButtonProveedor.Location = new Point(45, 9);
-            ButtonProveedor.Name = "ButtonProveedor";
-            ButtonProveedor.Size = new Size(130, 30);
-            ButtonProveedor.TabIndex = 9;
-            ButtonProveedor.Text = "Detalle de ventas";
-            ButtonProveedor.UseVisualStyleBackColor = false;
             // 
             // comboBox1
             // 
@@ -180,42 +146,6 @@
             dataGridView1.Size = new Size(776, 293);
             dataGridView1.TabIndex = 35;
             // 
-            // button9
-            // 
-            button9.BackColor = Color.Crimson;
-            button9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button9.ForeColor = SystemColors.ControlLightLight;
-            button9.Location = new Point(587, 348);
-            button9.Name = "button9";
-            button9.Size = new Size(161, 43);
-            button9.TabIndex = 42;
-            button9.Text = "🗑️Eliminar";
-            button9.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            button8.BackColor = Color.Crimson;
-            button8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button8.ForeColor = SystemColors.ControlLightLight;
-            button8.Location = new Point(328, 348);
-            button8.Name = "button8";
-            button8.Size = new Size(161, 43);
-            button8.TabIndex = 41;
-            button8.Text = "🖋️Editar";
-            button8.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            button7.BackColor = Color.Crimson;
-            button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.ForeColor = SystemColors.ControlLightLight;
-            button7.Location = new Point(53, 348);
-            button7.Name = "button7";
-            button7.Size = new Size(161, 43);
-            button7.TabIndex = 40;
-            button7.Text = "📥Agregar";
-            button7.UseVisualStyleBackColor = false;
-            // 
             // VentanaVenta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -240,16 +170,11 @@
 
         private SplitContainer splitContainer1;
         private PictureBox pictureBox1;
-        private Button button3;
         private Button button2;
-        private Button ButtonProveedor;
         private ComboBox comboBox1;
         private Label label2;
         private Button button10;
         private TextBox textBox1;
         private DataGridView dataGridView1;
-        private Button button9;
-        private Button button8;
-        private Button button7;
     }
 }
