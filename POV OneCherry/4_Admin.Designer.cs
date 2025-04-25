@@ -206,6 +206,7 @@
             Productos.TabIndex = 3;
             Productos.Text = "\U0001f947Admins";
             Productos.UseVisualStyleBackColor = false;
+            Productos.Click += botonAdministradores;
             // 
             // button3
             // 
@@ -218,13 +219,14 @@
             button3.TabIndex = 2;
             button3.Text = "👤Empleados";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += botonEmpleados;
             // 
             // button2
             // 
             button2.BackColor = Color.Crimson;
             button2.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(0, 45);
+            button2.Location = new Point(0, 75);
             button2.Name = "button2";
             button2.Size = new Size(130, 30);
             button2.TabIndex = 1;
@@ -242,6 +244,7 @@
             ButtonProveedor.TabIndex = 0;
             ButtonProveedor.Text = "🚚Proveedores";
             ButtonProveedor.UseVisualStyleBackColor = false;
+            ButtonProveedor.Click += botonProveedores;
             // 
             // button12
             // 
