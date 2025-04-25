@@ -65,26 +65,6 @@
             label1 = new Label();
             button6 = new Button();
             label4 = new Label();
-            button9 = new Button();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            button9 = new Button();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            button9 = new Button();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            button9 = new Button();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -116,18 +96,8 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.LavenderBlush;
-<<<<<<< HEAD
-            splitContainer1.Panel2.Controls.Add(label8);
-            splitContainer1.Panel2.Controls.Add(label7);
-            splitContainer1.Panel2.Controls.Add(label6);
-            splitContainer1.Panel2.Controls.Add(label5);
-            splitContainer1.Panel2.Controls.Add(label3);
-            splitContainer1.Panel2.Controls.Add(label2);
-            splitContainer1.Panel2.Controls.Add(textBox6);
-=======
             splitContainer1.Panel2.Controls.Add(button12);
             splitContainer1.Panel2.Controls.Add(label8);
->>>>>>> b83a3d0dc87083ca2956d2ff6849e91a1f8691a6
             splitContainer1.Panel2.Controls.Add(textBox5);
             splitContainer1.Panel2.Controls.Add(label3);
             splitContainer1.Panel2.Controls.Add(textBox4);
@@ -254,30 +224,20 @@
             button2.BackColor = Color.Crimson;
             button2.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlLightLight;
-            // textBox6
+            button2.Location = new Point(0, 45);
             button2.Name = "button2";
             button2.Size = new Size(130, 30);
             button2.TabIndex = 1;
-<<<<<<< HEAD
-            button2.Text = "Clientes";
-            // button6
-=======
             button2.Text = "👥Clientes";
             button2.UseVisualStyleBackColor = false;
->>>>>>> b83a3d0dc87083ca2956d2ff6849e91a1f8691a6
             // 
             // ButtonProveedor
             // 
             ButtonProveedor.BackColor = Color.Crimson;
             ButtonProveedor.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ButtonProveedor.ForeColor = SystemColors.ControlLightLight;
-            ButtonProveedor.Location = new Point(1, 45);
+            ButtonProveedor.Location = new Point(1, 75);
             ButtonProveedor.Name = "ButtonProveedor";
-<<<<<<< HEAD
-            // textBox4
-            ButtonProveedor.TabIndex = 0;
-            textBox4.Location = new Point(571, 340);
-=======
             ButtonProveedor.Size = new Size(130, 30);
             ButtonProveedor.TabIndex = 0;
             ButtonProveedor.Text = "🚚Proveedores";
@@ -330,7 +290,6 @@
             // textBox4
             // 
             textBox4.Location = new Point(588, 368);
->>>>>>> b83a3d0dc87083ca2956d2ff6849e91a1f8691a6
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(217, 23);
             textBox4.TabIndex = 58;
@@ -364,13 +323,13 @@
             textBox3.Location = new Point(210, 368);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(172, 23);
-            textBox3.TabIndex = 55;
+            textBox3.TabIndex = 26;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(14, 368);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(174, 23);
+            textBox2.Size = new Size(182, 23);
             textBox2.TabIndex = 54;
             // 
             // comboBox1
@@ -439,26 +398,8 @@
             button8.Text = "🖋️Editar";
             button8.UseVisualStyleBackColor = false;
             // 
-<<<<<<< HEAD
-            // textBox2
-            // 
-            textBox2.Location = new Point(223, 287);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(182, 23);
-            textBox2.TabIndex = 23;
-            textBox2.TextChanged += textBox2_TextChanged;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(14, 287);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(182, 23);
-            textBox1.TabIndex = 22;
-            textBox2.Location = new Point(223, 287);
-=======
->>>>>>> b83a3d0dc87083ca2956d2ff6849e91a1f8691a6
             // button7
-            textBox2.Size = new Size(182, 23);
+            // 
             button7.BackColor = Color.Crimson;
             button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button7.ForeColor = SystemColors.ControlLightLight;
@@ -468,14 +409,9 @@
             button7.TabIndex = 21;
             button7.Text = "📥Agregar";
             button7.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-            button7.Click += button7_Click;
-            button8.Name = "button8";
-=======
             // 
->>>>>>> b83a3d0dc87083ca2956d2ff6849e91a1f8691a6
             // dataGridView1
-            button8.TabIndex = 24;
+            // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
@@ -486,9 +422,6 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(750, 253);
             dataGridView1.TabIndex = 4;
-<<<<<<< HEAD
-            textBox2.TextChanged += textBox2_TextChanged;
-=======
             // 
             // ID_proveedor
             // 
@@ -525,9 +458,8 @@
             Dirección_proveedor.ReadOnly = true;
             Dirección_proveedor.Width = 150;
             // 
->>>>>>> b83a3d0dc87083ca2956d2ff6849e91a1f8691a6
             // label1
-            button9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Sitka Heading", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -536,16 +468,10 @@
             label1.Name = "label1";
             label1.Size = new Size(204, 42);
             label1.TabIndex = 3;
-<<<<<<< HEAD
-            label1.Text = "USUARIOS";
-            label1.Click += label1_Click;
-            button9.TabIndex = 25;
-=======
             label1.Text = "PROVEEDORES";
             // 
->>>>>>> b83a3d0dc87083ca2956d2ff6849e91a1f8691a6
             // button6
-            button9.UseVisualStyleBackColor = false;
+            // 
             button6.BackColor = Color.OliveDrab;
             button6.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button6.ForeColor = SystemColors.ControlLightLight;
@@ -555,9 +481,9 @@
             button6.TabIndex = 2;
             button6.Text = "➡️";
             button6.UseVisualStyleBackColor = false;
-            textBox3.Name = "textBox3";
+            // 
             // label4
-            textBox3.TabIndex = 26;
+            // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -567,42 +493,6 @@
             label4.Size = new Size(146, 28);
             label4.TabIndex = 1;
             label4.Text = "Nombre Apellido";
-<<<<<<< HEAD
-            label4.Click += label4_Click;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(182, 23);
-            textBox4.TabIndex = 27;
-            button9.UseVisualStyleBackColor = false;
-            // textBox5
-            // textBox3
-            textBox5.Location = new Point(14, 340);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(182, 23);
-            textBox5.TabIndex = 28;
-            textBox3.TabIndex = 26;
-            // textBox6
-            // textBox4
-            textBox6.Location = new Point(223, 340);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(182, 23);
-            textBox6.TabIndex = 29;
-            textBox4.TabIndex = 27;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(14, 340);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(182, 23);
-            textBox5.TabIndex = 28;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(223, 340);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(182, 23);
-            textBox6.TabIndex = 29;
-=======
->>>>>>> b83a3d0dc87083ca2956d2ff6849e91a1f8691a6
             // 
             // Administrador
             // 
@@ -662,17 +552,8 @@
         private Label label5;
         private Label label7;
         private TextBox textBox3;
-<<<<<<< HEAD
-        private Label label2;
-        private Label label3;
-        private Label label8;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-=======
         private TextBox textBox2;
         private Button button12;
         private Button button13;
->>>>>>> b83a3d0dc87083ca2956d2ff6849e91a1f8691a6
     }
 }

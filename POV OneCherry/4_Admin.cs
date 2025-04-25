@@ -63,33 +63,10 @@ namespace POV_OneCherry
 
         private void botonComprasProveedor(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new PaginaSoporte().ShowDialog();
-=======
             Form compras = new VentanaComprasProv();
             compras.Show();
             this.Hide();
             compras.FormClosed += onCloseChild;
->>>>>>> b83a3d0dc87083ca2956d2ff6849e91a1f8691a6
         }
     }
 }
