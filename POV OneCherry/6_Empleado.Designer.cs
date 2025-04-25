@@ -593,7 +593,7 @@
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(13, 273);
+            label9.Location = new Point(-125, 368);
             label9.Margin = new Padding(5);
             label9.Name = "label9";
             label9.Size = new Size(63, 28);

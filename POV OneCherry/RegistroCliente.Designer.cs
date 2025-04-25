@@ -113,6 +113,7 @@
             button7.TabIndex = 27;
             button7.Text = "📥Agregar";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += Agregar;
             // 
             // label5
             // 
@@ -151,7 +152,6 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "RegistroCliente";
             Text = "CLIENTE REGISTRO";
-            Load += RegistroCliente_Load;
             ResumeLayout(false);
             PerformLayout();
         }

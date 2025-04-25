@@ -22,13 +22,14 @@ namespace POV_OneCherry
         {
             Form agregar = new RegistroCliente();
             agregar.ShowDialog();
+            Form3_Load(sender, e);
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
             
             // SQL query to fetch product data
-            string query = "SELECT * FROM votante";
+            string query = "SELECT * FROM Clientes";
             using (SqlConnection connection = DBC.GlobalDBConnecion())
             {
                 connection.Open();
