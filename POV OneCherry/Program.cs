@@ -15,7 +15,7 @@ namespace POV_OneCherry
             DBC.nombre = "BAN03";
             DBC.DB = "INE_5";
             ApplicationConfiguration.Initialize();
-            Application.Run(new Usuarios());
+            Application.Run(new LoginEmpleado());
 
         }
     }

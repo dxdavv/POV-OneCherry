@@ -16,14 +16,15 @@ namespace POV_OneCherry
     {
         private static string nombreSV = "BAN03";
         private static string DB = "PruebaPOS";
+        private static string servidor = nombreSV + "\\SQLEXPRESS";
+        private string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
 
         private string query = "SELECT Ventas.ID_Ventas AS ID_Venta, Usuarios.NombreUsuario AS Usuario, Ventas.FechaVenta AS Fecha, " +
                 "CONCAT (Clientes.Nombre, ' ' ,Clientes.Apellido) AS Nombre_Cliente, Ventas.TotalVenta AS Total, Promociones.NombrePromocion FROM Ventas " +
                 "JOIN Clientes ON Ventas.ID_Clientes = Clientes.ID_Clientes  " +
                 "JOIN Promociones ON Ventas.ID_Promociones = Promociones.ID_Promociones " +
                 "JOIN Usuarios ON Ventas.ID_Usuarios = Usuarios.ID_Usuarios";
-        private static string servidor = nombreSV + "\\SQLEXPRESS";
-        private string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
+        private string[] columnas = { "Ventas.ID_Ventas", "Ventas.FechaVenta", "Ventas.TotalVenta", "Ventas.ID_Clientes", "Ventas.ID_Usuarios", "Ventas.ID_Promociones" };
         public VentanaVenta()
         {
             InitializeComponent();
@@ -63,37 +64,9 @@ namespace POV_OneCherry
         private void Buscar(object sender, EventArgs e)
         {
             string nwquery = query;
-            string ordenamiento;
             int seleccion = comboBox1.SelectedIndex;
-                // 0 - id
-                // 1 - fecha
-            switch (seleccion)
-            {
-                case 0:
-                    ordenamiento = "Ventas.ID_Ventas";
-                    break;
-
-                case 1:
-                    ordenamiento = "Ventas.FechaVenta";
-                    break;
-
-                case 2:
-                    ordenamiento = "Ventas.TotalVenta";
-                    break;
-                case 3:
-                    ordenamiento = "Ventas.ID_Clientes";
-                    break;
-                case 4:
-                    ordenamiento = "Ventas.ID_Usuarios";
-                    break;
-                case 5:
-                    ordenamiento = "Ventas.ID_Promociones";
-                    break;
-                default:
-                    ordenamiento = "Ventas.ID_Ventas";
-                    break;
-            }
-            if (!textBox1.Text.Equals(""))
+            string ordenamiento = columnas[seleccion];
+            if (textBox1.Text.Length > 0)
             {
                 string busqueda = textBox1.Text;
                 nwquery += $" WHERE Ventas.ID_Ventas LIKE ('{busqueda}') OR " +
@@ -105,20 +78,21 @@ namespace POV_OneCherry
                     $"Promociones.NombrePromocion LIKE ('{busqueda}')";
             }
             nwquery += $" ORDER BY {ordenamiento}";
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
 
-                    SqlDataAdapter adapter = new SqlDataAdapter(nwquery, connection);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-                    dataGridView1.DataSource = null; // Clear existing data source to avoid conflicts
+                SqlDataAdapter adapter = new SqlDataAdapter(nwquery, connection);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dataGridView1.DataSource = null; // Clear existing data source to avoid conflicts
 
-                    // Bind data to the DataGridView
-                    dataGridView1.DataSource = dataTable;
-                    connection.Close();
+                // Bind data to the DataGridView
+                dataGridView1.DataSource = dataTable;
+                connection.Close();
 
-                }
+            }
+            textBox1.Clear();
         }
         private void ToExcel (object sender, EventArgs e)
         {

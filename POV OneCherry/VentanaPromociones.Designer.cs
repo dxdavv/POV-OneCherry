@@ -43,6 +43,7 @@
             label7 = new Label();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)TablaPromociones).BeginInit();
             SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "ID", "Fecha", "Nombre" });
+            comboBox1.Items.AddRange(new object[] { "Fecha", "Nombre", "Descuento" });
             comboBox1.Location = new Point(196, 36);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
@@ -80,6 +81,7 @@
             button10.Text = "🔎Buscar";
             button10.TextAlign = ContentAlignment.TopCenter;
             button10.UseVisualStyleBackColor = false;
+            button10.Click += Buscar;
             // 
             // textBox1
             // 
@@ -99,6 +101,7 @@
             button9.TabIndex = 39;
             button9.Text = "🗑️Eliminar";
             button9.UseVisualStyleBackColor = false;
+            button9.Click += Eliminar;
             // 
             // button8
             // 
@@ -111,6 +114,7 @@
             button8.TabIndex = 38;
             button8.Text = "🖋️Editar";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += Editar;
             // 
             // button7
             // 
@@ -123,6 +127,7 @@
             button7.TabIndex = 37;
             button7.Text = "📥Agregar";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += Agregar;
             // 
             // label1
             // 
@@ -146,6 +151,7 @@
             TablaPromociones.ReadOnly = true;
             TablaPromociones.Size = new Size(770, 229);
             TablaPromociones.TabIndex = 35;
+            TablaPromociones.CellDoubleClick += MandarAEditar;
             // 
             // label8
             // 
@@ -204,12 +210,20 @@
             textBox2.Size = new Size(174, 23);
             textBox2.TabIndex = 64;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(311, 328);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(173, 23);
+            dateTimePicker1.TabIndex = 72;
+            // 
             // VentanaPromociones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(799, 411);
+            Controls.Add(dateTimePicker1);
             Controls.Add(label8);
             Controls.Add(textBox5);
             Controls.Add(label5);
@@ -251,5 +265,6 @@
         private Label label7;
         private TextBox textBox3;
         private TextBox textBox2;
+        private DateTimePicker dateTimePicker1;
     }
 }

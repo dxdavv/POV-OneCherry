@@ -69,6 +69,7 @@
             button10.Text = "🔎Buscar";
             button10.TextAlign = ContentAlignment.TopCenter;
             button10.UseVisualStyleBackColor = false;
+            button10.Click += Buscar;
             // 
             // button9
             // 
@@ -81,6 +82,7 @@
             button9.TabIndex = 37;
             button9.Text = "🗑️Eliminar";
             button9.UseVisualStyleBackColor = false;
+            button9.Click += Eliminar;
             // 
             // button8
             // 
@@ -93,6 +95,7 @@
             button8.TabIndex = 36;
             button8.Text = "🖋️Editar";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += Editar;
             // 
             // button7
             // 
@@ -105,6 +108,7 @@
             button7.TabIndex = 35;
             button7.Text = "📥Agregar";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += Agregar;
             // 
             // TablaUsuarios
             // 
@@ -117,6 +121,7 @@
             TablaUsuarios.ReadOnly = true;
             TablaUsuarios.Size = new Size(750, 225);
             TablaUsuarios.TabIndex = 34;
+            TablaUsuarios.CellDoubleClick += MandarAEditar;
             // 
             // label1
             // 
@@ -194,7 +199,7 @@
             // 
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Nombre de usuario", "Tipo" });
+            comboBox2.Items.AddRange(new object[] { "Nombre de usuario", "Pin", "Tipo" });
             comboBox2.Location = new Point(199, 37);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(274, 23);
