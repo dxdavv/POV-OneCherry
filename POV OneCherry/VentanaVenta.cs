@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,16 @@ namespace POV_OneCherry
 {
     public partial class VentanaVenta : Form
     {
+        private static string nombreSV = "BAN03";
+        private static string DB = "PruebaPOS";
+
+        private string query = "SELECT Ventas.ID_Ventas AS ID_Venta, Usuarios.NombreUsuario AS Usuario, Ventas.FechaVenta AS Fecha, " +
+                "CONCAT (Clientes.Nombre, ' ' ,Clientes.Apellido) AS Nombre_Cliente, Ventas.TotalVenta AS Total, Promociones.NombrePromocion FROM Ventas " +
+                "JOIN Clientes ON Ventas.ID_Clientes = Clientes.ID_Clientes  " +
+                "JOIN Promociones ON Ventas.ID_Promociones = Promociones.ID_Promociones " +
+                "JOIN Usuarios ON Ventas.ID_Usuarios = Usuarios.ID_Usuarios";
+        private static string servidor = nombreSV + "\\SQLEXPRESS";
+        private string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
         public VentanaVenta()
         {
             InitializeComponent();
@@ -33,19 +44,7 @@ namespace POV_OneCherry
 
         private void VentanaVenta_Load(object sender, EventArgs e)
         {
-        
-            string nombreSV = "ANG";
-            string servidor = nombreSV + "\\SQLEXPRESS";
-            string DB = "PruebaPOS";
-
-            string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
-
             // SQL query to fetch product data
-            string query = "SELECT Ventas.ID_Ventas AS ID_Venta, Usuarios.NombreUsuario AS Usuario, Ventas.FechaVenta AS Fecha, " +
-                "CONCAT (Clientes.Nombre, ' ' ,Clientes.Apellido) AS Nombre_Cliente, Ventas.TotalVenta AS Total, Promociones.NombrePromocion FROM Ventas " +
-                "JOIN Clientes ON Ventas.ID_Clientes = Clientes.ID_Clientes  " +
-                "JOIN Promociones ON Ventas.ID_Promociones = Promociones.ID_Promociones " +
-                "JOIN Usuarios ON Ventas.ID_Usuarios = Usuarios.ID_Usuarios";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -58,7 +57,98 @@ namespace POV_OneCherry
                 // Bind data to the DataGridView
                 dataGridView1.DataSource = dataTable;
                 connection.Close();
-            
+
+            }
+        }
+        private void Buscar(object sender, EventArgs e)
+        {
+            string nwquery = query;
+            string ordenamiento;
+            int seleccion = comboBox1.SelectedIndex;
+                // 0 - id
+                // 1 - fecha
+            switch (seleccion)
+            {
+                case 0:
+                    ordenamiento = "Ventas.ID_Ventas";
+                    break;
+
+                case 1:
+                    ordenamiento = "Ventas.FechaVenta";
+                    break;
+
+                case 2:
+                    ordenamiento = "Ventas.TotalVenta";
+                    break;
+                case 3:
+                    ordenamiento = "Ventas.ID_Clientes";
+                    break;
+                case 4:
+                    ordenamiento = "Ventas.ID_Usuarios";
+                    break;
+                case 5:
+                    ordenamiento = "Ventas.ID_Promociones";
+                    break;
+                default:
+                    ordenamiento = "Ventas.ID_Ventas";
+                    break;
+            }
+            if (!textBox1.Text.Equals(""))
+            {
+                string busqueda = textBox1.Text;
+                nwquery += $" WHERE Ventas.ID_Ventas LIKE ('{busqueda}') OR " +
+                    $"Usuarios.NombreUsuario LIKE ('{busqueda}') OR " +
+                    $"Ventas.FechaVenta LIKE ('{busqueda}') OR " +
+                    $"Clientes.Nombre LIKE ('{busqueda}') OR " +
+                    $"Clientes.Apellido LIKE ('{busqueda}') OR " +
+                    $"Ventas.TotalVenta LIKE ({busqueda}) OR " +
+                    $"Promociones.NombrePromocion LIKE ('{busqueda}')";
+            }
+            nwquery += $" ORDER BY {ordenamiento}";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(nwquery, connection);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataGridView1.DataSource = null; // Clear existing data source to avoid conflicts
+
+                    // Bind data to the DataGridView
+                    dataGridView1.DataSource = dataTable;
+                    connection.Close();
+
+                }
+        }
+        private void ToExcel (object sender, EventArgs e)
+        {
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    using (SaveFileDialog sfd = new SaveFileDialog())
+                    {
+                        sfd.Filter = "Excel Files|*.xlsx";
+                        sfd.Title = "Guardar Excel";
+                        sfd.FileName = "Ventas.xlsx";
+
+                        if (sfd.ShowDialog() == DialogResult.OK) // User selects a location
+                        {
+                            using (XLWorkbook workbook = new XLWorkbook())
+                            {
+                                var worksheet = workbook.Worksheets.Add(dt, "Todas las ventas");
+                                workbook.SaveAs(sfd.FileName);
+                            }
+
+                            MessageBox.Show("El Excel se guardo correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
             }
         }
     }

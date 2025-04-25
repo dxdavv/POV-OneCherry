@@ -50,12 +50,13 @@
             button12.TabIndex = 91;
             button12.Text = "⏬Descarga excel";
             button12.UseVisualStyleBackColor = false;
+            button12.Click += ToExcel;
             // 
             // comboBox1
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "ID", "Fecha", "Proveedor" });
+            comboBox1.Items.AddRange(new object[] { "ID", "Fecha", "Total", "Cliente", "Usuario", "Promocion" });
             comboBox1.Location = new Point(143, 47);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
@@ -85,6 +86,7 @@
             button10.Text = "🔎Buscar";
             button10.TextAlign = ContentAlignment.TopCenter;
             button10.UseVisualStyleBackColor = false;
+            button10.Click += Buscar;
             // 
             // textBox1
             // 

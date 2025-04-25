@@ -20,7 +20,47 @@ namespace POV_OneCherry
         {
             this.Show();
         }
+        private void botonProveedores(object sender, EventArgs e)
+        {
+            label1.Text = "PROVEEDORES";
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            button12.Show();
+        }
 
+        private void botonClientes(object sender, EventArgs e)
+        {
+            label1.Text = "CLIENTES";
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            button12.Hide();
+        }
+        private void botonEmpleados(object sender, EventArgs e)
+        {
+            label1.Text = "EMPLEADOS";
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            button12.Hide();
+        }
+        private void botonAdministradores(object sender, EventArgs e)
+        {
+            label1.Text = "ADMINS";
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            button12.Hide();
+        }
         private void botonProductos(object sender, EventArgs e)
         {
             Form productos = new VentanaProductos();
@@ -63,33 +103,10 @@ namespace POV_OneCherry
 
         private void botonComprasProveedor(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new PaginaSoporte().ShowDialog();
-=======
             Form compras = new VentanaComprasProv();
             compras.Show();
             this.Hide();
             compras.FormClosed += onCloseChild;
->>>>>>> b83a3d0dc87083ca2956d2ff6849e91a1f8691a6
         }
     }
 }

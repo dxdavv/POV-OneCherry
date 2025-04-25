@@ -152,12 +152,7 @@
             MaximumSize = new Size(600, 350);
             MinimumSize = new Size(600, 350);
             Name = "LoginEmpleado";
-<<<<<<< HEAD
-            Text = "Log in employee";
-            // Load += LoginEmpleado_Load;
-=======
             Text = "LOG IN EMPLOYEE";
->>>>>>> b83a3d0dc87083ca2956d2ff6849e91a1f8691a6
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
