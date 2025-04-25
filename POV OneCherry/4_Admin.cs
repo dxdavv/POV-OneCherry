@@ -20,7 +20,47 @@ namespace POV_OneCherry
         {
             this.Show();
         }
+        private void botonProveedores(object sender, EventArgs e)
+        {
+            label1.Text = "PROVEEDORES";
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            button12.Show();
+        }
 
+        private void botonClientes(object sender, EventArgs e)
+        {
+            label1.Text = "CLIENTES";
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            button12.Hide();
+        }
+        private void botonEmpleados(object sender, EventArgs e)
+        {
+            label1.Text = "EMPLEADOS";
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            button12.Hide();
+        }
+        private void botonAdministradores(object sender, EventArgs e)
+        {
+            label1.Text = "ADMINS";
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            button12.Hide();
+        }
         private void botonProductos(object sender, EventArgs e)
         {
             Form productos = new VentanaProductos();

@@ -1,3 +1,5 @@
+using System.Data.SqlClient;
+
 namespace POV_OneCherry
 {
     internal static class Program
@@ -10,8 +12,11 @@ namespace POV_OneCherry
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+            DBC.nombre = "BAN03";
+            DBC.DB = "INE_5";
             ApplicationConfiguration.Initialize();
-            Application.Run(new PrimerPantallaLogin());
+            Application.Run(new LoginEmpleado());
+
         }
     }
 }

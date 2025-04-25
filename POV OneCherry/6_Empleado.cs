@@ -26,24 +26,16 @@ namespace POV_OneCherry
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            string nombreSV = "ANG";
-            string servidor = nombreSV + "\\SQLEXPRESS";
-            string DB = "PruebaPOS";
-
-            string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
-
+            
             // SQL query to fetch product data
-            string query = "SELECT * FROM Clientes";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            string query = "SELECT * FROM votante";
+            using (SqlConnection connection = DBC.GlobalDBConnecion())
             {
                 connection.Open();
 
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                SqlDataAdapter adapter = DBC.CreateAdapter(query, connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
-                TablaClientes.DataSource = null; // Clear existing data source to avoid conflicts
-
-                // Bind data to the DataGridView
                 TablaClientes.DataSource = dataTable;
 
                 query = "SELECT Productos.ID_Productos AS ID_Prod, Productos.NombreProducto AS Nombre_Prod, Productos.Precio AS Precio, Productos.Stock AS Stock, Categorias.NombreCategoria AS Categoria FROM Productos " +
