@@ -48,6 +48,5 @@ namespace POV_OneCherry
                 connection.Close();
             }
         }
-
     }
 }

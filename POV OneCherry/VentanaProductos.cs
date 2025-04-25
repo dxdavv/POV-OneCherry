@@ -37,8 +37,8 @@ namespace POV_OneCherry
                 adapter.Fill(dataTable);
 
                 // Bind data to the DataGridView
-                dataGridView1.DataSource = dataTable;
                 connection.Close();
+                ListaProductos.DataSource = dataTable;
             }
         }
     }
