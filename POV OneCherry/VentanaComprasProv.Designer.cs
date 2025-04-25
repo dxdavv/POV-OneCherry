@@ -33,14 +33,9 @@
             label2 = new Label();
             button10 = new Button();
             textBox1 = new TextBox();
-            dataGridView1 = new DataGridView();
-            Id_compraprov = new DataGridViewTextBoxColumn();
-            fecha_compraprov = new DataGridViewTextBoxColumn();
-            total_compraprov = new DataGridViewTextBoxColumn();
-            proveedor_compraprov = new DataGridViewTextBoxColumn();
-            Prouctos_comprasprov = new DataGridViewTextBoxColumn();
+            TablaCompras = new DataGridView();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TablaCompras).BeginInit();
             SuspendLayout();
             // 
             // button12
@@ -97,53 +92,17 @@
             textBox1.Size = new Size(284, 23);
             textBox1.TabIndex = 73;
             // 
-            // dataGridView1
+            // TablaCompras
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id_compraprov, fecha_compraprov, total_compraprov, proveedor_compraprov, Prouctos_comprasprov });
-            dataGridView1.Location = new Point(44, 78);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(750, 253);
-            dataGridView1.TabIndex = 68;
-            // 
-            // Id_compraprov
-            // 
-            Id_compraprov.HeaderText = "ID";
-            Id_compraprov.Name = "Id_compraprov";
-            Id_compraprov.ReadOnly = true;
-            Id_compraprov.Width = 80;
-            // 
-            // fecha_compraprov
-            // 
-            fecha_compraprov.HeaderText = "Fecha de compra";
-            fecha_compraprov.Name = "fecha_compraprov";
-            fecha_compraprov.ReadOnly = true;
-            fecha_compraprov.Width = 150;
-            // 
-            // total_compraprov
-            // 
-            total_compraprov.HeaderText = "Total de compra";
-            total_compraprov.Name = "total_compraprov";
-            total_compraprov.ReadOnly = true;
-            total_compraprov.Width = 150;
-            // 
-            // proveedor_compraprov
-            // 
-            proveedor_compraprov.HeaderText = "Proveedor";
-            proveedor_compraprov.Name = "proveedor_compraprov";
-            proveedor_compraprov.ReadOnly = true;
-            proveedor_compraprov.Width = 150;
-            // 
-            // Prouctos_comprasprov
-            // 
-            Prouctos_comprasprov.HeaderText = "Productos";
-            Prouctos_comprasprov.Name = "Prouctos_comprasprov";
-            Prouctos_comprasprov.ReadOnly = true;
-            Prouctos_comprasprov.Width = 200;
+            TablaCompras.AllowUserToAddRows = false;
+            TablaCompras.AllowUserToDeleteRows = false;
+            TablaCompras.BackgroundColor = SystemColors.ButtonHighlight;
+            TablaCompras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaCompras.Location = new Point(44, 78);
+            TablaCompras.Name = "TablaCompras";
+            TablaCompras.ReadOnly = true;
+            TablaCompras.Size = new Size(750, 253);
+            TablaCompras.TabIndex = 68;
             // 
             // label1
             // 
@@ -168,12 +127,13 @@
             Controls.Add(label2);
             Controls.Add(button10);
             Controls.Add(textBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(TablaCompras);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "VentanaComprasProv";
             Text = "COMPRAS";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += VentanaComprasProv_Load;
+            ((System.ComponentModel.ISupportInitialize)TablaCompras).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -185,12 +145,7 @@
         private Label label2;
         private Button button10;
         private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private DataGridView TablaCompras;
         private Label label1;
-        private DataGridViewTextBoxColumn Id_compraprov;
-        private DataGridViewTextBoxColumn fecha_compraprov;
-        private DataGridViewTextBoxColumn total_compraprov;
-        private DataGridViewTextBoxColumn proveedor_compraprov;
-        private DataGridViewTextBoxColumn Prouctos_comprasprov;
     }
 }

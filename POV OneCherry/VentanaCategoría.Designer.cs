@@ -38,8 +38,8 @@
             button8 = new Button();
             button7 = new Button();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            TablaCategorias = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)TablaCategorias).BeginInit();
             SuspendLayout();
             // 
             // label7
@@ -150,17 +150,17 @@
             label1.TabIndex = 87;
             label1.Text = "CATEGORÍAS";
             // 
-            // dataGridView1
+            // TablaCategorias
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 88);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(775, 177);
-            dataGridView1.TabIndex = 86;
+            TablaCategorias.AllowUserToAddRows = false;
+            TablaCategorias.AllowUserToDeleteRows = false;
+            TablaCategorias.BackgroundColor = SystemColors.ButtonHighlight;
+            TablaCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaCategorias.Location = new Point(12, 88);
+            TablaCategorias.Name = "TablaCategorias";
+            TablaCategorias.ReadOnly = true;
+            TablaCategorias.Size = new Size(775, 177);
+            TablaCategorias.TabIndex = 86;
             // 
             // VentanaCategoría
             // 
@@ -178,11 +178,12 @@
             Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(TablaCategorias);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "VentanaCategoría";
             Text = "CATEGORÍAS";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += VentanaCategoría_Load;
+            ((System.ComponentModel.ISupportInitialize)TablaCategorias).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -198,6 +199,6 @@
         private Button button8;
         private Button button7;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView TablaCategorias;
     }
 }

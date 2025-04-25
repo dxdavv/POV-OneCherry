@@ -45,9 +45,19 @@ namespace POV_OneCherry
 
                 // Bind data to the DataGridView
                 TablaClientes.DataSource = dataTable;
+
+                query = "SELECT Productos.ID_Productos AS ID_Prod, Productos.NombreProducto AS Nombre_Prod, Productos.Precio AS Precio, Productos.Stock AS Stock, Categorias.NombreCategoria AS Categoria FROM Productos " +
+                    "JOIN Categorias ON Productos.ID_Categorias = Categorias.ID_Categorias";
+                adapter = new SqlDataAdapter(query, connection);
+                dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                TablaProducto.DataSource = null; // Clear existing data source to avoid conflicts
+                TablaProducto.DataSource = dataTable;
+
                 connection.Close();
             }
         }
 
+       
     }
 }

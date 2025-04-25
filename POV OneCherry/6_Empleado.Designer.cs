@@ -56,12 +56,7 @@
             comboBox1 = new ComboBox();
             textBox2 = new TextBox();
             label5 = new Label();
-            dataGridView1 = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            N_produc = new DataGridViewTextBoxColumn();
-            Precio_unitario = new DataGridViewTextBoxColumn();
-            Categoría = new DataGridViewTextBoxColumn();
-            Stock = new DataGridViewTextBoxColumn();
+            TablaProducto = new DataGridView();
             button9 = new Button();
             button3 = new Button();
             comboBox3 = new ComboBox();
@@ -74,7 +69,7 @@
             label10 = new Label();
             textBox3 = new TextBox();
             label9 = new Label();
-            dataGridView2 = new DataGridView();
+            TablaVenta = new DataGridView();
             Producto = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
@@ -110,8 +105,8 @@
             splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TablaClientes).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TablaProducto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TablaVenta).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             SuspendLayout();
             // 
@@ -263,7 +258,7 @@
             splitContainer2.Panel1.Controls.Add(comboBox1);
             splitContainer2.Panel1.Controls.Add(textBox2);
             splitContainer2.Panel1.Controls.Add(label5);
-            splitContainer2.Panel1.Controls.Add(dataGridView1);
+            splitContainer2.Panel1.Controls.Add(TablaProducto);
             // 
             // splitContainer2.Panel2
             // 
@@ -280,7 +275,7 @@
             splitContainer2.Panel2.Controls.Add(label10);
             splitContainer2.Panel2.Controls.Add(textBox3);
             splitContainer2.Panel2.Controls.Add(label9);
-            splitContainer2.Panel2.Controls.Add(dataGridView2);
+            splitContainer2.Panel2.Controls.Add(TablaVenta);
             splitContainer2.Panel2.Controls.Add(label3);
             splitContainer2.Panel2.Controls.Add(label2);
             splitContainer2.Panel2.Controls.Add(comboBox4);
@@ -472,45 +467,15 @@
             label5.TabIndex = 37;
             label5.Text = "Búsqueda por -›";
             // 
-            // dataGridView1
+            // TablaProducto
             // 
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, N_produc, Precio_unitario, Categoría, Stock });
-            dataGridView1.Location = new Point(12, 72);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(487, 188);
-            dataGridView1.TabIndex = 18;
-            // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.Width = 90;
-            // 
-            // N_produc
-            // 
-            N_produc.HeaderText = "Producto";
-            N_produc.Name = "N_produc";
-            N_produc.Width = 140;
-            // 
-            // Precio_unitario
-            // 
-            Precio_unitario.HeaderText = "Precio";
-            Precio_unitario.Name = "Precio_unitario";
-            Precio_unitario.Width = 70;
-            // 
-            // Categoría
-            // 
-            Categoría.HeaderText = "Categoría";
-            Categoría.Name = "Categoría";
-            // 
-            // Stock
-            // 
-            Stock.HeaderText = "Stock";
-            Stock.Name = "Stock";
-            Stock.Width = 50;
+            TablaProducto.AllowUserToOrderColumns = true;
+            TablaProducto.BackgroundColor = SystemColors.ButtonHighlight;
+            TablaProducto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaProducto.Location = new Point(12, 72);
+            TablaProducto.Name = "TablaProducto";
+            TablaProducto.Size = new Size(487, 188);
+            TablaProducto.TabIndex = 18;
             // 
             // button9
             // 
@@ -635,15 +600,15 @@
             label9.TabIndex = 48;
             label9.Text = "Fecha:";
             // 
-            // dataGridView2
+            // TablaVenta
             // 
-            dataGridView2.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Producto, Precio, Cantidad, Subtotal });
-            dataGridView2.Location = new Point(13, 40);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(432, 220);
-            dataGridView2.TabIndex = 16;
+            TablaVenta.BackgroundColor = SystemColors.ButtonHighlight;
+            TablaVenta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaVenta.Columns.AddRange(new DataGridViewColumn[] { Producto, Precio, Cantidad, Subtotal });
+            TablaVenta.Location = new Point(13, 40);
+            TablaVenta.Name = "TablaVenta";
+            TablaVenta.Size = new Size(432, 220);
+            TablaVenta.TabIndex = 16;
             // 
             // Producto
             // 
@@ -870,8 +835,8 @@
             splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)TablaClientes).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TablaProducto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TablaVenta).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             ResumeLayout(false);
         }
@@ -880,7 +845,7 @@
 
         private SplitContainer splitContainer1;
         private SplitContainer splitContainer2;
-        private DataGridView dataGridView1;
+        private DataGridView TablaProducto;
         private Label label3;
         private Label label2;
         private Button button6;
@@ -890,7 +855,7 @@
         private Label label5;
         private Button button10;
         private TextBox textBox2;
-        private DataGridView dataGridView2;
+        private DataGridView TablaVenta;
         private DataGridViewTextBoxColumn Producto;
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn Cantidad;
@@ -914,11 +879,6 @@
         private Label label16;
         private TextBox textBox3;
         private Label label9;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn N_produc;
-        private DataGridViewTextBoxColumn Precio_unitario;
-        private DataGridViewTextBoxColumn Categoría;
-        private DataGridViewTextBoxColumn Stock;
         private Button button8;
         private Label label10;
         private TextBox textBox9;

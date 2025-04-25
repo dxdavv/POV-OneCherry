@@ -33,12 +33,6 @@
             button10 = new Button();
             textBox1 = new TextBox();
             TablaFacturas = new DataGridView();
-            ID_venta = new DataGridViewTextBoxColumn();
-            Fecha_venta = new DataGridViewTextBoxColumn();
-            Productos_venta = new DataGridViewTextBoxColumn();
-            Precio_uni = new DataGridViewTextBoxColumn();
-            Cantidad_venta = new DataGridViewTextBoxColumn();
-            Precio_total_venta = new DataGridViewTextBoxColumn();
             button7 = new Button();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)TablaFacturas).BeginInit();
@@ -92,51 +86,11 @@
             TablaFacturas.AllowUserToDeleteRows = false;
             TablaFacturas.BackgroundColor = SystemColors.ButtonHighlight;
             TablaFacturas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            TablaFacturas.Columns.AddRange(new DataGridViewColumn[] { ID_venta, Fecha_venta, Productos_venta, Precio_uni, Cantidad_venta, Precio_total_venta });
             TablaFacturas.Location = new Point(24, 81);
             TablaFacturas.Name = "TablaFacturas";
             TablaFacturas.ReadOnly = true;
             TablaFacturas.Size = new Size(676, 253);
             TablaFacturas.TabIndex = 35;
-            // 
-            // ID_venta
-            // 
-            ID_venta.HeaderText = "ID";
-            ID_venta.Name = "ID_venta";
-            ID_venta.ReadOnly = true;
-            ID_venta.Width = 50;
-            // 
-            // Fecha_venta
-            // 
-            Fecha_venta.HeaderText = "Fecha";
-            Fecha_venta.Name = "Fecha_venta";
-            Fecha_venta.ReadOnly = true;
-            Fecha_venta.Width = 120;
-            // 
-            // Productos_venta
-            // 
-            Productos_venta.HeaderText = "Productos";
-            Productos_venta.Name = "Productos_venta";
-            Productos_venta.ReadOnly = true;
-            Productos_venta.Width = 150;
-            // 
-            // Precio_uni
-            // 
-            Precio_uni.HeaderText = "Precio";
-            Precio_uni.Name = "Precio_uni";
-            Precio_uni.ReadOnly = true;
-            // 
-            // Cantidad_venta
-            // 
-            Cantidad_venta.HeaderText = "Cantidad";
-            Cantidad_venta.Name = "Cantidad_venta";
-            Cantidad_venta.ReadOnly = true;
-            // 
-            // Precio_total_venta
-            // 
-            Precio_total_venta.HeaderText = "Precio total";
-            Precio_total_venta.Name = "Precio_total_venta";
-            Precio_total_venta.ReadOnly = true;
             // 
             // button7
             // 
@@ -178,6 +132,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "VentanaFacturas";
             Text = "FACTURAS";
+            Load += VentanaFacturas_Load;
             ((System.ComponentModel.ISupportInitialize)TablaFacturas).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -191,12 +146,6 @@
         private TextBox textBox1;
         private DataGridView TablaFacturas;
         private Button button7;
-        private DataGridViewTextBoxColumn ID_venta;
-        private DataGridViewTextBoxColumn Fecha_venta;
-        private DataGridViewTextBoxColumn Productos_venta;
-        private DataGridViewTextBoxColumn Precio_uni;
-        private DataGridViewTextBoxColumn Cantidad_venta;
-        private DataGridViewTextBoxColumn Precio_total_venta;
         private Label label1;
     }
 }

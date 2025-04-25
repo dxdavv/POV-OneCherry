@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            TablaProductos = new DataGridView();
             label1 = new Label();
             button9 = new Button();
             button8 = new Button();
@@ -47,20 +47,20 @@
             comboBox2 = new ComboBox();
             button12 = new Button();
             button1 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TablaProductos).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // TablaProductos
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 83);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(775, 177);
-            dataGridView1.TabIndex = 0;
+            TablaProductos.AllowUserToAddRows = false;
+            TablaProductos.AllowUserToDeleteRows = false;
+            TablaProductos.BackgroundColor = SystemColors.ButtonHighlight;
+            TablaProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaProductos.Location = new Point(12, 83);
+            TablaProductos.Name = "TablaProductos";
+            TablaProductos.ReadOnly = true;
+            TablaProductos.Size = new Size(775, 177);
+            TablaProductos.TabIndex = 0;
             // 
             // label1
             // 
@@ -279,19 +279,19 @@
             Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(TablaProductos);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "VentanaProductos";
             Text = "PRODUCTOS";
             Load += Form3_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TablaProductos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView TablaProductos;
         private Label label1;
         private Button button9;
         private Button button8;

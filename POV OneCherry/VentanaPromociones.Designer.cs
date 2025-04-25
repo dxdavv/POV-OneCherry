@@ -36,18 +36,14 @@
             button8 = new Button();
             button7 = new Button();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            TablaPromociones = new DataGridView();
             label8 = new Label();
             textBox5 = new TextBox();
             label5 = new Label();
             label7 = new Label();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
-            ID_promocion = new DataGridViewTextBoxColumn();
-            Nombre_promocion = new DataGridViewTextBoxColumn();
-            Fecha_promocion = new DataGridViewTextBoxColumn();
-            Descuento_promocion = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TablaPromociones).BeginInit();
             SuspendLayout();
             // 
             // comboBox1
@@ -139,18 +135,17 @@
             label1.TabIndex = 36;
             label1.Text = "Promociones";
             // 
-            // dataGridView1
+            // TablaPromociones
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_promocion, Nombre_promocion, Fecha_promocion, Descuento_promocion });
-            dataGridView1.Location = new Point(12, 67);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(770, 229);
-            dataGridView1.TabIndex = 35;
+            TablaPromociones.AllowUserToAddRows = false;
+            TablaPromociones.AllowUserToDeleteRows = false;
+            TablaPromociones.BackgroundColor = SystemColors.ButtonHighlight;
+            TablaPromociones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaPromociones.Location = new Point(12, 67);
+            TablaPromociones.Name = "TablaPromociones";
+            TablaPromociones.ReadOnly = true;
+            TablaPromociones.Size = new Size(770, 229);
+            TablaPromociones.TabIndex = 35;
             // 
             // label8
             // 
@@ -209,34 +204,6 @@
             textBox2.Size = new Size(174, 23);
             textBox2.TabIndex = 64;
             // 
-            // ID_promocion
-            // 
-            ID_promocion.HeaderText = "ID";
-            ID_promocion.Name = "ID_promocion";
-            ID_promocion.ReadOnly = true;
-            ID_promocion.Width = 50;
-            // 
-            // Nombre_promocion
-            // 
-            Nombre_promocion.HeaderText = "Nombre";
-            Nombre_promocion.Name = "Nombre_promocion";
-            Nombre_promocion.ReadOnly = true;
-            Nombre_promocion.Width = 240;
-            // 
-            // Fecha_promocion
-            // 
-            Fecha_promocion.HeaderText = "Fecha de termino";
-            Fecha_promocion.Name = "Fecha_promocion";
-            Fecha_promocion.ReadOnly = true;
-            Fecha_promocion.Width = 240;
-            // 
-            // Descuento_promocion
-            // 
-            Descuento_promocion.HeaderText = "Descuento";
-            Descuento_promocion.Name = "Descuento_promocion";
-            Descuento_promocion.ReadOnly = true;
-            Descuento_promocion.Width = 240;
-            // 
             // VentanaPromociones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -257,11 +224,12 @@
             Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(TablaPromociones);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "VentanaPromociones";
             Text = "REGISTRO DE PROMOCIONES";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += VentanaPromociones_Load;
+            ((System.ComponentModel.ISupportInitialize)TablaPromociones).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -276,16 +244,12 @@
         private Button button8;
         private Button button7;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView TablaPromociones;
         private Label label8;
         private TextBox textBox5;
         private Label label5;
         private Label label7;
         private TextBox textBox3;
         private TextBox textBox2;
-        private DataGridViewTextBoxColumn ID_promocion;
-        private DataGridViewTextBoxColumn Nombre_promocion;
-        private DataGridViewTextBoxColumn Fecha_promocion;
-        private DataGridViewTextBoxColumn Descuento_promocion;
     }
 }

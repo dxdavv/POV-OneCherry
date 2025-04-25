@@ -147,6 +147,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "VentanaVenta";
             Text = "INFORMACIÓN DE VENTA";
+            Load += VentanaVenta_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

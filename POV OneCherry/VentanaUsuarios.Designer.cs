@@ -33,10 +33,7 @@
             button9 = new Button();
             button8 = new Button();
             button7 = new Button();
-            dataGridView1 = new DataGridView();
-            Usuario_us = new DataGridViewTextBoxColumn();
-            password_us = new DataGridViewTextBoxColumn();
-            Tipo_usuario = new DataGridViewTextBoxColumn();
+            TablaUsuarios = new DataGridView();
             label1 = new Label();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
@@ -45,7 +42,7 @@
             label4 = new Label();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TablaUsuarios).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -109,39 +106,17 @@
             button7.Text = "📥Agregar";
             button7.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // TablaUsuarios
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Usuario_us, password_us, Tipo_usuario });
-            dataGridView1.Location = new Point(44, 70);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(750, 225);
-            dataGridView1.TabIndex = 34;
-            // 
-            // Usuario_us
-            // 
-            Usuario_us.HeaderText = "Usuario";
-            Usuario_us.Name = "Usuario_us";
-            Usuario_us.ReadOnly = true;
-            Usuario_us.Width = 300;
-            // 
-            // password_us
-            // 
-            password_us.HeaderText = "Contraseña";
-            password_us.Name = "password_us";
-            password_us.ReadOnly = true;
-            password_us.Width = 300;
-            // 
-            // Tipo_usuario
-            // 
-            Tipo_usuario.HeaderText = "Tipo";
-            Tipo_usuario.Name = "Tipo_usuario";
-            Tipo_usuario.ReadOnly = true;
-            Tipo_usuario.Width = 110;
+            TablaUsuarios.AllowUserToAddRows = false;
+            TablaUsuarios.AllowUserToDeleteRows = false;
+            TablaUsuarios.BackgroundColor = SystemColors.ButtonHighlight;
+            TablaUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaUsuarios.Location = new Point(44, 70);
+            TablaUsuarios.Name = "TablaUsuarios";
+            TablaUsuarios.ReadOnly = true;
+            TablaUsuarios.Size = new Size(750, 225);
+            TablaUsuarios.TabIndex = 34;
             // 
             // label1
             // 
@@ -179,7 +154,7 @@
             label3.Name = "label3";
             label3.Size = new Size(74, 28);
             label3.TabIndex = 43;
-            label3.Text = "Usuario"; 
+            label3.Text = "Usuario";
             // 
             // label5
             // 
@@ -243,12 +218,13 @@
             Controls.Add(button9);
             Controls.Add(button8);
             Controls.Add(button7);
-            Controls.Add(dataGridView1);
+            Controls.Add(TablaUsuarios);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Usuarios";
             Text = "USUARIOS";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += Usuarios_Load;
+            ((System.ComponentModel.ISupportInitialize)TablaUsuarios).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -259,15 +235,12 @@
         private Button button9;
         private Button button8;
         private Button button7;
-        private DataGridView dataGridView1;
+        private DataGridView TablaUsuarios;
         private Label label1;
         private TextBox textBox2;
         private TextBox textBox3;
         private Label label3;
         private Label label5;
-        private DataGridViewTextBoxColumn Usuario_us;
-        private DataGridViewTextBoxColumn password_us;
-        private DataGridViewTextBoxColumn Tipo_usuario;
         private Label label4;
         private ComboBox comboBox1;
         private ComboBox comboBox2;

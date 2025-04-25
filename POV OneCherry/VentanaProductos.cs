@@ -27,7 +27,8 @@ namespace POV_OneCherry
             string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
 
             // SQL query to fetch product data
-            string query = "SELECT * FROM Clientes";
+            string query = "SELECT Productos.ID_Productos AS ID_Prod, Productos.NombreProducto AS Nombre_Prod, Productos.Precio AS Precio, Productos.Stock AS Stock, Categorias.NombreCategoria AS Categoria FROM Productos " +
+                "JOIN Categorias ON Productos.ID_Categorias = Categorias.ID_Categorias";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -37,7 +38,7 @@ namespace POV_OneCherry
                 adapter.Fill(dataTable);
 
                 // Bind data to the DataGridView
-                dataGridView1.DataSource = dataTable;
+                TablaProductos.DataSource = dataTable;
                 connection.Close();
             }
         }
