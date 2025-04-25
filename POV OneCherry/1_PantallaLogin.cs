@@ -18,33 +18,30 @@ namespace POV_OneCherry
         }
 
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Salir(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void botonAdmin(object sender, EventArgs e)
         {
             Form admin = new LoginAdmin();
-            admin.ShowDialog();
+            admin.Show();
+            this.Hide();
+            admin.FormClosed += onCloseChild;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void botonEmpleado(object sender, EventArgs e)
         {
             Form empleado = new LoginEmpleado();
-            empleado.ShowDialog();
-            new LoginEmpleado().ShowDialog();
+            empleado.Show();
+            this.Hide();
+            empleado.FormClosed += onCloseChild;
         }
-
-        private void button2_Click_1(object sender, EventArgs e)
+        private void onCloseChild(object? sender, FormClosedEventArgs e)
         {
-            Form empleado = new Empleado();
-            empleado.ShowDialog();
+            this.Show();
         }
 
-        private void PrimerPantallaLogin_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -29,78 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginEmpleado));
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            label2 = new Label();
-            label3 = new Label();
             pictureBox1 = new PictureBox();
+            pwdInput = new TextBox();
+            usrInput = new TextBox();
+            exitButton = new Button();
+            loginButton = new Button();
+            label3 = new Label();
+            label2 = new Label();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = SystemColors.ButtonHighlight;
-            textBox1.Location = new Point(286, 127);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(151, 23);
-            textBox1.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = SystemColors.ButtonHighlight;
-            textBox2.Location = new Point(328, 193);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(151, 23);
-            textBox2.TabIndex = 8;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Crimson;
-            button1.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(355, 309);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 32);
-            button1.TabIndex = 9;
-            button1.Text = "Log in";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.OliveDrab;
-            button2.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(464, 309);
-            button2.Name = "button2";
-            button2.Size = new Size(100, 32);
-            button2.TabIndex = 10;
-            button2.Text = "Exit";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click_1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(182, 120);
-            label2.Name = "label2";
-            label2.Size = new Size(116, 31);
-            label2.TabIndex = 11;
-            label2.Text = "Usuario:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(182, 185);
-            label3.Name = "label3";
-            label3.Size = new Size(163, 31);
-            label3.TabIndex = 12;
-            label3.Text = "Contraseña:";
             // 
             // pictureBox1
             // 
@@ -116,14 +54,78 @@
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             // 
+            // pwdInput
+            // 
+            pwdInput.BackColor = SystemColors.ButtonHighlight;
+            pwdInput.Location = new Point(328, 202);
+            pwdInput.Name = "pwdInput";
+            pwdInput.Size = new Size(151, 23);
+            pwdInput.TabIndex = 20;
+            pwdInput.UseSystemPasswordChar = true;
+            // 
+            // usrInput
+            // 
+            usrInput.BackColor = SystemColors.ButtonHighlight;
+            usrInput.ForeColor = SystemColors.WindowText;
+            usrInput.Location = new Point(293, 129);
+            usrInput.Name = "usrInput";
+            usrInput.Size = new Size(151, 23);
+            usrInput.TabIndex = 19;
+            // 
+            // exitButton
+            // 
+            exitButton.BackColor = Color.OliveDrab;
+            exitButton.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            exitButton.ForeColor = SystemColors.ControlLightLight;
+            exitButton.Location = new Point(364, 264);
+            exitButton.Name = "exitButton";
+            exitButton.Size = new Size(100, 32);
+            exitButton.TabIndex = 18;
+            exitButton.Text = "Exit";
+            exitButton.UseVisualStyleBackColor = false;
+            exitButton.Click += Salir;
+            // 
+            // loginButton
+            // 
+            loginButton.BackColor = Color.Crimson;
+            loginButton.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            loginButton.ForeColor = SystemColors.ControlLightLight;
+            loginButton.Location = new Point(470, 264);
+            loginButton.Name = "loginButton";
+            loginButton.Size = new Size(100, 32);
+            loginButton.TabIndex = 17;
+            loginButton.Text = "Log in";
+            loginButton.UseVisualStyleBackColor = false;
+            loginButton.Click += logIn;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Sitka Heading", 20.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(180, 189);
+            label3.Name = "label3";
+            label3.Size = new Size(153, 39);
+            label3.TabIndex = 16;
+            label3.Text = "Contraseña:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Sitka Heading", 20.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(180, 121);
+            label2.Name = "label2";
+            label2.Size = new Size(112, 39);
+            label2.TabIndex = 15;
+            label2.Text = "Usuario:";
+            // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Sitka Heading", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlText;
             label1.ImageAlign = ContentAlignment.TopCenter;
-            label1.Location = new Point(176, 15);
+            label1.Location = new Point(171, 10);
             label1.MaximumSize = new Size(248, 37);
             label1.MinimumSize = new Size(248, 37);
             label1.Name = "label1";
@@ -137,35 +139,38 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
-            ClientSize = new Size(584, 361);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(584, 311);
+            Controls.Add(pwdInput);
+            Controls.Add(usrInput);
+            Controls.Add(exitButton);
+            Controls.Add(loginButton);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(label1);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            MaximumSize = new Size(600, 400);
-            MinimumSize = new Size(600, 400);
+            MaximumSize = new Size(600, 350);
+            MinimumSize = new Size(600, 350);
             Name = "LoginEmpleado";
+<<<<<<< HEAD
             Text = "Log in employee";
             // Load += LoginEmpleado_Load;
+=======
+            Text = "LOG IN EMPLOYEE";
+>>>>>>> b83a3d0dc87083ca2956d2ff6849e91a1f8691a6
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox textBox1;
-        private TextBox textBox2;
-        protected internal Button button1;
-        private Button button2;
-        private Label label2;
-        private Label label3;
         private PictureBox pictureBox1;
+        private TextBox pwdInput;
+        private TextBox usrInput;
+        private Button exitButton;
+        protected internal Button loginButton;
+        private Label label3;
+        private Label label2;
         private Label label1;
     }
 }

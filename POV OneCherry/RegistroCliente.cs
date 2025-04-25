@@ -31,5 +31,10 @@ namespace POV_OneCherry
         {
 
         }
+
+        private void RegistroCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

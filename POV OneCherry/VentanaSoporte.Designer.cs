@@ -1,6 +1,6 @@
 ﻿namespace POV_OneCherry
 {
-    partial class PaginaSoporte
+    partial class VentanaSoporte
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaginaSoporte));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaSoporte));
             button2 = new Button();
             label2 = new Label();
             label1 = new Label();
@@ -43,7 +43,7 @@
             // button2
             // 
             button2.BackColor = Color.Crimson;
-            button2.Font = new Font("Goudy Old Style", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Sitka Heading", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlLightLight;
             button2.Location = new Point(74, 164);
             button2.Name = "button2";
@@ -55,10 +55,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(12, 21);
+            label2.Font = new Font("Sitka Heading", 15.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(2, 19);
             label2.Name = "label2";
-            label2.Size = new Size(155, 22);
+            label2.Size = new Size(194, 30);
             label2.TabIndex = 12;
             label2.Text = "Numero de contacto:";
             // 
@@ -105,14 +105,14 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Goudy Old Style", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.Location = new Point(12, 137);
+            label4.Font = new Font("Sitka Heading", 15.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(2, 131);
             label4.Name = "label4";
-            label4.Size = new Size(145, 22);
+            label4.Size = new Size(180, 30);
             label4.TabIndex = 17;
             label4.Text = "Acceder al manual:";
             // 
-            // PaginaSoporte
+            // VentanaSoporte
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -125,11 +125,11 @@
             Controls.Add(label1);
             Controls.Add(label2);
             Controls.Add(button2);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximumSize = new Size(300, 250);
             MinimumSize = new Size(300, 250);
-            Name = "PaginaSoporte";
-            Text = "Soporte";
+            Name = "VentanaSoporte";
+            Text = "SOPORTE";
             Load += Form6_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

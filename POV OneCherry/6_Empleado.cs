@@ -11,11 +11,17 @@ using System.Data.SqlClient;
 
 namespace POV_OneCherry
 {
-    public partial class VentanaProductos : Form
+    public partial class Empleado : Form
     {
-        public VentanaProductos()
+        public Empleado()
         {
             InitializeComponent();
+        }
+
+        private void botonAgregarCliente(object sender, EventArgs e)
+        {
+            Form agregar = new RegistroCliente();
+            agregar.ShowDialog();
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -35,24 +41,13 @@ namespace POV_OneCherry
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
+                TablaClientes.DataSource = null; // Clear existing data source to avoid conflicts
 
                 // Bind data to the DataGridView
-                dataGridView1.DataSource = dataTable;
+                TablaClientes.DataSource = dataTable;
                 connection.Close();
             }
         }
 
-        private void onCloseChild(object? sender, FormClosedEventArgs e)
-        {
-            this.Show();
-        }
-
-        private void botonCategorias(object sender, EventArgs e)
-        {
-            Form categorias = new VentanaCategoría();
-            categorias.Show();
-            this.Hide();
-            categorias.FormClosed += onCloseChild;
-        }
     }
 }
