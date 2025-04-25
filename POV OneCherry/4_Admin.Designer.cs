@@ -226,7 +226,7 @@
             button2.BackColor = Color.Crimson;
             button2.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(0, 75);
+            button2.Location = new Point(1, 45);
             button2.Name = "button2";
             button2.Size = new Size(130, 30);
             button2.TabIndex = 1;
