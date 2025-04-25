@@ -29,9 +29,9 @@ namespace POV_OneCherry
                 MessageBox.Show("Contraseña incorrecta");
                 return;
             }
-            this.SendToBack();
+            //this.SendToBack();
             // this.SendToBack(); oculta esta ventana para no estorbar en las demas
-            new Administrador().Show();
+            new Administrador().ShowDialog();
             // este new Form2().Show(); es para usar la ventan siguiente
             // sin tener que crear un objeto y se utiliza Show()
             // para que se muestre

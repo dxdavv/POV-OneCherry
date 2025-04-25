@@ -51,12 +51,26 @@
             label1 = new Label();
             button6 = new Button();
             label4 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
+            button9 = new Button();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            button9 = new Button();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            button9 = new Button();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            button9 = new Button();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -155,6 +169,7 @@
             button1.TabIndex = 4;
             button1.Text = "Soporte";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // Productos
             // 
@@ -187,12 +202,12 @@
             button2.BackColor = Color.Crimson;
             button2.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(1, 75);
+            // textBox6
             button2.Name = "button2";
             button2.Size = new Size(102, 30);
             button2.TabIndex = 1;
             button2.Text = "Clientes";
-            button2.UseVisualStyleBackColor = false;
+            // button6
             // 
             // ButtonProveedor
             // 
@@ -201,28 +216,8 @@
             ButtonProveedor.ForeColor = SystemColors.ControlLightLight;
             ButtonProveedor.Location = new Point(1, 45);
             ButtonProveedor.Name = "ButtonProveedor";
-            ButtonProveedor.Size = new Size(102, 30);
-            ButtonProveedor.TabIndex = 0;
-            ButtonProveedor.Text = "Proveedores";
-            ButtonProveedor.UseVisualStyleBackColor = false;
-            ButtonProveedor.Click += ButtonProveedor_Click;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(223, 340);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(182, 23);
-            textBox6.TabIndex = 29;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(14, 340);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(182, 23);
-            textBox5.TabIndex = 28;
-            // 
             // textBox4
-            // 
+            ButtonProveedor.TabIndex = 0;
             textBox4.Location = new Point(571, 340);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(182, 23);
@@ -273,9 +268,9 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(182, 23);
             textBox1.TabIndex = 22;
-            // 
+            textBox2.Location = new Point(223, 287);
             // button7
-            // 
+            textBox2.Size = new Size(182, 23);
             button7.BackColor = Color.Crimson;
             button7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button7.ForeColor = SystemColors.ControlLightLight;
@@ -286,9 +281,9 @@
             button7.Text = "Agregar usuario";
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
-            // 
+            button8.Name = "button8";
             // dataGridView1
-            // 
+            button8.TabIndex = 24;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
@@ -298,22 +293,22 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(750, 199);
             dataGridView1.TabIndex = 4;
-            // 
+            textBox2.TextChanged += textBox2_TextChanged;
             // label1
-            // 
+            button9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Goudy Old Style", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(14, 14);
             label1.Margin = new Padding(5);
             label1.Name = "label1";
-            label1.Size = new Size(160, 34);
+            label1.Size = new Size(166, 33);
             label1.TabIndex = 3;
             label1.Text = "USUARIOS";
             label1.Click += label1_Click;
-            // 
+            button9.TabIndex = 25;
             // button6
-            // 
+            button9.UseVisualStyleBackColor = false;
             button6.BackColor = Color.OliveDrab;
             button6.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button6.ForeColor = SystemColors.ControlLightLight;
@@ -323,9 +318,9 @@
             button6.TabIndex = 2;
             button6.Text = "➡️";
             button6.UseVisualStyleBackColor = false;
-            // 
+            textBox3.Name = "textBox3";
             // label4
-            // 
+            textBox3.TabIndex = 26;
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -336,80 +331,38 @@
             label4.TabIndex = 1;
             label4.Text = "Nombre Apellido";
             label4.Click += label4_Click;
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(182, 23);
+            textBox4.TabIndex = 27;
+            button9.UseVisualStyleBackColor = false;
+            // textBox5
+            // textBox3
+            textBox5.Location = new Point(14, 340);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(182, 23);
+            textBox5.TabIndex = 28;
+            textBox3.TabIndex = 26;
+            // textBox6
+            // textBox4
+            textBox6.Location = new Point(223, 340);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(182, 23);
+            textBox6.TabIndex = 29;
+            textBox4.TabIndex = 27;
             // 
-            // label2
+            // textBox5
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(28, 263);
-            label2.Margin = new Padding(5);
-            label2.Name = "label2";
-            label2.Size = new Size(63, 23);
-            label2.TabIndex = 30;
-            label2.Text = "Nombre";
-            label2.Click += label2_Click;
+            textBox5.Location = new Point(14, 340);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(182, 23);
+            textBox5.TabIndex = 28;
             // 
-            // label3
+            // textBox6
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(223, 263);
-            label3.Margin = new Padding(5);
-            label3.Name = "label3";
-            label3.Size = new Size(62, 23);
-            label3.TabIndex = 31;
-            label3.Text = "Apellido";
-            label3.Click += label3_Click;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(571, 263);
-            label5.Margin = new Padding(5);
-            label5.Name = "label5";
-            label5.Size = new Size(63, 23);
-            label5.TabIndex = 32;
-            label5.Text = "Usuario";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(571, 318);
-            label6.Margin = new Padding(5);
-            label6.Name = "label6";
-            label6.Size = new Size(86, 23);
-            label6.TabIndex = 33;
-            label6.Text = "Contraseña";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(14, 318);
-            label7.Margin = new Padding(5);
-            label7.Name = "label7";
-            label7.Size = new Size(54, 23);
-            label7.TabIndex = 34;
-            label7.Text = "Correo";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(223, 318);
-            label8.Margin = new Padding(5);
-            label8.Name = "label8";
-            label8.Size = new Size(66, 23);
-            label8.TabIndex = 35;
-            label8.Text = "Telefono";
+            textBox6.Location = new Point(223, 340);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(182, 23);
+            textBox6.TabIndex = 29;
             // 
             // Administrador
             // 
