@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace POV_OneCherry
 {
-    public partial class VentanaFacturas : Form
+    public partial class VentanaCategoría : Form
     {
-        public VentanaFacturas()
+        public VentanaCategoría()
         {
             InitializeComponent();
         }

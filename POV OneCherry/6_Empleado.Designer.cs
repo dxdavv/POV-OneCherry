@@ -40,6 +40,7 @@
             button6 = new Button();
             label4 = new Label();
             splitContainer2 = new SplitContainer();
+            button8 = new Button();
             label8 = new Label();
             numericUpDown1 = new NumericUpDown();
             button2 = new Button();
@@ -61,7 +62,16 @@
             Precio_unitario = new DataGridViewTextBoxColumn();
             Categoría = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
+            button9 = new Button();
             button3 = new Button();
+            comboBox3 = new ComboBox();
+            textBox9 = new TextBox();
+            label13 = new Label();
+            textBox6 = new TextBox();
+            label12 = new Label();
+            textBox5 = new TextBox();
+            label11 = new Label();
+            label10 = new Label();
             textBox3 = new TextBox();
             label9 = new Label();
             dataGridView2 = new DataGridView();
@@ -71,7 +81,24 @@
             Subtotal = new DataGridViewTextBoxColumn();
             label3 = new Label();
             label2 = new Label();
-            button8 = new Button();
+            comboBox4 = new ComboBox();
+            textBox4 = new TextBox();
+            label14 = new Label();
+            textBox10 = new TextBox();
+            label17 = new Label();
+            textBox11 = new TextBox();
+            label18 = new Label();
+            label19 = new Label();
+            textBox12 = new TextBox();
+            label20 = new Label();
+            dataGridView3 = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            label21 = new Label();
+            label22 = new Label();
+            button11 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -85,6 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)TablaClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -240,15 +268,50 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.BackColor = Color.LavenderBlush;
+            splitContainer2.Panel2.Controls.Add(button9);
             splitContainer2.Panel2.Controls.Add(button3);
+            splitContainer2.Panel2.Controls.Add(comboBox3);
+            splitContainer2.Panel2.Controls.Add(textBox9);
+            splitContainer2.Panel2.Controls.Add(label13);
+            splitContainer2.Panel2.Controls.Add(textBox6);
+            splitContainer2.Panel2.Controls.Add(label12);
+            splitContainer2.Panel2.Controls.Add(textBox5);
+            splitContainer2.Panel2.Controls.Add(label11);
+            splitContainer2.Panel2.Controls.Add(label10);
             splitContainer2.Panel2.Controls.Add(textBox3);
             splitContainer2.Panel2.Controls.Add(label9);
             splitContainer2.Panel2.Controls.Add(dataGridView2);
             splitContainer2.Panel2.Controls.Add(label3);
             splitContainer2.Panel2.Controls.Add(label2);
+            splitContainer2.Panel2.Controls.Add(comboBox4);
+            splitContainer2.Panel2.Controls.Add(textBox4);
+            splitContainer2.Panel2.Controls.Add(label14);
+            splitContainer2.Panel2.Controls.Add(textBox10);
+            splitContainer2.Panel2.Controls.Add(label17);
+            splitContainer2.Panel2.Controls.Add(textBox11);
+            splitContainer2.Panel2.Controls.Add(label18);
+            splitContainer2.Panel2.Controls.Add(label19);
+            splitContainer2.Panel2.Controls.Add(textBox12);
+            splitContainer2.Panel2.Controls.Add(label20);
+            splitContainer2.Panel2.Controls.Add(dataGridView3);
+            splitContainer2.Panel2.Controls.Add(label21);
+            splitContainer2.Panel2.Controls.Add(label22);
             splitContainer2.Size = new Size(984, 610);
             splitContainer2.SplitterDistance = 513;
             splitContainer2.TabIndex = 0;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.Crimson;
+            button8.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button8.ForeColor = SystemColors.ControlLightLight;
+            button8.Location = new Point(430, 331);
+            button8.Name = "button8";
+            button8.Size = new Size(80, 35);
+            button8.TabIndex = 48;
+            button8.Text = "🔎Buscar";
+            button8.TextAlign = ContentAlignment.TopCenter;
+            button8.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -449,17 +512,109 @@
             Stock.Name = "Stock";
             Stock.Width = 50;
             // 
+            // button9
+            // 
+            button9.BackColor = Color.Crimson;
+            button9.Font = new Font("Sitka Small", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button9.ForeColor = SystemColors.ControlLightLight;
+            button9.Location = new Point(282, 428);
+            button9.Name = "button9";
+            button9.Size = new Size(30, 30);
+            button9.TabIndex = 49;
+            button9.Text = "↩️";
+            button9.TextAlign = ContentAlignment.TopCenter;
+            button9.UseVisualStyleBackColor = false;
+            // 
             // button3
             // 
             button3.BackColor = Color.Crimson;
             button3.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ControlLightLight;
-            button3.Location = new Point(301, 563);
+            button3.Location = new Point(263, 559);
             button3.Name = "button3";
-            button3.Size = new Size(160, 39);
-            button3.TabIndex = 48;
-            button3.Text = "Finalizar venta";
+            button3.Size = new Size(192, 39);
+            button3.TabIndex = 49;
+            button3.Text = "✅Finalizar venta";
             button3.UseVisualStyleBackColor = false;
+            // 
+            // comboBox3
+            // 
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "ID", "Nombre", "Teléfono", "Email" });
+            comboBox3.Location = new Point(123, 331);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(165, 23);
+            comboBox3.TabIndex = 49;
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(88, 481);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(168, 23);
+            textBox9.TabIndex = 55;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.Transparent;
+            label13.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.Location = new Point(13, 476);
+            label13.Margin = new Padding(5);
+            label13.Name = "label13";
+            label13.Size = new Size(78, 28);
+            label13.TabIndex = 56;
+            label13.Text = "Cambio:";
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(108, 433);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(168, 23);
+            textBox6.TabIndex = 53;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(13, 428);
+            label12.Margin = new Padding(5);
+            label12.Name = "label12";
+            label12.Size = new Size(87, 28);
+            label12.TabIndex = 54;
+            label12.Text = "Paga con:";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(134, 384);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(168, 23);
+            textBox5.TabIndex = 51;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(13, 379);
+            label11.Margin = new Padding(5);
+            label11.Name = "label11";
+            label11.Size = new Size(121, 28);
+            label11.TabIndex = 52;
+            label11.Text = "Total a pagar:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(13, 326);
+            label10.Margin = new Padding(5);
+            label10.Name = "label10";
+            label10.Size = new Size(102, 28);
+            label10.TabIndex = 50;
+            label10.Text = "Promoción:";
             // 
             // textBox3
             // 
@@ -530,18 +685,165 @@
             label2.TabIndex = 14;
             label2.Text = "Venta, cliente:";
             // 
-            // button8
+            // comboBox4
             // 
-            button8.BackColor = Color.Crimson;
-            button8.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button8.ForeColor = SystemColors.ControlLightLight;
-            button8.Location = new Point(430, 331);
-            button8.Name = "button8";
-            button8.Size = new Size(80, 35);
-            button8.TabIndex = 48;
-            button8.Text = "🔎Buscar";
-            button8.TextAlign = ContentAlignment.TopCenter;
-            button8.UseVisualStyleBackColor = false;
+            comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Items.AddRange(new object[] { "ID", "Nombre", "Teléfono", "Email" });
+            comboBox4.Location = new Point(123, 331);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(165, 23);
+            comboBox4.TabIndex = 49;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(88, 481);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(168, 23);
+            textBox4.TabIndex = 55;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.BackColor = Color.Transparent;
+            label14.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.Location = new Point(13, 476);
+            label14.Margin = new Padding(5);
+            label14.Name = "label14";
+            label14.Size = new Size(78, 28);
+            label14.TabIndex = 56;
+            label14.Text = "Cambio:";
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(108, 433);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(168, 23);
+            textBox10.TabIndex = 53;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.BackColor = Color.Transparent;
+            label17.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label17.Location = new Point(13, 428);
+            label17.Margin = new Padding(5);
+            label17.Name = "label17";
+            label17.Size = new Size(87, 28);
+            label17.TabIndex = 54;
+            label17.Text = "Paga con:";
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(134, 384);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(168, 23);
+            textBox11.TabIndex = 51;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.BackColor = Color.Transparent;
+            label18.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label18.Location = new Point(13, 379);
+            label18.Margin = new Padding(5);
+            label18.Name = "label18";
+            label18.Size = new Size(121, 28);
+            label18.TabIndex = 52;
+            label18.Text = "Total a pagar:";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.BackColor = Color.Transparent;
+            label19.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label19.Location = new Point(13, 326);
+            label19.Margin = new Padding(5);
+            label19.Name = "label19";
+            label19.Size = new Size(102, 28);
+            label19.TabIndex = 50;
+            label19.Text = "Promoción:";
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(74, 278);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(168, 23);
+            textBox12.TabIndex = 48;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.BackColor = Color.Transparent;
+            label20.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label20.Location = new Point(13, 273);
+            label20.Margin = new Padding(5);
+            label20.Name = "label20";
+            label20.Size = new Size(63, 28);
+            label20.TabIndex = 48;
+            label20.Text = "Fecha:";
+            // 
+            // dataGridView3
+            // 
+            dataGridView3.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
+            dataGridView3.Location = new Point(13, 40);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.Size = new Size(432, 220);
+            dataGridView3.TabIndex = 16;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "Producto";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "Precio";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.HeaderText = "Cantidad";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.HeaderText = "Subtotal";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label21.Location = new Point(134, 9);
+            label21.Name = "label21";
+            label21.Size = new Size(146, 28);
+            label21.TabIndex = 15;
+            label21.Text = "Nombre Apellido";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.Location = new Point(13, 9);
+            label22.Name = "label22";
+            label22.Size = new Size(124, 28);
+            label22.TabIndex = 14;
+            label22.Text = "Venta, cliente:";
+            // 
+            // button11
+            // 
+            button11.BackColor = Color.OliveDrab;
+            button11.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button11.ForeColor = SystemColors.ControlLightLight;
+            button11.Location = new Point(938, 6);
+            button11.Name = "button11";
+            button11.Size = new Size(40, 30);
+            button11.TabIndex = 4;
+            button11.Text = "➡️";
+            button11.UseVisualStyleBackColor = false;
             // 
             // Empleado
             // 
@@ -553,6 +855,7 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "Empleado";
             Text = "EMPLEADO";
+            Load += Form3_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
@@ -569,6 +872,7 @@
             ((System.ComponentModel.ISupportInitialize)TablaClientes).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             ResumeLayout(false);
         }
 
@@ -608,7 +912,6 @@
         private Button button5;
         private TextBox textBox8;
         private Label label16;
-        private Button button3;
         private TextBox textBox3;
         private Label label9;
         private DataGridViewTextBoxColumn ID;
@@ -617,5 +920,33 @@
         private DataGridViewTextBoxColumn Categoría;
         private DataGridViewTextBoxColumn Stock;
         private Button button8;
+        private Label label10;
+        private TextBox textBox9;
+        private Label label13;
+        private TextBox textBox6;
+        private Label label12;
+        private TextBox textBox5;
+        private Label label11;
+        private ComboBox comboBox3;
+        private ComboBox comboBox4;
+        private TextBox textBox4;
+        private Label label14;
+        private TextBox textBox10;
+        private Label label17;
+        private TextBox textBox11;
+        private Label label18;
+        private Label label19;
+        private TextBox textBox12;
+        private Label label20;
+        private DataGridView dataGridView3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private Label label21;
+        private Label label22;
+        private Button button11;
+        private Button button3;
+        private Button button9;
     }
 }

@@ -179,8 +179,7 @@
             label3.Name = "label3";
             label3.Size = new Size(74, 28);
             label3.TabIndex = 43;
-            label3.Text = "Usuario";
-            label3.Click += label3_Click;
+            label3.Text = "Usuario"; 
             // 
             // label5
             // 
@@ -249,7 +248,6 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Usuarios";
             Text = "USUARIOS";
-            Load += Usuarios_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

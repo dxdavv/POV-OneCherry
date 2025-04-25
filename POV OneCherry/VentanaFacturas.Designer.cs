@@ -78,7 +78,6 @@
             button10.Text = "🔎Buscar";
             button10.TextAlign = ContentAlignment.TopCenter;
             button10.UseVisualStyleBackColor = false;
-            button10.Click += button10_Click;
             // 
             // textBox1
             // 
@@ -97,7 +96,7 @@
             TablaFacturas.Location = new Point(24, 81);
             TablaFacturas.Name = "TablaFacturas";
             TablaFacturas.ReadOnly = true;
-            TablaFacturas.Size = new Size(658, 253);
+            TablaFacturas.Size = new Size(676, 253);
             TablaFacturas.TabIndex = 35;
             // 
             // ID_venta
@@ -148,27 +147,27 @@
             button7.Name = "button7";
             button7.Size = new Size(161, 43);
             button7.TabIndex = 40;
-            button7.Text = "Generar factura";
+            button7.Text = "⏬Factura pdf";
             button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Sitka Heading", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(257, 0);
+            label1.Font = new Font("Sitka Heading", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(4, 3);
+            label1.Margin = new Padding(5);
             label1.Name = "label1";
-            label1.Size = new Size(136, 35);
-            label1.TabIndex = 42;
-            label1.Text = "Elegir venta";
+            label1.Size = new Size(363, 42);
+            label1.TabIndex = 68;
+            label1.Text = "Ventas para realizar facturas";
             // 
             // VentanaFacturas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
-            ClientSize = new Size(734, 411);
+            ClientSize = new Size(734, 391);
             Controls.Add(label1);
             Controls.Add(button7);
             Controls.Add(comboBox1);
@@ -192,12 +191,12 @@
         private TextBox textBox1;
         private DataGridView TablaFacturas;
         private Button button7;
-        private Label label1;
         private DataGridViewTextBoxColumn ID_venta;
         private DataGridViewTextBoxColumn Fecha_venta;
         private DataGridViewTextBoxColumn Productos_venta;
         private DataGridViewTextBoxColumn Precio_uni;
         private DataGridViewTextBoxColumn Cantidad_venta;
         private DataGridViewTextBoxColumn Precio_total_venta;
+        private Label label1;
     }
 }

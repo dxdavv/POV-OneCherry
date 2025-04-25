@@ -19,12 +19,12 @@ namespace POV_OneCherry
 
         private void logIn(object sender, EventArgs e)
         {
-            if (usrText.Text != "def")
+            if (usrInput.Text != "def")
             {
                 MessageBox.Show("Usuario incorrecto");
                 return;
             }
-            if (pwdText.Text != "ault")
+            if (pwdInput.Text != "ault")
             {
                 MessageBox.Show("Contraseña incorrecta");
                 return;
@@ -37,8 +37,8 @@ namespace POV_OneCherry
 
         private void onClosedChild(object? sender, FormClosedEventArgs e)
         {
-            usrText.Clear();
-            pwdText.Clear();
+            usrInput.Clear();
+            pwdInput.Clear();
             this.Show();
         }
 

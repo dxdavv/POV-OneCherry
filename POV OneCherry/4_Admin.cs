@@ -16,81 +16,17 @@ namespace POV_OneCherry
         {
             InitializeComponent();
         }
-
-        private void Form2_Load(object sender, EventArgs e)
+        private void onCloseChild(object? sender, FormClosedEventArgs e)
         {
-
+            this.Show();
         }
 
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        private void botonProductos(object sender, EventArgs e)
         {
-
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButtonProveedor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Productos_Click(object sender, EventArgs e)
-        {
-            //this.SendToBack();
-            new VentanaProductos().ShowDialog();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new VentanaSoporte().ShowDialog();
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
+            Form productos = new VentanaProductos();
+            productos.Show();
+            this.Hide();
+            productos.FormClosed += onCloseChild;
         }
 
         private void botonVenta(object sender, EventArgs e)
@@ -99,10 +35,6 @@ namespace POV_OneCherry
             venta.Show();
             this.Hide();
             venta.FormClosed += onCloseChild;
-        }
-        private void onCloseChild(object? sender, FormClosedEventArgs e)
-        {
-            this.Show();
         }
 
         private void botonUsuarios(object sender, EventArgs e)
@@ -127,6 +59,14 @@ namespace POV_OneCherry
             soporte.Show();
             this.Hide();
             soporte.FormClosed += onCloseChild;
+        }
+
+        private void botonComprasProveedor(object sender, EventArgs e)
+        {
+            Form compras = new VentanaComprasProv();
+            compras.Show();
+            this.Hide();
+            compras.FormClosed += onCloseChild;
         }
     }
 }

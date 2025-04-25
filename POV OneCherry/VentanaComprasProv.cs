@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace POV_OneCherry
 {
-    public partial class Form1: Form
+    public partial class VentanaComprasProv : Form
     {
-        public Form1()
+        public VentanaComprasProv()
         {
             InitializeComponent();
         }
+
     }
 }

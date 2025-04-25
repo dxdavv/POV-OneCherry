@@ -16,5 +16,18 @@ namespace POV_OneCherry
         {
             InitializeComponent();
         }
+
+        private void onCloseChild(object? sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
+
+        private void botonFacturas(object sender, EventArgs e)
+        {
+            Form facturas = new VentanaFacturas();
+            facturas.Show();
+            this.Hide();
+            facturas.FormClosed += onCloseChild;
+        }
     }
 }

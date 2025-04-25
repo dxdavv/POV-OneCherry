@@ -92,7 +92,6 @@
             splitContainer1.Panel1.Controls.Add(button3);
             splitContainer1.Panel1.Controls.Add(button2);
             splitContainer1.Panel1.Controls.Add(ButtonProveedor);
-            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
             // 
             // splitContainer1.Panel2
             // 
@@ -117,7 +116,6 @@
             splitContainer1.Panel2.Controls.Add(label1);
             splitContainer1.Panel2.Controls.Add(button6);
             splitContainer1.Panel2.Controls.Add(label4);
-            splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(984, 461);
             splitContainer1.SplitterDistance = 134;
             splitContainer1.TabIndex = 0;
@@ -172,7 +170,7 @@
             button4.TabIndex = 6;
             button4.Text = "\U0001f6d2Productos";
             button4.UseVisualStyleBackColor = false;
-            button4.Click += Productos_Click;
+            button4.Click += botonProductos;
             // 
             // pictureBox1
             // 
@@ -220,7 +218,6 @@
             button3.TabIndex = 2;
             button3.Text = "👤Empleados";
             button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -245,7 +242,6 @@
             ButtonProveedor.TabIndex = 0;
             ButtonProveedor.Text = "🚚Proveedores";
             ButtonProveedor.UseVisualStyleBackColor = false;
-            ButtonProveedor.Click += ButtonProveedor_Click;
             // 
             // button12
             // 
@@ -258,6 +254,7 @@
             button12.TabIndex = 64;
             button12.Text = "Compras a proveedor";
             button12.UseVisualStyleBackColor = false;
+            button12.Click += botonComprasProveedor;
             // 
             // label8
             // 
@@ -344,7 +341,6 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 30;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -413,7 +409,6 @@
             button7.TabIndex = 21;
             button7.Text = "📥Agregar";
             button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
             // 
             // dataGridView1
             // 
@@ -474,7 +469,6 @@
             label1.Size = new Size(204, 42);
             label1.TabIndex = 3;
             label1.Text = "PROVEEDORES";
-            label1.Click += label1_Click;
             // 
             // button6
             // 
@@ -487,7 +481,6 @@
             button6.TabIndex = 2;
             button6.Text = "➡️";
             button6.UseVisualStyleBackColor = false;
-            button6.Click += button6_Click;
             // 
             // label4
             // 
@@ -500,7 +493,6 @@
             label4.Size = new Size(146, 28);
             label4.TabIndex = 1;
             label4.Text = "Nombre Apellido";
-            label4.Click += label4_Click;
             // 
             // Administrador
             // 
@@ -515,7 +507,6 @@
             Name = "Administrador";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ADMIN";
-            Load += Form2_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             splitContainer1.Panel2.PerformLayout();

@@ -44,10 +44,10 @@
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Sitka Heading", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlText;
             label1.ImageAlign = ContentAlignment.TopCenter;
-            label1.Location = new Point(176, 15);
+            label1.Location = new Point(173, 9);
             label1.MaximumSize = new Size(248, 37);
             label1.MinimumSize = new Size(248, 37);
             label1.Name = "label1";
@@ -59,20 +59,20 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Sitka Heading", 20.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(182, 120);
             label2.Name = "label2";
-            label2.Size = new Size(116, 31);
+            label2.Size = new Size(112, 39);
             label2.TabIndex = 1;
             label2.Text = "Usuario:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(182, 185);
+            label3.Font = new Font("Sitka Heading", 20.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(182, 188);
             label3.Name = "label3";
-            label3.Size = new Size(163, 31);
+            label3.Size = new Size(153, 39);
             label3.TabIndex = 2;
             label3.Text = "Contraseña:";
             // 
@@ -81,7 +81,7 @@
             loginButton.BackColor = Color.Crimson;
             loginButton.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             loginButton.ForeColor = SystemColors.ControlLightLight;
-            loginButton.Location = new Point(355, 309);
+            loginButton.Location = new Point(472, 263);
             loginButton.Name = "loginButton";
             loginButton.Size = new Size(100, 32);
             loginButton.TabIndex = 3;
@@ -94,7 +94,7 @@
             exitButton.BackColor = Color.OliveDrab;
             exitButton.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             exitButton.ForeColor = SystemColors.ControlLightLight;
-            exitButton.Location = new Point(464, 309);
+            exitButton.Location = new Point(366, 263);
             exitButton.Name = "exitButton";
             exitButton.Size = new Size(100, 32);
             exitButton.TabIndex = 4;
@@ -120,7 +120,7 @@
             // 
             usrInput.BackColor = SystemColors.ButtonHighlight;
             usrInput.ForeColor = SystemColors.WindowText;
-            usrInput.Location = new Point(286, 127);
+            usrInput.Location = new Point(295, 128);
             usrInput.Name = "usrInput";
             usrInput.Size = new Size(151, 23);
             usrInput.TabIndex = 6;
@@ -128,7 +128,7 @@
             // pwdInput
             // 
             pwdInput.BackColor = SystemColors.ButtonHighlight;
-            pwdInput.Location = new Point(328, 193);
+            pwdInput.Location = new Point(330, 201);
             pwdInput.Name = "pwdInput";
             pwdInput.Size = new Size(151, 23);
             pwdInput.TabIndex = 7;
@@ -139,7 +139,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
-            ClientSize = new Size(584, 361);
+            ClientSize = new Size(584, 311);
             Controls.Add(pwdInput);
             Controls.Add(usrInput);
             Controls.Add(imagenPerrito);
@@ -149,8 +149,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            MaximumSize = new Size(600, 400);
-            MinimumSize = new Size(600, 400);
+            MaximumSize = new Size(600, 350);
+            MinimumSize = new Size(600, 350);
             Name = "LoginAdmin";
             Text = "LOG IN ADMIN";
             ((System.ComponentModel.ISupportInitialize)imagenPerrito).EndInit();

@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            ID_producto = new DataGridViewTextBoxColumn();
-            Nombre_producto = new DataGridViewTextBoxColumn();
-            Precio_producto = new DataGridViewTextBoxColumn();
-            Categoria_producto = new DataGridViewTextBoxColumn();
-            Stock_producto = new DataGridViewTextBoxColumn();
             label1 = new Label();
             button9 = new Button();
             button8 = new Button();
@@ -50,9 +45,8 @@
             label6 = new Label();
             textBox4 = new TextBox();
             comboBox2 = new ComboBox();
-            label7 = new Label();
-            textBox5 = new TextBox();
-            button4 = new Button();
+            button12 = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -62,46 +56,11 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_producto, Nombre_producto, Precio_producto, Categoria_producto, Stock_producto });
             dataGridView1.Location = new Point(12, 83);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(775, 177);
             dataGridView1.TabIndex = 0;
-            // 
-            // ID_producto
-            // 
-            ID_producto.HeaderText = "ID";
-            ID_producto.Name = "ID_producto";
-            ID_producto.ReadOnly = true;
-            ID_producto.Width = 50;
-            // 
-            // Nombre_producto
-            // 
-            Nombre_producto.HeaderText = "Nombre";
-            Nombre_producto.Name = "Nombre_producto";
-            Nombre_producto.ReadOnly = true;
-            Nombre_producto.Width = 200;
-            // 
-            // Precio_producto
-            // 
-            Precio_producto.HeaderText = "Precio";
-            Precio_producto.Name = "Precio_producto";
-            Precio_producto.ReadOnly = true;
-            Precio_producto.Width = 200;
-            // 
-            // Categoria_producto
-            // 
-            Categoria_producto.HeaderText = "Categoría";
-            Categoria_producto.Name = "Categoria_producto";
-            Categoria_producto.ReadOnly = true;
-            Categoria_producto.Width = 200;
-            // 
-            // Stock_producto
-            // 
-            Stock_producto.HeaderText = "Stock";
-            Stock_producto.Name = "Stock_producto";
-            Stock_producto.ReadOnly = true;
             // 
             // label1
             // 
@@ -271,37 +230,30 @@
             comboBox2.Size = new Size(284, 23);
             comboBox2.TabIndex = 53;
             // 
-            // label7
+            // button12
             // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(575, 268);
-            label7.Margin = new Padding(5);
-            label7.Name = "label7";
-            label7.Size = new Size(152, 28);
-            label7.TabIndex = 55;
-            label7.Text = "Agregar categoría";
+            button12.BackColor = Color.OliveDrab;
+            button12.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button12.ForeColor = SystemColors.ControlLightLight;
+            button12.Location = new Point(586, 335);
+            button12.Name = "button12";
+            button12.Size = new Size(160, 43);
+            button12.TabIndex = 85;
+            button12.Text = "⏬Descarga excel";
+            button12.UseVisualStyleBackColor = false;
             // 
-            // textBox5
+            // button1
             // 
-            textBox5.Location = new Point(575, 296);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(152, 23);
-            textBox5.TabIndex = 54;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.Crimson;
-            button4.Font = new Font("Sitka Small", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = SystemColors.ControlLightLight;
-            button4.Location = new Point(733, 290);
-            button4.Name = "button4";
-            button4.Size = new Size(30, 30);
-            button4.TabIndex = 56;
-            button4.Text = "+";
-            button4.TextAlign = ContentAlignment.TopCenter;
-            button4.UseVisualStyleBackColor = false;
+            button1.BackColor = Color.Crimson;
+            button1.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Location = new Point(586, 276);
+            button1.Name = "button1";
+            button1.Size = new Size(161, 43);
+            button1.TabIndex = 86;
+            button1.Text = "Lista de categorías";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += botonCategorias;
             // 
             // VentanaProductos
             // 
@@ -309,9 +261,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(799, 451);
-            Controls.Add(button4);
-            Controls.Add(label7);
-            Controls.Add(textBox5);
+            Controls.Add(button1);
+            Controls.Add(button12);
             Controls.Add(comboBox2);
             Controls.Add(label4);
             Controls.Add(label6);
@@ -349,11 +300,6 @@
         private Label label2;
         private Button button10;
         private TextBox textBox1;
-        private DataGridViewTextBoxColumn ID_producto;
-        private DataGridViewTextBoxColumn Nombre_producto;
-        private DataGridViewTextBoxColumn Precio_producto;
-        private DataGridViewTextBoxColumn Categoria_producto;
-        private DataGridViewTextBoxColumn Stock_producto;
         private Label label5;
         private Label label3;
         private TextBox textBox3;
@@ -362,8 +308,7 @@
         private Label label6;
         private TextBox textBox4;
         private ComboBox comboBox2;
-        private Label label7;
-        private TextBox textBox5;
-        private Button button4;
+        private Button button12;
+        private Button button1;
     }
 }

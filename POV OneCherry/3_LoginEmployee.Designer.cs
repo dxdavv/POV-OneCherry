@@ -29,42 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginEmpleado));
-            button1 = new Button();
-            button2 = new Button();
             pictureBox1 = new PictureBox();
-            pwdText = new TextBox();
-            usrText = new TextBox();
+            pwdInput = new TextBox();
+            usrInput = new TextBox();
+            exitButton = new Button();
+            loginButton = new Button();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Crimson;
-            button1.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(355, 309);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 32);
-            button1.TabIndex = 9;
-            button1.Text = "Log in";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += logIn;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.OliveDrab;
-            button2.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(464, 309);
-            button2.Name = "button2";
-            button2.Size = new Size(100, 32);
-            button2.TabIndex = 10;
-            button2.Text = "Exit";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += Salir;
             // 
             // pictureBox1
             // 
@@ -80,41 +54,67 @@
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             // 
-            // pwdText
+            // pwdInput
             // 
-            pwdText.BackColor = SystemColors.ButtonHighlight;
-            pwdText.Location = new Point(322, 196);
-            pwdText.Name = "pwdText";
-            pwdText.Size = new Size(151, 23);
-            pwdText.TabIndex = 18;
-            pwdText.UseSystemPasswordChar = true;
+            pwdInput.BackColor = SystemColors.ButtonHighlight;
+            pwdInput.Location = new Point(328, 202);
+            pwdInput.Name = "pwdInput";
+            pwdInput.Size = new Size(151, 23);
+            pwdInput.TabIndex = 20;
+            pwdInput.UseSystemPasswordChar = true;
             // 
-            // usrText
+            // usrInput
             // 
-            usrText.BackColor = SystemColors.ButtonHighlight;
-            usrText.ForeColor = SystemColors.WindowText;
-            usrText.Location = new Point(280, 130);
-            usrText.Name = "usrText";
-            usrText.Size = new Size(151, 23);
-            usrText.TabIndex = 17;
+            usrInput.BackColor = SystemColors.ButtonHighlight;
+            usrInput.ForeColor = SystemColors.WindowText;
+            usrInput.Location = new Point(293, 129);
+            usrInput.Name = "usrInput";
+            usrInput.Size = new Size(151, 23);
+            usrInput.TabIndex = 19;
+            // 
+            // exitButton
+            // 
+            exitButton.BackColor = Color.OliveDrab;
+            exitButton.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            exitButton.ForeColor = SystemColors.ControlLightLight;
+            exitButton.Location = new Point(364, 264);
+            exitButton.Name = "exitButton";
+            exitButton.Size = new Size(100, 32);
+            exitButton.TabIndex = 18;
+            exitButton.Text = "Exit";
+            exitButton.UseVisualStyleBackColor = false;
+            exitButton.Click += Salir;
+            // 
+            // loginButton
+            // 
+            loginButton.BackColor = Color.Crimson;
+            loginButton.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            loginButton.ForeColor = SystemColors.ControlLightLight;
+            loginButton.Location = new Point(470, 264);
+            loginButton.Name = "loginButton";
+            loginButton.Size = new Size(100, 32);
+            loginButton.TabIndex = 17;
+            loginButton.Text = "Log in";
+            loginButton.UseVisualStyleBackColor = false;
+            loginButton.Click += logIn;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(176, 188);
+            label3.Font = new Font("Sitka Heading", 20.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(180, 189);
             label3.Name = "label3";
-            label3.Size = new Size(163, 31);
+            label3.Size = new Size(153, 39);
             label3.TabIndex = 16;
             label3.Text = "Contraseña:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(176, 123);
+            label2.Font = new Font("Sitka Heading", 20.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(180, 121);
             label2.Name = "label2";
-            label2.Size = new Size(116, 31);
+            label2.Size = new Size(112, 39);
             label2.TabIndex = 15;
             label2.Text = "Usuario:";
             // 
@@ -122,10 +122,10 @@
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Sitka Heading", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlText;
             label1.ImageAlign = ContentAlignment.TopCenter;
-            label1.Location = new Point(170, 18);
+            label1.Location = new Point(171, 10);
             label1.MaximumSize = new Size(248, 37);
             label1.MinimumSize = new Size(248, 37);
             label1.Name = "label1";
@@ -139,18 +139,18 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
-            ClientSize = new Size(584, 361);
-            Controls.Add(pwdText);
-            Controls.Add(usrText);
+            ClientSize = new Size(584, 311);
+            Controls.Add(pwdInput);
+            Controls.Add(usrInput);
+            Controls.Add(exitButton);
+            Controls.Add(loginButton);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            MaximumSize = new Size(600, 400);
-            MinimumSize = new Size(600, 400);
+            MaximumSize = new Size(600, 350);
+            MinimumSize = new Size(600, 350);
             Name = "LoginEmpleado";
             Text = "LOG IN EMPLOYEE";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -159,11 +159,11 @@
         }
 
         #endregion
-        protected internal Button button1;
-        private Button button2;
         private PictureBox pictureBox1;
-        private TextBox pwdText;
-        private TextBox usrText;
+        private TextBox pwdInput;
+        private TextBox usrInput;
+        private Button exitButton;
+        protected internal Button loginButton;
         private Label label3;
         private Label label2;
         private Label label1;

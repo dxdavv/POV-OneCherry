@@ -20,14 +20,14 @@ namespace POV_OneCherry
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            string nombreSV = "BAN03";
+            string nombreSV = "ANG";
             string servidor = nombreSV + "\\SQLEXPRESS";
-            string DB = "INE_5";
+            string DB = "PruebaPOS";
 
             string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
 
             // SQL query to fetch product data
-            string query = "SELECT * FROM votante";
+            string query = "SELECT * FROM Clientes";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -40,6 +40,19 @@ namespace POV_OneCherry
                 dataGridView1.DataSource = dataTable;
                 connection.Close();
             }
+        }
+
+        private void onCloseChild(object? sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
+
+        private void botonCategorias(object sender, EventArgs e)
+        {
+            Form categorias = new VentanaCategoría();
+            categorias.Show();
+            this.Hide();
+            categorias.FormClosed += onCloseChild;
         }
     }
 }
