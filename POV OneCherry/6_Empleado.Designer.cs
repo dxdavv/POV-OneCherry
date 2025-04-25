@@ -821,6 +821,7 @@
             Name = "Empleado";
             Text = "EMPLEADO";
             Load += Form3_Load;
+            Click += Form3_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
