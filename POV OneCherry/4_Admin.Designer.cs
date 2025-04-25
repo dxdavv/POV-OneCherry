@@ -263,16 +263,9 @@
             button12.BackColor = Color.Crimson;
             button12.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button12.ForeColor = SystemColors.ControlLightLight;
-<<<<<<< Updated upstream
             button12.Location = new Point(612, 406);
             button12.Name = "button12";
             button12.Size = new Size(193, 43);
-=======
-            button12.Location = new Point(699, 541);
-            button12.Margin = new Padding(3, 4, 3, 4);
-            button12.Name = "button12";
-            button12.Size = new Size(221, 57);
->>>>>>> Stashed changes
             button12.TabIndex = 64;
             button12.Text = "Compras a proveedor";
             button12.UseVisualStyleBackColor = false;
