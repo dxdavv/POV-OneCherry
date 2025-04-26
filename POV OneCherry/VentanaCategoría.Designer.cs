@@ -65,7 +65,7 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Nombre" });
+            comboBox1.Items.AddRange(new object[] { "ID", "Nombre" });
             comboBox1.Location = new Point(184, 55);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
@@ -95,6 +95,7 @@
             button10.Text = "🔎Buscar";
             button10.TextAlign = ContentAlignment.TopCenter;
             button10.UseVisualStyleBackColor = false;
+            button10.Click += Buscar;
             // 
             // textBox1
             // 
@@ -114,6 +115,7 @@
             button9.TabIndex = 90;
             button9.Text = "🗑️Eliminar";
             button9.UseVisualStyleBackColor = false;
+            button9.Click += Eliminar;
             // 
             // button8
             // 
@@ -126,6 +128,7 @@
             button8.TabIndex = 89;
             button8.Text = "🖋️Editar";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += Editar;
             // 
             // button7
             // 
@@ -138,6 +141,7 @@
             button7.TabIndex = 88;
             button7.Text = "📥Agregar";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += Agregar;
             // 
             // label1
             // 
@@ -161,6 +165,7 @@
             TablaCategorias.ReadOnly = true;
             TablaCategorias.Size = new Size(775, 177);
             TablaCategorias.TabIndex = 86;
+            TablaCategorias.CellDoubleClick += MandarAEditar;
             // 
             // VentanaCategoría
             // 
