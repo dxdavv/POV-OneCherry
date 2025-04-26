@@ -15,7 +15,7 @@ namespace POV_OneCherry
             DBC.nombre = "BAN03";
             DBC.DB = "PruebaPOS";
             ApplicationConfiguration.Initialize();
-            Application.Run(new VentanaFacturas());
+            Application.Run(new Empleado());
 
         }
     }
