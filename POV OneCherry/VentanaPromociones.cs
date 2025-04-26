@@ -14,7 +14,7 @@ namespace POV_OneCherry
 {
     public partial class VentanaPromociones : Form
     {
-        private static string nombreSV = "BAN03";
+        private static string nombreSV = "ANG";
         private static string DB = "PruebaPOS";
         private static string servidor = nombreSV + "\\SQLEXPRESS";
         private string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";

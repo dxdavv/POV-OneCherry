@@ -48,7 +48,7 @@ namespace POV_OneCherry
         }
         static bool AutenticarUsuario(string usuario, string contraseña)
         {
-            string nombreSV = "BAN03";
+            string nombreSV = "ANG";
             string DB = "PruebaPOS";
             string servidor = nombreSV + "\\SQLEXPRESS";
             string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
@@ -68,5 +68,5 @@ namespace POV_OneCherry
                 return count > 0;
             }
         }
-    }
+    } 
 }

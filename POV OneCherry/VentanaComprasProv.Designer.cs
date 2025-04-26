@@ -28,27 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button12 = new Button();
             comboBox1 = new ComboBox();
             label2 = new Label();
             button10 = new Button();
             textBox1 = new TextBox();
             TablaCompras = new DataGridView();
             label1 = new Label();
+            label8 = new Label();
+            textBox5 = new TextBox();
+            label5 = new Label();
+            label7 = new Label();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)TablaCompras).BeginInit();
             SuspendLayout();
-            // 
-            // button12
-            // 
-            button12.BackColor = Color.OliveDrab;
-            button12.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button12.ForeColor = SystemColors.ControlLightLight;
-            button12.Location = new Point(44, 337);
-            button12.Name = "button12";
-            button12.Size = new Size(193, 43);
-            button12.TabIndex = 84;
-            button12.Text = "⏬Descarga excel";
-            button12.UseVisualStyleBackColor = false;
             // 
             // comboBox1
             // 
@@ -116,13 +110,88 @@
             label1.TabIndex = 67;
             label1.Text = "COMPRAS A PROVEEDORES";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(432, 340);
+            label8.Margin = new Padding(5);
+            label8.Name = "label8";
+            label8.Size = new Size(93, 28);
+            label8.TabIndex = 92;
+            label8.Text = "Proveedor";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(432, 368);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(172, 23);
+            textBox5.TabIndex = 91;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(241, 340);
+            label5.Margin = new Padding(5);
+            label5.Name = "label5";
+            label5.Size = new Size(82, 28);
+            label5.TabIndex = 88;
+            label5.Text = "Cantidad";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(45, 340);
+            label7.Margin = new Padding(5);
+            label7.Name = "label7";
+            label7.Size = new Size(82, 28);
+            label7.TabIndex = 87;
+            label7.Text = "Producto";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(241, 368);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(172, 23);
+            textBox3.TabIndex = 85;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(45, 368);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(182, 23);
+            textBox2.TabIndex = 86;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Crimson;
+            button3.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = SystemColors.ControlLightLight;
+            button3.Location = new Point(637, 352);
+            button3.Name = "button3";
+            button3.Size = new Size(157, 39);
+            button3.TabIndex = 93;
+            button3.Text = "Solicitar compra";
+            button3.UseVisualStyleBackColor = false;
+            // 
             // VentanaComprasProv
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
-            ClientSize = new Size(834, 391);
-            Controls.Add(button12);
+            ClientSize = new Size(834, 411);
+            Controls.Add(button3);
+            Controls.Add(label8);
+            Controls.Add(textBox5);
+            Controls.Add(label5);
+            Controls.Add(label7);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
             Controls.Add(comboBox1);
             Controls.Add(label2);
             Controls.Add(button10);
@@ -139,13 +208,18 @@
         }
 
         #endregion
-
-        private Button button12;
         private ComboBox comboBox1;
         private Label label2;
         private Button button10;
         private TextBox textBox1;
         private DataGridView TablaCompras;
         private Label label1;
+        private Label label8;
+        private TextBox textBox5;
+        private Label label5;
+        private Label label7;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private Button button3;
     }
 }

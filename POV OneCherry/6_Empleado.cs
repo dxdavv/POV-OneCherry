@@ -28,7 +28,7 @@ namespace POV_OneCherry
         {
             
             // SQL query to fetch product data
-            string query = "SELECT * FROM votante";
+            string query = "SELECT * FROM Clientes";
             using (SqlConnection connection = DBC.GlobalDBConnecion())
             {
                 connection.Open();
