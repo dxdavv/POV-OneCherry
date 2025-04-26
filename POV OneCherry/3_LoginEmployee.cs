@@ -60,7 +60,7 @@ namespace POV_OneCherry
             {
                 cmd.Parameters.AddWithValue("@usuario", usuario);
                 cmd.Parameters.AddWithValue("@contraseña", contraseña);
-
+                
                 conn.Open();
                 int count = (int)cmd.ExecuteScalar();
                 conn.Close();
