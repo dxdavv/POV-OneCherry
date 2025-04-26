@@ -307,6 +307,7 @@
             button8.Text = "🔎Buscar";
             button8.TextAlign = ContentAlignment.TopCenter;
             button8.UseVisualStyleBackColor = false;
+            button8.Click += BuscarClientes;
             // 
             // label8
             // 
@@ -338,6 +339,7 @@
             button2.TabIndex = 46;
             button2.Text = "📂Elegir cliente";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += AgregarProductoVenta;
             // 
             // label7
             // 
@@ -378,7 +380,7 @@
             // 
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "ID", "Nombre", "Teléfono", "Email" });
+            comboBox2.Items.AddRange(new object[] { "ID", "Nombre", "Apellido", "Email", "Teléfono" });
             comboBox2.Location = new Point(143, 337);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(112, 23);
@@ -412,6 +414,7 @@
             TablaClientes.Name = "TablaClientes";
             TablaClientes.Size = new Size(487, 188);
             TablaClientes.TabIndex = 39;
+            TablaClientes.CellDoubleClick += MandarAAgregarClientes;
             // 
             // button7
             // 
@@ -424,6 +427,7 @@
             button7.TabIndex = 22;
             button7.Text = "📥Agregar a la venta";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += AgregarProductoVenta;
             // 
             // button10
             // 
@@ -437,12 +441,13 @@
             button10.Text = "🔎Buscar";
             button10.TextAlign = ContentAlignment.TopCenter;
             button10.UseVisualStyleBackColor = false;
+            button10.Click += BuscarProductos;
             // 
             // comboBox1
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "ID", "Nombre", "Categoría" });
+            comboBox1.Items.AddRange(new object[] { "ID", "Nombre", "Precio", "Stock", "Categoría" });
             comboBox1.Location = new Point(143, 40);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(112, 23);
@@ -476,6 +481,7 @@
             TablaProducto.Name = "TablaProducto";
             TablaProducto.Size = new Size(487, 188);
             TablaProducto.TabIndex = 18;
+            TablaProducto.CellDoubleClick += MandarAAgregarProductos;
             // 
             // button9
             // 
@@ -593,7 +599,7 @@
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(13, 273);
+            label9.Location = new Point(-125, 368);
             label9.Margin = new Padding(5);
             label9.Name = "label9";
             label9.Size = new Size(63, 28);

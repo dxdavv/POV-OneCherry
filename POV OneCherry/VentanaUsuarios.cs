@@ -54,7 +54,6 @@ namespace POV_OneCherry
             string nwquery = query;
             int seleccion = comboBox2.SelectedIndex;
             string ordenamiento = seleccion > 0 ? filtros[seleccion] : filtros[0];
-            ;
             nwquery += $" ORDER BY {ordenamiento}";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

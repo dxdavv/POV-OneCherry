@@ -15,7 +15,7 @@ namespace POV_OneCherry
             DBC.nombre = "ANG";
             DBC.DB = "PruebaPOS";
             ApplicationConfiguration.Initialize();
-            Application.Run(new PrimerPantallaLogin());
+            Application.Run(new LoginEmpleado());
 
         }
     }

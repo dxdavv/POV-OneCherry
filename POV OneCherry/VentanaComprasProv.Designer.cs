@@ -48,7 +48,7 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "ID", "Fecha", "Proveedor" });
+            comboBox1.Items.AddRange(new object[] { "ID", "Fecha", "Proveedor", "Productos", "Cantidad", "Precio Unitario", "Precio Total" });
             comboBox1.Location = new Point(142, 49);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
@@ -78,6 +78,7 @@
             button10.Text = "🔎Buscar";
             button10.TextAlign = ContentAlignment.TopCenter;
             button10.UseVisualStyleBackColor = false;
+            button10.Click += Buscar;
             // 
             // textBox1
             // 
