@@ -24,8 +24,11 @@ namespace POV_OneCherry
         private string IdCliente = "";
         private string IdProducto = "";
         private string IdVenta = "";
+        private List<string> IdProductos = new List<string>();
+        private List<string> IdVentas = new List<string>();
         private string user;
-        public Empleado(string user = "5")
+        // producto, precio, cantidad, subtotal
+        public Empleado(string user = "default")
         {
             this.user = user;
             InitializeComponent();
@@ -40,8 +43,9 @@ namespace POV_OneCherry
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            TablaProducto.DataSource = null;
-            TablaProducto.DataSource = DBC.Data(queryClientes, false);
+            label4.Text = user;
+            TablaProducto.DataSource = DBC.Data(queryProductos);
+            TablaClientes.DataSource = DBC.Data(queryClientes);
         }
         private void MandarAAgregarClientes(object sender, DataGridViewCellEventArgs e)
         {
@@ -72,7 +76,7 @@ namespace POV_OneCherry
             }
             nwquery += $" ORDER BY {ordenamiento}";
                 TablaProducto.DataSource = null;
-                TablaProducto.DataSource = DBC.Data(nwquery, false);
+                TablaProducto.DataSource = DBC.Data(nwquery);
         }
         private void BuscarProductos(object sender, EventArgs e)
         {
@@ -89,38 +93,38 @@ namespace POV_OneCherry
             }
             nwquery += $" ORDER BY {ordenamiento}";
             TablaProducto.DataSource = null;
-            TablaProducto.DataSource = DBC.Data(nwquery, false);
+            TablaProducto.DataSource = DBC.Data(nwquery);
         }
         private void AgregarClienteVenta (object sender, EventArgs e)
         {
+            if (IdCliente.Equals(""))
+            {
+                return;
+            }
+            label21.Text = DBC.GetData("SELECT CONCAT(Nombre, ' ', Apellido) AS Nombre FROM Clientes")[0];
 
         }
         private void AgregarProductoVenta (object sender, EventArgs e)
         {
             if (IdProducto.Length > 0 && IdCliente.Length > 0)
             {
-                if (IdVenta.Length > 0)
+                IdProductos.Add(IdProducto);
+                string cantidad = numericUpDown1.Value.ToString();
+                string precioU = DBC.GetData($"SELECT Precio FROM Productos WHERE ID_Productos = {IdProductos}")[0];
+                double subtotal = double.Parse(precioU) * int.Parse(cantidad);
+                string nwquery = "INSERT INTO DetallesVenta (Cantidad, PrecioUnidad, SubTotal, ID_Productos) " +
+                    $"VALUES ('{cantidad}', '{precioU}', '{subtotal}', '{IdProducto}')";
+                if (DBC.EditData(nwquery) > 0)
                 {
-                    SqlConnection conn = DBC.GlobalDBConnecion();
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Precio FROM Productos", conn);
-                    MessageBox.Show(adapter.ToString());
-                    int precioUnitario = 0;
-                    string nwquery = "INSERT INTO DetallesVenta (Cantidad, PrecioUnidad, SubTotal, ID_Ventas, ID_Productos)" +
-                        $"VALUES ({numericUpDown1.Value}, {precioUnitario}, {precioUnitario * numericUpDown1.Value}, {IdVenta} {IdProducto})";
-                }
-                else
-                {
-                    string nwquery = "INSERT INTO Ventas (FechaVenta, ID_Clientes, ID_Usuarios, ID_Promociones)" +
-                        $"{DateTime.Now}, {IdCliente}, {user}, {0}";
-                    string getIdVenta = "SELECT @@IDENTITY AS LastInsertedID;";
-                    DataTable dataTable = new DataTable();
-                    SqlConnection conn = DBC.GlobalDBConnecion();
-                    conn.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(getIdVenta, conn);
-                    adapter.Fill(dataTable);
-                    conn.Close();
-                    MessageBox.Show(dataTable.Rows.ToString());
-                    dataTable.ToString();
+                    // ACTUALIZAR TABLA CARRITO Y ANUNCIARLO
+                    string id = DBC.GetData("SELECT @@IDENTITY AS LastInsertedID")[0];
+                    IdVentas.Add(id);
+                    string ids = "(";
+                    foreach (string i in IdVentas) {
+                        ids += i + ",";
+                    }
+                    ids += IdVentas[-1] + ")";
+                    TablaVenta.DataSource = DBC.Data($"SELECT * FROM DetalleVenta WHERE ID_Detalle in {ids}");
                 }
             }
         }

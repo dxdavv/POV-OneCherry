@@ -71,7 +71,6 @@ namespace POV_OneCherry
             {
                 nwquery = $"INSERT INTO Productos ({columnas[1]}, {columnas[2]}, {columnas[3]}, ID_Categorias) " +
                     $"VALUES ('{textBox2.Text}', '{textBox3.Text}', '{textBox4.Text}', '{IdCategorias[seleccion]}')";
-                MessageBox.Show(nwquery);
                 if (DBC.EditData(nwquery) > 0)
                 {
                     MessageBox.Show("Agregado Exitosamente");

@@ -40,6 +40,8 @@
             button3 = new Button();
             button2 = new Button();
             ButtonProveedor = new Button();
+            label6 = new Label();
+            comboBox2 = new ComboBox();
             button12 = new Button();
             label8 = new Label();
             textBox5 = new TextBox();
@@ -57,11 +59,6 @@
             button8 = new Button();
             button7 = new Button();
             dataGridView1 = new DataGridView();
-            ID_proveedor = new DataGridViewTextBoxColumn();
-            Nombre_proveedor = new DataGridViewTextBoxColumn();
-            Email_proveedor = new DataGridViewTextBoxColumn();
-            Telefono_proveedor = new DataGridViewTextBoxColumn();
-            Dirección_proveedor = new DataGridViewTextBoxColumn();
             label1 = new Label();
             button6 = new Button();
             label4 = new Label();
@@ -96,6 +93,8 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.LavenderBlush;
+            splitContainer1.Panel2.Controls.Add(label6);
+            splitContainer1.Panel2.Controls.Add(comboBox2);
             splitContainer1.Panel2.Controls.Add(button12);
             splitContainer1.Panel2.Controls.Add(label8);
             splitContainer1.Panel2.Controls.Add(textBox5);
@@ -232,6 +231,7 @@
             button2.TabIndex = 1;
             button2.Text = "👥Clientes";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += botonClientes;
             // 
             // ButtonProveedor
             // 
@@ -245,6 +245,27 @@
             ButtonProveedor.Text = "🚚Proveedores";
             ButtonProveedor.UseVisualStyleBackColor = false;
             ButtonProveedor.Click += botonProveedores;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(684, 340);
+            label6.Margin = new Padding(5);
+            label6.Name = "label6";
+            label6.Size = new Size(72, 28);
+            label6.TabIndex = 66;
+            label6.Text = "Cambio";
+            // 
+            // comboBox2
+            // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(684, 368);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 65;
             // 
             // button12
             // 
@@ -264,7 +285,7 @@
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(401, 340);
+            label8.Location = new Point(357, 340);
             label8.Margin = new Padding(5);
             label8.Name = "label8";
             label8.Size = new Size(79, 28);
@@ -273,9 +294,9 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(401, 368);
+            textBox5.Location = new Point(357, 368);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(172, 23);
+            textBox5.Size = new Size(123, 23);
             textBox5.TabIndex = 62;
             // 
             // label3
@@ -283,7 +304,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(588, 340);
+            label3.Location = new Point(496, 340);
             label3.Margin = new Padding(5);
             label3.Name = "label3";
             label3.Size = new Size(86, 28);
@@ -292,9 +313,9 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(588, 368);
+            textBox4.Location = new Point(496, 368);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(217, 23);
+            textBox4.Size = new Size(176, 23);
             textBox4.TabIndex = 58;
             // 
             // label5
@@ -302,7 +323,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(210, 340);
+            label5.Location = new Point(169, 340);
             label5.Margin = new Padding(5);
             label5.Name = "label5";
             label5.Size = new Size(58, 28);
@@ -323,7 +344,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(210, 368);
+            textBox3.Location = new Point(169, 368);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(172, 23);
             textBox3.TabIndex = 26;
@@ -332,14 +353,13 @@
             // 
             textBox2.Location = new Point(14, 368);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(182, 23);
+            textBox2.Size = new Size(140, 23);
             textBox2.TabIndex = 54;
             // 
             // comboBox1
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "ID", "Nombre", "Teléfono", "Email" });
             comboBox1.Location = new Point(153, 50);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
@@ -369,6 +389,7 @@
             button10.Text = "🔎Buscar";
             button10.TextAlign = ContentAlignment.TopCenter;
             button10.UseVisualStyleBackColor = false;
+            button10.Click += Buscar;
             // 
             // textBox1
             // 
@@ -388,6 +409,7 @@
             button9.TabIndex = 25;
             button9.Text = "🗑️Eliminar";
             button9.UseVisualStyleBackColor = false;
+            button9.Click += Eliminar;
             // 
             // button8
             // 
@@ -400,6 +422,7 @@
             button8.TabIndex = 24;
             button8.Text = "🖋️Editar";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += Editar;
             // 
             // button7
             // 
@@ -412,6 +435,7 @@
             button7.TabIndex = 21;
             button7.Text = "📥Agregar";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += Agregar;
             // 
             // dataGridView1
             // 
@@ -419,47 +443,12 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_proveedor, Nombre_proveedor, Email_proveedor, Telefono_proveedor, Dirección_proveedor });
             dataGridView1.Location = new Point(55, 79);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(750, 253);
             dataGridView1.TabIndex = 4;
-            // 
-            // ID_proveedor
-            // 
-            ID_proveedor.HeaderText = "ID";
-            ID_proveedor.Name = "ID_proveedor";
-            ID_proveedor.ReadOnly = true;
-            ID_proveedor.Width = 150;
-            // 
-            // Nombre_proveedor
-            // 
-            Nombre_proveedor.HeaderText = "Nombre";
-            Nombre_proveedor.Name = "Nombre_proveedor";
-            Nombre_proveedor.ReadOnly = true;
-            Nombre_proveedor.Width = 150;
-            // 
-            // Email_proveedor
-            // 
-            Email_proveedor.HeaderText = "Email";
-            Email_proveedor.Name = "Email_proveedor";
-            Email_proveedor.ReadOnly = true;
-            Email_proveedor.Width = 150;
-            // 
-            // Telefono_proveedor
-            // 
-            Telefono_proveedor.HeaderText = "Teléfono";
-            Telefono_proveedor.Name = "Telefono_proveedor";
-            Telefono_proveedor.ReadOnly = true;
-            Telefono_proveedor.Width = 150;
-            // 
-            // Dirección_proveedor
-            // 
-            Dirección_proveedor.HeaderText = "Dirección";
-            Dirección_proveedor.Name = "Dirección_proveedor";
-            Dirección_proveedor.ReadOnly = true;
-            Dirección_proveedor.Width = 150;
+            dataGridView1.CellDoubleClick += MandarAEditar;
             // 
             // label1
             // 
@@ -510,6 +499,7 @@
             Name = "Administrador";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ADMIN";
+            Load += Administrador_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             splitContainer1.Panel2.PerformLayout();
@@ -543,11 +533,6 @@
         private TextBox textBox1;
         private ComboBox comboBox1;
         private Button button11;
-        private DataGridViewTextBoxColumn ID_proveedor;
-        private DataGridViewTextBoxColumn Nombre_proveedor;
-        private DataGridViewTextBoxColumn Email_proveedor;
-        private DataGridViewTextBoxColumn Telefono_proveedor;
-        private DataGridViewTextBoxColumn Dirección_proveedor;
         private Label label8;
         private TextBox textBox5;
         private Label label3;
@@ -558,5 +543,7 @@
         private TextBox textBox2;
         private Button button12;
         private Button button13;
+        private ComboBox comboBox2;
+        private Label label6;
     }
 }

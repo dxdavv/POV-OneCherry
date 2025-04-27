@@ -13,10 +13,6 @@ namespace POV_OneCherry
 {
     public partial class VentanaFacturas : Form
     {
-        private static string nombreSV = "BAN03";
-        private static string DB = "PruebaPOS";
-        private static string servidor = nombreSV + "\\SQLEXPRESS";
-        private string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
         private string query = "SELECT CONCAT (Clientes.Nombre, ' ' ,Clientes.Apellido) AS Nombre_Cliente, Ventas.FechaVenta AS Fecha_Venta, " +
                 "Productos.NombreProducto AS Productos, DetallesVenta.Cantidad, DetallesVenta.PrecioUnidad AS P_Unitario, " +
                 "Promociones.NombrePromocion, Promociones.Descuento, Ventas.TotalVenta AS Total FROM DetallesVenta " +
@@ -33,19 +29,7 @@ namespace POV_OneCherry
 
         private void VentanaFacturas_Load(object sender, EventArgs e)
         {
-            // SQL query to fetch product data
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-
-                // Bind data to the DataGridView
-                TablaFacturas.DataSource = dataTable;
-                connection.Close();
-            }
+            TablaFacturas.DataSource = DBC.Data(query);
         }
         private void Buscar(object sender, EventArgs e)
         {
@@ -66,20 +50,8 @@ namespace POV_OneCherry
                     $"{columnas[8]} LIKE ('{busqueda}')";
             }
             nwquery += $" ORDER BY {ordenamiento}";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(nwquery, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                TablaFacturas.DataSource = null; // Clear existing data source to avoid conflicts
-
-                // Bind data to the DataGridView
-                TablaFacturas.DataSource = dataTable;
-                connection.Close();
-
-            }
+            TablaFacturas.DataSource = null;
+            TablaFacturas.DataSource = DBC.Data(nwquery);
         }
 
     }

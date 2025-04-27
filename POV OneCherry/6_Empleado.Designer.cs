@@ -59,7 +59,6 @@
             TablaProducto = new DataGridView();
             button9 = new Button();
             button3 = new Button();
-            comboBox3 = new ComboBox();
             textBox9 = new TextBox();
             label13 = new Label();
             textBox6 = new TextBox();
@@ -67,32 +66,12 @@
             textBox5 = new TextBox();
             label11 = new Label();
             label10 = new Label();
-            textBox3 = new TextBox();
-            label9 = new Label();
             TablaVenta = new DataGridView();
-            Producto = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            Subtotal = new DataGridViewTextBoxColumn();
-            label3 = new Label();
             label2 = new Label();
             comboBox4 = new ComboBox();
-            textBox4 = new TextBox();
-            label14 = new Label();
-            textBox10 = new TextBox();
-            label17 = new Label();
-            textBox11 = new TextBox();
-            label18 = new Label();
-            label19 = new Label();
             textBox12 = new TextBox();
             label20 = new Label();
-            dataGridView3 = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             label21 = new Label();
-            label22 = new Label();
             button11 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -107,7 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)TablaClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TablaProducto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TablaVenta).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -265,7 +243,6 @@
             splitContainer2.Panel2.BackColor = Color.LavenderBlush;
             splitContainer2.Panel2.Controls.Add(button9);
             splitContainer2.Panel2.Controls.Add(button3);
-            splitContainer2.Panel2.Controls.Add(comboBox3);
             splitContainer2.Panel2.Controls.Add(textBox9);
             splitContainer2.Panel2.Controls.Add(label13);
             splitContainer2.Panel2.Controls.Add(textBox6);
@@ -273,24 +250,12 @@
             splitContainer2.Panel2.Controls.Add(textBox5);
             splitContainer2.Panel2.Controls.Add(label11);
             splitContainer2.Panel2.Controls.Add(label10);
-            splitContainer2.Panel2.Controls.Add(textBox3);
-            splitContainer2.Panel2.Controls.Add(label9);
             splitContainer2.Panel2.Controls.Add(TablaVenta);
-            splitContainer2.Panel2.Controls.Add(label3);
             splitContainer2.Panel2.Controls.Add(label2);
             splitContainer2.Panel2.Controls.Add(comboBox4);
-            splitContainer2.Panel2.Controls.Add(textBox4);
-            splitContainer2.Panel2.Controls.Add(label14);
-            splitContainer2.Panel2.Controls.Add(textBox10);
-            splitContainer2.Panel2.Controls.Add(label17);
-            splitContainer2.Panel2.Controls.Add(textBox11);
-            splitContainer2.Panel2.Controls.Add(label18);
-            splitContainer2.Panel2.Controls.Add(label19);
             splitContainer2.Panel2.Controls.Add(textBox12);
             splitContainer2.Panel2.Controls.Add(label20);
-            splitContainer2.Panel2.Controls.Add(dataGridView3);
             splitContainer2.Panel2.Controls.Add(label21);
-            splitContainer2.Panel2.Controls.Add(label22);
             splitContainer2.Size = new Size(984, 610);
             splitContainer2.SplitterDistance = 513;
             splitContainer2.TabIndex = 0;
@@ -339,7 +304,7 @@
             button2.TabIndex = 46;
             button2.Text = "📂Elegir cliente";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += AgregarProductoVenta;
+            button2.Click += AgregarClienteVenta;
             // 
             // label7
             // 
@@ -508,16 +473,6 @@
             button3.Text = "✅Finalizar venta";
             button3.UseVisualStyleBackColor = false;
             // 
-            // comboBox3
-            // 
-            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "ID", "Nombre", "Teléfono", "Email" });
-            comboBox3.Location = new Point(123, 331);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(165, 23);
-            comboBox3.TabIndex = 49;
-            // 
             // textBox9
             // 
             textBox9.Location = new Point(88, 481);
@@ -587,64 +542,14 @@
             label10.TabIndex = 50;
             label10.Text = "Promoción:";
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(74, 278);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(168, 23);
-            textBox3.TabIndex = 48;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(-125, 368);
-            label9.Margin = new Padding(5);
-            label9.Name = "label9";
-            label9.Size = new Size(63, 28);
-            label9.TabIndex = 48;
-            label9.Text = "Fecha:";
-            // 
             // TablaVenta
             // 
             TablaVenta.BackgroundColor = SystemColors.ButtonHighlight;
             TablaVenta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            TablaVenta.Columns.AddRange(new DataGridViewColumn[] { Producto, Precio, Cantidad, Subtotal });
             TablaVenta.Location = new Point(13, 40);
             TablaVenta.Name = "TablaVenta";
             TablaVenta.Size = new Size(432, 220);
             TablaVenta.TabIndex = 16;
-            // 
-            // Producto
-            // 
-            Producto.HeaderText = "Producto";
-            Producto.Name = "Producto";
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "Precio";
-            Precio.Name = "Precio";
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.Name = "Cantidad";
-            // 
-            // Subtotal
-            // 
-            Subtotal.HeaderText = "Subtotal";
-            Subtotal.Name = "Subtotal";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(134, 9);
-            label3.Name = "label3";
-            label3.Size = new Size(146, 28);
-            label3.TabIndex = 15;
-            label3.Text = "Nombre Apellido";
             // 
             // label2
             // 
@@ -666,75 +571,6 @@
             comboBox4.Size = new Size(165, 23);
             comboBox4.TabIndex = 49;
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(88, 481);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(168, 23);
-            textBox4.TabIndex = 55;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.BackColor = Color.Transparent;
-            label14.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.Location = new Point(13, 476);
-            label14.Margin = new Padding(5);
-            label14.Name = "label14";
-            label14.Size = new Size(78, 28);
-            label14.TabIndex = 56;
-            label14.Text = "Cambio:";
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(108, 433);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(168, 23);
-            textBox10.TabIndex = 53;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.BackColor = Color.Transparent;
-            label17.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label17.Location = new Point(13, 428);
-            label17.Margin = new Padding(5);
-            label17.Name = "label17";
-            label17.Size = new Size(87, 28);
-            label17.TabIndex = 54;
-            label17.Text = "Paga con:";
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(134, 384);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(168, 23);
-            textBox11.TabIndex = 51;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.BackColor = Color.Transparent;
-            label18.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label18.Location = new Point(13, 379);
-            label18.Margin = new Padding(5);
-            label18.Name = "label18";
-            label18.Size = new Size(121, 28);
-            label18.TabIndex = 52;
-            label18.Text = "Total a pagar:";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.BackColor = Color.Transparent;
-            label19.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label19.Location = new Point(13, 326);
-            label19.Margin = new Padding(5);
-            label19.Name = "label19";
-            label19.Size = new Size(102, 28);
-            label19.TabIndex = 50;
-            label19.Text = "Promoción:";
-            // 
             // textBox12
             // 
             textBox12.Location = new Point(74, 278);
@@ -754,36 +590,6 @@
             label20.TabIndex = 48;
             label20.Text = "Fecha:";
             // 
-            // dataGridView3
-            // 
-            dataGridView3.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
-            dataGridView3.Location = new Point(13, 40);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.Size = new Size(432, 220);
-            dataGridView3.TabIndex = 16;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "Producto";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.HeaderText = "Precio";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.HeaderText = "Cantidad";
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.HeaderText = "Subtotal";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
             // label21
             // 
             label21.AutoSize = true;
@@ -793,16 +599,6 @@
             label21.Size = new Size(146, 28);
             label21.TabIndex = 15;
             label21.Text = "Nombre Apellido";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label22.Location = new Point(13, 9);
-            label22.Name = "label22";
-            label22.Size = new Size(124, 28);
-            label22.TabIndex = 14;
-            label22.Text = "Venta, cliente:";
             // 
             // button11
             // 
@@ -844,7 +640,6 @@
             ((System.ComponentModel.ISupportInitialize)TablaClientes).EndInit();
             ((System.ComponentModel.ISupportInitialize)TablaProducto).EndInit();
             ((System.ComponentModel.ISupportInitialize)TablaVenta).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             ResumeLayout(false);
         }
 
@@ -853,7 +648,6 @@
         private SplitContainer splitContainer1;
         private SplitContainer splitContainer2;
         private DataGridView TablaProducto;
-        private Label label3;
         private Label label2;
         private Button button6;
         private Label label4;
@@ -863,10 +657,6 @@
         private Button button10;
         private TextBox textBox2;
         private DataGridView TablaVenta;
-        private DataGridViewTextBoxColumn Producto;
-        private DataGridViewTextBoxColumn Precio;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn Subtotal;
         private Button button7;
         private Button button1;
         private ComboBox comboBox2;
@@ -884,8 +674,6 @@
         private Button button5;
         private TextBox textBox8;
         private Label label16;
-        private TextBox textBox3;
-        private Label label9;
         private Button button8;
         private Label label10;
         private TextBox textBox9;
@@ -894,26 +682,12 @@
         private Label label12;
         private TextBox textBox5;
         private Label label11;
-        private ComboBox comboBox3;
-        private ComboBox comboBox4;
-        private TextBox textBox4;
-        private Label label14;
-        private TextBox textBox10;
-        private Label label17;
-        private TextBox textBox11;
-        private Label label18;
-        private Label label19;
         private TextBox textBox12;
         private Label label20;
-        private DataGridView dataGridView3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private Label label21;
-        private Label label22;
         private Button button11;
         private Button button3;
         private Button button9;
+        private ComboBox comboBox4;
     }
 }
