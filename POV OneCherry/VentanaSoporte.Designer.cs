@@ -130,7 +130,6 @@
             MinimumSize = new Size(300, 250);
             Name = "VentanaSoporte";
             Text = "SOPORTE";
-            Load += Form6_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

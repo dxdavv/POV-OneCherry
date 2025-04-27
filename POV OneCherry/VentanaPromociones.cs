@@ -14,10 +14,6 @@ namespace POV_OneCherry
 {
     public partial class VentanaPromociones : Form
     {
-        private static string nombreSV = "ANG";
-        private static string DB = "PruebaPOS";
-        private static string servidor = nombreSV + "\\SQLEXPRESS";
-        private string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
         private string query = "SELECT ID_Promociones AS ID, FechaPromocion AS Fecha_Termino, NombrePromocion AS Nombre, Descuento FROM Promociones";
         private string[] columnas = { "ID_Promociones", "NombrePromocion", "FechaPromocion", "Descuento" };
         private string IdACambiar = "";
@@ -28,20 +24,8 @@ namespace POV_OneCherry
 
         private void VentanaPromociones_Load(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                TablaPromociones.DataSource = null; // Clear existing data source to avoid conflicts
-
-                // Bind data to the DataGridView
-                TablaPromociones.DataSource = dataTable;
-                connection.Close();
-
-            }
+            TablaPromociones.DataSource = null;
+            TablaPromociones.DataSource = DBC.Data(query);
         }
 
         private void Buscar(object sender, EventArgs e)
@@ -57,48 +41,23 @@ namespace POV_OneCherry
                     $"{columnas[3]} LIKE ('{busqueda}')";
             }
             nwquery += $" ORDER BY {ordenamiento}";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(nwquery, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                TablaPromociones.DataSource = null; // Clear existing data source to avoid conflicts
-
-                // Bind data to the DataGridView
-                TablaPromociones.DataSource = dataTable;
-                connection.Close();
-
-            }
+            TablaPromociones.DataSource = null;
+            TablaPromociones.DataSource = DBC.Data(nwquery);
             textBox1.Clear();
         }
         private void Agregar(object sender, EventArgs e)
         {
-            string nwquery = $"INSERT INTO Promociones ({columnas[1]}, {columnas[2]}, {columnas[3]}) VALUES (@valor1, @fecha, @valor3)";
-
+            string nwquery = $"INSERT INTO Promociones ({columnas[1]}, {columnas[2]}, {columnas[3]}) VALUES ('{textBox2.Text}', '{dateTimePicker1.Value.Date.ToString("yyyy-MM-dd")}', {decimal.Parse(textBox5.Text)})";
             if (textBox2.Text.Length > 0 && textBox5.Text.Length > 0)
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                using (SqlCommand cmd = new SqlCommand(nwquery, connection))
+                if (DBC.EditData(nwquery) > 0)
                 {
-                    cmd.Parameters.AddWithValue("@valor1", textBox2.Text);
-                    cmd.Parameters.AddWithValue("@fecha", dateTimePicker1.Value.Date);
-                    cmd.Parameters.AddWithValue("@valor3", decimal.Parse(textBox5.Text)); // Si es numérico
-
-                    connection.Open();
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    connection.Close();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Agregado Exitosamente!");
-                        VentanaPromociones_Load(sender, e);
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo agregar el registro.");
-                    }
+                    MessageBox.Show("Agregado Exitosamente!");
+                    VentanaPromociones_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo agregar el registro.");
                 }
             }
         }
@@ -110,7 +69,6 @@ namespace POV_OneCherry
                 dateTimePicker1.Value = Convert.ToDateTime(TablaPromociones.Rows[e.RowIndex].Cells[1].Value);
                 textBox2.Text = TablaPromociones.Rows[e.RowIndex].Cells[2].Value.ToString();
                 textBox5.Text = TablaPromociones.Rows[e.RowIndex].Cells[3].Value.ToString();
-                
             }
         }
         private void Editar(object sender, EventArgs e)
@@ -120,35 +78,20 @@ namespace POV_OneCherry
             if (textBox2.Text.Length > 0 && textBox5.Text.Length > 0)
             {
                 string nwquery = "UPDATE Promociones SET " +
-                                 $"{columnas[1]} = @valor1, {columnas[2]} = @fecha, {columnas[3]} = @valor3 " +
-                                 "WHERE ID_Promociones = @id";
+                                 $"{columnas[1]} = '{textBox2.Text}', {columnas[2]} = '{dateTimePicker1.Value.Date.ToString("yyyy-MM-dd")}', {columnas[3]} = '{decimal.Parse(textBox5.Text)}'" +
+                                 $"WHERE ID_Promociones = {IdACambiar}";
 
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                using (SqlCommand cmd = new SqlCommand(nwquery, conn))
+                textBox2.Clear();
+                textBox5.Clear();
+
+                if (DBC.EditData(nwquery) > 0)
                 {
-                    // Asignar parámetros de forma segura
-                    cmd.Parameters.AddWithValue("@valor1", textBox2.Text);
-                    cmd.Parameters.AddWithValue("@fecha", dateTimePicker1.Value.Date); // ✅ Fecha correcta
-                    cmd.Parameters.AddWithValue("@valor3", decimal.Parse(textBox5.Text)); // ✅ Convertir si es número
-                    cmd.Parameters.AddWithValue("@id", int.Parse(IdACambiar)); // ✅ ID de la promoción
-
-                    conn.Open();
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    conn.Close();
-
-                    // Limpiar campos
-                    textBox2.Clear();
-                    textBox5.Clear();
-
-                    if (rowsAffected > 0)
-                    {
-                        VentanaPromociones_Load(sender, e); // Recargar tabla
-                        MessageBox.Show("Registro actualizado correctamente!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo actualizar el registro.");
-                    }
+                    VentanaPromociones_Load(sender, e);
+                    MessageBox.Show("Registro actualizado correctamente!");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo actualizar el registro.");
                 }
             }
             else
@@ -168,26 +111,18 @@ namespace POV_OneCherry
             if (textBox2.Text.Length > 0 && textBox5.Text.Length > 0 && !IdACambiar.Equals(""))
             {
                 nwquery = $"DELETE FROM Promociones WHERE ID_Promociones = {IdACambiar}";
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                using (SqlCommand cmd = new SqlCommand(nwquery, conn))
+                textBox2.Clear();
+                textBox3.Clear();
+                comboBox1.SelectedIndex = -1;
+
+                if (DBC.EditData(nwquery) > 0)
                 {
-                    conn.Open();
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    conn.Close();
-
-                    textBox2.Clear();
-                    textBox3.Clear();
-                    comboBox1.SelectedIndex = -1;
-
-                    if (rowsAffected > 0)
-                    {
-                        VentanaPromociones_Load(sender, e);
-                        MessageBox.Show("Registro eliminado correctamente!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo eliminar el registro.");
-                    }
+                    VentanaPromociones_Load(sender, e);
+                    MessageBox.Show("Registro eliminado correctamente!");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar el registro.");
                 }
             }
         }

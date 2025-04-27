@@ -24,8 +24,10 @@ namespace POV_OneCherry
         private string IdCliente = "";
         private string IdProducto = "";
         private string IdVenta = "";
-        public Empleado()
+        private string user;
+        public Empleado(string user = "5")
         {
+            this.user = user;
             InitializeComponent();
         }
 
@@ -38,25 +40,8 @@ namespace POV_OneCherry
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
-            // SQL query to fetch product data
-            using (SqlConnection connection = DBC.GlobalDBConnecion())
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = DBC.CreateAdapter(queryClientes, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                TablaClientes.DataSource = dataTable;
-
-                adapter = new SqlDataAdapter(queryProductos, connection);
-                dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                TablaProducto.DataSource = null; // Clear existing data source to avoid conflicts
-                TablaProducto.DataSource = dataTable;
-
-                connection.Close();
-            }
+            TablaProducto.DataSource = null;
+            TablaProducto.DataSource = DBC.Data(queryClientes, false);
         }
         private void MandarAAgregarClientes(object sender, DataGridViewCellEventArgs e)
         {
@@ -86,20 +71,8 @@ namespace POV_OneCherry
                     $"{columnasClientes[4]} LIKE ('{busqueda}')";
             }
             nwquery += $" ORDER BY {ordenamiento}";
-            using (SqlConnection connection = DBC.GlobalDBConnecion())
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(nwquery, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                TablaProducto.DataSource = null; // Clear existing data source to avoid conflicts
-
-                // Bind data to the DataGridView
-                TablaProducto.DataSource = dataTable;
-                connection.Close();
-
-            }
+                TablaProducto.DataSource = null;
+                TablaProducto.DataSource = DBC.Data(nwquery, false);
         }
         private void BuscarProductos(object sender, EventArgs e)
         {
@@ -115,20 +88,8 @@ namespace POV_OneCherry
                     $"{columnasProductos[4]} LIKE ('{busqueda}')";
             }
             nwquery += $" ORDER BY {ordenamiento}";
-            using (SqlConnection connection = DBC.GlobalDBConnecion())
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(nwquery, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                TablaProducto.DataSource = null; // Clear existing data source to avoid conflicts
-
-                // Bind data to the DataGridView
-                TablaProducto.DataSource = dataTable;
-                connection.Close();
-
-            }
+            TablaProducto.DataSource = null;
+            TablaProducto.DataSource = DBC.Data(nwquery, false);
         }
         private void AgregarClienteVenta (object sender, EventArgs e)
         {
@@ -136,12 +97,12 @@ namespace POV_OneCherry
         }
         private void AgregarProductoVenta (object sender, EventArgs e)
         {
-            if (IdProducto.Length > 0)
+            if (IdProducto.Length > 0 && IdCliente.Length > 0)
             {
                 if (IdVenta.Length > 0)
                 {
                     SqlConnection conn = DBC.GlobalDBConnecion();
-                    SqlDataAdapter adapter = DBC.CreateAdapter("SELECT Precio FROM Productos", conn);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Precio FROM Productos", conn);
                     MessageBox.Show(adapter.ToString());
                     int precioUnitario = 0;
                     string nwquery = "INSERT INTO DetallesVenta (Cantidad, PrecioUnidad, SubTotal, ID_Ventas, ID_Productos)" +
@@ -149,11 +110,17 @@ namespace POV_OneCherry
                 }
                 else
                 {
-                    string nwquery = "INSERT INTO Ventas ()" +
-                        "";
+                    string nwquery = "INSERT INTO Ventas (FechaVenta, ID_Clientes, ID_Usuarios, ID_Promociones)" +
+                        $"{DateTime.Now}, {IdCliente}, {user}, {0}";
                     string getIdVenta = "SELECT @@IDENTITY AS LastInsertedID;";
+                    DataTable dataTable = new DataTable();
                     SqlConnection conn = DBC.GlobalDBConnecion();
-                    SqlDataAdapter adapter = DBC.CreateAdapter(getIdVenta, conn);
+                    conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(getIdVenta, conn);
+                    adapter.Fill(dataTable);
+                    conn.Close();
+                    MessageBox.Show(dataTable.Rows.ToString());
+                    dataTable.ToString();
                 }
             }
         }

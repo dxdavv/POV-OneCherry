@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Runtime.CompilerServices;
+using System.Data;
+using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Office.Word;
 namespace POV_OneCherry
 {
     static class DBC
@@ -18,10 +21,72 @@ namespace POV_OneCherry
             SqlConnection c = new SqlConnection(connectionString);
             return c;
         }
-        public static SqlDataAdapter CreateAdapter (string query, SqlConnection conn)
+        public static DataTable Data(string query, bool needCommand = false)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            return adapter;
+            DataTable dataTable = new DataTable();
+            SqlConnection connection = GlobalDBConnecion();
+            SqlDataAdapter adapter;
+            connection.Open();
+            if (needCommand)
+            {
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                adapter = new SqlDataAdapter(cmd);
+            } else
+            {
+                adapter = new SqlDataAdapter(query, connection);
+            }
+            adapter.Fill(dataTable);
+            connection.Close();
+            return dataTable;
+        }
+        public static int EditData(string query)
+        {
+            int rowsAffected;
+            SqlConnection conn = GlobalDBConnecion();
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                conn.Open();
+                rowsAffected = cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            return rowsAffected;
+        }
+        public static void SentToExcel(string query)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "Excel Files|*.xlsx";
+                sfd.Title = "Guardar Excel";
+                sfd.FileName = "excel.xlsx";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    using (XLWorkbook workbook = new XLWorkbook())
+                    {
+                        var worksheet = workbook.Worksheets.Add(DBC.Data(query, true), "Todas las ventas");
+                        workbook.SaveAs(sfd.FileName);
+                    }
+
+                    MessageBox.Show("El Excel se guardo correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+        public static string[] GetData(string query)
+        {
+            List<string> listaUsuarios = new List<string>();
+            SqlConnection conn = GlobalDBConnecion();
+            SqlCommand cmd = new SqlCommand(query, conn);
+            conn.Open();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    // MessageBox.Show(reader.VisibleFieldCount.ToString());
+                    listaUsuarios.Add(reader.GetValue(0).ToString());
+                }
+            }
+            conn.Close();
+            return listaUsuarios.ToArray();
         }
     }
 
