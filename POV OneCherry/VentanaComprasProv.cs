@@ -14,11 +14,6 @@ namespace POV_OneCherry
 {
     public partial class VentanaComprasProv : Form
     {
-        private static string nombreSV = "BAN03";
-        private static string DB = "PruebaPOS";
-
-        private static string servidor = nombreSV + "\\SQLEXPRESS";
-        private string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
         private string query = "SELECT ComprasProveedor.ID_ComprasProveedor AS ID_Compra, ComprasProveedor.FechaCompra AS Fecha_Compra, " +
                 "Proveedores.NombreProveedor AS Proveedor, Productos.NombreProducto AS Productos, DetallesCompra.Cantidad, " +
                 "DetallesCompra.PrecioUnidad AS P_Unitario, ComprasProveedor.PrecioTotal AS P_Total FROM DetallesCompra " +
@@ -33,21 +28,8 @@ namespace POV_OneCherry
 
         private void VentanaComprasProv_Load(object sender, EventArgs e)
         {
-            // SQL query to fetch product data
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                TablaCompras.DataSource = null; // Clear existing data source to avoid conflicts
-
-                // Bind data to the DataGridView
-                TablaCompras.DataSource = dataTable;
-                connection.Close();
-
-            }
+            TablaCompras.DataSource = null;
+            TablaCompras.DataSource = DBC.Data(query);
         }
         private void Buscar(object sender, EventArgs e)
         {
@@ -66,52 +48,13 @@ namespace POV_OneCherry
                     $"{columnas[6]} LIKE ('{busqueda}')";
             }
             nwquery += $" ORDER BY {ordenamiento}";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter(nwquery, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                TablaCompras.DataSource = null; // Clear existing data source to avoid conflicts
-
-                // Bind data to the DataGridView
-                TablaCompras.DataSource = dataTable;
-                connection.Close();
-
-            }
+            TablaCompras.DataSource = null;
+            TablaCompras.DataSource = DBC.Data(nwquery);
             textBox1.Clear();
         }
         private void ToExcel(object sender, EventArgs e)
         {
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                {
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-                    using (SaveFileDialog sfd = new SaveFileDialog())
-                    {
-                        sfd.Filter = "Excel Files|*.xlsx";
-                        sfd.Title = "Guardar Excel";
-                        sfd.FileName = "Poveedor.xlsx";
-
-                        if (sfd.ShowDialog() == DialogResult.OK) // User selects a location
-                        {
-                            using (XLWorkbook workbook = new XLWorkbook())
-                            {
-                                var worksheet = workbook.Worksheets.Add(dt, "Todas las compras a proveedor");
-                                workbook.SaveAs(sfd.FileName);
-                            }
-
-                            MessageBox.Show("El Excel se guardo correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-            }
+            DBC.SentToExcel(query);
         }
     }
 }

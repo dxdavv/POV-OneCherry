@@ -55,6 +55,7 @@ namespace POV_OneCherry
                 string busqueda = textBox1.Text;
                 nwquery += $" WHERE {columnas[0]} LIKE ('{busqueda}') OR " +
                     $"{columnas[1]} LIKE ('{busqueda}')";
+                MessageBox.Show(nwquery);
             }
             nwquery += $" ORDER BY {ordenamiento}";
             using (SqlConnection connection = new SqlConnection(connectionString))

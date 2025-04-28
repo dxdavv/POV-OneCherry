@@ -61,6 +61,7 @@
             TablaProductos.ReadOnly = true;
             TablaProductos.Size = new Size(775, 177);
             TablaProductos.TabIndex = 0;
+            TablaProductos.CellDoubleClick += MandarAEditar;
             // 
             // label1
             // 
@@ -84,6 +85,7 @@
             button9.TabIndex = 28;
             button9.Text = "🗑️Eliminar";
             button9.UseVisualStyleBackColor = false;
+            button9.Click += Eliminar;
             // 
             // button8
             // 
@@ -96,6 +98,7 @@
             button8.TabIndex = 27;
             button8.Text = "🖋️Editar";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += Editar;
             // 
             // button7
             // 
@@ -108,12 +111,13 @@
             button7.TabIndex = 26;
             button7.Text = "📥Agregar";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += Agregar;
             // 
             // comboBox1
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "ID", "Nombre", "Teléfono", "Email" });
+            comboBox1.Items.AddRange(new object[] { "ID", "Nombre_Prod", "Precio", "Stock", "Categoria" });
             comboBox1.Location = new Point(184, 50);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
@@ -143,6 +147,7 @@
             button10.Text = "🔎Buscar";
             button10.TextAlign = ContentAlignment.TopCenter;
             button10.UseVisualStyleBackColor = false;
+            button10.Click += Buscar;
             // 
             // textBox1
             // 
@@ -241,6 +246,7 @@
             button12.TabIndex = 85;
             button12.Text = "⏬Descarga excel";
             button12.UseVisualStyleBackColor = false;
+            button12.Click += MandarExcel;
             // 
             // button1
             // 

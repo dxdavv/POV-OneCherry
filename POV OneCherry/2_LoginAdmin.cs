@@ -20,16 +20,23 @@ namespace POV_OneCherry
 
         private void logIn(object sender, EventArgs e)
         {
-            if (usrInput.Text.Length < 1 && pwdInput.Text.Length < 1)
+            if (usrInput.Text.Length < 1 || pwdInput.Text.Length < 1
+                && pwdInput.Text.CompareTo("0") < 0 && pwdInput.Text.CompareTo(":") > 9)
             {
                 return;
             }
-            if (!AutenticarUsuario(usrInput.Text, pwdInput.Text))
+            string usr = usrInput.Text;
+            string pwd = pwdInput.Text;
+            string query = $"SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario = '{usr}' AND Pin = '{pwd}' AND Tipo = 'Administrador'";
+            if (DBC.GetData(query)[0].Equals("0"))
             {
                 MessageBox.Show("Usuario o Contraseña incorrecta");
                 return;
             }
-            Form log = new Administrador();
+            string nwquery = "SELECT Administrador.NombreApellido FROM Administrador" +
+                " JOIN Usuarios ON Administrador.ID_Usuarios = Usuarios.ID_Usuarios"
+                + $" WHERE Usuarios.NombreUsuario = '{usr}' AND Usuarios.Pin = '{pwd}' AND Usuarios.Tipo = 'Administrador'";
+            Form log = new Administrador(DBC.GetData(nwquery)[0].ToString());
             log.Show();
             this.Hide();
             log.FormClosed += onClosedChild;
@@ -44,29 +51,6 @@ namespace POV_OneCherry
             usrInput.Clear();
             pwdInput.Clear();
             this.Show();
-        }
-        
-        static bool AutenticarUsuario(string usuario, string contraseña)
-        {
-            string nombreSV = "ANG";
-            string DB = "PruebaPOS";
-            string servidor = nombreSV + "\\SQLEXPRESS";
-            string connectionString = "Server=" + servidor + ";Database=" + DB + ";Trusted_Connection=True;";
-
-            string query = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario = @usuario AND Pin = @contraseña AND Tipo = 'Administrador'";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            using (SqlCommand cmd = new SqlCommand(query, conn))
-            {
-                cmd.Parameters.AddWithValue("@usuario", usuario);
-                cmd.Parameters.AddWithValue("@contraseña", contraseña);
-
-                conn.Open();
-                int count = (int)cmd.ExecuteScalar();
-                conn.Close();
-
-                return count > 0;
-            }
         }
     }
 }
