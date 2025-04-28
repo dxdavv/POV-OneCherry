@@ -86,6 +86,10 @@ namespace POV_OneCherry
                 }
             }
             conn.Close();
+            if (listaUsuarios.Count == 0)
+            {
+                return [""];
+            }
             return listaUsuarios.ToArray();
         }
     }

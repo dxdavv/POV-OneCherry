@@ -21,7 +21,7 @@
             label4.Text = this.nombre;
             comboBox2.Hide();
             label6.Hide();
-            botonProveedores(sender, e);
+            botonClientes(sender, e);
         }
         private void onCloseChild(object? sender, FormClosedEventArgs e)
         {
@@ -52,6 +52,7 @@
             label8.Text = RecuadrosTexto[3];
             label3.Text = RecuadrosTexto[4];
             label6.Text = RecuadrosTexto[5];
+            comboBox1.Items.Clear();
             comboBox1.Items.AddRange(RecuadrosTexto);
             categorias = DBC.GetData("SELECT NombreProducto FROM Productos");
             IdCategorias = DBC.GetData("SELECT ID_Productos FROM Productos");
@@ -84,10 +85,11 @@
             label5.Text = RecuadrosTexto[2];
             label8.Text = RecuadrosTexto[3];
             label3.Text = RecuadrosTexto[4];
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(RecuadrosTexto);
             comboBox2.Items.Clear();
             comboBox2.Hide();
             label6.Hide();
-            comboBox1.Items.AddRange(RecuadrosTexto);
             columnas = new string[]{ "Clientes.ID_Clientes", "Clientes.Nombre", "Clientes.Apellido",
                 "Clientes.Email", "Clientes.Telefono" };
             query = "SELECT Clientes.ID_Clientes AS ID, Clientes.Nombre, Clientes.Apellido, " +
@@ -104,15 +106,18 @@
         private void botonEmpleados(object sender, EventArgs e)
         {
             ventana = 2;
-            RecuadrosTexto = new string[] { "ID", "Nombre", "Email", "Telefono", "Direccion", "Usuario" };
+            RecuadrosTexto = new string[] { "ID", "Nombre", "Email", "Telefono", "Direccion", "Usuarios" };
             label7.Text = RecuadrosTexto[1];
             label5.Text = RecuadrosTexto[2];
             label8.Text = RecuadrosTexto[3];
             label3.Text = RecuadrosTexto[4];
             label6.Text = RecuadrosTexto[5];
+            comboBox1.Items.Clear();
             comboBox1.Items.AddRange(RecuadrosTexto);
-            categorias = DBC.GetData("SELECT NombreUsuario FROM Usuarios");
-            IdCategorias = DBC.GetData("SELECT ID_Usuarios FROM Usuarios");
+            string evitarduplicidad = " WHERE (SELECT COUNT(*) FROM Empleados JOIN Usuarios " +
+                "ON Empleados.ID_Usuarios = Usuarios.ID_Usuarios) = 0 AND Usuarios.Tipo = 'Empleado'";
+            categorias = DBC.GetData("SELECT NombreUsuario FROM Usuarios" + evitarduplicidad);
+            IdCategorias = DBC.GetData("SELECT ID_Usuarios FROM Usuarios" + evitarduplicidad);
             comboBox2.Items.Clear();
             comboBox2.Items.AddRange(categorias);
             comboBox2.Show();
@@ -142,9 +147,12 @@
             label8.Text = RecuadrosTexto[3];
             label3.Text = RecuadrosTexto[4];
             label6.Text = RecuadrosTexto[5];
+            comboBox1.Items.Clear();
             comboBox1.Items.AddRange(RecuadrosTexto);
-            categorias = DBC.GetData("SELECT NombreUsuario FROM Usuarios");
-            IdCategorias = DBC.GetData("SELECT ID_Usuarios FROM Usuarios");
+            string evitarduplicidad = " WHERE (SELECT COUNT(*) FROM Administrador JOIN Usuarios " +
+                "ON Administrador.ID_Usuarios = Usuarios.ID_Usuarios) = 0 AND Usuarios.Tipo = 'Administrador'";
+            categorias = DBC.GetData("SELECT NombreUsuario FROM Usuarios" + evitarduplicidad);
+            IdCategorias = DBC.GetData("SELECT ID_Usuarios FROM Usuarios" + evitarduplicidad);
             comboBox2.Items.Clear();
             comboBox2.Items.AddRange(categorias);
             comboBox2.Show();
