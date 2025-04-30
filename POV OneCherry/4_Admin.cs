@@ -5,20 +5,18 @@
         private string query = "";
         private int ventana = 0;
         private string IdACambiar = "";
-        private string[] categorias, IdCategorias, columnas,
+        private string[] categorias = { }, IdCategorias = { }, columnas = {},
             ventanaActiva = { "Proveedores", "Clientes", "Empleados", "Administrador" },
             IdJoin = { "ID_Productos", "ID_Usuarios" },
-            RecuadrosTexto;
-        private string nombre = "";
+            RecuadrosTexto = { };
 
         public Administrador(string nombre = "default")
         {
             InitializeComponent();
-            this.nombre = nombre;
+            label4.Text = nombre;
         }
         private void Administrador_Load(object sender, EventArgs e)
         {
-            label4.Text = this.nombre;
             comboBox2.Hide();
             label6.Hide();
             botonClientes(sender, e);
@@ -31,7 +29,7 @@
         {
             if (e.RowIndex >= 0)
             {
-                IdACambiar = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                IdACambiar = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() ?? "";
                 textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();

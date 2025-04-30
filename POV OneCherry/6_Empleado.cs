@@ -24,21 +24,23 @@ namespace POV_OneCherry
         private string[] IdPromociones;
         private string[] promociones;
         private string IdEmpleado = "";
-        private string user;
         private string IdCliente = "";
         private string IdProducto = "";
         private string IdVenta = "";
         private string IdEliminar ="";
-        private string datosTabla = "";
         private List<string> IdProductos = new List<string>();
         private List<string> IdVentas = new List<string>();
         double total;
         // producto, precio, cantidad, subtotal
         public Empleado(string user = "default", string IdEmpleado = "1")
         {
-            this.user = user;
             this.IdEmpleado = IdEmpleado;
             InitializeComponent();
+            label4.Text = user;
+            IdPromociones = DBC.GetData("SELECT ID_Promociones FROM Promociones");
+            promociones = DBC.GetData("SELECT NombrePromocion FROM Promociones");
+            comboBox4.Items.Clear();
+            comboBox4.Items.AddRange(promociones);
         }
 
         private void botonAgregarCliente(object sender, EventArgs e)
@@ -50,26 +52,21 @@ namespace POV_OneCherry
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            label4.Text = user;
             TablaProducto.DataSource = DBC.Data(queryProductos);
             TablaClientes.DataSource = DBC.Data(queryClientes);
-            IdPromociones = DBC.GetData("SELECT ID_Promociones FROM Promociones");
-            promociones = DBC.GetData("SELECT NombrePromocion FROM Promociones");
-            comboBox4.Items.Clear();
-            comboBox4.Items.AddRange(promociones);
         }
         private void MandarAAgregarClientes(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                IdCliente = TablaClientes.Rows[e.RowIndex].Cells[0].Value.ToString();
+                IdCliente = TablaClientes.Rows[e.RowIndex].Cells[0].Value.ToString() ?? "";
             }
         }
         private void MandarAAgregarProductos(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                IdProducto = TablaProducto.Rows[e.RowIndex].Cells[0].Value.ToString();
+                IdProducto = TablaProducto.Rows[e.RowIndex].Cells[0].Value.ToString() ?? "";
             }
         }
         private void MandarAEliminarProductos(object sender, DataGridViewCellEventArgs e)
