@@ -42,6 +42,7 @@
             label4 = new Label();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)TablaUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -62,7 +63,7 @@
             button10.BackColor = Color.Crimson;
             button10.Font = new Font("Sitka Banner", 12.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button10.ForeColor = SystemColors.ControlLightLight;
-            button10.Location = new Point(479, 32);
+            button10.Location = new Point(607, 29);
             button10.Name = "button10";
             button10.Size = new Size(102, 35);
             button10.TabIndex = 38;
@@ -202,8 +203,15 @@
             comboBox2.Items.AddRange(new object[] { "Nombre de usuario", "Pin", "Tipo" });
             comboBox2.Location = new Point(199, 37);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(274, 23);
+            comboBox2.Size = new Size(187, 23);
             comboBox2.TabIndex = 48;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(392, 37);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(207, 23);
+            textBox1.TabIndex = 49;
             // 
             // Usuarios
             // 
@@ -211,6 +219,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(834, 421);
+            Controls.Add(textBox1);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(label4);
@@ -249,5 +258,6 @@
         private Label label4;
         private ComboBox comboBox1;
         private ComboBox comboBox2;
+        private TextBox textBox1;
     }
 }

@@ -105,9 +105,9 @@
             // imagenPerrito
             // 
             imagenPerrito.ErrorImage = (Image)resources.GetObject("imagenPerrito.ErrorImage");
-            imagenPerrito.Image = Properties.Resources.perrito;
+            imagenPerrito.Image = (Image)resources.GetObject("imagenPerrito.Image");
             imagenPerrito.InitialImage = (Image)resources.GetObject("imagenPerrito.InitialImage");
-            imagenPerrito.Location = new Point(25, 106);
+            imagenPerrito.Location = new Point(25, 86);
             imagenPerrito.MaximumSize = new Size(140, 121);
             imagenPerrito.MinimumSize = new Size(140, 121);
             imagenPerrito.Name = "imagenPerrito";

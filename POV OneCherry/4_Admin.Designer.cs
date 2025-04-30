@@ -276,7 +276,7 @@
             button12.Name = "button12";
             button12.Size = new Size(193, 43);
             button12.TabIndex = 64;
-            button12.Text = "Compras a proveedor";
+            button12.Text = "Comprar a proveedor";
             button12.UseVisualStyleBackColor = false;
             button12.Click += botonComprasProveedor;
             // 

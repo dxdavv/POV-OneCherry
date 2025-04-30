@@ -28,76 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox1 = new ComboBox();
-            label2 = new Label();
-            button10 = new Button();
-            textBox1 = new TextBox();
-            TablaCompras = new DataGridView();
+            TablaSolicitarCompras = new DataGridView();
             label1 = new Label();
             label8 = new Label();
-            textBox5 = new TextBox();
             label5 = new Label();
             label7 = new Label();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
             button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)TablaCompras).BeginInit();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            numericUpDown1 = new NumericUpDown();
+            button1 = new Button();
+            button2 = new Button();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)TablaSolicitarCompras).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
-            // comboBox1
+            // TablaSolicitarCompras
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "ID", "Fecha", "Proveedor", "Productos", "Cantidad", "Precio Unitario", "Precio Total" });
-            comboBox1.Location = new Point(142, 49);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 75;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(3, 44);
-            label2.Margin = new Padding(5);
-            label2.Name = "label2";
-            label2.Size = new Size(140, 28);
-            label2.TabIndex = 74;
-            label2.Text = "Búsqueda por -›";
-            // 
-            // button10
-            // 
-            button10.BackColor = Color.Crimson;
-            button10.Font = new Font("Sitka Banner", 12.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button10.ForeColor = SystemColors.ControlLightLight;
-            button10.Location = new Point(559, 41);
-            button10.Name = "button10";
-            button10.Size = new Size(102, 35);
-            button10.TabIndex = 72;
-            button10.Text = "🔎Buscar";
-            button10.TextAlign = ContentAlignment.TopCenter;
-            button10.UseVisualStyleBackColor = false;
-            button10.Click += Buscar;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(269, 49);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(284, 23);
-            textBox1.TabIndex = 73;
-            // 
-            // TablaCompras
-            // 
-            TablaCompras.AllowUserToAddRows = false;
-            TablaCompras.AllowUserToDeleteRows = false;
-            TablaCompras.BackgroundColor = SystemColors.ButtonHighlight;
-            TablaCompras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            TablaCompras.Location = new Point(44, 78);
-            TablaCompras.Name = "TablaCompras";
-            TablaCompras.ReadOnly = true;
-            TablaCompras.Size = new Size(750, 253);
-            TablaCompras.TabIndex = 68;
+            TablaSolicitarCompras.AllowUserToAddRows = false;
+            TablaSolicitarCompras.AllowUserToDeleteRows = false;
+            TablaSolicitarCompras.BackgroundColor = SystemColors.ButtonHighlight;
+            TablaSolicitarCompras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaSolicitarCompras.Location = new Point(25, 108);
+            TablaSolicitarCompras.Name = "TablaSolicitarCompras";
+            TablaSolicitarCompras.ReadOnly = true;
+            TablaSolicitarCompras.Size = new Size(599, 253);
+            TablaSolicitarCompras.TabIndex = 68;
             // 
             // label1
             // 
@@ -107,35 +64,28 @@
             label1.Location = new Point(3, 5);
             label1.Margin = new Padding(5);
             label1.Name = "label1";
-            label1.Size = new Size(359, 42);
+            label1.Size = new Size(322, 42);
             label1.TabIndex = 67;
-            label1.Text = "COMPRAS A PROVEEDORES";
+            label1.Text = "SOLICITAR PRODUCTOS ";
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(432, 340);
+            label8.Location = new Point(25, 51);
             label8.Margin = new Padding(5);
             label8.Name = "label8";
             label8.Size = new Size(93, 28);
             label8.TabIndex = 92;
             label8.Text = "Proveedor";
             // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(432, 368);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(172, 23);
-            textBox5.TabIndex = 91;
-            // 
             // label5
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(241, 340);
+            label5.Location = new Point(408, 51);
             label5.Margin = new Padding(5);
             label5.Name = "label5";
             label5.Size = new Size(82, 28);
@@ -147,80 +97,128 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(45, 340);
+            label7.Location = new Point(212, 51);
             label7.Margin = new Padding(5);
             label7.Name = "label7";
             label7.Size = new Size(82, 28);
             label7.TabIndex = 87;
             label7.Text = "Producto";
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(241, 368);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(172, 23);
-            textBox3.TabIndex = 85;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(45, 368);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(182, 23);
-            textBox2.TabIndex = 86;
-            // 
             // button3
             // 
             button3.BackColor = Color.Crimson;
             button3.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ControlLightLight;
-            button3.Location = new Point(637, 352);
+            button3.Location = new Point(467, 367);
             button3.Name = "button3";
             button3.Size = new Size(157, 39);
             button3.TabIndex = 93;
             button3.Text = "Solicitar compra";
             button3.UseVisualStyleBackColor = false;
             // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Nombre_Cliente", "Fecha_Venta", "Productos", "Cantidad", "P_Unitario", "NombrePromocion", "Descuento", "Total" });
+            comboBox1.Location = new Point(25, 79);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(179, 23);
+            comboBox1.TabIndex = 94;
+            // 
+            // comboBox2
+            // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Nombre_Cliente", "Fecha_Venta", "Productos", "Cantidad", "P_Unitario", "NombrePromocion", "Descuento", "Total" });
+            comboBox2.Location = new Point(212, 79);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(179, 23);
+            comboBox2.TabIndex = 95;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(408, 80);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(120, 23);
+            numericUpDown1.TabIndex = 96;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Crimson;
+            button1.Font = new Font("Sitka Heading", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Location = new Point(534, 73);
+            button1.Name = "button1";
+            button1.Size = new Size(90, 30);
+            button1.TabIndex = 97;
+            button1.Text = "Agregar";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Crimson;
+            button2.Font = new Font("Sitka Heading", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.ControlLightLight;
+            button2.Location = new Point(161, 367);
+            button2.Name = "button2";
+            button2.Size = new Size(30, 30);
+            button2.TabIndex = 98;
+            button2.Text = "↪️";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += botonListaCompras;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Sitka Heading", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(25, 369);
+            label2.Margin = new Padding(5);
+            label2.Name = "label2";
+            label2.Size = new Size(137, 21);
+            label2.TabIndex = 99;
+            label2.Text = "Ir a lista de compras";
+            // 
             // VentanaComprasProv
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
-            ClientSize = new Size(834, 411);
+            ClientSize = new Size(634, 411);
+            Controls.Add(label2);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(numericUpDown1);
+            Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
             Controls.Add(button3);
             Controls.Add(label8);
-            Controls.Add(textBox5);
             Controls.Add(label5);
             Controls.Add(label7);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(label2);
-            Controls.Add(button10);
-            Controls.Add(textBox1);
-            Controls.Add(TablaCompras);
+            Controls.Add(TablaSolicitarCompras);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "VentanaComprasProv";
-            Text = "COMPRAS";
-            Load += VentanaComprasProv_Load;
-            ((System.ComponentModel.ISupportInitialize)TablaCompras).EndInit();
+            Text = "REABASTECIMIENTO ";
+            ((System.ComponentModel.ISupportInitialize)TablaSolicitarCompras).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private ComboBox comboBox1;
-        private Label label2;
-        private Button button10;
-        private TextBox textBox1;
-        private DataGridView TablaCompras;
+        private DataGridView TablaSolicitarCompras;
         private Label label1;
         private Label label8;
-        private TextBox textBox5;
         private Label label5;
         private Label label7;
-        private TextBox textBox3;
-        private TextBox textBox2;
         private Button button3;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private NumericUpDown numericUpDown1;
+        private Button button1;
+        private Button button2;
+        private Label label2;
     }
 }

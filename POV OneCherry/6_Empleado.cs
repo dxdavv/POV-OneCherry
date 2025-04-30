@@ -117,7 +117,7 @@ namespace POV_OneCherry
                 if (DBC.EditData(nwquery) > 0)
                 {
                     // ACTUALIZAR TABLA CARRITO Y ANUNCIARLO
-                    string id = DBC.GetData("SELECT @@IDENTITY AS LastInsertedID")[0];
+                    string id = DBC.GetData("SELECT SCOPE_IDENTITY() AS LastInsertedID")[0];
                     IdVentas.Add(id);
                     string ids = "(";
                     foreach (string i in IdVentas) {
