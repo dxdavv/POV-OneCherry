@@ -32,15 +32,10 @@ namespace POV_OneCherry
         {
             string nwquery = query;
             int seleccion = comboBox1.SelectedIndex;
-            string ordenamiento = seleccion != -1 ? columnas[seleccion] : columnas[0];
-            if (textBox1.Text.Length > 0)
+            if (textBox1.Text.Length > 0 && seleccion > -1)
             {
-                string busqueda = textBox1.Text;
-                nwquery += $" WHERE {columnas[0]} LIKE ('{busqueda}') OR " +
-                    $"{columnas[1]} LIKE ('{busqueda}')";
-                MessageBox.Show(nwquery);
+                nwquery = DBC.queryBuscar(query, columnas[seleccion], textBox1.Text);
             }
-            nwquery += $" ORDER BY {ordenamiento}";
             TablaCategorias.DataSource = null;
             TablaCategorias.DataSource = DBC.Data(nwquery);
         }

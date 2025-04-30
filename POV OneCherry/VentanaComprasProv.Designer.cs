@@ -41,6 +41,7 @@
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             button3 = new Button();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)TablaCompras).BeginInit();
             SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 75;
+            comboBox1.SelectedIndexChanged += OnChagedIndex;
             // 
             // label2
             // 
@@ -180,12 +182,20 @@
             button3.Text = "Solicitar compra";
             button3.UseVisualStyleBackColor = false;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(269, 49);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(284, 23);
+            dateTimePicker1.TabIndex = 94;
+            // 
             // VentanaComprasProv
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(834, 411);
+            Controls.Add(dateTimePicker1);
             Controls.Add(button3);
             Controls.Add(label8);
             Controls.Add(textBox5);
@@ -222,5 +232,6 @@
         private TextBox textBox3;
         private TextBox textBox2;
         private Button button3;
+        private DateTimePicker dateTimePicker1;
     }
 }

@@ -42,6 +42,7 @@
             label4 = new Label();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)TablaUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -199,11 +200,18 @@
             // 
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Nombre de usuario", "Pin", "Tipo" });
+            comboBox2.Items.AddRange(new object[] { "ID", "Nombre de usuario", "Pin", "Tipo" });
             comboBox2.Location = new Point(199, 37);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(274, 23);
+            comboBox2.Size = new Size(107, 23);
             comboBox2.TabIndex = 48;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(312, 37);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(161, 23);
+            textBox1.TabIndex = 49;
             // 
             // Usuarios
             // 
@@ -211,6 +219,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(834, 421);
+            Controls.Add(textBox1);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(label4);
@@ -249,5 +258,6 @@
         private Label label4;
         private ComboBox comboBox1;
         private ComboBox comboBox2;
+        private TextBox textBox1;
     }
 }

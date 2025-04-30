@@ -51,13 +51,13 @@ namespace POV_OneCherry
             }
             return rowsAffected;
         }
-        public static void SentToExcel(string query)
+        public static void SentToExcel(string query, string ventana)
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
                 sfd.Filter = "Excel Files|*.xlsx";
                 sfd.Title = "Guardar Excel";
-                sfd.FileName = "excel.xlsx";
+                sfd.FileName = $"{ventana}.xlsx";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -81,7 +81,7 @@ namespace POV_OneCherry
             {
                 while (reader.Read())
                 {
-                    // MessageBox.Show(reader.VisibleFieldCount.ToString());
+                    //MessageBox.Show(reader.GetValue(0).ToString());
                     listaUsuarios.Add(reader.GetValue(0).ToString());
                 }
             }
@@ -91,6 +91,13 @@ namespace POV_OneCherry
                 return [""];
             }
             return listaUsuarios.ToArray();
+        }
+        public static string queryBuscar(string query, string buscarEn, string datoABuscar)
+        {
+            query += $" WHERE {buscarEn} LIKE ('%{datoABuscar}%')";
+            // [A-Za-z0-9]%
+            //  ORDER BY {buscarEn}
+            return query;
         }
     }
 

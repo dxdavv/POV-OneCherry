@@ -442,7 +442,7 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;

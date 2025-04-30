@@ -35,6 +35,7 @@
             TablaFacturas = new DataGridView();
             button7 = new Button();
             label1 = new Label();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)TablaFacturas).BeginInit();
             SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 39;
+            comboBox1.SelectedIndexChanged += OnChagedIndex;
             // 
             // label2
             // 
@@ -117,12 +119,20 @@
             label1.TabIndex = 68;
             label1.Text = "Ventas para realizar facturas";
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(290, 48);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(284, 23);
+            dateTimePicker1.TabIndex = 69;
+            // 
             // VentanaFacturas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(734, 391);
+            Controls.Add(dateTimePicker1);
             Controls.Add(label1);
             Controls.Add(button7);
             Controls.Add(comboBox1);
@@ -148,5 +158,6 @@
         private DataGridView TablaFacturas;
         private Button button7;
         private Label label1;
+        private DateTimePicker dateTimePicker1;
     }
 }

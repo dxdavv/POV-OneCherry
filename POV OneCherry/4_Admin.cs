@@ -177,21 +177,10 @@
         {
             string nwquery = query;
             int seleccion = comboBox1.SelectedIndex;
-            string ordenamiento = seleccion > 0 ? columnas[seleccion] : columnas[0];
-            if (textBox1.Text.Length > 0)
+            if (textBox1.Text.Length > 0 && seleccion > -1)
             {
-                string busqueda = textBox1.Text;
-                nwquery += $" WHERE {columnas[0]} LIKE ('{busqueda}') OR " +
-                    $"{columnas[1]} LIKE ('{busqueda}') OR " +
-                    $"{columnas[2]} LIKE ('{busqueda}') OR " +
-                    $"{columnas[3]} LIKE ('{busqueda}') OR " +
-                    $"{columnas[4]} LIKE ('{busqueda}')";
-                if (ventana != 1)
-                {
-                    nwquery += $" OR {columnas[5]} LIKE ('{busqueda}')";
-                }
+                nwquery = DBC.queryBuscar(query, columnas[seleccion], textBox1.Text);
             }
-            nwquery += $" ORDER BY {ordenamiento}";
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = DBC.Data(nwquery);
             textBox1.Clear();

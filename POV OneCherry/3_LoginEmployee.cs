@@ -34,10 +34,14 @@ namespace POV_OneCherry
                 MessageBox.Show("Usuario o Contraseña incorrecta");
                 return;
             }
-            string nwquery = "SELECT Empleados.NombreApellido FROM Empleados" +
+            string nwquery = "SELECT ID_Empleados, FROM Empleados" +
                 " JOIN Usuarios ON Empleados.ID_Usuarios = Usuarios.ID_Usuarios"
                 + $" WHERE Usuarios.NombreUsuario = '{usr}' AND Usuarios.Pin = '{pwd}' AND Usuarios.Tipo = 'Empleado'";
-            Form log = new Empleado(DBC.GetData(nwquery)[0].ToString());
+            string idEmpleado = DBC.GetData(nwquery)[0];
+            nwquery = "SELECT Empleados.NombreApellido FROM Empleados" +
+                " JOIN Usuarios ON Empleados.ID_Usuarios = Usuarios.ID_Usuarios"
+                + $" WHERE Usuarios.NombreUsuario = '{usr}' AND Usuarios.Pin = '{pwd}' AND Usuarios.Tipo = 'Empleado'";
+            Form log = new Empleado(DBC.GetData(nwquery)[0].ToString(), idEmpleado);
             log.Show();
             this.Hide();
             log.FormClosed += onClosedChild;

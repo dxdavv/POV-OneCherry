@@ -30,31 +30,38 @@ namespace POV_OneCherry
         {
             TablaCompras.DataSource = null;
             TablaCompras.DataSource = DBC.Data(query);
+            dateTimePicker1.Hide();
+        }
+        private void OnChagedIndex(object sender, EventArgs e)
+        {
+            textBox1.Show();
+            dateTimePicker1.Hide();
+            if (comboBox1.SelectedIndex == 1)
+            {
+                textBox1.Hide();
+                dateTimePicker1.Show();
+            }
         }
         private void Buscar(object sender, EventArgs e)
         {
             string nwquery = query;
             int seleccion = comboBox1.SelectedIndex;
-            string ordenamiento = seleccion != -1 ? columnas[seleccion] : columnas[0];
-            if (textBox1.Text.Length > 0)
+            if ((textBox1.Text.Length > 0 || seleccion == 1) && seleccion > -1)
             {
                 string busqueda = textBox1.Text;
-                nwquery += $" WHERE {columnas[0]} LIKE ('{busqueda}') OR " +
-                    $"{columnas[1]} LIKE ('{busqueda}') OR " +
-                    $"{columnas[2]} LIKE ('{busqueda}') OR " +
-                    $"{columnas[3]} LIKE ('{busqueda}') OR " +
-                    $"{columnas[4]} LIKE ('{busqueda}') OR " +
-                    $"{columnas[5]} LIKE ('{busqueda}') OR " +
-                    $"{columnas[6]} LIKE ('{busqueda}')";
+                if (seleccion == 1)
+                {
+                    busqueda = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
+                }
+                nwquery = DBC.queryBuscar(query, columnas[seleccion], busqueda);
             }
-            nwquery += $" ORDER BY {ordenamiento}";
             TablaCompras.DataSource = null;
             TablaCompras.DataSource = DBC.Data(nwquery);
             textBox1.Clear();
         }
         private void ToExcel(object sender, EventArgs e)
         {
-            DBC.SentToExcel(query);
+            DBC.SentToExcel(query, "Compras Proveedor");
         }
     }
 }
