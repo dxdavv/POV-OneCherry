@@ -41,9 +41,9 @@
             textBox5 = new TextBox();
             label5 = new Label();
             label7 = new Label();
-            textBox3 = new TextBox();
             textBox2 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)TablaPromociones).BeginInit();
             SuspendLayout();
             // 
@@ -51,11 +51,12 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Fecha", "Nombre", "Descuento" });
+            comboBox1.Items.AddRange(new object[] { "ID", "Fecha", "Nombre", "Descuento" });
             comboBox1.Location = new Point(196, 36);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 43;
+            comboBox1.SelectedIndexChanged += OnChagedIndex;
             // 
             // label2
             // 
@@ -196,13 +197,6 @@
             label7.TabIndex = 66;
             label7.Text = "Nombre";
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(311, 328);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(172, 23);
-            textBox3.TabIndex = 65;
-            // 
             // textBox2
             // 
             textBox2.Location = new Point(115, 328);
@@ -217,18 +211,25 @@
             dateTimePicker1.Size = new Size(173, 23);
             dateTimePicker1.TabIndex = 72;
             // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(323, 36);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(284, 23);
+            dateTimePicker2.TabIndex = 73;
+            // 
             // VentanaPromociones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(799, 411);
+            Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
             Controls.Add(label8);
             Controls.Add(textBox5);
             Controls.Add(label5);
             Controls.Add(label7);
-            Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(comboBox1);
             Controls.Add(label2);
@@ -263,8 +264,8 @@
         private TextBox textBox5;
         private Label label5;
         private Label label7;
-        private TextBox textBox3;
         private TextBox textBox2;
         private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker2;
     }
 }

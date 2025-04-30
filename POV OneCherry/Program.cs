@@ -1,3 +1,4 @@
+using DocumentFormat.OpenXml.Packaging;
 using System.Data.SqlClient;
 
 namespace POV_OneCherry
@@ -15,7 +16,7 @@ namespace POV_OneCherry
             DBC.nombre = "BAN03";
             DBC.DB = "PruebaPOS";
             ApplicationConfiguration.Initialize();
-            Application.Run(new PrimerPantallaLogin());
+            Application.Run(new Administrador());
 
         }
     }
