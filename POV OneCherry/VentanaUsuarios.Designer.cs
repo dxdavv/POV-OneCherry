@@ -63,7 +63,7 @@
             button10.BackColor = Color.Crimson;
             button10.Font = new Font("Sitka Banner", 12.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button10.ForeColor = SystemColors.ControlLightLight;
-            button10.Location = new Point(479, 32);
+            button10.Location = new Point(607, 29);
             button10.Name = "button10";
             button10.Size = new Size(102, 35);
             button10.TabIndex = 38;

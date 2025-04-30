@@ -84,12 +84,12 @@
             splitContainer1.Panel1.Controls.Add(button11);
             splitContainer1.Panel1.Controls.Add(button5);
             splitContainer1.Panel1.Controls.Add(button4);
-            splitContainer1.Panel1.Controls.Add(pictureBox1);
             splitContainer1.Panel1.Controls.Add(button1);
             splitContainer1.Panel1.Controls.Add(Productos);
             splitContainer1.Panel1.Controls.Add(button3);
             splitContainer1.Panel1.Controls.Add(button2);
             splitContainer1.Panel1.Controls.Add(ButtonProveedor);
+            splitContainer1.Panel1.Controls.Add(pictureBox1);
             // 
             // splitContainer1.Panel2
             // 
@@ -174,11 +174,12 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(5, 5);
+            pictureBox1.Location = new Point(22, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(35, 35);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Size = new Size(90, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
@@ -277,7 +278,7 @@
             button12.Name = "button12";
             button12.Size = new Size(193, 43);
             button12.TabIndex = 64;
-            button12.Text = "Compras a proveedor";
+            button12.Text = "Comprar a proveedor";
             button12.UseVisualStyleBackColor = false;
             button12.Click += botonComprasProveedor;
             // 
