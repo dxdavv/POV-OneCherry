@@ -36,6 +36,7 @@
             dataGridView1 = new DataGridView();
             label1 = new Label();
             button1 = new Button();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -56,11 +57,12 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "ID", "Fecha", "Total", "Cliente", "Usuario", "Promocion" });
+            comboBox1.Items.AddRange(new object[] { "ID", "Empleados", "Fecha", "Total", "Cliente", "Promocion" });
             comboBox1.Location = new Point(143, 47);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 90;
+            comboBox1.SelectedIndexChanged += OnChangeSelected;
             // 
             // label2
             // 
@@ -132,12 +134,20 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += botonFacturas;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(270, 47);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(284, 23);
+            dateTimePicker1.TabIndex = 93;
+            // 
             // VentanaVenta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(799, 411);
+            Controls.Add(dateTimePicker1);
             Controls.Add(button1);
             Controls.Add(button12);
             Controls.Add(comboBox1);
@@ -165,5 +175,6 @@
         private DataGridView dataGridView1;
         private Label label1;
         private Button button1;
+        private DateTimePicker dateTimePicker1;
     }
 }

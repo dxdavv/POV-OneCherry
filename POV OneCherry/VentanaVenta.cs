@@ -15,12 +15,19 @@ namespace POV_OneCherry
 {
     public partial class VentanaVenta : Form
     {
-        private string query = "SELECT Ventas.ID_Ventas AS ID_Venta, Usuarios.NombreUsuario AS Usuario, Ventas.FechaVenta AS Fecha, " +
+        private string query = "SELECT Ventas.ID_Ventas AS ID_Venta, Empleados.NombreApellido AS Empleado, Ventas.FechaVenta AS Fecha, " +
                 "CONCAT (Clientes.Nombre, ' ' ,Clientes.Apellido) AS Nombre_Cliente, Ventas.TotalVenta AS Total, Promociones.NombrePromocion FROM Ventas " +
                 "JOIN Clientes ON Ventas.ID_Clientes = Clientes.ID_Clientes  " +
                 "JOIN Promociones ON Ventas.ID_Promociones = Promociones.ID_Promociones " +
-                "JOIN Usuarios ON Ventas.ID_Usuarios = Usuarios.ID_Usuarios";
-        private string[] columnas = { "Ventas.ID_Ventas", "Ventas.FechaVenta", "Ventas.TotalVenta", "Ventas.ID_Clientes", "Ventas.ID_Usuarios", "Ventas.ID_Promociones" };
+                "JOIN Empleados ON Ventas.ID_Empleados = Empleados.ID_Empleados";
+        private string[] columnas = { 
+            "Ventas.ID_Ventas", 
+            "Empleados.NombreApellido", 
+            "Ventas.FechaVenta",
+            "Ventas.TotalVenta",
+            "CONCAT (Clientes.Nombre, ' ' ,Clientes.Apellido)", 
+            "Promociones.NombrePromocion",
+        };
         public VentanaVenta()
         {
             InitializeComponent();
@@ -43,30 +50,38 @@ namespace POV_OneCherry
         {
             dataGridView1.DataSource = null; 
             dataGridView1.DataSource = DBC.Data(query);
+            dateTimePicker1.Hide();
+        }
+        private void OnChangeSelected(object sender, EventArgs e)
+        {
+            textBox1.Show();
+            dateTimePicker1.Hide();
+            if (comboBox1.SelectedIndex == 2)
+            {
+                dateTimePicker1.Show();
+                textBox1.Hide();
+            }
         }
         private void Buscar(object sender, EventArgs e)
         {
             string nwquery = query;
             int seleccion = comboBox1.SelectedIndex;
-            string ordenamiento = seleccion != -1 ? columnas[seleccion] : columnas[0];
-            if (textBox1.Text.Length > 0)
+            if ((textBox1.Text.Length > 0 || seleccion == 2) && seleccion > -1)
             {
-                string busqueda = textBox1.Text;
-                nwquery += $" WHERE Ventas.ID_Ventas LIKE ('{busqueda}') OR " +
-                    $"Usuarios.NombreUsuario LIKE ('{busqueda}') OR " +
-                    $"Ventas.FechaVenta LIKE ('{busqueda}') OR " +
-                    $"Clientes.Nombre LIKE ('{busqueda}') OR " +
-                    $"Clientes.Apellido LIKE ('{busqueda}') OR " +
-                    $"Ventas.TotalVenta LIKE ('{busqueda}') OR " +
-                    $"Promociones.NombrePromocion LIKE ('{busqueda}')";
+                string dato = textBox1.Text;
+                if (seleccion == 2)
+                {
+                    dato = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
+                }
+                nwquery = DBC.queryBuscar(query, columnas[seleccion], dato);
+                textBox1.Clear();
             }
-            nwquery += $" ORDER BY {ordenamiento}";
-            dataGridView1.DataSource = DBC.Data(nwquery);
-            textBox1.Clear();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = DBC.Data(query);
         }
         private void ToExcel (object sender, EventArgs e)
         {
-            DBC.SentToExcel(query);
+            DBC.SentToExcel(query, "Venta");
         }
     }
 }

@@ -35,8 +35,7 @@
             TablaFacturas = new DataGridView();
             button7 = new Button();
             label1 = new Label();
-            label3 = new Label();
-            button2 = new Button();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)TablaFacturas).BeginInit();
             SuspendLayout();
             // 
@@ -49,6 +48,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 39;
+            comboBox1.SelectedIndexChanged += OnChagedIndex;
             // 
             // label2
             // 
@@ -119,29 +119,12 @@
             label1.TabIndex = 68;
             label1.Text = "Ventas para realizar facturas";
             // 
-            // label3
+            // dateTimePicker1
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Sitka Heading", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(24, 342);
-            label3.Margin = new Padding(5);
-            label3.Name = "label3";
-            label3.Size = new Size(104, 21);
-            label3.TabIndex = 101;
-            label3.Text = "Volver a ventas";
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Crimson;
-            button2.Font = new Font("Sitka Heading", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(127, 340);
-            button2.Name = "button2";
-            button2.Size = new Size(30, 30);
-            button2.TabIndex = 100;
-            button2.Text = "↪️";
-            button2.UseVisualStyleBackColor = false;
+            dateTimePicker1.Location = new Point(290, 48);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(284, 23);
+            dateTimePicker1.TabIndex = 69;
             // 
             // VentanaFacturas
             // 
@@ -149,8 +132,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(734, 391);
-            Controls.Add(label3);
-            Controls.Add(button2);
+            Controls.Add(dateTimePicker1);
             Controls.Add(label1);
             Controls.Add(button7);
             Controls.Add(comboBox1);
@@ -176,7 +158,6 @@
         private DataGridView TablaFacturas;
         private Button button7;
         private Label label1;
-        private Label label3;
-        private Button button2;
+        private DateTimePicker dateTimePicker1;
     }
 }

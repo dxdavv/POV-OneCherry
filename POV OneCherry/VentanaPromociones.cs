@@ -15,7 +15,12 @@ namespace POV_OneCherry
     public partial class VentanaPromociones : Form
     {
         private string query = "SELECT ID_Promociones AS ID, FechaPromocion AS Fecha_Termino, NombrePromocion AS Nombre, Descuento FROM Promociones";
-        private string[] columnas = { "ID_Promociones", "NombrePromocion", "FechaPromocion", "Descuento" };
+        private string[] columnas = { 
+            "ID_Promociones", 
+            "FechaPromocion", 
+            "NombrePromocion", 
+            "Descuento" 
+        };
         private string IdACambiar = "";
         public VentanaPromociones()
         {
@@ -26,21 +31,33 @@ namespace POV_OneCherry
         {
             TablaPromociones.DataSource = null;
             TablaPromociones.DataSource = DBC.Data(query);
+            dateTimePicker2.Hide();
+        }
+
+        private void OnChagedIndex(object sender, EventArgs e)
+        {
+            textBox1.Show();
+            dateTimePicker2.Hide();
+            if (comboBox1.SelectedIndex == 1)
+            {
+                textBox1.Hide();
+                dateTimePicker2.Show();
+            }
         }
 
         private void Buscar(object sender, EventArgs e)
         {
             string nwquery = query;
             int seleccion = comboBox1.SelectedIndex;
-            string ordenamiento = seleccion != -1 ? columnas[seleccion] : columnas[0];
-            if (textBox1.Text.Length > 0)
+            if ((textBox1.Text.Length > 0 || seleccion == 1) && seleccion > -1)
             {
                 string busqueda = textBox1.Text;
-                nwquery += $" WHERE {columnas[1]} LIKE ('{busqueda}') OR " +
-                    $"{columnas[2]} LIKE ('{busqueda}') OR " +
-                    $"{columnas[3]} LIKE ('{busqueda}')";
+                if (seleccion == 1)
+                {
+                    busqueda = dateTimePicker2.Value.Date.ToString("yyyy-MM-dd");
+                }
+                nwquery = DBC.queryBuscar(query, columnas[seleccion], busqueda);
             }
-            nwquery += $" ORDER BY {ordenamiento}";
             TablaPromociones.DataSource = null;
             TablaPromociones.DataSource = DBC.Data(nwquery);
             textBox1.Clear();
@@ -112,7 +129,6 @@ namespace POV_OneCherry
             {
                 nwquery = $"DELETE FROM Promociones WHERE ID_Promociones = {IdACambiar}";
                 textBox2.Clear();
-                textBox3.Clear();
                 comboBox1.SelectedIndex = -1;
 
                 if (DBC.EditData(nwquery) > 0)

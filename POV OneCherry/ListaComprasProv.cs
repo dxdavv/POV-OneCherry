@@ -56,7 +56,7 @@ namespace POV_OneCherry
         }
         private void ToExcel(object sender, EventArgs e)
         {
-            DBC.SentToExcel(query);
+            DBC.SentToExcel(query, "Lista de compras a proveedor");
         }
     }
 }

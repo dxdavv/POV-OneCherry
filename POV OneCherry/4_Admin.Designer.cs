@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrador));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             splitContainer1 = new SplitContainer();
             button13 = new Button();
             button11 = new Button();
@@ -83,12 +84,12 @@
             splitContainer1.Panel1.Controls.Add(button11);
             splitContainer1.Panel1.Controls.Add(button5);
             splitContainer1.Panel1.Controls.Add(button4);
-            splitContainer1.Panel1.Controls.Add(pictureBox1);
             splitContainer1.Panel1.Controls.Add(button1);
             splitContainer1.Panel1.Controls.Add(Productos);
             splitContainer1.Panel1.Controls.Add(button3);
             splitContainer1.Panel1.Controls.Add(button2);
             splitContainer1.Panel1.Controls.Add(ButtonProveedor);
+            splitContainer1.Panel1.Controls.Add(pictureBox1);
             // 
             // splitContainer1.Panel2
             // 
@@ -173,11 +174,12 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(5, 5);
+            pictureBox1.Location = new Point(22, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(35, 35);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Size = new Size(90, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
@@ -441,7 +443,16 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(55, 79);
             dataGridView1.Name = "dataGridView1";
@@ -476,15 +487,18 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(659, 1);
             label4.Margin = new Padding(5);
             label4.Name = "label4";
+            label4.RightToLeft = RightToLeft.Yes;
             label4.Size = new Size(146, 28);
             label4.TabIndex = 1;
             label4.Text = "Nombre Apellido";
+            label4.TextAlign = ContentAlignment.MiddleRight;
             // 
             // Administrador
             // 

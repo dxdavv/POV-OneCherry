@@ -26,10 +26,12 @@ namespace POV_OneCherry
 
         private void botonListaCompras(object sender, EventArgs e)
         {
+
             Form lista = new ListaComprasProv();
             lista.Show();
             this.Hide();
             lista.FormClosed += onCloseChild;
+
         }
 
     }
