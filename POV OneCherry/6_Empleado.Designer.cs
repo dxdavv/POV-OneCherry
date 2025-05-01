@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empleado));
             splitContainer1 = new SplitContainer();
-            pictureBox1 = new PictureBox();
             button6 = new Button();
             label4 = new Label();
             splitContainer2 = new SplitContainer();
@@ -65,11 +64,13 @@
             comboBox4 = new ComboBox();
             label21 = new Label();
             button11 = new Button();
+            pictureBox1 = new PictureBox();
+            label3 = new Label();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel1.SuspendLayout();
             splitContainer2.Panel2.SuspendLayout();
@@ -78,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)TablaClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TablaProducto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TablaVenta).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -90,6 +92,7 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.LavenderBlush;
+            splitContainer1.Panel1.Controls.Add(label3);
             splitContainer1.Panel1.Controls.Add(pictureBox1);
             splitContainer1.Panel1.Controls.Add(button6);
             splitContainer1.Panel1.Controls.Add(label4);
@@ -100,16 +103,6 @@
             splitContainer1.Size = new Size(984, 661);
             splitContainer1.SplitterDistance = 47;
             splitContainer1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(35, 35);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
             // 
             // button6
             // 
@@ -165,6 +158,7 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.BackColor = Color.LavenderBlush;
+            splitContainer2.Panel2.Controls.Add(button4);
             splitContainer2.Panel2.Controls.Add(button9);
             splitContainer2.Panel2.Controls.Add(button3);
             splitContainer2.Panel2.Controls.Add(textBox9);
@@ -520,6 +514,40 @@
             button11.Text = "➡️";
             button11.UseVisualStyleBackColor = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(90, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Sitka Subheading", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(382, 1);
+            label3.Name = "label3";
+            label3.Size = new Size(289, 47);
+            label3.TabIndex = 49;
+            label3.Text = "PUNTO DE VENTA";
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.OliveDrab;
+            button4.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.ForeColor = SystemColors.ControlLightLight;
+            button4.Location = new Point(13, 559);
+            button4.Name = "button4";
+            button4.Size = new Size(192, 39);
+            button4.TabIndex = 57;
+            button4.Text = "❎Cancelar venta";
+            button4.UseVisualStyleBackColor = false;
+            // 
             // Empleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -537,7 +565,6 @@
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel1.PerformLayout();
             splitContainer2.Panel2.ResumeLayout(false);
@@ -548,6 +575,7 @@
             ((System.ComponentModel.ISupportInitialize)TablaClientes).EndInit();
             ((System.ComponentModel.ISupportInitialize)TablaProducto).EndInit();
             ((System.ComponentModel.ISupportInitialize)TablaVenta).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -559,7 +587,6 @@
         private Label label2;
         private Button button6;
         private Label label4;
-        private PictureBox pictureBox1;
         private ComboBox comboBox1;
         private Label label5;
         private Button button10;
@@ -589,5 +616,8 @@
         private Button button3;
         private Button button9;
         private ComboBox comboBox4;
+        private Label label3;
+        private PictureBox pictureBox1;
+        private Button button4;
     }
 }

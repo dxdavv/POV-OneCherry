@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaCategoría));
             label7 = new Label();
             textBox2 = new TextBox();
             comboBox1 = new ComboBox();
@@ -37,9 +38,11 @@
             button9 = new Button();
             button8 = new Button();
             button7 = new Button();
-            label1 = new Label();
             TablaCategorias = new DataGridView();
+            pictureBox1 = new PictureBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)TablaCategorias).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label7
@@ -47,16 +50,16 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(12, 273);
+            label7.Location = new Point(311, 273);
             label7.Margin = new Padding(5);
             label7.Name = "label7";
-            label7.Size = new Size(152, 28);
+            label7.Size = new Size(197, 28);
             label7.TabIndex = 104;
-            label7.Text = "Agregar categoría";
+            label7.Text = "Nombre de la categoría";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(12, 301);
+            textBox2.Location = new Point(267, 309);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(284, 23);
             textBox2.TabIndex = 95;
@@ -143,17 +146,6 @@
             button7.UseVisualStyleBackColor = false;
             button7.Click += Agregar;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Sitka Heading", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(150, 35);
-            label1.TabIndex = 87;
-            label1.Text = "CATEGORÍAS";
-            // 
             // TablaCategorias
             // 
             TablaCategorias.AllowUserToAddRows = false;
@@ -167,12 +159,37 @@
             TablaCategorias.TabIndex = 86;
             TablaCategorias.CellDoubleClick += MandarAEditar;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(90, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 105;
+            pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Sitka Heading", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(98, 6);
+            label3.Margin = new Padding(5);
+            label3.Name = "label3";
+            label3.Size = new Size(386, 42);
+            label3.TabIndex = 106;
+            label3.Text = "CATEGORIAS DE PRODUCTOS";
+            // 
             // VentanaCategoría
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(804, 391);
+            Controls.Add(label3);
+            Controls.Add(pictureBox1);
             Controls.Add(label7);
             Controls.Add(textBox2);
             Controls.Add(comboBox1);
@@ -182,13 +199,12 @@
             Controls.Add(button9);
             Controls.Add(button8);
             Controls.Add(button7);
-            Controls.Add(label1);
             Controls.Add(TablaCategorias);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "VentanaCategoría";
-            Text = "CATEGORÍAS";
             Load += VentanaCategoría_Load;
             ((System.ComponentModel.ISupportInitialize)TablaCategorias).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -203,7 +219,8 @@
         private Button button9;
         private Button button8;
         private Button button7;
-        private Label label1;
         private DataGridView TablaCategorias;
+        private PictureBox pictureBox1;
+        private Label label3;
     }
 }

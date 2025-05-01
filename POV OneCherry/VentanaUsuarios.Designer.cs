@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
             label2 = new Label();
             button10 = new Button();
             button9 = new Button();
@@ -43,7 +44,9 @@
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
             textBox1 = new TextBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)TablaUsuarios).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -51,7 +54,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(51, 33);
+            label2.Location = new Point(73, 48);
             label2.Margin = new Padding(5);
             label2.Name = "label2";
             label2.Size = new Size(140, 28);
@@ -63,7 +66,7 @@
             button10.BackColor = Color.Crimson;
             button10.Font = new Font("Sitka Banner", 12.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button10.ForeColor = SystemColors.ControlLightLight;
-            button10.Location = new Point(607, 29);
+            button10.Location = new Point(520, 44);
             button10.Name = "button10";
             button10.Size = new Size(102, 35);
             button10.TabIndex = 38;
@@ -117,7 +120,7 @@
             TablaUsuarios.AllowUserToDeleteRows = false;
             TablaUsuarios.BackgroundColor = SystemColors.ButtonHighlight;
             TablaUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            TablaUsuarios.Location = new Point(44, 70);
+            TablaUsuarios.Location = new Point(44, 84);
             TablaUsuarios.Name = "TablaUsuarios";
             TablaUsuarios.ReadOnly = true;
             TablaUsuarios.Size = new Size(750, 225);
@@ -129,7 +132,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Sitka Heading", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(0, -7);
+            label1.Location = new Point(98, 6);
             label1.Margin = new Padding(5);
             label1.Name = "label1";
             label1.Size = new Size(147, 42);
@@ -138,14 +141,14 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(44, 331);
+            textBox2.Location = new Point(44, 342);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(284, 23);
             textBox2.TabIndex = 41;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(348, 331);
+            textBox3.Location = new Point(348, 342);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(284, 23);
             textBox3.TabIndex = 42;
@@ -155,7 +158,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(44, 303);
+            label3.Location = new Point(44, 314);
             label3.Margin = new Padding(5);
             label3.Name = "label3";
             label3.Size = new Size(74, 28);
@@ -167,7 +170,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(348, 303);
+            label5.Location = new Point(348, 314);
             label5.Margin = new Padding(5);
             label5.Name = "label5";
             label5.Size = new Size(101, 28);
@@ -179,7 +182,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(662, 303);
+            label4.Location = new Point(662, 314);
             label4.Margin = new Padding(5);
             label4.Name = "label4";
             label4.Size = new Size(47, 28);
@@ -191,7 +194,7 @@
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Administrador", "Empleado" });
-            comboBox1.Location = new Point(662, 331);
+            comboBox1.Location = new Point(662, 342);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 47;
@@ -201,17 +204,28 @@
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "ID", "Nombre de usuario", "Pin", "Tipo" });
-            comboBox2.Location = new Point(199, 37);
+            comboBox2.Location = new Point(221, 52);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(107, 23);
             comboBox2.TabIndex = 48;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(312, 37);
+            textBox1.Location = new Point(334, 52);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(161, 23);
+            textBox1.Size = new Size(180, 23);
             textBox1.TabIndex = 49;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(90, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 102;
+            pictureBox1.TabStop = false;
             // 
             // Usuarios
             // 
@@ -219,6 +233,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(834, 421);
+            Controls.Add(pictureBox1);
             Controls.Add(textBox1);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
@@ -236,9 +251,9 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Usuarios";
-            Text = "USUARIOS";
             Load += Usuarios_Load;
             ((System.ComponentModel.ISupportInitialize)TablaUsuarios).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -259,5 +274,6 @@
         private ComboBox comboBox1;
         private ComboBox comboBox2;
         private TextBox textBox1;
+        private PictureBox pictureBox1;
     }
 }

@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrador));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             splitContainer1 = new SplitContainer();
             button13 = new Button();
             button11 = new Button();
             button5 = new Button();
             button4 = new Button();
-            pictureBox1 = new PictureBox();
             button1 = new Button();
             Productos = new Button();
             button3 = new Button();
             button2 = new Button();
             ButtonProveedor = new Button();
+            pictureBox1 = new PictureBox();
             label6 = new Label();
             comboBox2 = new ComboBox();
             button12 = new Button();
@@ -125,7 +125,7 @@
             button13.BackColor = Color.Crimson;
             button13.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button13.ForeColor = SystemColors.ControlLightLight;
-            button13.Location = new Point(3, 255);
+            button13.Location = new Point(1, 195);
             button13.Name = "button13";
             button13.Size = new Size(130, 30);
             button13.TabIndex = 9;
@@ -138,7 +138,7 @@
             button11.BackColor = Color.Crimson;
             button11.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button11.ForeColor = SystemColors.ControlLightLight;
-            button11.Location = new Point(2, 225);
+            button11.Location = new Point(1, 105);
             button11.Name = "button11";
             button11.Size = new Size(130, 30);
             button11.TabIndex = 8;
@@ -151,7 +151,7 @@
             button5.BackColor = Color.Crimson;
             button5.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button5.ForeColor = SystemColors.ControlLightLight;
-            button5.Location = new Point(1, 195);
+            button5.Location = new Point(1, 255);
             button5.Name = "button5";
             button5.Size = new Size(130, 30);
             button5.TabIndex = 7;
@@ -172,17 +172,6 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += botonProductos;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(22, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(90, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            // 
             // button1
             // 
             button1.BackColor = Color.Crimson;
@@ -201,7 +190,7 @@
             Productos.BackColor = Color.Crimson;
             Productos.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Productos.ForeColor = SystemColors.ControlLightLight;
-            Productos.Location = new Point(1, 135);
+            Productos.Location = new Point(1, 75);
             Productos.Name = "Productos";
             Productos.Size = new Size(130, 30);
             Productos.TabIndex = 3;
@@ -214,7 +203,7 @@
             button3.BackColor = Color.Crimson;
             button3.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ControlLightLight;
-            button3.Location = new Point(1, 105);
+            button3.Location = new Point(1, 45);
             button3.Name = "button3";
             button3.Size = new Size(130, 30);
             button3.TabIndex = 2;
@@ -227,7 +216,7 @@
             button2.BackColor = Color.Crimson;
             button2.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(1, 45);
+            button2.Location = new Point(1, 135);
             button2.Name = "button2";
             button2.Size = new Size(130, 30);
             button2.TabIndex = 1;
@@ -240,13 +229,24 @@
             ButtonProveedor.BackColor = Color.Crimson;
             ButtonProveedor.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ButtonProveedor.ForeColor = SystemColors.ControlLightLight;
-            ButtonProveedor.Location = new Point(1, 75);
+            ButtonProveedor.Location = new Point(1, 225);
             ButtonProveedor.Name = "ButtonProveedor";
             ButtonProveedor.Size = new Size(130, 30);
             ButtonProveedor.TabIndex = 0;
             ButtonProveedor.Text = "🚚Proveedores";
             ButtonProveedor.UseVisualStyleBackColor = false;
             ButtonProveedor.Click += botonProveedores;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(90, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -445,14 +445,14 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(55, 79);
             dataGridView1.Name = "dataGridView1";
@@ -512,7 +512,7 @@
             MinimumSize = new Size(1000, 500);
             Name = "Administrador";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ADMIN";
+            Text = "ADMINISTRADOR";
             Load += Administrador_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
