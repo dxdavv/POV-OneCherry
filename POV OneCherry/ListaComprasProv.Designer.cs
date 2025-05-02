@@ -86,6 +86,7 @@
             button10.Text = "🔎Buscar";
             button10.TextAlign = ContentAlignment.TopCenter;
             button10.UseVisualStyleBackColor = false;
+            button10.Click += Buscar;
             // 
             // textBox1
             // 
@@ -117,6 +118,7 @@
             button12.TabIndex = 86;
             button12.Text = "⏬Descarga excel";
             button12.UseVisualStyleBackColor = false;
+            button12.Click += ToExcel;
             // 
             // pictureBox1
             // 
