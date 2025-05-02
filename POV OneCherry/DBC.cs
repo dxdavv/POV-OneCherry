@@ -19,6 +19,8 @@ using iText.Layout;
 using iText.Kernel.Pdf.Canvas;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentFormat.OpenXml.Spreadsheet;
+using iText.Commons.Actions;
 namespace POV_OneCherry
 {
     static class DBC
@@ -110,31 +112,30 @@ namespace POV_OneCherry
             //  ORDER BY {buscarEn}
             return query;
         }
-        public static void ticket(string id)
+        public static void ticket(string idVenta, string query)
         {
-            string rutaArchivo = "";
-            string rutaModificada = "documento_modificado.pdf";
+            SqlConnection connection = GlobalDBConnecion();
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@IDVenta", idVenta);
 
-            // Abrir el PDF existente en modo edición
-            using (PdfDocument pdf = new PdfDocument(new PdfReader(rutaArchivo), new PdfWriter(rutaModificada)))
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read())
             {
-                // Seleccionar la página donde queremos insertar el texto (por ejemplo, la primera)
-                PdfPage pagina = pdf.GetPage(1);
-                PdfCanvas canvas = new PdfCanvas(pagina);
+                string idVenta = reader["ID_Venta"].ToString();
+                string usuario = reader["Usuario"].ToString();
+                string fecha = reader["Fecha"].ToString();
+                string nombreCliente = reader["Nombre_Cliente"].ToString();
+                string idProducto = reader["ID_Producto"].ToString();
+                string cantidad = reader["Cantidad"].ToString();
+                string precio = reader["Precio"].ToString();
+                string subtotal = reader["Subtotal"].ToString();
+                string total = reader["Total"].ToString();
+                string pagoCon = reader["PagoCon"].ToString();
+                string cambio = reader["Cambio"].ToString();
 
-                // Definir la posición donde queremos colocar el texto (x, y)
-                float x = 200;  // Posición horizontal
-                float y = 500;  // Posición vertical
-
-                // Escribir texto en coordenadas específicas
-                canvas.BeginText()
-                      .SetFontAndSize(PdfFontFactory.CreateFont(), 12)
-                      .MoveText(x, y)
-                      .SetColor(new DeviceRgb(0, 0, 0), true)
-                      .ShowText("Este es un texto insertado en una posición específica.")
-                      .EndText();
-
-                Console.WriteLine("Texto agregado correctamente en el PDF.");
+                // Aquí puedes formatear los datos para tu ticket.
             }
         }
         public static void factura(string id)

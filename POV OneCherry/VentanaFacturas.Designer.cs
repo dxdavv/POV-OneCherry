@@ -37,6 +37,7 @@
             label1 = new Label();
             label3 = new Label();
             button2 = new Button();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)TablaFacturas).BeginInit();
             SuspendLayout();
             // 
@@ -143,12 +144,20 @@
             button2.Text = "↪️";
             button2.UseVisualStyleBackColor = false;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(290, 48);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(284, 23);
+            dateTimePicker1.TabIndex = 102;
+            // 
             // VentanaFacturas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(734, 391);
+            Controls.Add(dateTimePicker1);
             Controls.Add(label3);
             Controls.Add(button2);
             Controls.Add(label1);
@@ -178,5 +187,6 @@
         private Label label1;
         private Label label3;
         private Button button2;
+        private DateTimePicker dateTimePicker1;
     }
 }
