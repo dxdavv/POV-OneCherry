@@ -7,8 +7,7 @@ using System.Diagnostics;
 using Rectangle = iTextSharp.text.Rectangle;
 using Font = iTextSharp.text.Font;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using iText.Layout.Borders;
-using DocumentFormat.OpenXml.Office2013.Drawing.Chart;
+//using Document = iTextSharp.text.Document;
 namespace POV_OneCherry
 {
     static class DBC
@@ -340,26 +339,10 @@ namespace POV_OneCherry
                 UseShellExecute = true
             });
         }
-        //public static void factura(string id)
-        //{
-        //    string rutaArchivo = System.IO.Path.Combine(Application.StartupPath, "Resources", "factura.docx");
-
-        //    using (WordprocessingDocument documento = WordprocessingDocument.Open(rutaArchivo, true))
-        //    {
-        //        Body cuerpo = documento.MainDocumentPart.Document.Body;
-
-        //        // Agregar un nuevo párrafo al final del documento
-
-        //        DocumentFormat.OpenXml.Wordprocessing.Paragraph nuevoParrafo = 
-        //            new DocumentFormat.OpenXml.Wordprocessing.Paragraph(new DocumentFormat.OpenXml.Wordprocessing.Run(
-        //                new DocumentFormat.OpenXml.Wordprocessing.Text("Este es el texto insertado en el documento.")));
-
-        //        cuerpo.AppendChild(nuevoParrafo);
-
-        //        // Guardar cambios
-        //        documento.MainDocumentPart.Document.Save();
-        //    }
-        //}
+        public static void factura(string idVenta)
+        {
+            
+        }
         public static void Salir()
         {
             Application.Exit();

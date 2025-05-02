@@ -219,7 +219,7 @@ namespace POV_OneCherry
                 }
                 else if (resultado == DialogResult.Cancel)
                 {
-                    MessageBox.Show("Has seleccionado Factura.");
+                    DBC.factura(IdVenta);
                 }
 
                 IdVenta = "";

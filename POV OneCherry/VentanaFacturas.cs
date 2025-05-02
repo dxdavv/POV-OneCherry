@@ -117,5 +117,13 @@ namespace POV_OneCherry
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(new object[] { "ID Factura", "Fecha", "Total", "Cliente", "Empleado", "Promocion" });
         }
+        private void Facturar (object sender, EventArgs e)
+        {
+            if (idFactura.Equals(""))
+            {
+                return;
+            }
+            DBC.factura(idFactura);
+        }
     }
 }
