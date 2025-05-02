@@ -21,6 +21,7 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using DocumentFormat.OpenXml.Spreadsheet;
 using iText.Commons.Actions;
+using System.Drawing.Printing;
 namespace POV_OneCherry
 {
     static class DBC
@@ -112,7 +113,7 @@ namespace POV_OneCherry
             //  ORDER BY {buscarEn}
             return query;
         }
-        public static void ticket(string idVenta, string query)
+        public static void ticket(string idVenta, string query, System.Drawing.Printing.PrintPageEventArgs e)
         {
             SqlConnection connection = GlobalDBConnecion();
             SqlCommand command = new SqlCommand(query, connection);
@@ -123,7 +124,6 @@ namespace POV_OneCherry
 
             if (reader.Read())
             {
-                string idVenta = reader["ID_Venta"].ToString();
                 string usuario = reader["Usuario"].ToString();
                 string fecha = reader["Fecha"].ToString();
                 string nombreCliente = reader["Nombre_Cliente"].ToString();
@@ -136,6 +136,47 @@ namespace POV_OneCherry
                 string cambio = reader["Cambio"].ToString();
 
                 // Aquí puedes formatear los datos para tu ticket.
+                string ticket = $"Ticket de Venta\n" +
+                                $"ID Venta: {idVenta}\n" +
+                                $"Usuario: {usuario}\n" +
+                                $"Fecha: {fecha}\n" +
+                                $"Nombre Cliente: {nombreCliente}\n" +
+                                $"ID Producto: {idProducto}\n" +
+                                $"Cantidad: {cantidad}\n" +
+                                $"Precio: {precio}\n" +
+                                $"Subtotal: {subtotal}\n" +
+                                $"Total: {total}\n" +
+                                $"Pago Con: {pagoCon}\n" +
+                                $"Cambio: {cambio}";
+
+                System.Drawing.Font font = new System.Drawing.Font("Arial", 10);
+                int y = 20;
+
+                e.Graphics.DrawString("One Cherry", font, Brushes.Black, new PointF(10, y));
+                y += 20;
+                e.Graphics.DrawString("ID Venta: " + idVenta, font, Brushes.Black, new PointF(10, y));
+                y += 20;
+                e.Graphics.DrawString("Usuario: " + usuario, font, Brushes.Black, new PointF(10, y));
+                y += 20;
+                e.Graphics.DrawString("Fecha: " + fecha, font, Brushes.Black, new PointF(10, y));
+                y += 20;
+                e.Graphics.DrawString("Cliente: " + nombreCliente, font, Brushes.Black, new PointF(10, y));
+                y += 20;
+                e.Graphics.DrawString("ID Producto: " + idProducto, font, Brushes.Black, new PointF(10, y));
+                y += 20;
+                e.Graphics.DrawString("Cantidad: " + cantidad, font, Brushes.Black, new PointF(10, y));
+                y += 20;
+                e.Graphics.DrawString("Precio: $" + precio, font, Brushes.Black, new PointF(10, y));
+                y += 20;
+                e.Graphics.DrawString("Subtotal: $" + subtotal, font, Brushes.Black, new PointF(10, y));
+                y += 20;
+                e.Graphics.DrawString("TOTAL: $" + total, font, Brushes.Black, new PointF(10, y));
+                y += 20;
+                e.Graphics.DrawString("Pago con: $" + pagoCon, font, Brushes.Black, new PointF(10, y));
+                y += 20;
+                e.Graphics.DrawString("Cambio a recibir: $" + cambio, font, Brushes.Black, new PointF(10, y));
+                y += 40;
+                e.Graphics.DrawString("*** Gracias por su compra ***", font, Brushes.Black, new PointF(10, y));
             }
         }
         public static void factura(string id)
@@ -149,7 +190,7 @@ namespace POV_OneCherry
                 // Agregar un nuevo párrafo al final del documento
 
                 DocumentFormat.OpenXml.Wordprocessing.Paragraph nuevoParrafo = 
-                    new DocumentFormat.OpenXml.Wordprocessing.Paragraph(new Run(
+                    new DocumentFormat.OpenXml.Wordprocessing.Paragraph(new DocumentFormat.OpenXml.Wordprocessing.Run(
                         new DocumentFormat.OpenXml.Wordprocessing.Text("Este es el texto insertado en el documento.")));
 
                 cuerpo.AppendChild(nuevoParrafo);
