@@ -42,6 +42,8 @@
             button2 = new Button();
             label2 = new Label();
             pictureBox1 = new PictureBox();
+            label3 = new Label();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)TablaSolicitarCompras).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -88,7 +90,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(408, 51);
+            label5.Location = new Point(440, 51);
             label5.Margin = new Padding(5);
             label5.Name = "label5";
             label5.Size = new Size(82, 28);
@@ -100,7 +102,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(212, 51);
+            label7.Location = new Point(204, 51);
             label7.Margin = new Padding(5);
             label7.Name = "label7";
             label7.Size = new Size(82, 28);
@@ -118,32 +120,33 @@
             button3.TabIndex = 93;
             button3.Text = "Solicitar compra";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += solicitarStock;
             // 
             // comboBox1
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Nombre_Cliente", "Fecha_Venta", "Productos", "Cantidad", "P_Unitario", "NombrePromocion", "Descuento", "Total" });
             comboBox1.Location = new Point(25, 79);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(179, 23);
+            comboBox1.Size = new Size(166, 23);
             comboBox1.TabIndex = 94;
+            comboBox1.SelectedIndexChanged += seleccionarProveedor;
             // 
             // comboBox2
             // 
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Nombre_Cliente", "Fecha_Venta", "Productos", "Cantidad", "P_Unitario", "NombrePromocion", "Descuento", "Total" });
-            comboBox2.Location = new Point(212, 79);
+            comboBox2.Location = new Point(204, 81);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(179, 23);
+            comboBox2.Size = new Size(139, 23);
             comboBox2.TabIndex = 95;
+            comboBox2.SelectedIndexChanged += seleccionarProducto;
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(408, 80);
+            numericUpDown1.Location = new Point(440, 81);
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
+            numericUpDown1.Size = new Size(88, 23);
             numericUpDown1.TabIndex = 96;
             // 
             // button1
@@ -151,12 +154,13 @@
             button1.BackColor = Color.Crimson;
             button1.Font = new Font("Sitka Heading", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(534, 73);
+            button1.Location = new Point(534, 74);
             button1.Name = "button1";
             button1.Size = new Size(90, 30);
             button1.TabIndex = 97;
             button1.Text = "Agregar";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += AgregarProductoCompra;
             // 
             // button2
             // 
@@ -194,12 +198,33 @@
             pictureBox1.TabIndex = 100;
             pictureBox1.TabStop = false;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Sitka Heading", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(349, 51);
+            label3.Margin = new Padding(5);
+            label3.Name = "label3";
+            label3.Size = new Size(61, 28);
+            label3.TabIndex = 101;
+            label3.Text = "Precio";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(349, 81);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(85, 23);
+            textBox1.TabIndex = 102;
+            // 
             // VentanaComprasProv
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(634, 411);
+            Controls.Add(textBox1);
+            Controls.Add(label3);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(button2);
@@ -236,5 +261,7 @@
         private Button button2;
         private Label label2;
         private PictureBox pictureBox1;
+        private Label label3;
+        private TextBox textBox1;
     }
 }
