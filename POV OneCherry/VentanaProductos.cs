@@ -132,10 +132,14 @@ namespace POV_OneCherry
 
         private void botonCategorias(object sender, EventArgs e)
         {
-            Form categorias = new VentanaCategoría();
-            categorias.Show();
+            Form cat = new VentanaCategoría();
+            cat.Show();
             this.Hide();
-            categorias.FormClosed += onCloseChild;
+            cat.FormClosed += onCloseChild;
+            categorias = DBC.GetData("SELECT NombreCategoria FROM Categorias");
+            IdCategorias = DBC.GetData("SELECT ID_Categorias FROM Categorias");
+            comboBox2.Items.Clear();
+            comboBox2.Items.AddRange(categorias);
         }
         private void MandarExcel(object sender, EventArgs e)
         {

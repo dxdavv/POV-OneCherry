@@ -6,8 +6,6 @@ using iTextSharp.text.pdf;
 using System.Diagnostics;
 using Rectangle = iTextSharp.text.Rectangle;
 using Font = iTextSharp.text.Font;
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-//using Document = iTextSharp.text.Document;
 namespace POV_OneCherry
 {
     static class DBC
@@ -179,16 +177,11 @@ namespace POV_OneCherry
                         doc.Add(table);
                         doc.Close();
                         readerArticulos.Close();
-                        //table.WriteSelectedRows(0, -1, 50, 900 - espacioExtra, stamper.GetOverContent(1));
                         PdfReader readerProductos = new PdfReader("productos.pdf");
 
-                        //PdfReader readerProductos = new PdfReader(productosPDF);
                         PdfContentByte canvas = stamper.GetOverContent(1);
                         PdfImportedPage page = stamper.GetImportedPage(readerProductos, 1);
                         canvas.AddTemplate(page, -55, 90);
-
-                        // Posición en el ticket (ajustar según tu diseño)
-
                     }
                 }
 
@@ -208,17 +201,16 @@ namespace POV_OneCherry
             {
                 conn.Open();
                 command.Parameters.AddWithValue("@IDVenta", idVenta);
-                filas = (int)command.ExecuteScalar(); // Obtiene el número de filas en la venta
+                filas = (int)command.ExecuteScalar();
                 conn.Close();
             }
 
             using (FileStream fs = new FileStream(rutaSalida, FileMode.Create))
-            using (Document doc = new Document(new Rectangle(300, 290 + (filas * 20)))) // Tamaño inicial del ticket
+            using (Document doc = new Document(new Rectangle(300, 290 + (filas * 20))))
             using (PdfWriter writer = PdfWriter.GetInstance(doc, fs))
             {
                 doc.Open();
 
-                // **1️⃣ CABECERA DEL TICKET**
                 PdfPTable headerTable = new PdfPTable(1);
                 headerTable.WidthPercentage = 130;
 
@@ -226,7 +218,6 @@ namespace POV_OneCherry
                 {
                     connection.Open();
 
-                    // Obtener datos de la venta, cliente y promoción
                     string queryVenta = @"SELECT 
                                 V.ID_Ventas, V.FechaVenta, 
                                 C.Nombre + ' ' + C.Apellido AS Nombre_Cliente, 
@@ -260,7 +251,6 @@ namespace POV_OneCherry
                         }
                         readerVenta.Close();
                     }
-                    // **2️⃣ TABLA DE PRODUCTOS**
                     PdfPTable table = new PdfPTable(5);
                     table.WidthPercentage = 130;
                     table.SetWidths(new float[] { 0.2f, 1f, 0.3f, 0.3f, 0.3f });
@@ -303,7 +293,6 @@ namespace POV_OneCherry
                     });
                     doc.Add(espacio);
 
-                    // **3️⃣ PIE DEL TICKET CON DETALLES DE PAGO**
                     PdfPTable footerTable = new PdfPTable(2);
                     footerTable.WidthPercentage = 130;
                     footerTable.SetWidths(new float[] { 1f, 1f });
@@ -326,7 +315,6 @@ namespace POV_OneCherry
                 }
 
                 doc.Close();
-                //System.Diagnostics.Process.Start("ticket_completo.pdf");
                 ImprimirPDF(rutaSalida);
             }
 
@@ -341,7 +329,126 @@ namespace POV_OneCherry
         }
         public static void factura(string idVenta)
         {
-            
+            string rutaSalida = "factura.pdf";
+         
+            using (FileStream fs = new FileStream(rutaSalida, FileMode.Create))
+            using (Document doc = new Document(new Rectangle(450, 700))) 
+            using (PdfWriter writer = PdfWriter.GetInstance(doc, fs))
+            {
+                doc.Open();
+
+                PdfPTable headerTable = new PdfPTable(1);
+                headerTable.WidthPercentage = 100;
+
+                headerTable.AddCell(new PdfPCell(new Phrase(new Chunk("FACTURA ELECTRÓNICA", FontFactory.GetFont(FontFactory.HELVETICA, 16, Font.BOLD, new BaseColor(214, 0, 43)))))
+                {
+                    Border = Rectangle.NO_BORDER,
+                    HorizontalAlignment = Element.ALIGN_CENTER
+                });
+
+                using (SqlConnection connection = GlobalDBConnecion())
+                {
+                    connection.Open();
+
+                    string queryVenta = @"SELECT 
+                                DV.ID_Ventas, 
+                                V.FechaVenta, 
+                                C.Nombre + ' ' + C.Apellido AS NombreCliente, 
+                                E.NombreApellido AS NombreEmpleado, 
+                                P.NombreProducto, 
+                                P.Precio,
+                                DV.Cantidad, 
+                                DV.SubTotal, 
+                                PR.NombrePromocion, 
+                                PR.Descuento, 
+                                V.TotalVenta
+                            FROM DetallesVenta DV
+                            JOIN Ventas V ON DV.ID_Ventas = V.ID_Ventas
+                            JOIN Productos P ON DV.ID_Productos = P.ID_Productos
+                            JOIN Clientes C ON V.ID_Clientes = C.ID_Clientes
+                            JOIN Empleados E ON V.ID_Empleados = E.ID_Empleados
+                            LEFT JOIN Promociones PR ON V.ID_Promociones = PR.ID_Promociones
+                            WHERE V.ID_Ventas = @IDVenta";
+
+                    using (SqlCommand command = new SqlCommand(queryVenta, connection))
+                    {
+                        command.Parameters.AddWithValue("@IDVenta", idVenta);
+                        SqlDataReader readerVenta = command.ExecuteReader();
+
+                        if (readerVenta.Read())
+                        {
+                            headerTable.AddCell(new PdfPCell(new Phrase(new Chunk($"Venta ID: {readerVenta["ID_Ventas"]}\nFecha: {readerVenta["FechaVenta"].ToString().Remove(10)}\nCliente: {readerVenta["NombreCliente"]}\nEmpleado: {readerVenta["NombreEmpleado"]}", FontFactory.GetFont(FontFactory.HELVETICA, 12))))
+                            {
+                                Border = Rectangle.NO_BORDER,
+                                HorizontalAlignment = Element.ALIGN_LEFT
+                            });
+
+                            doc.Add(headerTable);
+                        }
+                        readerVenta.Close();
+                    }
+
+                    PdfPTable table = new PdfPTable(4);
+                    table.WidthPercentage = 100;
+                    table.SetWidths(new float[] { 1.5f, 0.5f, 1f, 1f });
+                    table.DefaultCell.BorderWidth = 0f;
+
+                    table.AddCell(new PdfPCell(new Phrase(new Chunk("Producto", FontFactory.GetFont(FontFactory.HELVETICA, 12, Font.BOLD, BaseColor.BLACK)))));
+                    table.AddCell(new PdfPCell(new Phrase(new Chunk("Precio", FontFactory.GetFont(FontFactory.HELVETICA, 12, Font.BOLD, BaseColor.BLACK)))));
+                    table.AddCell(new PdfPCell(new Phrase(new Chunk("Cantidad", FontFactory.GetFont(FontFactory.HELVETICA, 12, Font.BOLD, BaseColor.BLACK)))));
+                    table.AddCell(new PdfPCell(new Phrase(new Chunk("Subtotal", FontFactory.GetFont(FontFactory.HELVETICA, 12, Font.BOLD, BaseColor.BLACK)))));
+                    
+                    using (SqlCommand command = new SqlCommand(queryVenta, connection))
+                    {
+                        command.Parameters.AddWithValue("@IDVenta", idVenta);
+                        SqlDataReader readerArticulos = command.ExecuteReader();
+
+                        while (readerArticulos.Read())
+                        {
+                            table.AddCell(readerArticulos["NombreProducto"].ToString());
+                            table.AddCell(readerArticulos["Precio"].ToString());
+                            table.AddCell(readerArticulos["Cantidad"].ToString());
+                            table.AddCell(readerArticulos["SubTotal"].ToString());
+                        }
+                        readerArticulos.Close();
+                    }
+
+                    doc.Add(table);
+
+                    PdfPTable footerTable = new PdfPTable(2);
+                    footerTable.WidthPercentage = 100;
+                    footerTable.SetWidths(new float[] { 1f, 1f });
+                    using (SqlCommand command = new SqlCommand(queryVenta, connection))
+                    {
+                        command.Parameters.AddWithValue("@IDVenta", idVenta);
+                        SqlDataReader readerVenta = command.ExecuteReader();
+
+                        if (readerVenta.Read())
+                        {
+                            footerTable.AddCell(new PdfPCell(new Phrase(new Chunk("Promoción:", FontFactory.GetFont(FontFactory.HELVETICA, 12, Font.BOLD)))));
+                            footerTable.AddCell(new PdfPCell(new Phrase(new Chunk(readerVenta["NombrePromocion"].ToString(), FontFactory.GetFont(FontFactory.HELVETICA, 12)))));
+
+                            footerTable.AddCell(new PdfPCell(new Phrase(new Chunk("Descuento:", FontFactory.GetFont(FontFactory.HELVETICA, 12, Font.BOLD)))));
+                            footerTable.AddCell(new PdfPCell(new Phrase(new Chunk("$" + readerVenta["Descuento"].ToString(), FontFactory.GetFont(FontFactory.HELVETICA, 12)))));
+
+                            footerTable.AddCell(new PdfPCell(new Phrase(new Chunk("TOTAL:", FontFactory.GetFont(FontFactory.HELVETICA, 14, Font.BOLD, BaseColor.RED)))));
+                            footerTable.AddCell(new PdfPCell(new Phrase(new Chunk("$" + readerVenta["TotalVenta"].ToString(), FontFactory.GetFont(FontFactory.HELVETICA, 14, Font.BOLD, BaseColor.RED)))));
+
+                            footerTable.AddCell(new PdfPCell(new Phrase(new Chunk("*** Factura generada automáticamente ***", FontFactory.GetFont(FontFactory.HELVETICA, 12, Font.ITALIC, BaseColor.GRAY))))
+                            {
+                                Colspan = 2,
+                                HorizontalAlignment = Element.ALIGN_CENTER
+                            });
+                        }
+                        readerVenta.Close();
+                    }
+                    doc.Add(footerTable);
+                }
+
+                doc.Close();
+                ImprimirPDF(rutaSalida);
+            }
+
         }
         public static void Salir()
         {
