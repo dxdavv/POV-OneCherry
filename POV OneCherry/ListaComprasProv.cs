@@ -21,10 +21,11 @@ namespace POV_OneCherry
                 "JOIN ComprasProveedor ON DetallesCompra.ID_ComprasProveedor = ComprasProveedor.ID_ComprasProveedor " +
                 "JOIN Proveedores ON DetallesCompra.ID_Proveedores = Proveedores.ID_Proveedores";
         private string[] columnas = { "ComprasProveedor.ID_ComprasProveedor", "ComprasProveedor.FechaCompra", "Proveedores.NombreProveedor", "Productos.NombreProducto", "DetallesCompra.Cantidad", "DetallesCompra.PrecioUnidad", "ComprasProveedor.PrecioTotal" };
-
+        private string[] filtros = { "ID_Compra", "Fecha_Compra", "Proveedor", "Productos", "Cantidad", "PrecioUnitario", "PrecioTotal" };
         public ListaComprasProv()
         {
             InitializeComponent();
+            comboBox1.Items.AddRange(filtros);
         }
 
         private void ListaComprasProv_Load(object sender, EventArgs e)
@@ -37,11 +38,9 @@ namespace POV_OneCherry
         {
             string nwquery = query;
             int seleccion = comboBox1.SelectedIndex;
-            string ordenamiento = seleccion != -1 ? columnas[seleccion] : columnas[0];
             if (textBox1.Text.Length > 0 && seleccion > -1)
             {
-                string busqueda = textBox1.Text;
-                nwquery = DBC.queryBuscar(nwquery, ordenamiento, busqueda);
+                nwquery = DBC.queryBuscar(nwquery, columnas[seleccion], textBox1.Text);
             }
             TablaListaCompras.DataSource = null;
             TablaListaCompras.DataSource = DBC.Data(nwquery);
