@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empleado));
             splitContainer1 = new SplitContainer();
+            button5 = new Button();
             label3 = new Label();
             pictureBox1 = new PictureBox();
             button6 = new Button();
@@ -67,7 +68,6 @@
             comboBox4 = new ComboBox();
             label21 = new Label();
             button11 = new Button();
-            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -106,6 +106,18 @@
             splitContainer1.SplitterDistance = 47;
             splitContainer1.TabIndex = 0;
             // 
+            // button5
+            // 
+            button5.BackColor = Color.OliveDrab;
+            button5.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button5.ForeColor = SystemColors.ControlLightLight;
+            button5.Location = new Point(96, 10);
+            button5.Name = "button5";
+            button5.Size = new Size(70, 30);
+            button5.TabIndex = 50;
+            button5.Text = "Manual";
+            button5.UseVisualStyleBackColor = false;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -139,6 +151,7 @@
             button6.TabIndex = 4;
             button6.Text = "➡️";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // label4
             // 
@@ -400,6 +413,7 @@
             button4.TabIndex = 57;
             button4.Text = "❎Cancelar venta";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += Cancelar;
             // 
             // button9
             // 
@@ -549,18 +563,6 @@
             button11.TabIndex = 4;
             button11.Text = "➡️";
             button11.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            button5.BackColor = Color.OliveDrab;
-            button5.Font = new Font("Sitka Heading", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.ForeColor = SystemColors.ControlLightLight;
-            button5.Location = new Point(96, 10);
-            button5.Name = "button5";
-            button5.Size = new Size(70, 30);
-            button5.TabIndex = 50;
-            button5.Text = "Manual";
-            button5.UseVisualStyleBackColor = false;
             // 
             // Empleado
             // 

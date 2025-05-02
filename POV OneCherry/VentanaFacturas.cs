@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,17 +14,51 @@ namespace POV_OneCherry
 {
     public partial class VentanaFacturas : Form
     {
-        private string query = "SELECT CONCAT (Clientes.Nombre, ' ' ,Clientes.Apellido) AS Nombre_Cliente, Ventas.FechaVenta AS Fecha_Venta, " +
-                "Productos.NombreProducto AS Productos, DetallesVenta.Cantidad, DetallesVenta.PrecioUnidad AS P_Unitario, " +
-                "Promociones.NombrePromocion, Promociones.Descuento, Ventas.TotalVenta AS Total FROM DetallesVenta " +
-                "JOIN Ventas ON DetallesVenta.ID_Ventas = Ventas.ID_Ventas " +
-                "JOIN Clientes ON Ventas.ID_Clientes = Clientes.ID_Clientes " +
-                "JOIN Promociones ON Ventas.ID_Promociones = Promociones.ID_Promociones " +
-                "JOIN Productos ON DetallesVenta.ID_Productos = Productos.ID_Productos";
-        private string[] columnas = { "CONCAT (Clientes.Nombre, ' ' ,Clientes.Apellido)", "Ventas.FechaVenta", "Productos.NombreProducto", "DetallesVenta.Cantidad", "DetallesVenta.PrecioUnidad", "Promociones.NombrePromocion", "Promociones.Descuento", "Ventas.TotalVenta" };
+        private string query = "SELECT V.ID_Ventas, V.FechaVenta, V.TotalVenta, " +
+            "CONCAT(C.Nombre, ' ',C.Apellido) AS Nombre, E.NombreApellido, P.NombrePromocion " +
+            "FROM Ventas V " +
+            "JOIN Clientes C ON V.ID_Clientes = C.ID_Clientes " +
+            "JOIN Empleados E ON V.ID_Empleados = E.ID_Empleados " +
+            "JOIN Promociones P ON V.ID_Promociones = P.ID_Promociones";
+
+        private string query_subtabla = "SELECT " +
+            "V.ID_Ventas, " +
+            "CONCAT(C.Nombre, ' ', C.Apellido) AS Nombre_Cliente, " +
+            "V.FechaVenta, " +
+            "P.NombreProducto, " +
+            "DV.PrecioUnidad, " +
+            "DV.Cantidad, " +
+            "DV.SubTotal, " +
+            "PR.NombrePromocion, " +
+            "PR.Descuento, " +
+            "V.TotalVenta " +
+            "FROM Ventas V " +
+            "JOIN Clientes C ON V.ID_Clientes = C.ID_Clientes " +
+            "JOIN Empleados E ON V.ID_Empleados = E.ID_Empleados " +
+            "JOIN DetallesVenta DV ON V.ID_Ventas = DV.ID_Ventas " +
+            "JOIN Productos P ON DV.ID_Productos = P.ID_Productos LEFT " +
+            "JOIN Promociones PR ON V.ID_Promociones = PR.ID_Promociones ";
+        private string[] columnas = { "V.ID_Ventas", "V.FechaVenta", "V.TotalVenta", "Nombre", "E.NombreApellido", "P.NombrePromocion" };
+        private string[] columnas_subtabla = {
+            "V.ID_Ventas",
+            "CONCAT (C.Nombre, ' ' ,C.Apellido)", 
+            "V.FechaVenta", 
+            "P.NombreProducto",
+            "DV.PrecioUnidad",
+            "DV.Cantidad", 
+            "DV.SubTotal",
+            "D.PrecioUnidad", 
+            "P.NombrePromocion", 
+            "P.Descuento", 
+            "V.TotalVenta" 
+        };
+        private string idFactura = "";
         public VentanaFacturas()
         {
             InitializeComponent();
+            label3.Hide();
+            button2.Hide();
+            comboBox1.Items.AddRange(new object[] { "ID Factura", "Fecha", "Total", "Cliente", "Empleado", "Promocion" });
         }
         private void VentanaFacturas_Load(object sender, EventArgs e)
         {
@@ -43,7 +78,7 @@ namespace POV_OneCherry
 
         private void Buscar(object sender, EventArgs e)
         {
-            string nwquery = query;
+            string nwquery = idFactura.Equals("") ? query : query_subtabla;
             int seleccion = comboBox1.SelectedIndex;
             if ((textBox1.Text.Length > 0 || seleccion == 1) && seleccion > -1)
             {
@@ -52,11 +87,35 @@ namespace POV_OneCherry
                 {
                     busqueda = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
                 }
-                nwquery = DBC.queryBuscar(query, columnas[seleccion], busqueda);
+                nwquery = DBC.queryBuscar(
+                    query, 
+                    idFactura.Equals("") ? columnas[seleccion] : columnas_subtabla[seleccion], 
+                    busqueda
+                    );
             }
             TablaFacturas.DataSource = null;
             TablaFacturas.DataSource = DBC.Data(nwquery);
         }
-
+        private void CargarVenta(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                idFactura = TablaFacturas.Rows[e.RowIndex].Cells[0].Value.ToString();
+                TablaFacturas.DataSource = DBC.Data(query_subtabla + "WHERE V.ID_Ventas = " + idFactura);
+                label3.Show();
+                button2.Show();
+                comboBox1.Items.Clear();
+                comboBox1.Items.AddRange(new object[] { "ID Factura", "Fecha", "Total", "Cliente", "Empleado", "Promocion" });
+            }
+        }
+        private void Volver(object sender, EventArgs e)
+        {
+            TablaFacturas.DataSource = DBC.Data(query);
+            label3.Hide();
+            button2.Hide();
+            idFactura = "";
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(new object[] { "ID Factura", "Fecha", "Total", "Cliente", "Empleado", "Promocion" });
+        }
     }
 }

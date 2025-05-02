@@ -212,10 +212,12 @@
             // 
             // textBox4
             // 
+            textBox4.Enabled = false;
             textBox4.Location = new Point(316, 355);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(172, 23);
             textBox4.TabIndex = 50;
+            textBox4.Click += NoSePuede;
             // 
             // comboBox2
             // 

@@ -48,7 +48,6 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "IDCliente", "NombreCliente", "EmailCliente", "FechaVenta" });
             comboBox1.Location = new Point(163, 48);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
@@ -98,6 +97,7 @@
             TablaFacturas.ReadOnly = true;
             TablaFacturas.Size = new Size(676, 253);
             TablaFacturas.TabIndex = 35;
+            TablaFacturas.CellContentDoubleClick += CargarVenta;
             // 
             // button7
             // 
@@ -146,6 +146,7 @@
             button2.TabIndex = 100;
             button2.Text = "↪️";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += Volver;
             // 
             // dateTimePicker1
             // 
@@ -153,7 +154,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(284, 23);
             dateTimePicker1.TabIndex = 102;
-            //
+            // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;

@@ -27,14 +27,15 @@ namespace POV_OneCherry
         private string IdCliente = "";
         private string IdProducto = "";
         private string IdVenta = "";
-        private string IdEliminar ="";
+        private string IdEliminar = "";
         private List<string> IdProductos = new List<string>();
         private List<string> IdVentas = new List<string>();
         double total;
         // producto, precio, cantidad, subtotal
-        public Empleado(string user = "default", string IdEmpleado = "1")
+        public Empleado(string user = "default", string IdEmpleado = "2")
         {
             this.IdEmpleado = IdEmpleado;
+            //this.IdEmpleado = 2.ToString();
             InitializeComponent();
             label4.Text = user;
             IdPromociones = DBC.GetData("SELECT ID_Promociones FROM Promociones");
@@ -79,13 +80,31 @@ namespace POV_OneCherry
                 ActualizarTabla();
             }
         }
+
+        private void Cancelar(object sender, EventArgs e)
+        {
+            IdCliente = "";
+            IdProducto = "";
+            IdVenta = "";
+            IdEliminar = "";
+            IdProductos = new List<string>();
+            IdVentas = new List<string>();
+            total = 0;
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox9.Clear();
+            label21.Text = "";
+            comboBox4.SelectedIndex = -1;
+        }
         private void BuscarClientes(object sender, EventArgs e)
         {
             int seleccion = comboBox2.SelectedIndex;
             if (textBox1.Text.Length > 0 && seleccion > -1)
             {
-                TablaProducto.DataSource = null;
-                TablaProducto.DataSource = DBC.Data(
+                TablaClientes.DataSource = null;
+                TablaClientes.DataSource = DBC.Data(
                     DBC.queryBuscar(
                         queryClientes,
                         columnasClientes[seleccion],
@@ -93,8 +112,8 @@ namespace POV_OneCherry
                         )
                     );
             }
-            TablaProducto.DataSource = null;
-            TablaProducto.DataSource = DBC.Data(queryClientes);
+            TablaClientes.DataSource = null;
+            TablaClientes.DataSource = DBC.Data(queryClientes);
         }
         private void BuscarProductos(object sender, EventArgs e)
         {
@@ -104,12 +123,13 @@ namespace POV_OneCherry
                 TablaProducto.DataSource = null;
                 TablaProducto.DataSource = DBC.Data(
                     DBC.queryBuscar(
-                        queryProductos, 
-                        columnasProductos[seleccion], 
+                        queryProductos,
+                        columnasProductos[seleccion],
                         textBox2.Text
                         )
                     );
-            } else
+            }
+            else
             {
                 TablaProducto.DataSource = null;
                 TablaProducto.DataSource = DBC.Data(queryProductos);
@@ -128,6 +148,11 @@ namespace POV_OneCherry
         {
             if (IdProducto.Length > 0 && IdCliente.Length > 0 && numericUpDown1.Value > 0)
             {
+                if (numericUpDown1.Value > decimal.Parse(DBC.GetData($"SELECT Stock FROM Productos WHERE ID_Productos = {IdProducto}")[0]))
+                {
+                    MessageBox.Show("No hay suficiente stock");
+                    return;
+                }
                 if (IdVenta.Equals(""))
                 {
                     string nwventa = "INSERT INTO Ventas (FechaVenta, TotalVenta, ID_Clientes, ID_Empleados, ID_Promociones) " +
@@ -153,7 +178,6 @@ namespace POV_OneCherry
                     ActualizarTabla();
                 }
             }
-            textBox5.Text = total.ToString("0.00");
         }
         private void Cambio(object sender, EventArgs e)
         {
@@ -165,7 +189,8 @@ namespace POV_OneCherry
             {
                 MessageBox.Show("Cantidad a pagar mayor al dinero ingresado");
                 return;
-            } else
+            }
+            else
             {
                 textBox9.Text = (double.Parse(textBox6.Text) - total).ToString("0.00");
             }
@@ -176,12 +201,27 @@ namespace POV_OneCherry
             {
                 return;
             }
-            string nwquery = $"UPDATE Ventas SET TotalVenta = {total}, " +
+            if (IdVenta.Equals("") || IdCliente.Equals("") || IdProducto.Equals("") || comboBox4.SelectedIndex == -1)
+            {
+                MessageBox.Show("Faltan datos para finalizar la venta");
+                return;
+            }
+            float descuento = float.Parse(DBC.GetData($"SELECT Descuento FROM Promociones WHERE ID_Promociones = {IdPromociones[comboBox4.SelectedIndex]}")[0]);
+            string nwquery = $"UPDATE Ventas SET TotalVenta = {total - descuento}, " +
                 $"ID_Promociones = {IdPromociones[comboBox4.SelectedIndex]} " +
                 $"WHERE ID_Ventas = {IdVenta}";
             if (DBC.EditData(nwquery) > 0)
             {
-                MessageBox.Show("Venta registrada exitosamente");
+                DialogResult resultado = BotonTicketFactura();
+                if (resultado == DialogResult.OK)
+                {
+                    DBC.ImprimirTicket(IdVenta);
+                }
+                else if (resultado == DialogResult.Cancel)
+                {
+                    MessageBox.Show("Has seleccionado Factura.");
+                }
+
                 IdVenta = "";
                 IdCliente = "";
                 IdProducto = "";
@@ -194,10 +234,35 @@ namespace POV_OneCherry
                 TablaVenta.DataSource = null;
                 label21.Text = "";
                 comboBox4.SelectedIndex = -1;
-            } else
+
+            }
+            else
             {
                 MessageBox.Show("Ocurrio un error durante la venta");
             }
+        }
+
+        private DialogResult BotonTicketFactura()
+        {
+            Form mensaje = new Form();
+            mensaje.Text = "Seleccion comprobante";
+            mensaje.Size = new Size(300, 150);
+
+            Button btnTicket = new Button();
+            btnTicket.Text = "Ticket";
+            btnTicket.Location = new Point(50, 50);
+            btnTicket.DialogResult = DialogResult.OK;
+            mensaje.Controls.Add(btnTicket);
+
+            Button btnFactura = new Button();
+            btnFactura.Text = "Factura";
+            btnFactura.Location = new Point(150, 50);
+            btnFactura.DialogResult = DialogResult.Cancel;
+            mensaje.Controls.Add(btnFactura);
+
+            mensaje.AcceptButton = btnTicket;
+            mensaje.CancelButton = btnFactura;
+            return mensaje.ShowDialog();
         }
         private void ActualizarTabla()
         {
@@ -220,6 +285,22 @@ namespace POV_OneCherry
                 "ON DetallesVenta.ID_Productos = Productos.ID_Productos " +
                 $"WHERE DetallesVenta.ID_DetallesVenta IN({ids})";
             TablaVenta.DataSource = DBC.Data(datosTabla);
+            if (comboBox4.SelectedIndex != -1)
+            {
+                textBox5.Text = (total - double.Parse(
+                    DBC.GetData(
+                        $"SELECT Descuento FROM Promociones WHERE ID_Promociones = {IdPromociones[comboBox4.SelectedIndex]}"
+                        )[0])).ToString("0.00");
+            }
+            else
+            {
+                textBox5.Text = total.ToString("0.00");
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DBC.Salir();
         }
     }
 }

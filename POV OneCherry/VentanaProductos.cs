@@ -63,7 +63,7 @@ namespace POV_OneCherry
             if (textBox2.Text.Length > 0 && textBox3.Text.Length > 0 && textBox4.Text.Length > 0 && seleccion > -1)
             {
                 nwquery = $"INSERT INTO Productos ({columnas[1]}, {columnas[2]}, {columnas[3]}, ID_Categorias) " +
-                    $"VALUES ('{textBox2.Text}', '{textBox3.Text}', '{textBox4.Text}', '{IdCategorias[seleccion]}')";
+                    $"VALUES ('{textBox2.Text}', '{textBox3.Text}', '{0}', '{IdCategorias[seleccion]}')";
                 if (DBC.EditData(nwquery) > 0)
                 {
                     MessageBox.Show("Agregado Exitosamente");
@@ -140,6 +140,10 @@ namespace POV_OneCherry
         private void MandarExcel(object sender, EventArgs e)
         {
             DBC.SentToExcel(query, "Productos");
+        }
+        private void NoSePuede (object sender, EventArgs e)
+        {
+            MessageBox.Show("Para aumentar tu stock debes solicitar a proveedor", "No disponible", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

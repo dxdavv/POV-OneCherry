@@ -5,7 +5,7 @@
         private string query = "";
         private int ventana = 0;
         private string IdACambiar = "";
-        private string[] categorias = { }, IdCategorias = { }, columnas = {},
+        private string[] categorias = { }, IdCategorias = { }, columnas = { },
             ventanaActiva = { "Proveedores", "Clientes", "Empleados", "Administrador" },
             IdJoin = { "ID_Productos", "ID_Usuarios" },
             RecuadrosTexto = { };
@@ -19,7 +19,7 @@
         {
             comboBox2.Hide();
             label6.Hide();
-            botonClientes(sender, e);
+            botonEmpleados(sender, e);
         }
         private void onCloseChild(object? sender, FormClosedEventArgs e)
         {
@@ -58,8 +58,8 @@
             comboBox2.Items.AddRange(categorias);
             comboBox2.Show();
             label6.Show();
-            columnas = new string[]{ "Proveedores.ID_Proveedores", "Proveedores.NombreProveedor", 
-                "Proveedores.Email", "Proveedores.Telefono", 
+            columnas = new string[]{ "Proveedores.ID_Proveedores", "Proveedores.NombreProveedor",
+                "Proveedores.Email", "Proveedores.Telefono",
                 "Proveedores.Direccion", "Productos.NombreProducto" };
             query = "SELECT Proveedores.ID_Proveedores AS ID, Proveedores.NombreProveedor AS " +
                 "Nombre, Proveedores.Email, Proveedores.Telefono, Proveedores.Direccion, " +
@@ -195,7 +195,8 @@
                 {
                     nwquery += $",{ventanaActiva[ventana]}.{IdJoin[ventana > 0 ? 1 : 0]}" +
                         $") VALUES ('{textBox2.Text}', '{textBox3.Text}', '{textBox5.Text}', '{textBox4.Text}', '{IdCategorias[seleccion]}')";
-                } else
+                }
+                else
                 {
                     nwquery += $") VALUES ('{textBox2.Text}', '{textBox3.Text}', '{textBox5.Text}', '{textBox4.Text}')";
                 }
@@ -226,7 +227,8 @@
                         $"{columnas[4]}='{textBox4.Text}', " +
                         $"{IdJoin[ventana > 0 ? 1 : 0]}='{IdCategorias[seleccion]}' ";
 
-                } else
+                }
+                else
                 {
                     nwquery += $"{columnas[1]}='{textBox2.Text}', " +
                         $"{columnas[2]}='{textBox3.Text}', " +
@@ -328,6 +330,11 @@
             compras.Show();
             this.Hide();
             compras.FormClosed += onCloseChild;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DBC.Salir();
         }
     }
 }
