@@ -319,7 +319,7 @@ namespace POV_OneCherry
             }
 
         }
-        private static void ImprimirPDF(string rutaPDF)
+        public static void ImprimirPDF(string rutaPDF)
         {
             System.Diagnostics.Process.Start(new ProcessStartInfo
             {

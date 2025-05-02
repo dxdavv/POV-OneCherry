@@ -117,6 +117,7 @@
             button5.TabIndex = 50;
             button5.Text = "Manual";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += ManualEmpleado;
             // 
             // label3
             // 

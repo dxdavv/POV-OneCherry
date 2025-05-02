@@ -54,6 +54,7 @@
             button2.TabIndex = 11;
             button2.Text = "Manual de usuario";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += ManualAdmin;
             // 
             // label2
             // 

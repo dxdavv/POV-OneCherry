@@ -297,7 +297,11 @@ namespace POV_OneCherry
                 textBox5.Text = total.ToString("0.00");
             }
         }
-
+        private void ManualEmpleado(object sender, EventArgs e)
+        {
+            string rutaPDF = Path.Combine(Application.StartupPath, "Resources", "ManualEmpleado.pdf");
+            DBC.ImprimirPDF(rutaPDF);
+        }
         private void button6_Click(object sender, EventArgs e)
         {
             DBC.Salir();
