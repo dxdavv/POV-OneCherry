@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaComprasProv));
             label1 = new Label();
             comboBox1 = new ComboBox();
             label2 = new Label();
@@ -35,7 +36,9 @@
             textBox1 = new TextBox();
             TablaListaCompras = new DataGridView();
             button12 = new Button();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)TablaListaCompras).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -43,12 +46,12 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Sitka Heading", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(3, 2);
+            label1.Location = new Point(101, 4);
             label1.Margin = new Padding(5);
             label1.Name = "label1";
-            label1.Size = new Size(359, 42);
+            label1.Size = new Size(479, 42);
             label1.TabIndex = 68;
-            label1.Text = "COMPRAS A PROVEEDORES";
+            label1.Text = "LISTA DE COMPRAS A PROVEEDORES";
             // 
             // comboBox1
             // 
@@ -115,12 +118,24 @@
             button12.Text = "⏬Descarga excel";
             button12.UseVisualStyleBackColor = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(90, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 87;
+            pictureBox1.TabStop = false;
+            // 
             // ListaComprasProv
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(784, 391);
+            Controls.Add(pictureBox1);
             Controls.Add(button12);
             Controls.Add(comboBox1);
             Controls.Add(label2);
@@ -130,9 +145,9 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "ListaComprasProv";
-            Text = "LISTA DE COMPRAS A PROVEEDOR";
             Load += ListaComprasProv_Load;
             ((System.ComponentModel.ISupportInitialize)TablaListaCompras).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -146,5 +161,6 @@
         private TextBox textBox1;
         private DataGridView TablaListaCompras;
         private Button button12;
+        private PictureBox pictureBox1;
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaProductos));
             TablaProductos = new DataGridView();
-            label1 = new Label();
             button9 = new Button();
             button8 = new Button();
             button7 = new Button();
@@ -47,7 +47,10 @@
             comboBox2 = new ComboBox();
             button12 = new Button();
             button1 = new Button();
+            pictureBox1 = new PictureBox();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)TablaProductos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // TablaProductos
@@ -62,17 +65,6 @@
             TablaProductos.Size = new Size(775, 177);
             TablaProductos.TabIndex = 0;
             TablaProductos.CellDoubleClick += MandarAEditar;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Sitka Heading", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(-1, -4);
-            label1.Name = "label1";
-            label1.Size = new Size(201, 35);
-            label1.TabIndex = 1;
-            label1.Text = "Lista de Productos";
             // 
             // button9
             // 
@@ -261,12 +253,37 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += botonCategorias;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(90, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 101;
+            pictureBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Sitka Heading", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(98, 6);
+            label7.Margin = new Padding(5);
+            label7.Name = "label7";
+            label7.Size = new Size(295, 42);
+            label7.TabIndex = 102;
+            label7.Text = "LISTA DE PRODUCTOS";
+            // 
             // VentanaProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(799, 451);
+            Controls.Add(label7);
+            Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(button12);
             Controls.Add(comboBox2);
@@ -284,13 +301,12 @@
             Controls.Add(button9);
             Controls.Add(button8);
             Controls.Add(button7);
-            Controls.Add(label1);
             Controls.Add(TablaProductos);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "VentanaProductos";
-            Text = "PRODUCTOS";
             Load += Form3_Load;
             ((System.ComponentModel.ISupportInitialize)TablaProductos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -298,7 +314,6 @@
         #endregion
 
         private DataGridView TablaProductos;
-        private Label label1;
         private Button button9;
         private Button button8;
         private Button button7;
@@ -316,5 +331,7 @@
         private ComboBox comboBox2;
         private Button button12;
         private Button button1;
+        private PictureBox pictureBox1;
+        private Label label7;
     }
 }

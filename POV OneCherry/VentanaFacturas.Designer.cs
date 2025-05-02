@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaFacturas));
             comboBox1 = new ComboBox();
             label2 = new Label();
             button10 = new Button();
@@ -37,7 +38,9 @@
             label1 = new Label();
             label3 = new Label();
             button2 = new Button();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)TablaFacturas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // comboBox1
@@ -112,12 +115,12 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Sitka Heading", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(4, 3);
+            label1.Location = new Point(98, 6);
             label1.Margin = new Padding(5);
             label1.Name = "label1";
-            label1.Size = new Size(363, 42);
+            label1.Size = new Size(460, 42);
             label1.TabIndex = 68;
-            label1.Text = "Ventas para realizar facturas";
+            label1.Text = "VENTAS PARA REALIZAR FACTURAS";
             // 
             // label3
             // 
@@ -143,12 +146,24 @@
             button2.Text = "↪️";
             button2.UseVisualStyleBackColor = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(90, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 102;
+            pictureBox1.TabStop = false;
+            // 
             // VentanaFacturas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(734, 391);
+            Controls.Add(pictureBox1);
             Controls.Add(label3);
             Controls.Add(button2);
             Controls.Add(label1);
@@ -160,9 +175,9 @@
             Controls.Add(TablaFacturas);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "VentanaFacturas";
-            Text = "FACTURAS";
             Load += VentanaFacturas_Load;
             ((System.ComponentModel.ISupportInitialize)TablaFacturas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -178,5 +193,6 @@
         private Label label1;
         private Label label3;
         private Button button2;
+        private PictureBox pictureBox1;
     }
 }
