@@ -16,5 +16,10 @@ namespace POV_OneCherry
         {
             InitializeComponent();
         }
+        private void ManualAdmin(object sender, EventArgs e)
+        {
+            string rutaPDF = Path.Combine(Application.StartupPath, "Resources", "ManualAdmin.pdf");
+            DBC.ImprimirPDF(rutaPDF);
+        }
     }
 }
