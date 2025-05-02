@@ -151,7 +151,6 @@
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "RegistroCliente";
-            Text = "CLIENTE REGISTRO";
             ResumeLayout(false);
             PerformLayout();
         }
