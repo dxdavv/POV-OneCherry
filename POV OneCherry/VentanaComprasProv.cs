@@ -11,6 +11,7 @@ namespace POV_OneCherry
         private string IdCompra = "";
         private string IdEliminar = "";
         private List<string> IdCompras = new List<string>();
+        //private List<string> IdCompras = new List<string>();
         private double total = 0;
         public VentanaComprasProv()
         {
