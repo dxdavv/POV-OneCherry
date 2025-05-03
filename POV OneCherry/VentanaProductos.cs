@@ -60,7 +60,7 @@ namespace POV_OneCherry
         {
             string nwquery;
             int seleccion = comboBox2.SelectedIndex;
-            if (textBox2.Text.Length > 0 && textBox3.Text.Length > 0 && textBox4.Text.Length > 0 && seleccion > -1)
+            if (textBox2.Text.Length > 0 && textBox3.Text.Length > 0 && seleccion > -1)
             {
                 nwquery = $"INSERT INTO Productos ({columnas[1]}, {columnas[2]}, {columnas[3]}, ID_Categorias) " +
                     $"VALUES ('{textBox2.Text}', '{textBox3.Text}', '{0}', '{IdCategorias[seleccion]}')";
@@ -128,6 +128,7 @@ namespace POV_OneCherry
         private void onCloseChild(object? sender, FormClosedEventArgs e)
         {
             this.Show();
+            Form3_Load(sender, e);
         }
 
         private void botonCategorias(object sender, EventArgs e)
@@ -136,10 +137,6 @@ namespace POV_OneCherry
             cat.Show();
             this.Hide();
             cat.FormClosed += onCloseChild;
-            categorias = DBC.GetData("SELECT NombreCategoria FROM Categorias");
-            IdCategorias = DBC.GetData("SELECT ID_Categorias FROM Categorias");
-            comboBox2.Items.Clear();
-            comboBox2.Items.AddRange(categorias);
         }
         private void MandarExcel(object sender, EventArgs e)
         {
