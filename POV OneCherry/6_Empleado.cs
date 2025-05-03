@@ -73,7 +73,7 @@ namespace POV_OneCherry
         private void MandarAEliminarProductos(object sender, DataGridViewCellEventArgs e)
         {
             //MessageBox.Show(TablaVenta.Rows.Count.ToString());
-            //if (TablaVenta.Rows.Count == 0) 
+            //if (TablaVenta.Rows.Count == 0)
             //{
             //    TablaVenta.DataSource = null;
             //    IdVenta = "";
@@ -82,8 +82,12 @@ namespace POV_OneCherry
             if (e.RowIndex >= 0)
             {
                 IdEliminar = IdVentas[e.RowIndex];
-                DBC.EditData($"DELETE FROM DetallesVenta WHERE ID_DetallesVenta = {IdEliminar}");
+                string idEProducto = IdProductos[e.RowIndex];
+                string equery = $"DELETE FROM DetallesVenta WHERE ID_DetallesVenta = {IdEliminar} AND ID_Productos = {idEProducto}";
+                MessageBox.Show(equery);
+                DBC.EditData(equery);
                 IdVentas.Remove(IdEliminar);
+                IdProductos.Remove(idEProducto);
                 ActualizarTabla();
             }
         }
