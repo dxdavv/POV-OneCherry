@@ -60,6 +60,7 @@
             TablaSolicitarCompras.ReadOnly = true;
             TablaSolicitarCompras.Size = new Size(599, 253);
             TablaSolicitarCompras.TabIndex = 68;
+            TablaSolicitarCompras.CellDoubleClick += MandarAEliminarProductos;
             // 
             // label1
             // 
@@ -148,6 +149,7 @@
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(88, 23);
             numericUpDown1.TabIndex = 96;
+            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // button1
             // 

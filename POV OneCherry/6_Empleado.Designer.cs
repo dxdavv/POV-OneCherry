@@ -522,7 +522,7 @@
             TablaVenta.Name = "TablaVenta";
             TablaVenta.Size = new Size(432, 326);
             TablaVenta.TabIndex = 16;
-            TablaVenta.CellContentDoubleClick += MandarAEliminarProductos;
+            TablaVenta.CellDoubleClick += MandarAEliminarProductos;
             // 
             // label2
             // 
