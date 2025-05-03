@@ -64,7 +64,7 @@ namespace POV_OneCherry
         }
         private void Agregar(object sender, EventArgs e)
         {
-            string nwquery = $"INSERT INTO Promociones ({columnas[1]}, {columnas[2]}, {columnas[3]}) VALUES ('{textBox2.Text}', '{dateTimePicker1.Value.Date.ToString("yyyy-MM-dd")}', {decimal.Parse(textBox5.Text)})";
+            string nwquery = $"INSERT INTO Promociones ({columnas[2]}, {columnas[1]}, {columnas[3]}) VALUES ('{textBox2.Text}', '{dateTimePicker1.Value.Date.ToString("yyyy-MM-dd")}', {decimal.Parse(textBox5.Text)})";
             if (textBox2.Text.Length > 0 && textBox5.Text.Length > 0)
             {
                 if (DBC.EditData(nwquery) > 0)
