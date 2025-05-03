@@ -13,8 +13,8 @@ namespace POV_OneCherry
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            DBC.nombre = "BAN03";
-            DBC.DB = "PruebaPOS";
+            DBC.nombre = "ANG";
+            DBC.DB = "TiendaDeRegalos";
             ApplicationConfiguration.Initialize();
             Application.Run(new PrimerPantallaLogin());
 
