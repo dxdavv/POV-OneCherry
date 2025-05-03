@@ -542,6 +542,7 @@
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(273, 23);
             comboBox4.TabIndex = 49;
+            comboBox4.SelectedIndexChanged += onPromoSelected;
             // 
             // label21
             // 
