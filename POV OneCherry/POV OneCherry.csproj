@@ -37,6 +37,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Resources\ManualAdmin.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\ManualEmpleado.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\ticket.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
