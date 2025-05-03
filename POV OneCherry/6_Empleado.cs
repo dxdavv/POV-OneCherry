@@ -32,7 +32,7 @@ namespace POV_OneCherry
         private List<string> IdVentas = new List<string>();
         double total;
         // producto, precio, cantidad, subtotal
-        public Empleado(string user = "default", string IdEmpleado = "1")
+        public Empleado(string user = "default", string IdEmpleado = "2")
         {
             this.IdEmpleado = IdEmpleado;
             //this.IdEmpleado = 2.ToString();
@@ -72,12 +72,14 @@ namespace POV_OneCherry
         }
         private void MandarAEliminarProductos(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 2)
-            {
-                TablaVenta.DataSource = null;
-                IdVenta = "";
-            }
-            if (e.RowIndex > 1)
+            //MessageBox.Show(TablaVenta.Rows.Count.ToString());
+            //if (TablaVenta.Rows.Count == 0) 
+            //{
+            //    TablaVenta.DataSource = null;
+            //    IdVenta = "";
+            //    IdVentas.Clear();
+            //}
+            if (e.RowIndex >= 0)
             {
                 IdEliminar = IdVentas[e.RowIndex];
                 DBC.EditData($"DELETE FROM DetallesVenta WHERE ID_DetallesVenta = {IdEliminar}");

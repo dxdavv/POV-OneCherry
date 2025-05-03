@@ -1,4 +1,6 @@
-﻿namespace POV_OneCherry
+﻿using iText.Commons.Actions;
+
+namespace POV_OneCherry
 {
     public partial class VentanaComprasProv : Form
     {
@@ -7,6 +9,7 @@
         private string IdProveedor = "";
         private string IdProducto = "";
         private string IdCompra = "";
+        private string IdEliminar = "";
         private List<string> IdCompras = new List<string>();
         private double total = 0;
         public VentanaComprasProv()
@@ -58,6 +61,22 @@
                     // ACTUALIZAR TABLA CARRITO Y ANUNCIARLO
                     ActualizarTabla();
                 }
+            }
+        }
+
+        private void MandarAEliminarProductos(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (e.RowIndex < 1)
+            //{
+            //    TablaSolicitarCompras.DataSource = null;
+            //    IdCompra = "";
+            //}
+            if (e.RowIndex >= 0)
+            {
+                IdEliminar = IdCompras[e.RowIndex];
+                DBC.EditData($"DELETE FROM DetallesCompra WHERE ID_DetallesCompra = {IdEliminar}");
+                IdCompras.Remove(IdEliminar);
+                ActualizarTabla();
             }
         }
         private void seleccionarProveedor(object sender, EventArgs e)
