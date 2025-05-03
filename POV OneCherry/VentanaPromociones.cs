@@ -95,7 +95,7 @@ namespace POV_OneCherry
             if (textBox2.Text.Length > 0 && textBox5.Text.Length > 0)
             {
                 string nwquery = "UPDATE Promociones SET " +
-                                 $"{columnas[1]} = '{textBox2.Text}', {columnas[2]} = '{dateTimePicker1.Value.Date.ToString("yyyy-MM-dd")}', {columnas[3]} = '{decimal.Parse(textBox5.Text)}'" +
+                                 $"{columnas[2]} = '{textBox2.Text}', {columnas[1]} = '{dateTimePicker1.Value.Date.ToString("yyyy-MM-dd")}', {columnas[3]} = '{decimal.Parse(textBox5.Text)}'" +
                                  $"WHERE ID_Promociones = {IdACambiar}";
 
                 textBox2.Clear();

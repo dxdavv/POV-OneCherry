@@ -32,7 +32,7 @@ namespace POV_OneCherry
         private List<string> IdVentas = new List<string>();
         double total;
         // producto, precio, cantidad, subtotal
-        public Empleado(string user = "default", string IdEmpleado = "2")
+        public Empleado(string user = "default", string IdEmpleado = "1")
         {
             this.IdEmpleado = IdEmpleado;
             //this.IdEmpleado = 2.ToString();
@@ -72,7 +72,12 @@ namespace POV_OneCherry
         }
         private void MandarAEliminarProductos(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex < 2)
+            {
+                TablaVenta.DataSource = null;
+                IdVenta = "";
+            }
+            if (e.RowIndex > 1)
             {
                 IdEliminar = IdVentas[e.RowIndex];
                 DBC.EditData($"DELETE FROM DetallesVenta WHERE ID_DetallesVenta = {IdEliminar}");
@@ -81,8 +86,28 @@ namespace POV_OneCherry
             }
         }
 
+        private void onPromoSelected(object sender, EventArgs e)
+        {
+            if (comboBox4.SelectedIndex != -1)
+            {
+                textBox5.Text = (total - double.Parse(
+                    DBC.GetData(
+                        $"SELECT Descuento FROM Promociones WHERE ID_Promociones = {IdPromociones[comboBox4.SelectedIndex]}"
+                        )[0])).ToString("0.00");
+            }
+            else
+            {
+                textBox5.Text = total.ToString("0.00");
+            }
+        }
+
         private void Cancelar(object sender, EventArgs e)
         {
+            if (IdVenta.Equals(""))
+            {
+                return;
+            }
+            DBC.EditData("DELETE FROM Ventas WHERE ID_Ventas = " + IdVenta);
             IdCliente = "";
             IdProducto = "";
             IdVenta = "";
@@ -97,6 +122,7 @@ namespace POV_OneCherry
             textBox9.Clear();
             label21.Text = "";
             comboBox4.SelectedIndex = -1;
+            TablaVenta.DataSource = null;
         }
         private void BuscarClientes(object sender, EventArgs e)
         {
@@ -155,8 +181,9 @@ namespace POV_OneCherry
                 }
                 if (IdVenta.Equals(""))
                 {
+                    string promocionDisponible = DBC.GetData("SELECT ID_Promociones FROM Promociones ORDER BY ID_Promociones")[0];
                     string nwventa = "INSERT INTO Ventas (FechaVenta, TotalVenta, ID_Clientes, ID_Empleados, ID_Promociones) " +
-                        $"VALUES (GETDATE(), 0.00, '{IdCliente}', '{IdEmpleado}', 1)";
+                        $"VALUES (GETDATE(), 0.00, '{IdCliente}', '{IdEmpleado}', '{promocionDisponible}')";
                     if (DBC.EditData(nwventa) > 1)
                     {
                         MessageBox.Show("error");
@@ -185,14 +212,14 @@ namespace POV_OneCherry
             {
                 return;
             }
-            if (double.Parse(textBox6.Text) < total)
+            if (double.Parse(textBox6.Text) < total - double.Parse(IdPromociones[comboBox4.SelectedIndex]))
             {
                 MessageBox.Show("Cantidad a pagar mayor al dinero ingresado");
                 return;
             }
             else
             {
-                textBox9.Text = (double.Parse(textBox6.Text) - total).ToString("0.00");
+                textBox9.Text = (double.Parse(textBox6.Text) - total + double.Parse(IdPromociones[comboBox4.SelectedIndex])).ToString("0.00");
             }
         }
         private void FinalizarVenta(object sender, EventArgs e)
