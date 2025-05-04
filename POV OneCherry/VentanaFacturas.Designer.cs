@@ -110,6 +110,7 @@
             button7.TabIndex = 40;
             button7.Text = "⏬Factura pdf";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += Facturar;
             // 
             // label1
             // 
