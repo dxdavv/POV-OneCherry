@@ -52,6 +52,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 39;
+            comboBox1.SelectedIndexChanged += OnChagedIndex;
             // 
             // label2
             // 
@@ -97,7 +98,7 @@
             TablaFacturas.ReadOnly = true;
             TablaFacturas.Size = new Size(676, 253);
             TablaFacturas.TabIndex = 35;
-            TablaFacturas.CellContentDoubleClick += CargarVenta;
+            TablaFacturas.CellDoubleClick += CargarVenta;
             // 
             // button7
             // 

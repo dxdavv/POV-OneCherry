@@ -44,6 +44,10 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             textBox1 = new TextBox();
+            Producto = new DataGridViewTextBoxColumn();
+            Cantidad = new DataGridViewTextBoxColumn();
+            Precio = new DataGridViewTextBoxColumn();
+            Subtotal = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)TablaSolicitarCompras).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -53,8 +57,10 @@
             // 
             TablaSolicitarCompras.AllowUserToAddRows = false;
             TablaSolicitarCompras.AllowUserToDeleteRows = false;
+            TablaSolicitarCompras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             TablaSolicitarCompras.BackgroundColor = SystemColors.ButtonHighlight;
             TablaSolicitarCompras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaSolicitarCompras.Columns.AddRange(new DataGridViewColumn[] { Producto, Cantidad, Precio, Subtotal });
             TablaSolicitarCompras.Location = new Point(25, 108);
             TablaSolicitarCompras.Name = "TablaSolicitarCompras";
             TablaSolicitarCompras.ReadOnly = true;
@@ -219,6 +225,30 @@
             textBox1.Size = new Size(85, 23);
             textBox1.TabIndex = 102;
             // 
+            // Producto
+            // 
+            Producto.HeaderText = "Producto";
+            Producto.Name = "Producto";
+            Producto.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.Name = "Cantidad";
+            Cantidad.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            Precio.HeaderText = "Precio";
+            Precio.Name = "Precio";
+            Precio.ReadOnly = true;
+            // 
+            // Subtotal
+            // 
+            Subtotal.HeaderText = "Subtotal";
+            Subtotal.Name = "Subtotal";
+            Subtotal.ReadOnly = true;
+            // 
             // VentanaComprasProv
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -265,5 +295,9 @@
         private PictureBox pictureBox1;
         private Label label3;
         private TextBox textBox1;
+        private DataGridViewTextBoxColumn Producto;
+        private DataGridViewTextBoxColumn Cantidad;
+        private DataGridViewTextBoxColumn Precio;
+        private DataGridViewTextBoxColumn Subtotal;
     }
 }

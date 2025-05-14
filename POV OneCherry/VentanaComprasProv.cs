@@ -6,12 +6,11 @@ namespace POV_OneCherry
     {
         private string[] proveedores;
         private string[] productos;
+        private List<string> IdProductos = new List<string>();
+        private List<string> IdProveedores = new List<string>();
         private string IdProveedor = "";
         private string IdProducto = "";
         private string IdCompra = "";
-        private string IdEliminar = "";
-        private List<string> IdCompras = new List<string>();
-        //private List<string> IdCompras = new List<string>();
         private double total = 0;
         public VentanaComprasProv()
         {
@@ -40,130 +39,134 @@ namespace POV_OneCherry
         {
             if (IdProducto.Length > 0 && IdProveedor.Length > 0 && numericUpDown1.Value > 0 && textBox1.Text.Length > 0)
             {
-                if (IdCompra.Equals(""))
-                {
-                    string nwventa = "INSERT INTO ComprasProveedor (FechaCompra, PrecioTotal) " +
-                        $"VALUES (GETDATE(), 0.00)";
-                    if (DBC.EditData(nwventa) > 1)
-                    {
-                        MessageBox.Show("error");
-                    }
-                    IdCompra = DBC.GetData("SELECT ID_ComprasProveedor FROM ComprasProveedor ORDER BY ID_ComprasProveedor DESC")[0];
-                    total = 0;
-                }
+                IdProductos.Add(IdProducto);
+                IdProveedores.Add(IdProveedor);
+                string producto = DBC.GetData(
+                    "SELECT Productos.NombreProducto " +
+                    "FROM Productos " +
+                    $"WHERE ID_Productos = '{IdProducto}'")[0];
                 string cantidad = numericUpDown1.Value.ToString();
                 string precioU = textBox1.Text;
                 double subtotal = double.Parse(precioU) * int.Parse(cantidad);
                 total += subtotal;
-                string nwquery = "INSERT INTO DetallesCompra (Cantidad, PrecioUnidad, SubTotal, ID_Productos, ID_Proveedores, ID_ComprasProveedor) " +
-                    $"VALUES ('{cantidad}', '{precioU}', '{subtotal}', '{IdProducto}', '{IdProveedor}', '{IdCompra}')";
-                if (DBC.EditData(nwquery) > 0)
+                foreach (DataGridViewRow row in TablaSolicitarCompras.Rows)
                 {
-                    // ACTUALIZAR TABLA CARRITO Y ANUNCIARLO
-                    ActualizarTabla();
+                    if (row.Cells[0].Value.ToString() == producto && row.Cells[2].ToString() == precioU)
+                    {
+                        row.Cells[1].Value = int.Parse(row.Cells[1].Value.ToString() ?? "") + int.Parse(cantidad);
+                        row.Cells[3].Value = double.Parse(row.Cells[1].Value.ToString() ?? "") * double.Parse(precioU);
+                        return;
+                    }
                 }
+                TablaSolicitarCompras.Rows.Add(producto, cantidad, precioU, subtotal);
+                textBox1.Clear();
+                numericUpDown1.Value = 1;
+                IdProducto = "";
+                IdProveedor = "";
+                comboBox1.Items.Clear();
+                comboBox2.Items.Clear();
+                proveedores = DBC.GetData("SELECT ID_Proveedores FROM Proveedores");
+                comboBox1.Items.AddRange(DBC.GetData("SELECT NombreProveedor FROM Proveedores"));
+                productos = DBC.GetData("SELECT ID_Productos FROM Productos");
+                comboBox2.Items.AddRange(DBC.GetData("SELECT NombreProducto FROM Productos"));
             }
         }
 
         private void MandarAEliminarProductos(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex < 1)
-            //{
-            //    TablaSolicitarCompras.DataSource = null;
-            //    IdCompra = "";
-            //}
             if (e.RowIndex >= 0)
             {
-                IdEliminar = IdCompras[e.RowIndex];
-                DBC.EditData($"DELETE FROM DetallesCompra WHERE ID_DetallesCompra = {IdEliminar}");
-                IdCompras.Remove(IdEliminar);
-                ActualizarTabla();
+                total -= double.Parse(TablaSolicitarCompras.Rows[e.RowIndex].Cells[3].Value.ToString());
+                IdProductos.Remove(IdProductos[e.RowIndex]);
+                IdProveedores.Remove(IdProveedores[e.RowIndex]);
+                TablaSolicitarCompras.Rows.RemoveAt(e.RowIndex);
             }
         }
         private void seleccionarProveedor(object sender, EventArgs e)
         {
             IdProveedor = proveedores[comboBox1.SelectedIndex];
-            comboBox2.Items.Clear();
-            productos = DBC.GetData(
-                "SELECT Productos.ID_Productos " +
-                "FROM Proveedores " +
-                "JOIN Productos " +
-                "ON Proveedores.ID_Productos = Productos.ID_Productos " +
-                $"WHERE Proveedores.ID_Proveedores = '{IdProveedor}'");
-            comboBox2.Items.AddRange(
-                DBC.GetData(
-                    "SELECT Productos.NombreProducto " +
+            if (comboBox2.SelectedIndex > -1)
+            {
+                IdProducto = productos[comboBox2.SelectedIndex];
+            }
+            else
+            {
+                comboBox2.Items.Clear();
+                productos = DBC.GetData(
+                    "SELECT Productos.ID_Productos " +
                     "FROM Proveedores " +
                     "JOIN Productos " +
                     "ON Proveedores.ID_Productos = Productos.ID_Productos " +
-                    $"WHERE Proveedores.ID_Proveedores = '{IdProveedor}'"
-                    )
-                );
+                    $"WHERE Proveedores.ID_Proveedores = '{IdProveedor}'");
+                comboBox2.Items.AddRange(
+                    DBC.GetData(
+                        "SELECT Productos.NombreProducto " +
+                        "FROM Proveedores " +
+                        "JOIN Productos " +
+                        "ON Proveedores.ID_Productos = Productos.ID_Productos " +
+                        $"WHERE Proveedores.ID_Proveedores = '{IdProveedor}'"
+                        )
+                    );
+            }
         }
         private void seleccionarProducto(object sender, EventArgs e)
         {
             IdProducto = productos[comboBox2.SelectedIndex];
-            string selected = comboBox1.SelectedText;
-            comboBox1.Items.Clear();
-            proveedores = DBC.GetData(
-                "SELECT Proveedores.ID_Proveedores " +
-                "FROM Proveedores " +
-                "JOIN Productos " +
-                "ON Proveedores.ID_Productos = Productos.ID_Productos " +
-                $"WHERE Productos.ID_Productos = '{IdProducto}'");
-            comboBox1.Items.AddRange(
-                DBC.GetData(
-                "SELECT Proveedores.NombreProveedor " +
-                "FROM Proveedores " +
-                "JOIN Productos " +
-                "ON Proveedores.ID_Productos = Productos.ID_Productos " +
-                $"WHERE Productos.ID_Productos = '{IdProducto}'"
-                    )
-                );
-        }
-        private void ActualizarTabla()
-        {
-            string ids = "";
-            IdCompras.Add(DBC.GetData("SELECT ID_DetallesCompra FROM DetallesCompra ORDER BY ID_DetallesCompra DESC")[0]);
-            foreach (string i in IdCompras)
+            if (comboBox1.SelectedIndex > -1)
             {
-                if (IdCompras.IndexOf(i) == 0)
-                {
-                    ids += i;
-                }
-                else
-                {
-                    ids += ", " + i;
-                }
+                IdProveedor = proveedores[comboBox1.SelectedIndex];
             }
-            string datosTabla = "SELECT Productos.NombreProducto AS Producto, " +
-                "DetallesCompra.Cantidad, DetallesCompra.PrecioUnidad AS Precio, " +
-                "DetallesCompra.SubTotal FROM DetallesCompra " +
-                "JOIN Productos ON DetallesCompra.ID_Productos = Productos.ID_Productos " +
-                "JOIN Proveedores ON DetallesCompra.ID_Proveedores = Proveedores.ID_Proveedores " +
-                $"WHERE DetallesCompra.ID_DetallesCompra IN({ids})";
-
-            comboBox1.Items.Clear();
-            comboBox2.Items.Clear();
-            proveedores = DBC.GetData("SELECT ID_Proveedores FROM Proveedores");
-            comboBox1.Items.AddRange(DBC.GetData("SELECT NombreProveedor FROM Proveedores"));
-            productos = DBC.GetData("SELECT ID_Productos FROM Productos");
-            comboBox2.Items.AddRange(DBC.GetData("SELECT NombreProducto FROM Productos"));
-            TablaSolicitarCompras.DataSource = DBC.Data(datosTabla);
+            else
+            {
+                comboBox1.Items.Clear();
+                proveedores = DBC.GetData(
+                    "SELECT Proveedores.ID_Proveedores " +
+                    "FROM Proveedores " +
+                    "JOIN Productos " +
+                    "ON Proveedores.ID_Productos = Productos.ID_Productos " +
+                    $"WHERE Productos.ID_Productos = '{IdProducto}'");
+                comboBox1.Items.AddRange(
+                    DBC.GetData(
+                    "SELECT Proveedores.NombreProveedor " +
+                    "FROM Proveedores " +
+                    "JOIN Productos " +
+                    "ON Proveedores.ID_Productos = Productos.ID_Productos " +
+                    $"WHERE Productos.ID_Productos = '{IdProducto}'"
+                        )
+                    );
+            }
         }
+
         private void solicitarStock(object sender, EventArgs e)
         {
-            if (IdCompra.Length > 0 && IdCompras.Count > 0)
+            if (IdProductos.Count > 0)
             {
-                string nwquery = "UPDATE ComprasProveedor SET PrecioTotal = " +
-                    $"{total} WHERE ID_ComprasProveedor = {IdCompra}";
+                string nwquery = "INSERT INTO ComprasProveedor (FechaCompra, PrecioTotal) " +
+                    $"VALUES (GETDATE(), {total})";
+                DBC.EditData(nwquery);
+                IdCompra = DBC.GetData("SELECT ID_ComprasProveedor FROM ComprasProveedor ORDER BY ID_ComprasProveedor DESC")[0];
+                nwquery = "INSERT INTO DetallesCompra (Cantidad, PrecioUnidad, SubTotal, ID_Productos, ID_Proveedores, ID_ComprasProveedor) VALUES ";
+                int indice = 0;
+                foreach (DataGridViewRow row in TablaSolicitarCompras.Rows)
+                {
+                    string cantidad = row.Cells[1].Value.ToString();
+                    string precioU = row.Cells[2].Value.ToString();
+                    string subtotal = row.Cells[3].Value.ToString();
+                    nwquery += $"('{cantidad}', '{precioU}', '{subtotal}', '{IdProductos[indice]}', '{IdProveedores[indice]}', '{IdCompra}')";
+                    if (indice < IdProductos.Count - 1)
+                    {
+                        nwquery += ", ";
+                    }
+                    indice++;
+                }
                 if (DBC.EditData(nwquery) > 0)
                 {
                     MessageBox.Show("Compra realizada");
+                    IdProductos.Clear();
+                    IdProveedores.Clear();
                     IdProveedor = "";
                     IdProducto = "";
                     IdCompra = "";
-                    IdCompras.Clear();
                     total = 0;
                     comboBox1.Items.Clear();
                     comboBox2.Items.Clear();
@@ -172,6 +175,7 @@ namespace POV_OneCherry
                     productos = DBC.GetData("SELECT ID_Productos FROM Productos");
                     comboBox2.Items.AddRange(DBC.GetData("SELECT NombreProducto FROM Productos"));
                     TablaSolicitarCompras.DataSource = null;
+                    TablaSolicitarCompras.Rows.Clear();
                 }
             }
             else

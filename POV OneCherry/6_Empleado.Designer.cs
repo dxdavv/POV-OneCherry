@@ -64,6 +64,10 @@
             label11 = new Label();
             label10 = new Label();
             TablaVenta = new DataGridView();
+            nombreProducto = new DataGridViewTextBoxColumn();
+            cantidadProducto = new DataGridViewTextBoxColumn();
+            precioUnitario = new DataGridViewTextBoxColumn();
+            subTotal = new DataGridViewTextBoxColumn();
             label2 = new Label();
             comboBox4 = new ComboBox();
             label21 = new Label();
@@ -516,13 +520,42 @@
             // 
             // TablaVenta
             // 
+            TablaVenta.AllowUserToAddRows = false;
+            TablaVenta.AllowUserToDeleteRows = false;
+            TablaVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             TablaVenta.BackgroundColor = SystemColors.ButtonHighlight;
             TablaVenta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaVenta.Columns.AddRange(new DataGridViewColumn[] { nombreProducto, cantidadProducto, precioUnitario, subTotal });
             TablaVenta.Location = new Point(13, 40);
             TablaVenta.Name = "TablaVenta";
+            TablaVenta.ReadOnly = true;
             TablaVenta.Size = new Size(432, 326);
             TablaVenta.TabIndex = 16;
             TablaVenta.CellDoubleClick += MandarAEliminarProductos;
+            // 
+            // nombreProducto
+            // 
+            nombreProducto.HeaderText = "Producto";
+            nombreProducto.Name = "nombreProducto";
+            nombreProducto.ReadOnly = true;
+            // 
+            // cantidadProducto
+            // 
+            cantidadProducto.HeaderText = "Cantidad";
+            cantidadProducto.Name = "cantidadProducto";
+            cantidadProducto.ReadOnly = true;
+            // 
+            // precioUnitario
+            // 
+            precioUnitario.HeaderText = "Precio Unitario";
+            precioUnitario.Name = "precioUnitario";
+            precioUnitario.ReadOnly = true;
+            // 
+            // subTotal
+            // 
+            subTotal.HeaderText = "Subtotal";
+            subTotal.Name = "subTotal";
+            subTotal.ReadOnly = true;
             // 
             // label2
             // 
@@ -638,5 +671,9 @@
         private PictureBox pictureBox1;
         private Button button4;
         private Button button5;
+        private DataGridViewTextBoxColumn nombreProducto;
+        private DataGridViewTextBoxColumn cantidadProducto;
+        private DataGridViewTextBoxColumn precioUnitario;
+        private DataGridViewTextBoxColumn subTotal;
     }
 }

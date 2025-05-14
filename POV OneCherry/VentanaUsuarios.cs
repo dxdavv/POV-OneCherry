@@ -48,6 +48,12 @@ namespace POV_OneCherry
             int seleccion = comboBox1.SelectedIndex;
             if (textBox2.Text.Length > 0 && textBox3.Text.Length > 0 && seleccion > -1)
             {
+                nwquery = DBC.queryBuscar(query, columnas[1], textBox2.Text);
+                if (DBC.Data(nwquery).Rows.Count > 0)
+                {
+                    MessageBox.Show("El nombre de usuario ya existe, por favor elija otro.");
+                    return;
+                }
                 nwquery = "INSERT INTO Usuarios (NombreUsuario, Pin, Tipo) " +
                     $"VALUES ('{textBox2.Text}', {textBox3.Text}, '{tipos[seleccion]}')";
                 if (DBC.EditData(nwquery) > 0)
@@ -74,6 +80,12 @@ namespace POV_OneCherry
             string nwquery;
             if (textBox2.Text.Length > 0 && textBox3.Text.Length > 0 && seleccion > -1)
             {
+                nwquery = DBC.queryBuscar(query, columnas[1], textBox2.Text);
+                if (DBC.Data(nwquery).Rows.Count > 0)
+                {
+                    MessageBox.Show("El nombre de usuario ya existe, por favor elija otro.");
+                    return;
+                }
                 nwquery = "UPDATE Usuarios SET " +
                     $"{columnas[1]}='{textBox2.Text}', {columnas[2]}={textBox3.Text}, {columnas[3]}='{tipos[seleccion]}' WHERE ID_Usuarios = {IdACambiar}";
                 

@@ -39,6 +39,16 @@
                     return;
                 }
                 comboBox2.SelectedIndex = Array.IndexOf(categorias, dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+                if (ventana > 1)
+                {
+                    IdCategorias = DBC.GetData("SELECT ID_Usuarios FROM Usuarios WHERE NombreUsuario = '" +
+                        dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString() + "'");
+                    comboBox2.Items.Clear();
+                    categorias = DBC.GetData("SELECT NombreUsuario FROM Usuarios WHERE ID_Usuarios = '" +
+                        IdCategorias[0] + "'");
+                    comboBox2.Items.AddRange(categorias);
+                    comboBox2.SelectedIndex = 0;
+                }
             }
         }
         private void botonProveedores(object sender, EventArgs e)
