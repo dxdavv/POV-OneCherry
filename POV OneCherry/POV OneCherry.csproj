@@ -7,10 +7,15 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>logoonecherry.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="Login.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="logoonecherry.ico" />
   </ItemGroup>
 
   <ItemGroup>
