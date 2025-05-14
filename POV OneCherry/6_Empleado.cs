@@ -23,13 +23,12 @@ namespace POV_OneCherry
         private string[] columnasProductos = { "Productos.ID_Productos", "Productos.NombreProducto", "Productos.Precio", "Productos.Stock", "Categorias.NombreCategoria" };
         private string[] IdPromociones;
         private string[] promociones;
+        private string[] descuentos;
         private string IdEmpleado = "";
         private string IdCliente = "";
         private string IdProducto = "";
         private string IdVenta = "";
-        private string IdEliminar = "";
         private List<string> IdProductos = new List<string>();
-        private List<string> IdVentas = new List<string>();
         double total;
         // producto, precio, cantidad, subtotal
         public Empleado(string user = "default", string IdEmpleado = "2")
@@ -40,6 +39,7 @@ namespace POV_OneCherry
             label4.Text = user;
             IdPromociones = DBC.GetData("SELECT ID_Promociones FROM Promociones");
             promociones = DBC.GetData("SELECT NombrePromocion FROM Promociones");
+            descuentos = DBC.GetData("SELECT Descuento FROM Promociones");
             comboBox4.Items.Clear();
             comboBox4.Items.AddRange(promociones);
         }
@@ -72,23 +72,12 @@ namespace POV_OneCherry
         }
         private void MandarAEliminarProductos(object sender, DataGridViewCellEventArgs e)
         {
-            //MessageBox.Show(TablaVenta.Rows.Count.ToString());
-            //if (TablaVenta.Rows.Count == 0)
-            //{
-            //    TablaVenta.DataSource = null;
-            //    IdVenta = "";
-            //    IdVentas.Clear();
-            //}
             if (e.RowIndex >= 0)
             {
-                IdEliminar = IdVentas[e.RowIndex];
-                string idEProducto = IdProductos[e.RowIndex];
-                string equery = $"DELETE FROM DetallesVenta WHERE ID_DetallesVenta = {IdEliminar} AND ID_Productos = {idEProducto}";
-                MessageBox.Show(equery);
-                DBC.EditData(equery);
-                IdVentas.Remove(IdEliminar);
-                IdProductos.Remove(idEProducto);
-                ActualizarTabla();
+                total -= double.Parse(TablaVenta.Rows[e.RowIndex].Cells[3].Value.ToString() ?? "");
+                IdProductos.Remove(IdProductos[e.RowIndex]);
+                TablaVenta.Rows.RemoveAt(e.RowIndex);
+                textBox5.Text = total.ToString("0.00");
             }
         }
 
@@ -96,10 +85,7 @@ namespace POV_OneCherry
         {
             if (comboBox4.SelectedIndex != -1)
             {
-                textBox5.Text = (total - double.Parse(
-                    DBC.GetData(
-                        $"SELECT Descuento FROM Promociones WHERE ID_Promociones = {IdPromociones[comboBox4.SelectedIndex]}"
-                        )[0])).ToString("0.00");
+                textBox5.Text = (total - double.Parse(descuentos[comboBox4.SelectedIndex])).ToString("0.00");
             }
             else
             {
@@ -117,9 +103,7 @@ namespace POV_OneCherry
             IdCliente = "";
             IdProducto = "";
             IdVenta = "";
-            IdEliminar = "";
             IdProductos = new List<string>();
-            IdVentas = new List<string>();
             total = 0;
             textBox1.Clear();
             textBox2.Clear();
@@ -176,6 +160,7 @@ namespace POV_OneCherry
             string nwquery = $"SELECT CONCAT(Nombre, ' ', Apellido) AS Nombre FROM Clientes WHERE ID_Clientes = {IdCliente}";
             label21.Text = DBC.GetData(nwquery)[0];
         }
+
         private void AgregarProductoVenta(object sender, EventArgs e)
         {
             if (IdProducto.Length > 0 && IdCliente.Length > 0 && numericUpDown1.Value > 0)
@@ -185,31 +170,30 @@ namespace POV_OneCherry
                     MessageBox.Show("No hay suficiente stock");
                     return;
                 }
-                if (IdVenta.Equals(""))
-                {
-                    string promocionDisponible = DBC.GetData("SELECT ID_Promociones FROM Promociones ORDER BY ID_Promociones")[0];
-                    string nwventa = "INSERT INTO Ventas (FechaVenta, TotalVenta, ID_Clientes, ID_Empleados, ID_Promociones) " +
-                        $"VALUES (GETDATE(), 0.00, '{IdCliente}', '{IdEmpleado}', '{promocionDisponible}')";
-                    if (DBC.EditData(nwventa) > 1)
-                    {
-                        MessageBox.Show("error");
-                    }
-                    IdVenta = DBC.GetData("SELECT ID_Ventas FROM Ventas ORDER BY ID_Ventas DESC")[0];
-                    total = 0;
-                }
-                string nwquery = $"SELECT Precio FROM Productos WHERE ID_Productos = {IdProducto}";
                 IdProductos.Add(IdProducto);
+                string nombre = DBC.GetData($"SELECT NombreProducto FROM Productos WHERE ID_Productos = {IdProducto}")[0];
                 string cantidad = numericUpDown1.Value.ToString();
-                string precioU = DBC.GetData(nwquery)[0];
+                string precioU = DBC.GetData($"SELECT Precio FROM Productos WHERE ID_Productos = {IdProducto}")[0];
                 double subtotal = double.Parse(precioU) * int.Parse(cantidad);
                 total += subtotal;
-                nwquery = "INSERT INTO DetallesVenta (Cantidad, PrecioUnidad, SubTotal, ID_Productos, ID_Ventas) " +
-                    $"VALUES ('{cantidad}', '{precioU}', '{subtotal}', '{IdProducto}', '{IdVenta}')";
-                if (DBC.EditData(nwquery) > 0)
+                foreach (DataGridViewRow row in TablaVenta.Rows)
                 {
-                    // ACTUALIZAR TABLA CARRITO Y ANUNCIARLO
-                    ActualizarTabla();
+                    if (row.Cells[0].Value.ToString() == nombre)
+                    {
+                        int cantidadActual = int.Parse(row.Cells[1].Value.ToString() ?? "") + int.Parse(cantidad);
+                        if (cantidadActual > int.Parse(DBC.GetData($"SELECT Stock FROM Productos WHERE ID_Productos = {IdProducto}")[0]))
+                        {
+                            MessageBox.Show("No hay suficiente stock");
+                            return;
+                        }
+                        row.Cells[1].Value = cantidadActual.ToString();
+                        row.Cells[3].Value = (double.Parse(precioU) * cantidadActual).ToString("0.00");
+                        textBox5.Text = total.ToString("0.00");
+                        return;
+                    }
                 }
+                TablaVenta.Rows.Add(nombre, cantidad, precioU, subtotal);
+                textBox5.Text = total.ToString("0.00");
             }
         }
         private void Cambio(object sender, EventArgs e)
@@ -218,14 +202,14 @@ namespace POV_OneCherry
             {
                 return;
             }
-            if (double.Parse(textBox6.Text) < total - double.Parse(IdPromociones[comboBox4.SelectedIndex]))
+            if (double.Parse(textBox6.Text) < total - double.Parse(descuentos[comboBox4.SelectedIndex]))
             {
                 MessageBox.Show("Cantidad a pagar mayor al dinero ingresado");
                 return;
             }
             else
             {
-                textBox9.Text = (double.Parse(textBox6.Text) - total + double.Parse(IdPromociones[comboBox4.SelectedIndex])).ToString("0.00");
+                textBox9.Text = (double.Parse(textBox6.Text) - (total - double.Parse(descuentos[comboBox4.SelectedIndex]))).ToString("0.00");
             }
         }
         private void FinalizarVenta(object sender, EventArgs e)
@@ -234,15 +218,27 @@ namespace POV_OneCherry
             {
                 return;
             }
-            if (IdVenta.Equals("") || IdCliente.Equals("") || IdProducto.Equals("") || comboBox4.SelectedIndex == -1)
+            double descuento = double.Parse(descuentos[comboBox4.SelectedIndex]);
+            string nwventa = "INSERT INTO Ventas (FechaVenta, TotalVenta, ID_Clientes, ID_Empleados, ID_Promociones) " +
+                        $"VALUES (GETDATE(), {total - descuento}, '{IdCliente}', '{IdEmpleado}', '{IdPromociones[comboBox4.SelectedIndex]}')";
+            DBC.EditData(nwventa);
+            IdVenta = DBC.GetData("SELECT ID_Ventas FROM Ventas ORDER BY ID_Ventas DESC")[0];
+            string nwquery = $"INSERT INTO DetallesVenta (Cantidad, PrecioUnidad, Subtotal, ID_Productos, ID_Ventas) VALUES ";
+            int indice = 0;
+            foreach (DataGridViewRow row in TablaVenta.Rows)
             {
-                MessageBox.Show("Faltan datos para finalizar la venta");
-                return;
+                string cantidad = row.Cells[1].Value.ToString();
+                string precioU = row.Cells[2].Value.ToString();
+                string subtotal = row.Cells[3].Value.ToString();
+                string idProducto = IdProductos[indice];
+                nwquery += $"({cantidad}, {precioU}, {subtotal}, {idProducto}, {IdVenta}), ";
+                indice++;
+                if (indice == TablaVenta.Rows.Count)
+                {
+                    nwquery = nwquery.Remove(nwquery.Length - 2, 2);
+                }
+
             }
-            float descuento = float.Parse(DBC.GetData($"SELECT Descuento FROM Promociones WHERE ID_Promociones = {IdPromociones[comboBox4.SelectedIndex]}")[0]);
-            string nwquery = $"UPDATE Ventas SET TotalVenta = {total - descuento}, " +
-                $"ID_Promociones = {IdPromociones[comboBox4.SelectedIndex]} " +
-                $"WHERE ID_Ventas = {IdVenta}";
             if (DBC.EditData(nwquery) > 0)
             {
                 DialogResult resultado = BotonTicketFactura();
@@ -259,14 +255,16 @@ namespace POV_OneCherry
                 IdCliente = "";
                 IdProducto = "";
                 IdProductos = new List<string>();
-                IdVentas = new List<string>();
                 total = 0;
                 textBox5.Clear();
                 textBox6.Clear();
                 textBox9.Clear();
+                TablaVenta.Rows.Clear();
                 TablaVenta.DataSource = null;
                 label21.Text = "";
                 comboBox4.SelectedIndex = -1;
+                TablaProducto.DataSource = DBC.Data(queryProductos);
+                TablaClientes.DataSource = DBC.Data(queryClientes);
 
             }
             else
@@ -297,39 +295,7 @@ namespace POV_OneCherry
             mensaje.CancelButton = btnFactura;
             return mensaje.ShowDialog();
         }
-        private void ActualizarTabla()
-        {
-            string ids = "";
-            IdVentas.Add(DBC.GetData("SELECT ID_DetallesVenta FROM DetallesVenta ORDER BY ID_DetallesVenta DESC")[0]);
-            foreach (string i in IdVentas)
-            {
-                if (IdVentas.IndexOf(i) == 0)
-                {
-                    ids += i;
-                }
-                else
-                {
-                    ids += ", " + i;
-                }
-            }
-            string datosTabla = "SELECT Productos.NombreProducto AS Producto, " +
-                "DetallesVenta.Cantidad, DetallesVenta.PrecioUnidad AS Precio, " +
-                "DetallesVenta.SubTotal FROM DetallesVenta JOIN Productos " +
-                "ON DetallesVenta.ID_Productos = Productos.ID_Productos " +
-                $"WHERE DetallesVenta.ID_DetallesVenta IN({ids})";
-            TablaVenta.DataSource = DBC.Data(datosTabla);
-            if (comboBox4.SelectedIndex != -1)
-            {
-                textBox5.Text = (total - double.Parse(
-                    DBC.GetData(
-                        $"SELECT Descuento FROM Promociones WHERE ID_Promociones = {IdPromociones[comboBox4.SelectedIndex]}"
-                        )[0])).ToString("0.00");
-            }
-            else
-            {
-                textBox5.Text = total.ToString("0.00");
-            }
-        }
+
         private void ManualEmpleado(object sender, EventArgs e)
         {
             string rutaPDF = Path.Combine(Application.StartupPath, "Resources", "ManualEmpleado.pdf");

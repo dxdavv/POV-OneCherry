@@ -39,6 +39,16 @@
                     return;
                 }
                 comboBox2.SelectedIndex = Array.IndexOf(categorias, dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+                if (ventana > 1)
+                {
+                    IdCategorias = DBC.GetData("SELECT ID_Usuarios FROM Usuarios WHERE NombreUsuario = '" +
+                        dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString() + "'");
+                    comboBox2.Items.Clear();
+                    categorias = DBC.GetData("SELECT NombreUsuario FROM Usuarios WHERE ID_Usuarios = '" +
+                        IdCategorias[0] + "'");
+                    comboBox2.Items.AddRange(categorias);
+                    comboBox2.SelectedIndex = 0;
+                }
             }
         }
         private void botonProveedores(object sender, EventArgs e)
@@ -112,8 +122,8 @@
             label6.Text = RecuadrosTexto[5];
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(RecuadrosTexto);
-            string evitarduplicidad = " WHERE (SELECT COUNT(*) FROM Empleados JOIN Usuarios " +
-                "ON Empleados.ID_Usuarios = Usuarios.ID_Usuarios) = 0 AND Usuarios.Tipo = 'Empleado'";
+            string evitarduplicidad = " WHERE ID_Usuarios NOT IN (SELECT ID_Usuarios FROM Empleados) " +
+                "AND Tipo = 'Empleado'";
             categorias = DBC.GetData("SELECT NombreUsuario FROM Usuarios" + evitarduplicidad);
             IdCategorias = DBC.GetData("SELECT ID_Usuarios FROM Usuarios" + evitarduplicidad);
             comboBox2.Items.Clear();
@@ -147,8 +157,8 @@
             label6.Text = RecuadrosTexto[5];
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(RecuadrosTexto);
-            string evitarduplicidad = " WHERE (SELECT COUNT(*) FROM Administrador JOIN Usuarios " +
-                "ON Administrador.ID_Usuarios = Usuarios.ID_Usuarios) = 0 AND Usuarios.Tipo = 'Administrador'";
+            string evitarduplicidad = " WHERE ID_Usuarios NOT IN (SELECT ID_Usuarios FROM Administrador) " +
+                "AND Tipo = 'Administrador'";
             categorias = DBC.GetData("SELECT NombreUsuario FROM Usuarios" + evitarduplicidad);
             IdCategorias = DBC.GetData("SELECT ID_Usuarios FROM Usuarios" + evitarduplicidad);
             comboBox2.Items.Clear();
@@ -203,13 +213,19 @@
                 if (DBC.EditData(nwquery) > 0)
                 {
                     MessageBox.Show("Agregado Exitosamente");
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
+                    categorias = categorias.Where(x => x != categorias[seleccion]).ToArray();
+                    IdCategorias = IdCategorias.Where(x => x != IdCategorias[seleccion]).ToArray();
+                    comboBox2.SelectedIndex = -1;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo agregar el registro.");
                 }
             }
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
-            comboBox1.SelectedIndex = -1;
             dataGridView1.DataSource = DBC.Data(query);
         }
         private void Editar(object sender, EventArgs e)
@@ -237,15 +253,15 @@
                 }
                 nwquery += $"WHERE ID_{ventanaActiva[ventana]}={IdACambiar}";
 
-                textBox2.Clear();
-                textBox3.Clear();
-                textBox4.Clear();
-                textBox5.Clear();
-                comboBox1.SelectedIndex = -1;
 
                 if (DBC.EditData(nwquery) > 0)
                 {
                     MessageBox.Show("Registro actualizado correctamente!");
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
+                    comboBox2.SelectedIndex = -1;
                 }
                 else
                 {
